@@ -7,11 +7,11 @@
   background-image: url("../img/hero/back.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 425px;
+  background-size: auto 528px;
   position: relative;
   overflow: hidden;
   padding: 0;
-  height: 425px;
+  height: 528px;
   text-align: center;
 
   @media (max-width: 768px){
@@ -29,16 +29,14 @@
 
   .character {
   position: absolute;
-  top: 277px;
+  bottom: -529px;
   left: 50%;
-  margin-left: 14px;
-  width: 125px;
-  height: 109px;
+  width: 268px;
+  height: 322px;
   background-image: url("../img/hero/character.png");
   background-size: contain;
   background-repeat: no-repeat;
   transform: translateX(-50%);
-  animation: sway-pause 5s ease-in-out infinite;
   z-index: 10;
 
   @media (max-width: 768px){
@@ -50,15 +48,6 @@
     margin-left: 0;
   }
   }
-}
-
-@keyframes sway-pause {
-  0%, 12.5%, 25% { transform: translateX(-50%) rotate(0deg); }
-  3.125%  { transform: translateX(-52%) rotate(-3deg); }
-  9.375%  { transform: translateX(-48%) rotate(3deg); }
-  15.625% { transform: translateX(-52%) rotate(-3deg); }
-  21.875% { transform: translateX(-48%) rotate(3deg); }
-  25.001%, 100% { transform: translateX(-50%) rotate(0deg); }
 }
 
 .item {
@@ -88,17 +77,6 @@
   }
 }
 
-.item-ticket {
-  background-image: url("../img/hero/ticket.png");
-  animation: fly-left-bottom 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.4s;
-  width: 130px;
-  height: 128px;
-
-  @media (max-width: 768px){
-    display: none;
-  }
-}
-
 .item-phone {
   background-image: url("../img/hero/phone.png");
   animation: fly-right-top 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
@@ -110,17 +88,6 @@
     width: 29%;
     height: auto;
     aspect-ratio: 132 / 109;
-  }
-}
-
-.item-boomerang {
-  background-image: url("../img/hero/boomerang.png");
-  animation: fly-right-bottom 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.7s;
-  width: 124px;
-  height: 119px;
-
-  @media (max-width: 768px){
-    display: none;
   }
 }
 
@@ -144,16 +111,4 @@
 @keyframes fly-right-top_ph {
   0%   { transform: translate(500px, 200px) rotate(0deg); opacity: 0;}
   100% { transform: translate(27vw, 73vw); opacity: 1;}
-}
-
-/* 3. 斜め左下(画面外) → 左下 */
-@keyframes fly-left-bottom {
-  0%   { left: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
-  100% { left: 50%;   top: 50%;   margin-left: -620px;   margin-top: 240px;   opacity: 1; }
-}
-
-/* 4. 右下(画面外) → 右下(画面内) */
-@keyframes fly-right-bottom {
-  0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
-  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; rotate:(-15deg); }
 }

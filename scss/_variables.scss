@@ -3,11 +3,12 @@
 // =========================================================
 
 // Brand
-$teal:        #00A3AD;
+$teal:        #46C9F4;
 $yellow:      #FFD700;
 $yellow-soft: #FFEF99;
 $pink:        #FF0064;
 $green:       #06C755;
+$red:       #FF3250;
 
 // Neutrals
 $ink:       #000;
@@ -77,4 +78,5 @@ $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
   --ink:#{$ink};
   --ink-soft:#{$ink-soft};
   --footer:#{$footer};
+  --red:#{$red};
 }
