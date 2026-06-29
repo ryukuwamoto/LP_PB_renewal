@@ -1,0 +1,969 @@
+// =========================================================
+// sec-top-h — Study & Work Guide（ハンドブック）+ Customer Reviews
+// =========================================================
+@use "variables" as *;
+
+.sec-top-h{
+  background: var(--teal);
+  position: relative;
+  overflow: hidden;
+}
+
+.sec-top-h-wave-top{
+  height: 75px;
+  background: url('../img/sec-top-f/wave.png');
+  background-size: 1920px 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sec-top-h-wave-bottom{
+  height: 75px;
+  background: url('../img/sec-top-f/wave.png');
+  background-size: 1920px 75px;
+  transform: scaleY(-1);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+// ---------- 共通：見出し ----------
+.h-head {
+  padding: 0 0 35px;
+
+.sec-head {
+    .sec-en, .sec-jp {
+    color: #fff;
+
+      .line-l, .line-r {
+      background: #fff;
+      }
+    }
+}
+}
+
+// =========================================================
+// Study & Work Guide
+// =========================================================
+.h-block-guide{
+  margin-bottom: 80px;
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.h-handbook{
+  width: 100%;
+  margin: 0 auto;
+  background: var(--yellow);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1030 / 574;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    aspect-ratio: auto;
+    background: none;
+  }
+}
+
+// ---------- 目次 ----------
+.h-toc{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 2.8155% 3%;
+  width: 28.932%;
+  height: 100%;
+  flex-shrink: 0;
+  background: var(--yellow-soft);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.h-toc-item{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color .2s ease, font-weight .2s ease;
+
+  &:not(:last-child) {
+      border-bottom: 3px dotted #fff; /* ドットの色や太さは任意で調整 */
+    }
+
+  // 番号：通常は文字のみ、アクティブ時は黄色フラッグで装飾
+  .h-toc-num{
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 48px;
+    height: 32px;
+    padding-left: 4px;
+    @include font-sofia(700);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1;
+    transition: background-color .2s ease, clip-path .2s ease;
+  }
+
+  .h-toc-text{
+    @include font-gen(bold);
+    font-size: 16px; 
+
+  @media (max-width: 1030px) {
+    font-size: 1.5534vw; 
+  }
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  // アクティブ状態：番号に右向きフラッグのあしらい
+  &.is-active{
+    .h-toc-num{
+      background: var(--yellow);
+      // 旗（右側に矢羽根）の形を clip-path で抜く
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+    }
+  }
+
+  &:hover:not(.is-active){
+    .h-toc-text{ color: #444; }
+  }
+}
+
+// ---------- ページビューワー----------
+.h-pages{
+  width: 42.1359%;
+  max-width: 100%;
+  aspect-ratio: 340 / 489;
+  flex-shrink: 1;
+  margin: 4.0776% 4.5631%;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;          // 角丸を保ったままページ側でスクロール
+
+  @media (max-width: 768px) {
+    max-width: 340px;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.h-page{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto; /* 上（画像）は残りの高さ全て、下（ナビ）は文字の高さ */
+  overflow: hidden;
+
+  &[hidden]{ display: none; }
+
+  .h-page-imgwrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;  /* 👈 ここでスクロールバーを出します */
+    overflow-x: hidden;
+
+    // スクロールバー（控えめ）の設定
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-soft) transparent;
+
+    &::-webkit-scrollbar{ width: 4px; }
+    &::-webkit-scrollbar-track{ background: transparent; }
+    &::-webkit-scrollbar-thumb{
+      background: var(--ink-soft);
+      border-radius: 3px;
+    }
+
+    .scroll-hint-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; // 💡ヒント画像の上からでも裏のコンテンツをスクロールできるようにする
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    img {
+      width: 70px; // 💡デザインに合わせてサイズは微調整してください
+      height: auto;
+
+      &:nth-of-type(1) {
+        display: none;
+
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+
+      &:nth-of-type(2) {
+        display: block;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    /* スクロールされたら消すクラス */
+    &.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  }
+
+  /* ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼ */
+  .content-wrap {
+    width: 100%;
+    height: auto;      /* 👈 縦に潰れず、本来の比率で縦長に表示されます */
+    display: block;
+    padding: 10% 5% 5%;
+    text-align: center;
+
+    .head {
+      display: flex;
+      gap: 5%;
+      align-items: flex-start;
+      padding: 0 4% 12%;
+      text-align: left;
+
+      .num {
+        line-height: 0.8;
+        font-size: 30px;
+        color: var(--yellow);
+        font-weight: bold;
+        text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
+        
+        @media (max-width: 1070px) {
+          font-size: 2.80vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 30px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 7.89vw; 
+        }
+      }
+
+      .title {
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1.3;
+
+        @media (max-width: 1070px) {
+          font-size: 1.86vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 21px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 5.43vw; 
+        }
+      }
+    }
+
+    .page1-img {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .page3-img {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .big-read {
+      padding: 14% 0;
+      p {
+        font-weight: 700;
+        display: inline;
+        background: linear-gradient(transparent 65%, #98DADE 65%);
+        line-height: 1.5;
+        font-size: 16px;
+
+        @media (max-width: 1070px) {
+          font-size: 1.50vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 4.21vw; 
+        }
+      }
+    }
+
+    .read {
+      width: 90%;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 16px;
+
+      @media (max-width: 1070px) {
+        font-size: 1.50vw; 
+      }
+
+      @media (max-width: 768px) {
+        font-size: 16px; 
+      }
+
+      @media (max-width: 380px) {
+        font-size: 4.21vw; 
+      }
+
+      .lists {
+        padding-top: 5%;
+        display: inline-block;
+        text-align: left;
+      }
+
+      .check-list {
+        padding-top: 14%;
+
+        li {
+          display: flex;
+          align-items: start;
+          text-align: left;
+          padding-bottom: 4%;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          &::before {
+            content: ""; /* 💡中身は空っぽにする */
+            display: inline-block;
+            width: 4%;
+            aspect-ratio: 1 / 1;
+            margin: 3% 2% 0 0;
+            flex-shrink: 0;
+            background-image: url("../img/sec-top-h/checkmark.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          .bold {
+            font-weight: 700;
+
+            .normal {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .checkpoint {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding-top: 14%;
+
+      .title {
+        font-weight: 700;
+        background-color: var(--yellow);
+        padding: 1% 6%;
+        border-radius: 8px 8px 0 0;
+        font-size: 16px;
+
+        @media (max-width: 1070px) {
+          font-size: 1.50vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 4.21vw; 
+        }
+      }
+
+      .read {
+        background-color: var(--yellow-soft);
+        width: 100%;
+        padding: 4% 8%;
+        border-radius: 0 8px 8px 8px;
+        text-align: left;
+      }
+    }
+
+    .bubble {
+      padding: 12% 0 8%;
+      display: flex;
+      justify-content: center;
+      gap: 28%;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    .graph-wrap {
+      padding-bottom: 10%;
+
+      &:last-child {
+        padding-bottom: 0%;
+      }
+
+      img {
+        margin: 0 auto;
+
+        &.media1 {
+          width: 30%;
+          height: auto;
+          margin-bottom: 6%;
+        }
+
+        &.media2 {
+          width: 10%;
+          height: auto;
+          margin-bottom: 6%;
+        }
+
+        &.media3 {
+          width: 10%;
+          height: auto;
+          margin-bottom: 1%;
+        }
+
+        &.media4 {
+          width: 8%;
+          height: auto;
+          margin-bottom: 1%;
+        }
+
+        &.media5 {
+          width: 25%;
+          height: auto;
+          margin-bottom: 6%;
+        }
+      }
+
+      .graph {
+        width: 100%;
+        aspect-ratio: 286 / 35;
+        display: flex;
+        background-image: url("../img/sec-top-h/graph1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        div {
+          padding-top: 2%;
+          text-align: center;
+          flex: 1;
+          font-size: 12px;
+          font-weight: 700;
+
+          @media (max-width: 1070px) {
+            font-size: 1.12vw; 
+          }
+
+          @media (max-width: 768px) {
+            font-size: 12px; 
+          }
+
+          @media (max-width: 380px) {
+            font-size: 3.16vw; 
+          }
+
+          .num {
+            font-size: 18px;
+
+            @media (max-width: 1070px) {
+              font-size: 1.68vw; 
+            }
+
+            @media (max-width: 768px) {
+              font-size: 18px; 
+            }
+
+            @media (max-width: 380px) {
+              font-size: 4.74vw; 
+            }
+          }
+          
+          &.ja {
+            font-size: 14px;
+            padding-top: 3%;
+
+            @media (max-width: 1070px) {
+              font-size: 1.31vw; 
+            }
+
+            @media (max-width: 768px) {
+              font-size: 14px; 
+            }
+
+            @media (max-width: 380px) {
+              font-size: 3.68vw; 
+            }
+          }
+        }
+      }
+
+      .top-attention {
+        text-align: left;
+        font-size: 12px;
+        font-weight: 300;
+        padding-bottom: 3%;
+
+        @media (max-width: 1070px) {
+          font-size: 1.12vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 12px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 3.16vw; 
+        }
+
+        &.top-ate2 {
+          padding-top: 3%;
+        }
+      }
+
+      .bottom-attention {
+        text-align: right;
+        font-size: 12px;
+        font-weight: 300;
+        padding-top: 3%;
+
+        @media (max-width: 1070px) {
+          font-size: 1.12vw; 
+        }
+
+        @media (max-width: 768px) {
+          font-size: 12px; 
+        }
+
+        @media (max-width: 380px) {
+          font-size: 3.16vw; 
+        }
+      }
+    }
+
+    .boxs {
+      
+      .box {
+        width: 100%;
+        height: auto;
+        position: relative;
+        aspect-ratio: 286 / 140;
+        background-image: url("../img/sec-top-h/box.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 15%;
+
+        &:nth-of-type(2) {
+          background-image: url("../img/sec-top-h/box-ye.png");
+        }
+
+        p {
+          &:nth-of-type(1) {
+            position: absolute;
+            top: -4%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: 900;
+            display: inline;
+            background: linear-gradient(transparent 90%, var(--ink) 90%);
+
+            @media (max-width: 1070px) {
+              font-size: 1.12vw; 
+            }
+
+            @media (max-width: 768px) {
+              font-size: 12px; 
+            }
+
+            @media (max-width: 380px) {
+              font-size: 3.16vw; 
+            }
+          }
+
+          &:nth-of-type(2) {
+            font-size: 12px;
+            padding: 10% 0 4%;
+
+            @media (max-width: 1070px) {
+              font-size: 1.12vw; 
+            }
+
+            @media (max-width: 768px) {
+              font-size: 12px; 
+            }
+
+            @media (max-width: 380px) {
+              font-size: 3.16vw; 
+            }
+
+            .en {
+              font-size: 15px;
+
+              @media (max-width: 1070px) {
+                font-size: 1.40vw; 
+              }
+
+              @media (max-width: 768px) {
+                font-size: 15px; 
+              }
+
+              @media (max-width: 380px) {
+                font-size: 3.95vw; 
+              }
+            }
+          }
+
+          &:nth-of-type(3) {
+            font-size: 21px;
+            font-weight: 900;
+
+            @media (max-width: 1070px) {
+              font-size: 1.96vw; 
+            }
+
+            @media (max-width: 768px) {
+              font-size: 21px; 
+            }
+
+            @media (max-width: 380px) {
+              font-size: 5.53vw; 
+            }
+            
+            .num {
+              font-size: 43px;
+              color: var(--yellow);
+              font-weight: bold;
+              text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
+
+              @media (max-width: 1070px) {
+                font-size: 4.02vw; 
+              }
+
+              @media (max-width: 768px) {
+                font-size: 43px; 
+              }
+
+              @media (max-width: 380px) {
+                font-size: 11.32vw; 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===== 00 表紙 =====
+.h-page-cover{
+  align-items: center;
+  text-align: center;
+  background: url('../img/sec-top-h/表紙.png');
+  background-size: 100%;
+}
+.h-cover-cta{
+  display: inline-flex;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 50%;
+  height: 8%;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 999px;
+  @include font-gen(bold);
+  font-size: 16px; 
+
+  @media (max-width: 1070px) {
+    font-size: 1.50vw; 
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px; 
+  }
+
+  @media (max-width: 380px) {
+    font-size: 4.21vw; 
+  }
+
+
+  text-decoration: none;
+  transition: opacity .25s ease;
+
+  .cta-arrow{
+    width: 8%;
+    height: auto;
+  }
+
+  &:hover{ opacity: .85; }
+}
+
+// ページ内ナビ：スクロールしてもページ下部に固定
+.h-page-nav{
+  position: relative;
+  width: 100%;
+  padding: 15px 10px;
+  background: #fff;                 // スクロールするコンテンツの上に乗せるため不透明
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 2;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+  .scroll-arrow {
+  display: block;
+  margin: 0 auto;
+  width: 6%;
+  height: auto;
+
+  // 💡 2秒かけて上下にフワフワと無限ループ（infinite）させる
+  animation: bounceUpDown 2.0s ease-in-out infinite;
+}
+
+  button{
+    @include font-gen(bold);
+    font-size: 12px;
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: opacity .25s ease;
+
+    &:hover{ opacity: .85; }
+  }
+
+  .h-nav-no{
+    background: #fff;
+    padding: 4px 10px;
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0); // 最初と最後は元の位置
+  }
+  50% {
+    transform: translateY(60%); // 💡真ん中のタイミングで下に12px沈む
+  }
+}
+
+// ---------- 右側ロゴ ----------
+.h-handbook-logo{
+  width: 28.932%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow-soft);
+
+  img{
+    width: 65%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// =========================================================
+// Customer Reviews
+// =========================================================
+.f-slider-wrap {
+    padding-bottom: 40px;
+    @media (max-width: 1070px) {
+        width: 680px;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        width: 330px;padding-bottom: 0px;
+    }
+}
+
+// sec-f-slider
+.f-slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .slide-arrow {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    left: 50%;
+    z-index: 10;
+  }
+
+  .prev-arrow {
+    transform: translateX(calc(-50% - 130px)) translateY(10px) rotate(180deg);
+  }
+
+  .next-arrow {
+    transform: translateX(calc(-50% + 130px)) translateY(10px);
+  }
+
+  .slide, .slick-slide {
+    width: 330px;
+    margin: 0 10px;
+
+    .voice-card {
+      height: 415px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 18px 25px 30px;
+
+      .num {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        column-gap: 5px;
+        font-size: 21px;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1;
+        padding-bottom: 6px;
+
+        span {
+          font-size: 35px;
+          color: var(--yellow);
+          text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
+        }
+      }
+
+      .head {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: flex-end;
+        column-gap: 8px;
+        margin-bottom: 18px;
+
+        .icon {
+          width: 50px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .name {
+          font-size: 12px;
+          font-weight: 400;
+          padding-bottom: 6px;
+
+          
+        }
+        .hashtag {
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 12px;
+          gap: 6px;
+          font-weight: 400;
+          padding-bottom: 6px;
+
+          li {
+            display: list-item;
+            unicode-bidi: isolate;
+
+            &::before {
+              content: "#";
+            }
+          }
+        }
+      }
+
+      .star {
+        display: flex;
+
+        figure {
+          width: 15px;
+          height: 14px;
+        }
+      }
+
+      .title {
+        padding: 15px 0 12px;
+        margin-bottom: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 2px solid rgb(51, 51, 51);
+      }
+
+      .comment {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 2;
+      }
+    }
+  }
+
+  .slick-dotted.slick-slider {
+    @media (max-width: 768px) {
+      margin-bottom: 15px !important;
+    }
+  }
+
+  .f-slide-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 0;
+    padding-top: 36px;
+
+    li {
+      width: 8px;
+      height: 8px;
+      margin: 0 5px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.slick-active {
+        transform: scale(2);
+      }
+    }
+  }
+}
+

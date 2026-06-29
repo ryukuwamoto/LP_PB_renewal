@@ -1,0 +1,266 @@
+.footer {
+	text-align: center;
+	background-color: #eff0f1;
+}
+
+.footer_read {
+	padding: 50px 0 26px;
+
+	.boxs {
+		.box {
+			float: none;
+			width: 100%;
+		}
+	}
+
+    .box_img {
+        img {
+            display: inline-block;
+        }
+    }
+
+	.box_clm {
+		padding: 20px 0 45px;
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			li {
+				font-size: 107%;
+				font-weight: 300;
+				display: inline-block;
+			}
+		}
+	}
+
+	.box_nav {
+		ul {
+			li {
+				font-size: 94%;
+				font-weight: 300;
+				display: inline-block;
+				margin: 0 10px;
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px){
+		.box_img {
+			a {
+				img {
+					width: 150px;
+					height: auto;
+				}
+			}
+		}
+
+		.box_nav {
+			ul {
+				li {
+					font-size: 12px;
+					margin: 0 6px 10px;
+				}
+			}
+		}
+    }
+}
+
+.footer_copy {
+	padding: 25px 30px;
+	background-color: #00a3ad;
+
+	p {
+		font-size: 94%;
+		color: #fff;
+	}
+}
+
+.footer_gotop {
+	position: absolute;
+	top: -26px;
+	left: 0;
+	width: 100%;
+
+	a {
+		display: inline-block;
+
+        img {
+            max-width: 100%;
+            display: inline-block;
+        }
+
+		span {
+			font-size: 94%;
+			font-style: normal;
+			display: block;
+			margin-top: 6px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.side_nav {
+	position: fixed;
+	z-index: 90;
+	right: 85px;
+	bottom: 135px;
+
+	ul {
+		li {
+			position: relative;
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			img {
+				position: relative;
+				z-index: 10;
+
+				filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, .16));
+			}
+
+			.close {
+				position: absolute;
+				z-index: 12;
+				top: 0;
+				right: -10px;
+				display: block;
+				width: 28px;
+				height: 28px;
+				cursor: pointer;
+				background-image: url(./img/common/side_ico_00@2x.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 28px;
+			}
+		}
+	}
+}
+
+.common_sns {
+	margin-top: 60px;
+
+	&.__header {
+		margin: -28px 0 42px;
+
+		ul {
+			gap: 50px;
+
+			li {
+				svg {
+					path {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: 100px;
+	}
+
+	@media (max-width: 768px){
+		ul {
+			gap: 44px;
+		}
+    }
+}
+
+.footer_press {
+    padding-top: 100px;
+    width: 100%;
+
+    .inner {
+        display: flex;
+        gap: 25px;
+        width: 100%;
+
+        .section-box {
+            background-color: #fff;
+            border-radius: 10px;
+            flex: 1;
+            padding: 21px 27px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+
+        .section-title {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: 700;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--ink);
+            opacity: 0.2;
+            margin: 7px 0 12px;
+        }
+
+        .article {
+          position: relative;
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          border-radius: 5px;
+          background-color: #fff;
+
+          .thumnail {
+            width: 100%;
+            height: auto;
+          }
+
+          div {
+
+            text-align: left;
+
+            p:nth-of-type(1){
+              font-size: 15px;
+              padding: 8px 0 4px
+            }
+
+            p:nth-of-type(2){
+              font-size: 16px;
+              text-decoration: underline var(--ink) 1px;
+            }
+          }
+        }
+      }
+    }
+
+	@media (max-width: 768px){
+        max-width: 400px;
+		margin: 0 auto;
+
+		.inner {
+			flex-direction: column;
+		}
+    }
+}
+
+.footer-inline-icon {
+  display: inline;
+  height: 0.8em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 5px 2px 0;
+}

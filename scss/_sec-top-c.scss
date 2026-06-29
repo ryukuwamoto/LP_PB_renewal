@@ -1,0 +1,277 @@
+@use "variables" as *;
+
+.sec-top-c{
+  background: #fff;
+  padding: 60px 0 80px;     // PC: 左右最低 20px の隙間
+  overflow: hidden;
+
+  @media (max-width: 768px){
+    padding: 40px 0 60px;       // SP: テーブルが横スクロールするため左右 0
+  }
+}
+
+// ---------- 見出し ----------
+.c-head {
+  padding-bottom: 35px;
+}
+
+// ---------- 横スクロールラッパー（SP用） ----------
+.plan-table-wrapper {
+  position: relative; // 💡画像をテーブルの中央に配置するための基準線になります
+  width: 100%;
+
+  .scroll-hint-overlay {
+    display: none; // 💡基本（PCやタブレットなど）は非表示
+
+    @media (max-width: 599px) {
+      display: block; // 💡横スクロールが発生する599px以下だけ表示
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none; // 💡【重要】画像の上をスワイプしてもテーブルがスクロールできるようにする
+      transition: opacity 0.5s ease, visibility 0.5s ease; // 消える時のフワッと感
+
+      img {
+        width: 76px; // 💡用意した画像のサイズに合わせて自由に調整してください
+        height: auto;
+      }
+
+      // JSでこのクラスがついたら非表示にする
+      &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.plan-table-scroll{
+  max-width: 700px;
+  margin: 0 auto;
+
+  @media (max-width: 768px){
+    max-width: 560px;
+  }
+
+  @media (max-width: 599px){
+    max-width: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 20px;            // 左右に 20px 余白を入れて終端を見やすく
+  }
+}
+
+// ---------- プラン表 ----------
+.plan-table{
+  width: 700px;                 // PC/SP 共通の固定幅
+  border-collapse: collapse;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 0 2px black;
+  border-radius: 10px;
+  table-layout: fixed;
+  overflow: hidden;
+  margin: 1px 0;
+
+  @media (max-width: 768px){
+    width: 560px;
+  }
+
+  th, td{
+    padding: 0 8px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    color: var(--ink);
+    border-top: none;
+    border-bottom: none;
+    border-left: 2px solid var(--yellow);
+    border-right: none;
+  }
+
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+
+  // 列幅: ラベル 178 / 各プラン 174
+  col, th, td{
+    &:first-child{ width: 178px; }
+  }
+
+  // ラベル列（左端）
+  th[scope="row"], thead th.label-cell{
+    @include font-gen(bold);
+    font-size: 16px;
+    background: #fff;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 16px;
+    }
+  }
+
+  // データセル
+  td{
+    @include font-gen(500);
+    font-size: 16px;
+
+    .num{
+      @include font-sofia(700);
+      font-size: 34px;
+      vertical-align: baseline;
+    }
+
+    .unit{
+      @include font-sofia(700);
+      font-size: 20px;
+      margin-left: 2px;
+      vertical-align: baseline;
+    }
+
+    .unit-jp{
+      @include font-gen(bold);
+      font-size: 17px;
+      margin-left: 4px;
+      vertical-align: baseline;
+    }
+
+    .standard{
+      display: block;
+      @include font-sofia(500);
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .standard-sub{
+      display: block;
+      @include font-sofia(700);
+      color: #959595;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .en{
+      @include font-sofia(700);
+    }
+  }
+
+  // 黄色背景行
+  .row-yellow{
+    th, td{
+      background: var(--yellow-soft);  // #FFEF99
+    }
+  }
+
+  // 国際通話 / SMS 行（最終行は少し低め）
+  .row-international{
+    th, td{ height: 60px; }
+
+    .intl-row{
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      justify-content: center;
+    }
+
+    .intl-target{
+      @include font-gen(bold);
+      color: #959595;
+      font-size: 10px;
+      line-height: 1;
+
+      .num-sm{
+        @include font-sofia(700);
+        font-size: 12px;
+        margin: 0 1px;
+      }
+    }
+
+    .intl-main{
+      @include font-gen(500);
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .intl-note{
+      display: block;
+      @include font-gen(bold);
+      color: #959595;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+  }
+
+  // ヘッダー行のバッジセル
+  .plan-table-head{
+    
+    th:nth-of-type(2) {
+      img {
+        width: 92px;
+        height: auto;
+        margin: 20px 0 0 32px;
+
+        @media (max-width: 768px){
+          margin: 20px 0 0 9px;
+        }
+      }
+    }
+
+    th:nth-of-type(3) {
+      img {
+        width: 72px;
+        height: auto;
+        margin: 25px 0 0 38px;
+
+        @media (max-width: 768px){
+          margin: 25px 0 0 19px;
+        }
+      }
+    }
+
+    th:nth-of-type(4) {
+      img {
+        width: 72px;
+        height: auto;
+        margin: 25px 0 0 38px;
+
+        @media (max-width: 768px){
+          margin: 25px 0 0 19px;
+        }
+      }
+    }
+  }
+}
+
+// ---------- 注意書き ----------
+.plan-note{
+  max-width: 700px;
+  margin: 24px auto 0;
+  @include font-gen(300);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink);
+
+  @media (max-width: 768px){
+    max-width: 560px;
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+}
+
+// ---------- アクションボタン ----------
+.plan-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 36px;
+
+  @media (max-width: 768px){
+    flex-direction: column-reverse;
+    gap: 25px;
+    padding: 0 20px;
+    margin-top: 37px;
+  }
+}

@@ -1,0 +1,159 @@
+// =========================================================
+// Hero — teal background with burst shape and floating items
+// =========================================================
+@use "variables" as *;
+
+.hero{
+  background-image: url("../img/hero/back.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 425px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  height: 425px;
+  text-align: center;
+
+  @media (max-width: 768px){
+    background-image: url("../img/hero/back_ph.png");
+    background-size: 100% auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 195 / 203;
+    margin-top: -1px;
+  }
+}
+
+.hero-anime{
+  position: relative;
+
+  .character {
+  position: absolute;
+  top: 277px;
+  left: 50%;
+  margin-left: 14px;
+  width: 125px;
+  height: 109px;
+  background-image: url("../img/hero/character.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  animation: sway-pause 5s ease-in-out infinite;
+  z-index: 10;
+
+  @media (max-width: 768px){
+    width: 36%;
+    height: auto;
+    aspect-ratio: 109 / 125;
+    left: calc(50% + 0vw);
+    top: calc(50% + 68vw);
+    margin-left: 0;
+  }
+  }
+}
+
+@keyframes sway-pause {
+  0%, 12.5%, 25% { transform: translateX(-50%) rotate(0deg); }
+  3.125%  { transform: translateX(-52%) rotate(-3deg); }
+  9.375%  { transform: translateX(-48%) rotate(3deg); }
+  15.625% { transform: translateX(-52%) rotate(-3deg); }
+  21.875% { transform: translateX(-48%) rotate(3deg); }
+  25.001%, 100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.item {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-fill-mode: forwards;
+
+  @media (max-width: 768px){
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.item-passport {
+  background-image: url("../img/hero/passport.png");
+  animation: fly-left-top 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
+  width: 89px;
+  height: 100px;
+
+  @media (max-width: 768px){
+    animation: fly-left-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
+    width: 25%;
+    height: auto;
+    aspect-ratio: 100 / 89;
+  }
+}
+
+.item-ticket {
+  background-image: url("../img/hero/ticket.png");
+  animation: fly-left-bottom 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.4s;
+  width: 130px;
+  height: 128px;
+
+  @media (max-width: 768px){
+    display: none;
+  }
+}
+
+.item-phone {
+  background-image: url("../img/hero/phone.png");
+  animation: fly-right-top 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
+  width: 109px;
+  height: 132px;
+
+  @media (max-width: 768px){
+    animation: fly-right-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
+    width: 29%;
+    height: auto;
+    aspect-ratio: 132 / 109;
+  }
+}
+
+.item-boomerang {
+  background-image: url("../img/hero/boomerang.png");
+  animation: fly-right-bottom 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.7s;
+  width: 124px;
+  height: 119px;
+
+  @media (max-width: 768px){
+    display: none;
+  }
+}
+
+/* 1. 斜め左下(画面外) → 左上 */
+@keyframes fly-left-top {
+  0%   { left: -100px; top: 450px; opacity: 0; transform: rotate(0deg); }
+  100% { left: 50%;   top: 50%;   margin-left: -387px;   margin-top: 17px;    opacity: 1; }
+}
+
+@keyframes fly-left-top_ph {
+  0%   { transform: translate(-500px, 200px) rotate(0deg); opacity: 0;}
+  100% { transform: translate(-48vw, 13vw); opacity: 1;}
+}
+
+/* 2. 右下(画面外) → 右上 */
+@keyframes fly-right-top {
+  0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
+  100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 244px;     opacity: 1; }
+}
+
+@keyframes fly-right-top_ph {
+  0%   { transform: translate(500px, 200px) rotate(0deg); opacity: 0;}
+  100% { transform: translate(27vw, 73vw); opacity: 1;}
+}
+
+/* 3. 斜め左下(画面外) → 左下 */
+@keyframes fly-left-bottom {
+  0%   { left: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
+  100% { left: 50%;   top: 50%;   margin-left: -620px;   margin-top: 240px;   opacity: 1; }
+}
+
+/* 4. 右下(画面外) → 右下(画面内) */
+@keyframes fly-right-bottom {
+  0%   { right: -100px; top: 200px; opacity: 0; transform: rotate(0deg); }
+  100% { right: 50%;   top: 50%;   margin-right: -700px;   margin-top: 140px;    opacity: 1; rotate:(-15deg); }
+}

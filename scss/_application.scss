@@ -1,0 +1,996 @@
+@use "variables" as *;
+
+/* =========================================================
+   top_a … eSIM概要・端末・決済セクション
+   ========================================================= */
+.a-top_a {
+  background-color: #fff;
+  background-image: 
+    radial-gradient(circle at 3px 2.8px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px), 
+    radial-gradient(circle at 16px 15.9px, color-mix(in srgb, var(--yellow-soft) 35%, transparent) 3px, transparent 3.6px);
+  background-size: 27px 27px;
+  padding: 30px 0 120px;
+
+  .wrap-wide {
+    @media (max-width: 768px) {
+      max-width: 500px;
+    }
+  }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .usp {
+      display: none;
+
+      @media (max-width: 600px) {
+        display: inline;
+      }
+    }
+
+  &__lead {
+    margin: 60px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    text-align: center;
+    text-decoration: underline;
+
+    @media (max-width: 768px) {
+      margin: 30px 0;
+    }
+  }
+
+  /* ナビゲーション */
+  &__nav {
+    display: flex;
+    gap: 60px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      max-width: 320px;
+    }
+  }
+
+  &__navitem {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 14px 14px 30px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-align: center;
+
+    &:first-child {
+        margin-left: 30px;
+
+        
+    }
+    @media (max-width: 768px) {
+      margin-left: 30px;
+    }
+    .c-check {
+      position: absolute;
+      left: -31px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 63px;
+      height: auto;
+    }
+  }
+
+  /* メインコンテンツカード */
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+    margin: 60px auto;
+    gap: 50px;
+
+    @media (max-width: 768px) {
+      margin: 35px auto;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    scroll-margin-top: 90px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      padding: 24px 20px 30px;
+      gap: 20px;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 29px;
+      color: var(--ink);
+    }
+
+    &-text {
+      margin: 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+
+      @media (max-width: 768px) {
+        max-width: 320px;
+      }
+    }
+
+    &-desc {
+      width: 100%;
+      max-width: 580px;
+      background: #efefef;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        padding: 12px;
+        max-width: 320px;
+      }
+    }
+  }
+
+  /* 対応端末エリア */
+  &__devices {
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+  }
+
+  &__device {
+    flex: 0 1 290px;
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    @media (max-width: 768px) {
+      max-width: 320px;
+    }
+
+    &-os {
+      width: 100%;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFD700;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 21px;
+      color: var(--ink);
+    }
+
+    &-model {
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+
+      b,
+      strong,
+      .is-lg {
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    &-note {
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+
+      u {
+        text-decoration: underline;
+      }
+    }
+
+    &-foot {
+      margin: 0;
+      width: 100%;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+      color: #00A3AD;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+
+    &-mini {
+      margin: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink);
+      text-align: center;
+    }
+  }
+
+  &__freq {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: 2px solid var(--ink);
+    padding: 19px 10px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+
+    span {
+      margin-left: 25px;
+    }
+
+    p:last-child {
+      padding: 1px 0 0 34px;
+      color: var(--teal);
+      font-style: italic;
+      font-weight: 700;
+
+      span {
+        margin-left: 18px;
+      }
+    }
+  }
+
+  /* おすすめバナー（マスコット付き） */
+  &__recommend {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    background: #98DADE;
+    border-radius: 5px;
+    padding: 12px 16px;
+
+    @media (max-width: 768px) {
+      margin-top: 6px;
+    }
+
+    &-title {
+      margin: 0 0 8px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+      text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+
+      span {
+        background: linear-gradient(transparent 60%, #FFD700 60%);
+      }
+    }
+
+    &-text {
+      margin: 0;
+      padding-right: 80px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink);
+
+      strong {
+        font-weight: 800;
+        color: #E7322A;
+      }
+
+      @media (max-width: 768px) {
+        padding-right: 106px;
+      }
+    }
+
+    &-mascot {
+      position: absolute;
+      right: -18px;
+      bottom: -26px;
+      width: 102px;
+      height: auto;
+
+      @media (max-width: 768px) {
+        right: 6px;
+        bottom: 5px;
+      }
+
+      @media (max-width: 365px) {
+        right: 8px;
+        bottom: 14px;
+      }
+    }
+  }
+
+  /* お支払い方法エリア */
+  &__pays {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+  }
+
+  &__pay {
+    flex: 0 1 290px;
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    &-title {
+      width: 100%;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFD700;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    &-text {
+      margin: 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    &-note {
+      margin: 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    &-sub {
+      padding: 0 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--ink);
+      text-align: center;
+
+      &--em {
+        font-weight: 700;
+        color: #00A3AD;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* =========================================================
+   共通コンポーネントパーツ（独立クラスとしてネスト化）
+   ========================================================= */
+
+/* チェックバッジ */
+.c-check {
+  position: relative;
+  flex-shrink: 0;
+  width: 63px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("../assets/application/check-badge.svg") center/contain no-repeat;
+  color: #fff;
+
+  &__label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  &__num {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+  }
+}
+
+/* クレジットカードブランドロゴ */
+.c-brands {
+  padding: 0 30px;
+  width: 100%;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
+/* =========================================================
+   top_b … タブ切り替え・商品購入セクション
+   ========================================================= */
+.a-top_b {
+  position: relative;
+  background: #00A3AD;
+  padding-bottom: 60px;
+  margin: 0 0 120px;
+
+  @media (max-width: 768px) {
+    margin: 0 0 80px;
+  }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flow-root;
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  /* タブメニュー */
+  /* タブメニュー（親要素） */
+  &__tabs {
+    display: flex;
+    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
+    justify-content: center;
+    gap: 18px;
+    max-width: 1030px;
+    
+    /* 💡ここがガタつき防止のポイント */
+    height: 70px;          // エリア全体の高さを最大値の70pxに固定
+    margin: -70px auto 0;  // 高さに合わせたネガティブマージン
+
+    @media (max-width: 768px) {
+      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      margin-top: -50px;
+      gap: 8px;
+    }
+  }
+
+  /* タブ単体 */
+  &__tab {
+    flex: 0 1 356px;
+    height: 50px; // 閉じている時は50px
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    background: #98DADE;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s, color .2s, height .2s;
+    text-align: center;
+
+    .en {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    &.is-active {
+      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
+      background: #00A3AD;
+      color: #fff;
+    }
+
+    /* レスポンシブ（スマホ版） */
+    @media (max-width: 768px) {
+      font-size: 15px;
+      height: 38px; // スマホ版：閉じている時（50pxより少し低く）
+
+      &.is-active {
+        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
+      }
+
+      .en {
+        font-size: 17px;
+      }
+    }
+  }
+
+  /* 導入テキスト */
+  &__intro {
+    margin: 60px 0 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: underline;
+
+      img {
+        height: 1em;
+        margin: 1px 0 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin: 25px 0 0;
+    }
+  }
+
+  /* メインカード */
+  &__card {
+    max-width: 1030px;
+    margin: 40px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 60px;
+    display: flex;
+    gap: 86px;
+    justify-content: center;
+
+    @media (max-width: 1070px) {
+      gap: 40px;
+      padding: 40px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;
+      padding: 30px 30px;
+      margin: 25px auto 0;
+    }
+  }
+
+  /* カード内：左カラム（商品画像・アコーディオン等） */
+  &__left {
+    flex: 0 0 285px;
+    width: 285px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .c-accordion {
+      margin-top: 0;
+
+      &__head {
+        padding: 10px;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+
+  &__product {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+
+    @media (max-width: 768px) {
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+
+  &__simsize {
+    width: 282px;
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  /* 左カラム：アコーディオン（details/summary） */
+  &__acc {
+    width: 282px;
+    max-width: 100%;
+
+    &-body {
+      padding: 0 10px 14px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--ink);
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: #46C9F4;
+        text-decoration: underline;
+      }
+
+      .is-label {
+        font-weight: 700;
+        margin-top: 8px;
+      }
+
+      .is-indent {
+        padding-left: 1em;
+      }
+
+      .is-em {
+        font-weight: 700;
+        color: #00A3AD;
+      }
+    }
+  }
+
+  /* 左カラム：対応バンド表 */
+  &__band {
+    display: grid;
+    grid-template-columns: 108px auto;
+    align-items: center;
+    row-gap: 11px;
+    width: 218px;
+    max-width: 100%;
+    margin: 14px auto 4px;
+    padding: 19px 21px;
+    border: 2px solid var(--ink);
+
+    &-label {
+      font-weight: 500;
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.1;
+      color: var(--ink);
+      white-space: nowrap;
+
+      &--5g {
+        color: #00A3AD;
+      }
+    }
+
+    &-val {
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 1;
+      color: var(--ink);
+      white-space: nowrap;
+
+      &--5g {
+        color: #00A3AD;
+      }
+    }
+  }
+
+  /* カード内：右カラム（セレクトボックス・購入ボタン等） */
+  &__right {
+    flex: 1 1 0%;
+    width: 100%;
+    max-width: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex: 1 1 auto;
+      gap: 35px;
+    }
+  }
+
+  &__bar {
+    width: 100%;
+    margin: 0;
+    background: #FFD700;
+    border-radius: 5px;
+    padding: 9px 12px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--ink);
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  &__selects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__select {
+    position: relative;
+    display: block;
+
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 45px;
+      padding: 0 40px 0 19px;
+      background: #fff;
+      border: 1px solid var(--ink);
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--ink);
+      cursor: pointer;
+
+      &:invalid {
+        color: #A7A7A7;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #00A3AD;
+      }
+
+      &:focus-visible {
+        outline: none;
+        border-color: #00A3AD;
+        box-shadow: 0 0 0 1px #00A3AD;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      width: 13px;
+      height: 8px;
+      transform: translateY(-50%);
+      background: var(--ink);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+  }
+
+  /* カート・購入ボタン */
+  &__btn {
+    position: relative;
+    width: 285px;
+    max-width: 100%;
+    min-height: 59px;
+    border: 0;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform .12s, box-shadow .12s, opacity .2s;
+
+    .en {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        opacity: .92;
+      }
+      &:active {
+        transform: translateY(4px);
+        box-shadow: none;
+      }
+    }
+
+    &:disabled {
+      opacity: 1;
+    }
+
+    &-ico {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ion-icon {
+        font-size: 18px;
+      }
+    }
+
+    &-next {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #fff;
+    }
+
+    /* カートボタンバリエーション */
+    &--cart {
+      background: #A7A7A7;
+      box-shadow: 0 4px 0 #7e7e7e;
+      cursor: default;
+
+      .top_b__btn-ico ion-icon {
+        color: #A7A7A7;
+      }
+
+      &.is-ready {
+        background: #FF0064;
+        box-shadow: 0 4px 0 #c2004c;
+        cursor: pointer;
+
+        .top_b__btn-ico ion-icon {
+          color: #FF0064;
+        }
+      }
+    }
+
+    &--multi {
+      background: #FF0064;
+      box-shadow: 0 4px 0 #c2004c;
+
+      .top_b__btn-ico ion-icon {
+        color: #FF0064;
+      }
+    }
+  }
+
+  /* 注記エリア */
+  &__notes {
+    width: 100%;
+    margin-top: 4px;
+
+    p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--ink);
+
+      &.is-link {
+        font-weight: 500;
+        color: #46C9F4;
+      }
+    }
+
+    a {
+      color: #46C9F4;
+      text-decoration: underline;
+    }
+
+    .is-ext {
+      display: inline-flex;
+      vertical-align: middle;
+      font-size: 10px;
+      color: #46C9F4;
+    }
+  }
+
+  /* セット端末・その他の要素 */
+  &__setphone {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__setlead {
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #00A3AD;
+    text-align: center;
+  }
+
+  &__panel {
+    &[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+
+  /* 未選択状態などのプレースホルダー */
+  &__placeholder {
+    max-width: 1030px;
+    margin: 40px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 60px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #00A3AD;
+  }
+}

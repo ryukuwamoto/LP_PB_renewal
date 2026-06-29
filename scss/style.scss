@@ -1,0 +1,23 @@
+// =========================================================
+// LP.html master stylesheet
+// Compile with: sass scss/main.scss styles.css
+// =========================================================
+
+@use "variables" as *;
+@use "base";
+@use "responsive";
+@use "header";
+@use "hero";
+@use "sec-top-a";
+@use "sec-top-b";
+@use "sec-top-c";
+@use "sec-top-d";
+@use "sec-top-e";
+@use "sec-top-f";
+@use "sec-top-g";
+@use "sec-top-h";
+@use "sec-top-i";
+@use "footer";
+@use "planpage";
+@use "delivery";
+@use "application";

@@ -1,0 +1,30 @@
+.sec-top-i {
+  padding: 120px 0;
+
+  .line_pc {
+    @media (max-width: 768px){
+      display: none;
+    }
+  }
+
+  .line_sp {
+    display: none;
+
+    @media (max-width: 768px){
+      display: block;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .button-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px){
+    padding: 56px 0 66px;
+  }
+}

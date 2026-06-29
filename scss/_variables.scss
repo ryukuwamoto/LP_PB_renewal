@@ -1,0 +1,80 @@
+// =========================================================
+// Design tokens — colors / typography
+// =========================================================
+
+// Brand
+$teal:        #00A3AD;
+$yellow:      #FFD700;
+$yellow-soft: #FFEF99;
+$pink:        #FF0064;
+$green:       #06C755;
+
+// Neutrals
+$ink:       #000;
+$ink-soft:      #e6e6e6;
+$footer:     #EFF0F1;
+
+// Typography stacks
+$font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
+
+@mixin font-face($weight, $file) {
+    @font-face {
+        font-family: 'GenJyuuGothic';
+        src: url('#{$font-path}#{$file}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+@include font-face(900, 'GenJyuuGothic-Heavy');
+@include font-face(bold, 'GenJyuuGothic-Bold');
+@include font-face(500, 'GenJyuuGothic-Medium');
+@include font-face(normal, 'GenJyuuGothic-P-Normal');
+@include font-face(300, 'GenJyuuGothic-Light');
+
+@mixin font-face-mobo($weight, $file) {
+    @font-face {
+        font-family: 'MOBO';
+        src: url('#{$font-path}#{$file}.otf') format('opentype');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+@include font-face-mobo(700, 'MOBO-Bold');
+@include font-face-mobo(600, 'MOBO-SemiBold');
+
+@mixin font-gen($weight: normal, $style: normal) {
+    font-family: 'GenJyuuGothic', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-mobo($weight: 600, $style: normal) {
+    font-family: 'MOBO', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-sofia($weight: 400, $style: normal) {
+    font-family: "sofia-pro-soft", sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-mix($weight: 400) {
+  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
+  font-weight: $weight;
+}
+
+// CSS custom-property mirror — lets runtime Tweaks override without recompile
+:root{
+  --teal:#{$teal};
+  --yellow:#{$yellow};
+  --yellow-soft:#{$yellow-soft};
+  --pink:#{$pink};
+  --green:#{$green};
+  --ink:#{$ink};
+  --ink-soft:#{$ink-soft};
+  --footer:#{$footer};
+}
