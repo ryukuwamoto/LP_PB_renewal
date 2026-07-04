@@ -16,15 +16,15 @@
 
 .sec-top-f-wave-top{
   background: url('../img/sec-top-f/wave-top.png');
-  background-size: 1920px 75px;
-  background-repeat: no-repeat;
+  background-size: auto 75px;
+  background-repeat: repeat;
   background-position: center;
 }
 .sec-top-f-wave-bottom{
   background: url('../img/sec-top-f/wave.png');
-  background-size: 1920px 75px;
+  background-size: auto 75px;
   transform: scaleY(-1);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
 }
 
@@ -238,8 +238,8 @@
       }
 
       @media (max-width: 768px){
-        width: 94px;
-        margin: 0 0 0 8px;
+        width: 84px;
+        margin: 0 2px 0 16px;
       }
     }
   }
@@ -379,11 +379,19 @@
     .gp-text-sub{
       font-size: 12px;
       .en{ font-size: 13px; }
+
+      sup{
+        vertical-align: baseline !important;
+      }
     }
 
     .gp-text-hl{
       font-size: 16px;
       .en{ font-size: 18px; }
+
+      sup{
+        vertical-align: baseline !important;
+      }
 
       &.gp-text-hl-inline{
         font-size: 14px;

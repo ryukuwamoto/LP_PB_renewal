@@ -12,16 +12,16 @@
 .sec-top-h-wave-top{
   height: 75px;
   background: url('../img/sec-top-f/wave.png');
-  background-size: 1920px 75px;
-  background-repeat: no-repeat;
+  background-size: auto 75px;
+  background-repeat: repeat;
   background-position: center;
 }
 .sec-top-h-wave-bottom{
   height: 75px;
   background: url('../img/sec-top-f/wave.png');
-  background-size: 1920px 75px;
+  background-size: auto 75px;
   transform: scaleY(-1);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
 }
 // ---------- 共通：見出し ----------
@@ -245,7 +245,7 @@
       .num {
         line-height: 0.8;
         font-size: 30px;
-        color: var(--yellow);
+        color: var(--teal);
         font-weight: bold;
         text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
         
@@ -298,7 +298,7 @@
       p {
         font-weight: 700;
         display: inline;
-        background: linear-gradient(transparent 65%, #98DADE 65%);
+        background: linear-gradient(transparent 65%, #FFD5DB 65%);
         line-height: 1.5;
         font-size: 16px;
 
@@ -385,7 +385,8 @@
 
       .title {
         font-weight: 700;
-        background-color: var(--yellow);
+        background-color: var(--teal);
+        color: #fff;
         padding: 1% 6%;
         border-radius: 8px 8px 0 0;
         font-size: 16px;
@@ -404,7 +405,7 @@
       }
 
       .read {
-        background-color: var(--yellow-soft);
+        background-color: #dbf4fd;
         width: 100%;
         padding: 4% 8%;
         border-radius: 0 8px 8px 8px;
@@ -703,7 +704,7 @@
   gap: 8px;
   width: 50%;
   height: 8%;
-  background: var(--teal);
+  background: var(--red);
   color: #fff;
   border-radius: 999px;
   @include font-gen(bold);
@@ -738,7 +739,7 @@
   position: relative;
   width: 100%;
   padding: 15px 10px;
-  background: #fff;                 // スクロールするコンテンツの上に乗せるため不透明
+  background: #fff;               // スクロールするコンテンツの上に乗せるため不透明
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -759,7 +760,7 @@
   button{
     @include font-gen(bold);
     font-size: 12px;
-    background: var(--teal);
+    background: var(--red);
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -795,7 +796,7 @@
   background-color: var(--red);
 
   img{
-    width: 65%;
+    width: 55%;
     height: auto;
   }
 
@@ -815,6 +816,9 @@
     }
     @media (max-width: 768px) {
         width: 330px;padding-bottom: 0px;
+    }
+    @media (max-width: 370px) {
+        width: 310px;padding-bottom: 0px;
     }
 }
 
@@ -936,6 +940,9 @@
         font-weight: 400;
         line-height: 2;
       }
+    }
+    @media (max-width: 768px) {
+      width: 310px;
     }
   }
 

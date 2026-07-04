@@ -2143,9 +2143,9 @@ ul {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  z-index: 9;
 }
 @media (max-width: 768px) {
   .item {
@@ -2154,15 +2154,19 @@ ul {
   }
 }
 
-.item-passport {
+.item-yellow {
   background-image: url("../img/hero/passport.png");
-  -webkit-animation: fly-left-top 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
-          animation: fly-left-top 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
-  width: 89px;
-  height: 100px;
+  -webkit-animation: fly-right-top 2s ease-in-out infinite;
+          animation: fly-right-top 2s ease-in-out infinite;
+  width: 270px;
+  height: 258px;
+  right: 50%;
+  top: 50%;
+  margin-right: 90px;
+  margin-top: 170px;
 }
 @media (max-width: 768px) {
-  .item-passport {
+  .item-yellow {
     -webkit-animation: fly-left-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
             animation: fly-left-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
     width: 25%;
@@ -2171,15 +2175,19 @@ ul {
   }
 }
 
-.item-phone {
+.item-blue {
   background-image: url("../img/hero/phone.png");
-  -webkit-animation: fly-right-top 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards 0.2s;
-          animation: fly-right-top 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards 0.2s;
-  width: 109px;
-  height: 132px;
+  -webkit-animation: fly-right-top 2s ease-in-out infinite 0.5s;
+          animation: fly-right-top 2s ease-in-out infinite 0.5s;
+  width: 270px;
+  height: 244px;
+  left: 50%;
+  top: 50%;
+  margin-left: 85px;
+  margin-top: 260px;
 }
 @media (max-width: 768px) {
-  .item-phone {
+  .item-blue {
     -webkit-animation: fly-right-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards 0.2s;
             animation: fly-right-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards 0.2s;
     width: 29%;
@@ -2248,34 +2256,30 @@ ul {
 /* 2. 右下(画面外) → 右上 */
 @-webkit-keyframes fly-right-top {
   0% {
-    right: -100px;
-    top: 550px;
-    opacity: 0;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* 最初は元の位置 */
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
   }
   100% {
-    right: 50%;
-    top: 50%;
-    margin-right: -390px;
-    margin-top: 244px;
-    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
   }
 }
 @keyframes fly-right-top {
   0% {
-    right: -100px;
-    top: 550px;
-    opacity: 0;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* 最初は元の位置 */
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
   }
   100% {
-    right: 50%;
-    top: 50%;
-    margin-right: -390px;
-    margin-top: 244px;
-    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
   }
 }
 @-webkit-keyframes fly-right-top_ph {
@@ -3287,7 +3291,7 @@ ul {
 }
 
 .d-content-wrap {
-  padding-top: 340px;
+  padding-top: 370px;
 }
 @media (max-width: 768px) {
   .d-content-wrap {
@@ -3410,7 +3414,7 @@ ul {
 }
 
 .visual-msg {
-  margin-top: 50px;
+  margin-top: 70px;
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
   font-style: normal;
@@ -3953,6 +3957,7 @@ ul {
   width: 150px;
   height: 100%;
   font-size: 19px;
+  color: #fff;
 }
 .phone-need-item .head img {
   width: 22px;
@@ -4264,17 +4269,17 @@ ul {
 
 .sec-top-f-wave-top {
   background: url("../img/sec-top-f/wave-top.png");
-  background-size: 1920px 75px;
-  background-repeat: no-repeat;
+  background-size: auto 75px;
+  background-repeat: repeat;
   background-position: center;
 }
 
 .sec-top-f-wave-bottom {
   background: url("../img/sec-top-f/wave.png");
-  background-size: 1920px 75px;
+  background-size: auto 75px;
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
 }
 
@@ -4498,8 +4503,8 @@ ul {
 }
 @media (max-width: 768px) {
   .good-point-card:nth-of-type(5) .gp-illust {
-    width: 94px;
-    margin: 0 0 0 8px;
+    width: 84px;
+    margin: 0 2px 0 16px;
   }
 }
 .good-point-card:nth-of-type(6) .gp-illust {
@@ -4672,11 +4677,17 @@ ul {
   .gp-text .gp-text-sub .en {
     font-size: 13px;
   }
+  .gp-text .gp-text-sub sup {
+    vertical-align: baseline !important;
+  }
   .gp-text .gp-text-hl {
     font-size: 16px;
   }
   .gp-text .gp-text-hl .en {
     font-size: 18px;
+  }
+  .gp-text .gp-text-hl sup {
+    vertical-align: baseline !important;
   }
   .gp-text .gp-text-hl.gp-text-hl-inline {
     font-size: 14px;
@@ -5015,12 +5026,12 @@ ul {
 }
 .tab-esim .g-step:nth-of-type(2) .window-shape {
   position: absolute;
-  height: 432px;
+  height: 258px;
   width: 100%;
   top: 0;
   left: 0;
   background-image: url("../img/sec-top-g/windowsim2.png");
-  background-size: 100% 432px;
+  background-size: 100% 258px;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -5032,12 +5043,12 @@ ul {
 }
 .tab-esim .g-step:nth-of-type(3) .window-shape {
   position: absolute;
-  height: 432px;
+  height: 531px;
   width: 100%;
   top: 0;
   left: 0;
   background-image: url("../img/sec-top-g/windowsim3.png");
-  background-size: 100% 432px;
+  background-size: 100% 531px;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -5088,12 +5099,12 @@ ul {
 }
 .tab-sim .g-step:nth-of-type(2) .window-shape {
   position: absolute;
-  height: 450px;
+  height: 277px;
   width: 100%;
   top: 0;
   left: 0;
   background-image: url("../img/sec-top-g/windowsimcard2.png");
-  background-size: 100% 450px;
+  background-size: 100% 277px;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -5489,18 +5500,18 @@ ul {
 .sec-top-h-wave-top {
   height: 75px;
   background: url("../img/sec-top-f/wave.png");
-  background-size: 1920px 75px;
-  background-repeat: no-repeat;
+  background-size: auto 75px;
+  background-repeat: repeat;
   background-position: center;
 }
 
 .sec-top-h-wave-bottom {
   height: 75px;
   background: url("../img/sec-top-f/wave.png");
-  background-size: 1920px 75px;
+  background-size: auto 75px;
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
 }
 
@@ -5756,7 +5767,7 @@ ul {
 .h-page .content-wrap .head .num {
   line-height: 0.8;
   font-size: 30px;
-  color: var(--yellow);
+  color: var(--teal);
   font-weight: bold;
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
 }
@@ -5811,8 +5822,8 @@ ul {
 .h-page .content-wrap .big-read p {
   font-weight: 700;
   display: inline;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, #98DADE));
-  background: linear-gradient(transparent 65%, #98DADE 65%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, #FFD5DB));
+  background: linear-gradient(transparent 65%, #FFD5DB 65%);
   line-height: 1.5;
   font-size: 16px;
 }
@@ -5907,7 +5918,8 @@ ul {
 }
 .h-page .content-wrap .checkpoint .title {
   font-weight: 700;
-  background-color: var(--yellow);
+  background-color: var(--teal);
+  color: #fff;
   padding: 1% 6%;
   border-radius: 8px 8px 0 0;
   font-size: 16px;
@@ -5928,7 +5940,7 @@ ul {
   }
 }
 .h-page .content-wrap .checkpoint .read {
-  background-color: var(--yellow-soft);
+  background-color: #dbf4fd;
   width: 100%;
   padding: 4% 8%;
   border-radius: 0 8px 8px 8px;
@@ -6244,7 +6256,7 @@ ul {
   gap: 8px;
   width: 50%;
   height: 8%;
-  background: var(--teal);
+  background: var(--red);
   color: #fff;
   border-radius: 999px;
   font-family: "GenJyuuGothic", sans-serif;
@@ -6312,7 +6324,7 @@ ul {
   font-weight: bold;
   font-style: normal;
   font-size: 12px;
-  background: var(--teal);
+  background: var(--red);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -6366,7 +6378,7 @@ ul {
   background-color: var(--red);
 }
 .h-handbook-logo img {
-  width: 65%;
+  width: 55%;
   height: auto;
 }
 @media (max-width: 768px) {
@@ -6387,6 +6399,12 @@ ul {
 @media (max-width: 768px) {
   .f-slider-wrap {
     width: 330px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 370px) {
+  .f-slider-wrap {
+    width: 310px;
     padding-bottom: 0px;
   }
 }
@@ -6510,6 +6528,11 @@ ul {
   font-size: 13px;
   font-weight: 400;
   line-height: 2;
+}
+@media (max-width: 768px) {
+  .f-slider .slide, .f-slider .slick-slide {
+    width: 310px;
+  }
 }
 @media (max-width: 768px) {
   .f-slider .slick-dotted.slick-slider {
@@ -8498,9 +8521,6 @@ ul {
   }
   .top_b .wrap-wide {
     max-width: 500px;
-  }
-  .top_b .sec-top-f-wave-bottom {
-    margin-top: -4px;
   }
 }
 .top_b {

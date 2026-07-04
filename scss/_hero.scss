@@ -54,8 +54,8 @@
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0;
   animation-fill-mode: forwards;
+  z-index: 9;
 
   @media (max-width: 768px){
     left: 50%;
@@ -63,11 +63,15 @@
   }
 }
 
-.item-passport {
+.item-yellow {
   background-image: url("../img/hero/passport.png");
-  animation: fly-left-top 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
-  width: 89px;
-  height: 100px;
+  animation: fly-right-top 2s ease-in-out infinite;
+  width: 270px;
+  height: 258px;
+  right: 50%;
+  top: 50%;
+  margin-right: 90px;
+  margin-top: 170px;
 
   @media (max-width: 768px){
     animation: fly-left-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
@@ -77,11 +81,15 @@
   }
 }
 
-.item-phone {
+.item-blue {
   background-image: url("../img/hero/phone.png");
-  animation: fly-right-top 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
-  width: 109px;
-  height: 132px;
+  animation: fly-right-top 2s ease-in-out infinite 0.5s;
+  width: 270px;
+  height: 244px;
+  left: 50%;
+  top: 50%;
+  margin-left: 85px;
+  margin-top: 260px;
 
   @media (max-width: 768px){
     animation: fly-right-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
@@ -104,8 +112,15 @@
 
 /* 2. 右下(画面外) → 右上 */
 @keyframes fly-right-top {
-  0%   { right: -100px; top: 550px; opacity: 0; transform: rotate(0deg); }
-  100% { right: 50%;   top: 50%;   margin-right: -390px;   margin-top: 244px;     opacity: 1; }
+  0% {
+    transform: translateY(0); /* 最初は元の位置 */
+  }
+  50% {
+    transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
+  }
+  100% {
+    transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+  }
 }
 
 @keyframes fly-right-top_ph {
