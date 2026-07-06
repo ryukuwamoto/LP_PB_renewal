@@ -355,6 +355,7 @@
   .fill-box {
     border: none;
     background-color: var(--teal);
+    color: #fff;
   }
 }
 
@@ -387,6 +388,7 @@
           flex: none;
           width: calc(50% - 10px);
           height: calc(50% - 10px);
+          padding: 0 10px;
         }
       }
     }
@@ -411,7 +413,8 @@
       justify-content: space-between;
 
       p {
-        padding-bottom: 24px; 
+        padding-bottom: 24px;
+        
       }
 
       &:nth-of-type(1) {
@@ -429,6 +432,22 @@
           width: 21px;
           height: auto;
           padding-top: 24px;
+        }
+
+        p {
+          padding-bottom: 8px;
+
+          .sp {
+            display: none;
+          }
+
+          @media (max-width: 768px){
+            padding-bottom: 10px;
+
+            .sp {
+              display: inline;
+            }
+          }
         }
       }
 

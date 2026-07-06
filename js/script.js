@@ -260,8 +260,8 @@ $(function () {
     autoplay: true,
     dots: true,
     variableWidth: true,
-    prevArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/YM-LP/AUS/sec-top-h/sliderarrow.png" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="https://gigaplus.makeshop.jp/yemoba4818/YM-LP/AUS/sec-top-h/sliderarrow.png" class="slide-arrow next-arrow">',
+    prevArrow: '<img src="../img/sec-top-h/sliderarrow.png" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="../img/sec-top-h/sliderarrow.png" class="slide-arrow next-arrow">',
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [

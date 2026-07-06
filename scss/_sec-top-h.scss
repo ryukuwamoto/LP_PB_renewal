@@ -293,6 +293,14 @@
       margin: 0 auto;
     }
 
+    .page4-img {
+      margin: 0 auto 14%;
+    }
+
+    .page5-img {
+      margin: 0 auto 6%;
+    }
+
     .big-read {
       padding: 14% 0;
       p {
@@ -341,7 +349,6 @@
       }
 
       .check-list {
-        padding-top: 14%;
 
         li {
           display: flex;
@@ -374,6 +381,25 @@
             }
           }
         }
+      }
+    }
+
+    .inforead{
+      width: 90%;
+      margin: 5% auto 0;
+      line-height: 1.6;
+      font-size: 12px;
+
+      @media (max-width: 1070px) {
+        font-size: 1.12vw; 
+      }
+
+      @media (max-width: 768px) {
+        font-size: 12px; 
+      }
+
+      @media (max-width: 380px) {
+        font-size: 3.16vw; 
       }
     }
 
@@ -414,7 +440,11 @@
     }
 
     .bubble {
-      padding: 12% 0 8%;
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 5;
+      padding: 6% 0 4%;
       display: flex;
       justify-content: center;
       gap: 28%;
@@ -427,8 +457,8 @@
     .graph-wrap {
       padding-bottom: 10%;
 
-      &:last-child {
-        padding-bottom: 0%;
+      &.firstgraph {
+        padding-top: 4%;
       }
 
       img {
@@ -584,7 +614,7 @@
         background-position: center;
         margin-top: 15%;
 
-        &:nth-of-type(2) {
+        &:nth-of-type(1) {
           background-image: url("../img/sec-top-h/box-ye.png");
         }
 
@@ -663,7 +693,7 @@
             
             .num {
               font-size: 43px;
-              color: var(--yellow);
+              color: var(--teal);
               font-weight: bold;
               text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
 
@@ -871,7 +901,7 @@
 
         span {
           font-size: 35px;
-          color: var(--yellow);
+          color: var(--red);
           text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
         }
       }

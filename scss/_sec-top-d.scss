@@ -37,7 +37,7 @@
 @keyframes walkDiagonal {
   0% {
     /* 【スタート：右上奥】 */
-    top: 80px;
+    top: -110px;
     left: calc(50% + 100px);
     transform: scale(0.5) rotate(0deg);
     opacity: 0;
@@ -48,19 +48,19 @@
   
   /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
   22% {
-    top: calc(80px + 14px - 3px); /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
+    top: calc(-110px + 14px - 3px); /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
     left: calc(50% + 94px);    /* 横に6px左へ進む */
     transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
   }
   
   45% {
-    top: calc(90px + 18px);       /* 縦に8px進む（着地） */
+    top: calc(-100px + 18px);       /* 縦に8px進む（着地） */
     right: calc(10px + 12px);    /* 横に12px左へ進む */
     transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
   }
   
   67% {
-    top: calc(90px + 22px - 3px); /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
+    top: calc(-100px + 22px - 3px); /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
     right: calc(10px + 18px);     /* 横に18px左へ進む */
     transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
   }
@@ -68,7 +68,7 @@
   90% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     transform: scale(1.0) rotate(0deg); /* 最後は正面に戻る */
     opacity: 1;
@@ -77,7 +77,7 @@
   100% {
     /* 【ゴール：左下手前】
        初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
-    top: 130px;
+    top: -60px;
     left: calc(50% + 60px);
     transform: scale(1.0) rotate(0deg); /* 最後は正面に戻る */
     opacity: 1;
@@ -116,19 +116,38 @@
 }
 
 // ---------- メインビジュアル + ティール + 黄色帯 ----------
+.buildingsimg {
+  position: relative;
+  height: 270px;
+  margin: 40px 0 0 30px;
+  background-image: url("../img/select/scene_buildings.png");
+  background-size: 733px 270px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (max-width: 768px){
+    display: none;
+  }
+}
+
 .select-visual{
   position: relative;
-  height: 817px;
-  margin-top: 40px;
-  background-image: url("../img/select/scene.png");
-  background-size: 1920px 817px;
+  height: 630px;
+  margin-top: -78px;
+  background-image: url("../img/select/scene_ground.png");
+  background-size: 1920px 630px;
   background-repeat: no-repeat;
-  background-position: center; // 常に中央を基準にする
+  background-position: center;
 
   @media (max-width: 768px){
     background-image: url("../img/select/scene_sp.png");
     height: 539px;
     background-size: auto 539px;
+  }
+
+  @media (min-width: 1920px){
+    background-image: url("../img/select/scene_ground.png");
+    background-size: 100% 630px;
   }
 }
 
@@ -139,7 +158,7 @@
 }
 
 .d-content-wrap {
-  padding-top: 370px;
+  padding-top: 160px;
 
   @media (max-width: 768px){
     padding-top: 145px;

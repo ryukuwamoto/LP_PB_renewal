@@ -4,10 +4,10 @@
 @use "variables" as *;
 
 .hero{
-  background-image: url("../img/hero/back.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto 528px;
+  background-image: url("../img/hero/back.png"), radial-gradient(#f2f2f2 2px, transparent 3px);
+  background-position: center bottom, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto 505px, 20px 20px;
   position: relative;
   overflow: hidden;
   padding: 0;
