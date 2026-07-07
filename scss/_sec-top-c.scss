@@ -6,240 +6,860 @@
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 40px 0 60px;       // SP: テーブルが横スクロールするため左右 0
+    padding: 20px 0 60px;       // SP: テーブルが横スクロールするため左右 0
   }
 }
+
+.w-support{
+  background: #fff;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 120px;
+
+  @media (max-width: 768px){
+    padding: 24px 16px;
+    gap: 16px;
+    max-width: 500px;
+    margin: 0 auto 56px;
+  }
+}
+
+// ---------- ヘッダー（Wサポート ロゴ） ----------
+.ws-title{
+  display: flex;
+  justify-content: center;
+
+  .ws-title-img{
+    width: 255px;
+    height: auto;
+    display: block;
+
+    @media (max-width: 768px){
+      width: 220px;
+    }
+  }
+}
+
+// ---------- 比較ボックス ----------
+.ws-compare{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+.ws-compare-box{
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 289px;
+  flex-shrink: 0;
+
+  &.ws-compare-phonebox{ border-color: var(--teal); }
+  &.ws-compare-ym{ border-color: var(--red);}
+
+  .cb-tag{
+    @include font-gen(normal);
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1;
+  }
+
+  .cb-logo{
+    height: auto;
+    max-width: 220px;
+    display: block;
+
+    // PhoneBox 用と ym 用でロゴ寸法が違うので個別に
+  }
+
+  .cb-desc{
+    @include font-gen(500);
+    font-size: 13px;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px){
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+// PhoneBox 側のロゴ寸法
+.ws-compare-phonebox .cb-logo{
+  width: 216px;
+  height: 40px;
+}
+
+// イエローモバイル 側のロゴ寸法
+.ws-compare-ym .cb-logo{
+  width: 220px;
+  height: 30px;
+  margin: 5px 0;
+}
+
+// 中央の「×」
+.xross{
+  width: 36px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ---------- 説明文 ----------
+.ws-lead{
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  @include font-gen(bold);
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--ink);
+
+  p{ margin: 0; }
+
+  .hl{
+    color: var(--red);
+
+    .en{
+      @include font-sofia(700);
+    }
+  }
+
+  @media (max-width: 768px){
+    max-width: 410px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+// ---------- 区切り線 ----------
+.ws-divider{
+  border: 0;
+  border-top: 2px dashed var(--red);
+  width: 100%;
+  max-width: 860px;
+  margin: 0;
+
+  @media (max-width: 768px){
+    max-width: 400px;
+  }
+}
+
+// ---------- もっと安心 ----------
+.ws-mote{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ws-mote-line{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 768px){
+    gap: 6px;
+  }
+}
+
+.ws-mote-badge{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+
+  .mote-sub{
+    @include font-gen(bold);
+    font-weight: 900;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .mote-main{
+    @include font-gen(bold);
+    font-weight: 900;
+    font-size: 19px;
+  }
+}
+
+.ws-mote-logo{
+  width: 190px;
+  height: auto;
+  display: block;
+
+  @media (max-width: 768px){
+    max-width: 168px;
+  }
+}
+
+.ws-mote-nara{
+  @include font-gen(bold);
+  font-size: 16px;
+  color: var(--ink);
+  margin-top: 12px;
+
+  @media (max-width: 768px){
+    margin-top: 10px;
+  }
+}
+
+.ws-mote-sub{
+  @include font-gen(bold);
+  font-size: 16px;
+  color: var(--ink);
+  text-align: center;
+  line-height: 28px;
+
+  .lg{ font-size: 21px; }
+
+  .hl{
+    color: var(--red);
+  }
+
+  @media (max-width: 768px){
+    font-size: 14px;
+    line-height: 24px;
+
+    .lg{ font-size: 19px; }
+  }
+}
+
+// ---------- 特徴カード ----------
+.ws-features{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.ws-feature{
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px){
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.ws-feature-head{
+  background: var(--red);
+  color: #fff;
+  padding: 12px 10px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+
+  p{
+    @include font-gen(bold);
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 23px;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 18px;
+    }
+  }
+}
+
+.ws-feature-body{
+  background: #fff;
+  border: 2px solid var(--red);
+  border-top: none;
+  padding: 15px 25px;
+  border-radius: 0 0 10px 10px;
+  flex: 1;
+
+  p{
+    @include font-gen(500);
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--ink);
+  }
+
+  .strong{
+    @include font-gen(bold);
+    color: var(--red);
+  }
+
+  .underline{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .en{
+    @include font-sofia(700);
+  }
+
+  @media (max-width: 768px){
+    padding: 15px;
+
+    p{
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
+
 
 // ---------- 見出し ----------
 .c-head {
   padding-bottom: 35px;
 }
 
-// ---------- 横スクロールラッパー（SP用） ----------
-.plan-table-wrapper {
-  position: relative; // 💡画像をテーブルの中央に配置するための基準線になります
-  width: 100%;
-
-  .scroll-hint-overlay {
-    display: none; // 💡基本（PCやタブレットなど）は非表示
-
-    @media (max-width: 599px) {
-      display: block; // 💡横スクロールが発生する599px以下だけ表示
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      pointer-events: none; // 💡【重要】画像の上をスワイプしてもテーブルがスクロールできるようにする
-      transition: opacity 0.5s ease, visibility 0.5s ease; // 消える時のフワッと感
-
-      img {
-        width: 76px; // 💡用意した画像のサイズに合わせて自由に調整してください
-        height: auto;
-      }
-
-      // JSでこのクラスがついたら非表示にする
-      &.is-hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-  }
-}
-
-.plan-table-scroll{
-  max-width: 700px;
+// ---------- ラッパー ----------
+.plan-cards{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1030px;
   margin: 0 auto;
 
   @media (max-width: 768px){
-    max-width: 560px;
-  }
-
-  @media (max-width: 599px){
-    max-width: none;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 2px 20px;            // 左右に 20px 余白を入れて終端を見やすく
+    // SP でも横並び 2 カード（160×2）を維持
+    gap: 20px;
+    padding: 24px 15px;
   }
 }
 
-// ---------- プラン表 ----------
-.plan-table{
-  width: 700px;                 // PC/SP 共通の固定幅
-  border-collapse: collapse;
-  background: #fff;
-  border: none;
-  box-shadow: 0 0 0 2px black;
+// =========================================================
+// カード本体
+// =========================================================
+.plan-card{
+  width: 336px;
+  border: 2px solid var(--ink);
   border-radius: 10px;
-  table-layout: fixed;
+  background: #fff;
   overflow: hidden;
-  margin: 1px 0;
+  display: flex;
+  flex-direction: column;
 
-  @media (max-width: 768px){
-    width: 560px;
-  }
+  // 💡 カラーテーマ（デフォルト値をvar(--red)系に変更）
+  --card-color: var(--red);
+  --card-color-soft: #FFD5DB;
 
-  th, td{
-    padding: 0 8px;
-    text-align: center;
-    vertical-align: middle;
-    height: 60px;
-    color: var(--ink);
-    border-top: none;
-    border-bottom: none;
-    border-left: 2px solid var(--yellow);
-    border-right: none;
-  }
+  &.plan-card-longterm{
+    --card-color: var(--red);
+    --card-color-soft: #FFD5DB;
 
-  th:first-child, td:first-child {
-    border-left: none;
-  }
-
-  // 列幅: ラベル 178 / 各プラン 174
-  col, th, td{
-    &:first-child{ width: 178px; }
-  }
-
-  // ラベル列（左端）
-  th[scope="row"], thead th.label-cell{
-    @include font-gen(bold);
-    font-size: 16px;
-    background: #fff;
-
-    .en{
-      @include font-sofia(700);
-      font-size: 16px;
+    .plan-card-head{
+      background: var(--red);
     }
   }
 
-  // データセル
-  td{
-    @include font-gen(500);
+  &.plan-card-travel{
+    --card-color: var(--teal);
+    --card-color-soft: #DBF4FD;
+
+    .plan-card-head{
+      background: var(--teal);
+    }
+  }
+
+  @media (max-width: 768px){
+    width: 160px;
+    flex: 0 1 160px;   // 2 枚並びで 160+20+160=340px にフィット
+  }
+}
+
+// ---------- ヘッダー（プラン名） ----------
+.plan-card-head{
+  background: var(--red);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px){
+    // 「トラベル用(30日)」を1行に収めるため横パディングを詰める
+    padding: 10px 2px;
+  }
+}
+
+.plan-card-title{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #fff;
+  @include font-gen(bold);
+  font-weight: 900;
+  line-height: 1;
+
+  .ttl-jp{ font-size: 23px; }
+  .ttl-days{
     font-size: 16px;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 18px;
+    }
+  }
+  .ttl-plan{ font-size: 18px; }
+
+  @media (max-width: 768px){
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    row-gap: 4px;
+    column-gap: 2px;
+
+    .ttl-jp{ font-size: 21px; }
+    .ttl-days{
+      font-size: 12px;
+      white-space: nowrap;   // (30日) や (31日以上) を単位で折り返さない
+      .en{ font-size: 14px; }
+    }
+    // 「プラン」だけ改行
+    .ttl-plan{
+      font-size: 16px;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// ---------- 説明（黒帯） ----------
+.plan-card-desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 84px;
+  background: var(--ink);
+  color: #fff;
+  padding: 0 8px;
+  align-items: center;
+  @include font-gen(bold);
+  font-size: 12px;
+  line-height: 1.6;
+
+  p{ margin: 0; }
+
+  .hl{ color: var(--yellow); } /* 💡 $pb-hl-yellow から変更 */
+
+  .en{
+    @include font-sofia(700);
+  }
+
+  @media (max-width: 768px){
+    padding: 10px;
+    line-height: 1.55;
+  }
+}
+
+// ---------- データ容量 + 料金 ----------
+.plan-card-price{
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  min-height: 129px;
+  padding: 15px 0;
+
+  .price-col{
+    flex: 1;
+    padding: 0 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    &:first-child{
+      border-right: 2px dotted var(--ink);
+    }
+  }
+
+  @media (max-width: 768px){
+    // 縦積み：データ容量が上・月額料金が下
+    flex-direction: column;
+    min-height: 0;
+
+    .price-col{
+      width: 100%;
+      padding: 15px 8px;
+
+      &:first-child{
+        border-right: none;
+        border-bottom: 1px dashed rgba(0,0,0,.4);
+      }
+    }
+  }
+
+  .price-label{
+    @include font-gen(normal);
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .price-value{
+    color: var(--card-color);
+    display: inline-flex;
+    align-items: baseline;
+    line-height: 1;
+    gap: 2px;
 
     .num{
       @include font-sofia(700);
-      font-size: 34px;
-      vertical-align: baseline;
+      font-size: 45px;
     }
 
     .unit{
       @include font-sofia(700);
-      font-size: 20px;
+      font-size: 29px;
       margin-left: 2px;
-      vertical-align: baseline;
     }
 
-    .unit-jp{
+    .currency{
       @include font-gen(bold);
-      font-size: 17px;
-      margin-left: 4px;
-      vertical-align: baseline;
+      font-weight: 900;
+      font-size: 29px;
+    }
+  }
+
+  .price-extra{
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    color: var(--card-color);
+    line-height: 1.2;
+
+    .extra-tag{
+      @include font-gen(500);
+      font-size: 12px;
     }
 
-    .standard{
-      display: block;
-      @include font-sofia(500);
-      font-size: 19px;
-      line-height: 1.2;
-    }
-
-    .standard-sub{
-      display: block;
+    .extra-amount .en{
       @include font-sofia(700);
-      color: #959595;
-      font-size: 11px;
-      line-height: 1.2;
+      font-size: 14px;
     }
+  }
+}
+
+// ---------- 電話番号発行の帯 ----------
+.plan-card-phone{
+  background: var(--card-color-soft);
+  padding: 15px 8px 2px;
+  text-align: center;
+  color: var(--card-color);
+
+  @media (max-width: 768px){
+    padding: 10px 8px;
+  }
+}
+
+.phone-lead{
+  @include font-gen(bold);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media (max-width: 768px){
+    font-size: 14px;
+  }
+}
+
+.phone-body{
+  margin-top: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  @include font-gen(bold);
+  font-weight: 900;
+
+  .phone-cal{
+    width: 17px;
+    height: 20px;
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+
+  .phone-note{ font-size: 16px; }
+
+  .phone-num{
+    @include font-sofia(700);
+    font-size: 37px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .phone-suffix{
+    font-size: 16px;
+
+    .lg{ font-size: 18px; }
+  }
+
+  .phone-tail{ font-size: 18px; }
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    column-gap: 2px;
+
+    .phone-cal{ width: 21px; height: 21px; }
+    .phone-note{ font-size: 14px;}
+    .phone-num{ font-size: 35px; }
+    .phone-suffix{
+      font-size: 14px;
+      .lg{ font-size: 16px; }
+    }
+    // 「電話番号発行」を改行して次の行へ
+    .phone-tail{
+      font-size: 16px;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// ---------- 「全プラン共通基本サービス」ラベル ----------
+.plan-card-common{
+  padding: 15px 15px 0;
+  text-align: center;
+  @include font-gen(500);
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+
+  @media (max-width: 768px){
+    // 幅が狭いので 2 行折り返し（「全プラン共通 / 基本サービス」）
+    line-height: 1.4;
+    padding: 10px 8px 0;
+  }
+}
+
+// ---------- サービスアイコン 4 列（SP は 2×2 グリッド） ----------
+.plan-services{
+  list-style: none;
+  padding: 15px 8px 12px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+
+  @media (max-width: 768px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 0;
+  }
+
+  .service{
+    flex: 1;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: center;
+
+    @media (max-width: 768px){
+      padding: 5px 0;
+      min-height: 121px;
+    }
+  }
+
+  .service-name{
+    @include font-gen(500);
+    font-size: 12px;
+
+    .en{
+      @include font-sofia(700);
+    }
+
+    .asterisk{ color: var(--card-color); }
+  }
+
+  .service-icon{
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+
+  .service-value{
+    @include font-gen(bold);
+    font-weight: 900;
+    font-size: 19px;
+    color: var(--card-color);
+    line-height: 1;
+  }
+
+  // 国際通話：日本宛+無料 + 分数
+  .service-intl{
+    .service-value{
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      line-height: 1;
+
+      .target{
+        @include font-gen(bold);
+        font-weight: 900;
+        font-size: 9px;
+        line-height: 1.2;
+        color: var(--card-color);
+      }
+
+      .free{
+        @include font-gen(bold);
+        font-weight: 900;
+        font-size: 19px;
+        color: var(--card-color);
+      }
+    }
+
+    .service-sub{
+      @include font-gen(bold);
+      font-weight: 900;
+      font-size: 10px;
+      color: var(--card-color);
+      margin-top: -4px;
+    }
+  }
+}
+
+// ---------- 特徴タイトル ＼○○の特徴／ ----------
+.plan-card-feat{
+  background: var(--card-color-soft);
+  padding: 15px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  .feat-mark{
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background: var(--card-color);
+
+    &.left { transform: rotate(-25deg); }
+    &.right{ transform: rotate(25deg); }
+  }
+
+  .feat-text{
+    @include font-gen(bold);
+    font-weight: 900;
+    color: var(--card-color);
+    line-height: 1;
+    font-size: 16px;
+
+    .en{
+      @include font-sofia(700);
+      font-size: 18px;
+    }
+
+    .lg{ font-size: 18px; }
+  }
+
+  @media (max-width: 768px){
+    padding: 10px 6px;
+    gap: 4px;
+
+    .feat-mark{ height: 11px; }
+
+    .feat-text{
+      font-size: 12px;
+      .en{ font-size: 14px; }
+      .lg{ font-size: 14px; }
+    }
+  }
+}
+
+// ---------- チェックリスト ----------
+.plan-card-checks{
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #fff;
+
+  .check{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .check-icon{
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .check-text{
+    @include font-gen(500);
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.4;
 
     .en{
       @include font-sofia(700);
     }
   }
 
-  // 黄色背景行
-  .row-yellow{
-    th, td{
-      background: var(--yellow-soft);  // #FFEF99
-    }
-  }
+  @media (max-width: 768px){
+    padding: 15px 0;
 
-  // 国際通話 / SMS 行（最終行は少し低め）
-  .row-international{
-    th, td{ height: 60px; }
-
-    .intl-row{
-      display: inline-flex;
-      align-items: baseline;
-      gap: 2px;
-      justify-content: center;
+    .check{
+      padding: 0 10px;
+      gap: 8px;
     }
 
-    .intl-target{
-      @include font-gen(bold);
-      color: #959595;
-      font-size: 10px;
-      line-height: 1;
+    .check-icon{ margin-top: 3px; }
 
-      .num-sm{
-        @include font-sofia(700);
-        font-size: 12px;
-        margin: 0 1px;
-      }
-    }
-
-    .intl-main{
-      @include font-gen(500);
-      font-size: 16px;
-      color: var(--ink);
-    }
-
-    .intl-note{
-      display: block;
-      @include font-gen(bold);
-      color: #959595;
-      font-size: 10px;
-      margin-top: 2px;
-    }
-  }
-
-  // ヘッダー行のバッジセル
-  .plan-table-head{
-    
-    th:nth-of-type(2) {
-      img {
-        width: 92px;
-        height: auto;
-        margin: 20px 0 0 32px;
-
-        @media (max-width: 768px){
-          margin: 20px 0 0 9px;
-        }
-      }
-    }
-
-    th:nth-of-type(3) {
-      img {
-        width: 72px;
-        height: auto;
-        margin: 25px 0 0 38px;
-
-        @media (max-width: 768px){
-          margin: 25px 0 0 19px;
-        }
-      }
-    }
-
-    th:nth-of-type(4) {
-      img {
-        width: 72px;
-        height: auto;
-        margin: 25px 0 0 38px;
-
-        @media (max-width: 768px){
-          margin: 25px 0 0 19px;
-        }
-      }
+    .check-text{
+      font-size: 14px;
+      line-height: 1.4;
     }
   }
 }
@@ -257,6 +877,12 @@
     max-width: 560px;
     padding: 0 20px;
     margin-top: 20px;
+  }
+
+  .note-link{
+    color: var(--teal);
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
   }
 }
 

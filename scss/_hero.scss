@@ -15,11 +15,12 @@
   text-align: center;
 
   @media (max-width: 768px){
-    background-image: url("../img/hero/back_ph.png");
-    background-size: 100% auto;
+    background-image: url("../img/hero/back_ph.png"), radial-gradient(#f2f2f2 2px, transparent 3px);
+    background-position: center bottom, 0 0;
+    background-size: 100% auto, 20px 20px;
     width: 100%;
     height: auto;
-    aspect-ratio: 195 / 203;
+    aspect-ratio: 390 / 501;
     margin-top: -1px;
   }
 }
@@ -40,12 +41,27 @@
   z-index: 10;
 
   @media (max-width: 768px){
-    width: 36%;
-    height: auto;
-    aspect-ratio: 109 / 125;
-    left: calc(50% + 0vw);
-    top: calc(50% + 68vw);
-    margin-left: 0;
+    display: none;
+  }
+  }
+
+  .character_sp {
+  position: absolute;
+  width: 42%;
+  height: auto;
+  aspect-ratio: 161 / 326;
+  left: calc(50% + 24vw);
+  bottom: calc(50% - 140vw);
+  margin-left: 0;
+  background-image: url("../img/hero/character_ph.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: none;
+
+  @media (max-width: 768px){
+    display: block;
   }
   }
 }
@@ -74,10 +90,12 @@
   margin-top: 170px;
 
   @media (max-width: 768px){
-    animation: fly-left-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards;
-    width: 25%;
+    animation: fly-right-top_ph 2s ease-in-out infinite;
+    width: 42%;
     height: auto;
-    aspect-ratio: 100 / 89;
+    aspect-ratio: 270 / 258;
+    margin-left: -43%;
+    margin-top: 50%;
   }
 }
 
@@ -92,22 +110,13 @@
   margin-top: 260px;
 
   @media (max-width: 768px){
-    animation: fly-right-top_ph 2s cubic-bezier(0.17, 0.84, 0.44, 1.0) forwards 0.2s;
-    width: 29%;
+    animation: fly-right-top_ph 2s ease-in-out infinite 0.5s;
+    width: 42%;
     height: auto;
-    aspect-ratio: 132 / 109;
+    aspect-ratio: 270 / 244;
+    margin-left: -38%;
+    margin-top: 86%;
   }
-}
-
-/* 1. 斜め左下(画面外) → 左上 */
-@keyframes fly-left-top {
-  0%   { left: -100px; top: 450px; opacity: 0; transform: rotate(0deg); }
-  100% { left: 50%;   top: 50%;   margin-left: -387px;   margin-top: 17px;    opacity: 1; }
-}
-
-@keyframes fly-left-top_ph {
-  0%   { transform: translate(-500px, 200px) rotate(0deg); opacity: 0;}
-  100% { transform: translate(-48vw, 13vw); opacity: 1;}
 }
 
 /* 2. 右下(画面外) → 右上 */
@@ -124,6 +133,13 @@
 }
 
 @keyframes fly-right-top_ph {
-  0%   { transform: translate(500px, 200px) rotate(0deg); opacity: 0;}
-  100% { transform: translate(27vw, 73vw); opacity: 1;}
+  0% {
+    transform: translateY(0); /* 最初は元の位置 */
+  }
+  50% {
+    transform: translateY(-10px); /* 💡 1.5秒かけて上に15px浮き上がる */
+  }
+  100% {
+    transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+  }
 }
