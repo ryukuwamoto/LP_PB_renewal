@@ -77,7 +77,7 @@
                   </a>
                   <a class="box box-right" href="index.html#goodpoint">
                     <img src="img/header/service/icon.png">
-                    <p>サクっとSIMの特徴</p>
+                    <p>イエローモバイル<br>の特徴</p>
                   </a>
                   <a class="box box-right" href="index.html#review">
                     <img src="img/header/service/group2152.png">
@@ -134,7 +134,7 @@
                 </a>
                 <a class="box box-right" href="index.html#select">
                   <img src="img/header/手続き方法/earth.png">
-                  <p>オーストラリアの<br>SIMの選び方</p>
+                  <p>カナダの<br>SIMの選び方</p>
                 </a>
                 <a class="box box-right" href="index.html#book">
                   <img src="img/header/手続き方法/flag.png">
@@ -314,11 +314,16 @@
         <img class="ico" src="img/header/line-icon-hover.png">
         で聞く
       </a>
-      <a class="pill-btn apply" href="application.html#application">
+      <label class="pill-btn apply is-pulldown">
         <img class="ico" src="img/header/aplly-icon.png">
         <img class="ico" src="img/header/aplly-icon-hover.png">
-        お申込み
-      </a>
+        <span>お申込み</span>
+        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
+          <option value="" selected disabled hidden>選択してください</option>
+          <option value="#">長期用SIM</option>
+          <option value="#">短期用SIM</option>
+        </select>
+      </label>
       <a class=" common_btn is-whitepink phone-sp" href="tel:0474724818">
           <span class="icon-circle phone-icon-circle">
             <img src="img/header/Phone-black.png">
@@ -330,34 +335,33 @@
           </span>
           <span class="text">で聞く</span>
         </a>
-        <a class="common_btn is-pinkwhite apply-sp" href="application.html#application">
+        <label class="common_btn is-pinkwhite apply-sp is-pulldown">
           <span class="icon-circle">
-            <img src="img/assurance/buttonicon.png">
+            <img src="img/sec-top-a/buttonicon.png">
           </span>
           <span class="text">お申し込み</span>
-        </a>
+          <select class="c-os-select" required aria-label="購入方法の選択">
+            <option value="" selected disabled hidden>選択してください</option>
+            <option value="#">長期用SIM</option>
+            <option value="#">短期用SIM</option>
+          </select>
+        </label>
     </div>
   </div>
 </header>
 
 <main>
-
-  <!-- ============================ top_a（Check before use）============================ -->
-  <section class="a-top_a" id="pagetop">
-    <div class="head-wrap" id="before-use">
-      <div class="sec-head" id="select">
-        <img class="sec-ico applyico" src="img/choice/choice.png">
-        <h2 class="sec-en"><span class="line-l"></span>check&nbsp;before&nbsp;use<span class="line-r"></span></h2>
-        <p class="sec-jp">ご利用前に確認すること</p>
-      </div>
+<!-- Check before use -->
+<section class="a-top_a" id="pagetop">
+  <div class="head-wrap" id="before-use">
+    <div class="sec-head" id="select">
+      <img class="sec-ico applyico" src="img/sec-top-d/choice.png">
+      <h2 class="sec-en"><span class="line-l"></span>check&nbsp;before&nbsp;use<span class="line-r"></span></h2>
+      <p class="sec-jp">ご利用前に確認すること</p>
     </div>
+  </div>
   <div class="wrap-wide">
-
-    <!-- 見出し -->
-    
     <p class="a-top_a__lead">下記３つの項目については<br class="usp">ご購入前に必ずご確認ください!!</p>
-
-    <!-- ステップナビ -->
     <ul class="a-top_a__nav">
       <li class="a-top_a__navitem">
         <img class="c-check" src="img/application/check1.png">
@@ -373,117 +377,99 @@
       </li>
     </ul>
     <div class="a-top_a__cards">
-    <!-- CHECK 1 -->
-    <div class="a-top_a__card js-check1">
-      <div class="a-top_a__card-head">
-        <img class="c-check" src="img/application/check1.png">
-        <h2 class="a-top_a__card-title">サービスエリアについて</h2>
-      </div>
-      <p class="a-top_a__card-text">ご渡航先が使用可能エリア内にあるかを必ずご確認ください。<br class="sp">郊外は対応していない地域もございますのでご注意ください。</p>
-      <a class="common_btn is-whitepink" target="_blank" href="https://www.telstrawholesale.com.au/products/mobiles/coverage.html">
-        <span class="text">サービスエリアの確認</span>
-        <span class="arrow"></span>
-    </a>
-    </div>
-
-    <!-- CHECK 2 -->
-    <div class="a-top_a__card js-check2">
-      <div class="a-top_a__card-head">
-        <img class="c-check" src="img/application/check2.png">
-        <h2 class="a-top_a__card-title">対応機種について</h2>
-      </div>
-      <p class="a-top_a__card-desc">ご希望のSIM (eSIM/SIMカード) が、<br class="sp">ご利用のスマートフォンで対応しているか事前にご確認ください。</p>
-
-      <!-- 【修正】a-top_a__devices に統一 -->
-      <div class="a-top_a__devices">
-        <!-- Android -->
-        <div class="a-top_a__device">
-          <h3 class="a-top_a__device-os">Android</h3>
-          <p class="a-top_a__device-model"><span class="is-lg">Google Pixel</span><br>(最新OSに対応した<br>SIMフリースマートフォン)</p>
-          <!-- 【修正】a-top_a__device-note / a-top_a__freq / a-top_a__device-foot に統一 -->
-          <p class="a-top_a__device-note">Google Pixel以外のスマートフォンは下記<u>周波数に対応しているか</u>ご確認ください。</p>
-          <div class="a-top_a__freq">
-            <p>4G LTE Band<span>3/28/7</span></p>
-            <p>5G Band <span>n78/n5*</span></p>
-          </div>
-          <p class="a-top_a__device-note">また、現地VoLTE非対応スマートフォンでは<u>通話が利用できない</u>場合がございます。</p>
-          <p class="a-top_a__device-foot">*4G/LTEプランをご利用の場合は必須ではありません</p>
+      <!-- CHECK 1 -->
+      <div class="a-top_a__card js-check1">
+        <div class="a-top_a__card-head">
+          <img class="c-check" src="img/application/check1.png">
+          <h2 class="a-top_a__card-title">サービスエリアについて</h2>
         </div>
-        
-        <!-- iPhone -->
-        <!-- 【修正】a-top_a__device / a-top_a__device-os / a-top_a__device-model / a-top_a__device-mini に統一 -->
-        <div class="a-top_a__device">
-          <h3 class="a-top_a__device-os">iPhone</h3>
-          <p class="a-top_a__device-model">最新のiOSに対応した<br>SIMフリーのiPhone</p>
-          <p class="a-top_a__device-mini">※中国本土・香港・マカオで販売された<br>一部iPhoneはeSIM非対応の場合があります。</p>
-
-          <!-- オススメの理由（iPhoneカラム下に配置） -->
-          <!-- 【修正】a-top_a__recommend 関連に統一 -->
-          <div class="a-top_a__recommend">
-            <p class="a-top_a__recommend-title"><span>iPhoneとGoogle Pixelが</span><br class="sp"><span>オススメの理由</span></p>
-            <p class="a-top_a__recommend-text">周波数が合わないと通信が不安定になる場合がございます。世界各国の周波数に対応した<strong>iPhone</strong>と<strong>Google Pixelシリーズ</strong>を推奨しています。</p>
-            <img class="a-top_a__recommend-mascot" src="img/application/character.png" alt="" width="96" height="96">
+        <p class="a-top_a__card-text">ご渡航先が使用可能エリア内にあるかを必ずご確認ください。<br class="sp">郊外は対応していない地域もございますのでご注意ください。</p>
+        <a class="common_btn is-whitepink" target="_blank" href="https://www.telus.com/en/mobility/network/coverage-map">
+          <span class="text">サービスエリアの確認</span>
+          <span class="arrow"></span>
+        </a>
+      </div>
+      <!-- CHECK 2 -->
+      <div class="a-top_a__card js-check2">
+        <div class="a-top_a__card-head">
+          <img class="c-check" src="img/application/check2.png">
+          <h2 class="a-top_a__card-title">対応機種について</h2>
+        </div>
+        <p class="a-top_a__card-desc">ご希望のSIM (eSIM/SIMカード) が、<br class="sp">ご利用のスマートフォンで対応しているか事前にご確認ください。</p>
+        <div class="a-top_a__devices">
+          <div class="a-top_a__device">
+            <h3 class="a-top_a__device-os">Android</h3>
+            <p class="a-top_a__device-model"><span class="is-lg">Google Pixel</span><br>(最新OSに対応した<br>SIMフリースマートフォン)</p>
+            <p class="a-top_a__device-note">Google Pixel以外のスマートフォンは下記<u>周波数に対応しているか</u>ご確認ください。</p>
+            <div class="a-top_a__freq">
+              <p>4G LTE Band<span>2/4/5/7/12/13/17/29</span></p>
+              <p>5G Band <span>n71/n66/n78</span></p>
+            </div>
+            <p class="a-top_a__device-note">また、現地VoLTE非対応スマートフォンでは<u>通話が利用できない</u>場合がございます。</p>
+          </div>
+          <div class="a-top_a__device">
+            <h3 class="a-top_a__device-os">iPhone</h3>
+            <p class="a-top_a__device-model">最新のiOSに対応した<br>SIMフリーの<span class="is-lg">iPhone</span></p>
+            <p class="a-top_a__device-mini">※中国本土・香港・マカオで販売された<br>一部iPhoneはeSIM非対応の場合があります。</p>
+            <div class="a-top_a__recommend">
+              <p class="a-top_a__recommend-title"><span>iPhoneとGoogle Pixelが</span><br class="sp"><span>オススメの理由</span></p>
+              <p class="a-top_a__recommend-text">周波数が合わないと通信が不安定になる場合がございます。世界各国の周波数に対応した<strong>iPhone</strong>と<strong>Google Pixelシリーズ</strong>を推奨しています。</p>
+              <img class="a-top_a__recommend-mascot" src="img/application/character.png" alt="" width="96" height="96">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- CHECK 3 -->
-    <!-- 【修正】a-top_a__card / a-top_a__card-head / a-top_a__card-title / a-top_a__pays 関連にすべて統一 -->
-    <div class="a-top_a__card js-check3">
-      <div class="a-top_a__card-head">
-        <img class="c-check" src="img/application/check3.png">
-        <h2 class="a-top_a__card-title">お支払いについて</h2>
-      </div>
-
-      <div class="a-top_a__pays">
-        <!-- 事務手数料 -->
-        <!-- 【修正】a-top_a__pay 関連に統一 -->
-        <div class="a-top_a__pay">
-          <h3 class="a-top_a__pay-title">事務手数料</h3>
-          <p class="a-top_a__pay-text">事務手数料のお支払いは<br>下記に対応しております。</p>
-          <div class="c-brands">
-            <img src="img/application/credit1.png">
-          </div>
-          <p class="a-top_a__pay-note">VISA・Mastercard・American Express・JCB・ダイナース<br>(クレジットカード / デビットカード)</p>
-          <p class="a-top_a__pay-sub">ご利用者本人もしくは三親等以内の親族名義のカードがご利用になれます。</p>
+      <!-- CHECK 3 -->
+      <div class="a-top_a__card js-check3">
+        <div class="a-top_a__card-head">
+          <img class="c-check" src="img/application/check3.png">
+          <h2 class="a-top_a__card-title">お支払いについて</h2>
         </div>
-        
-        <!-- プラン料金 -->
-        <!-- 【修正】a-top_a__pay 関連に統一（最下部の強調クラスも a-top_a__pay-sub--em へ） -->
-        <div class="a-top_a__pay">
-          <h3 class="a-top_a__pay-title">プラン料金</h3>
-          <p class="a-top_a__pay-text">プラン料金のお支払いは<br>下記に対応しております。</p>
-          <div class="c-brands">
-            <img src="img/application/credit2.png">
+        <div class="a-top_a__pays">
+          <div class="a-top_a__pay">
+            <h3 class="a-top_a__pay-title">事務手数料</h3>
+            <p class="a-top_a__pay-text">事務手数料のお支払いは<br>下記に対応しております。</p>
+            <div class="c-brands">
+              <img src="img/application/credit1.png">
+            </div>
+            <p class="a-top_a__pay-note">VISA・Mastercard・American Express・JCB・ダイナース<br>(クレジットカード / デビットカード)</p>
+            <p class="a-top_a__pay-sub">ご利用者本人もしくは三親等以内の親族名義のカードがご利用になれます。</p>
           </div>
-          <p class="a-top_a__pay-note">VISA / Mastercard / American Express<br>(クレジットカード / デビットカード)</p>
-          <p class="a-top_a__pay-sub">ご利用者本人もしくは三親等以内の親族名義のカードがご利用になれます。<br><span class="a-top_a__pay-sub--em">ドル建て決済(海外決済)に対応しているカードをご用意ください。JCB・ダイナースのクレジットカードはご利用いただけません。</span></p>
+          <div class="a-top_a__pay">
+            <h3 class="a-top_a__pay-title">プラン料金</h3>
+            <p class="a-top_a__pay-text">プラン料金のお支払いは<br>下記に対応しております。</p>
+            <div class="c-brands">
+              <img src="img/application/credit2.png">
+            </div>
+            <p class="a-top_a__pay-note">VISA / Mastercard / American Express<br>(クレジットカード / デビットカード)</p>
+            <p class="a-top_a__pay-sub">ご利用者本人もしくは三親等以内の親族名義のカードがご利用になれます。<br><span class="a-top_a__pay-sub--em">ドル建て決済(海外決済)に対応しているカードをご用意ください。JCB・ダイナースのクレジットカードはご利用いただけません。</span></p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="a-top_a__box">
+      <p class="a-top_a__box-title"><span class="a-top_a__box-slash">\</span>留学など長期利用向け<span>/</span></p>
+      <p class="a-top_a__box-read"><span class="num">31</span>日以上の<br class="sp"><span class="bg">長期用<span class="en">SIM</span></span>のお申し込み</p>
+      <img src="img/application/character2.png">
     </div>
-
+    <div class="a-top_a__link">
+      <p>30日以内のトラベル用SIMのお申込みは<a href="delivery.html#shield">こちら<img src="img/planpage/plan/inlineicon.png" class="inline-icon"></a></p>
+    </div>
   </div>
 </section>
-
-  <!-- ============================ top_b（SIMお申し込みフォーム）============================ -->
-  <section class="a-top_b js-form" aria-label="SIMお申し込み" id="application">
+<!-- SIMお申し込みフォーム -->
+<section class="a-top_b js-form" aria-label="SIMお申し込み" id="application">
   <div class="a-top_b__inner">
-
     <div class="a-top_b__tabs" role="tablist">
       <button class="a-top_b__tab is-active" type="button" role="tab" aria-selected="true" data-tab="sim"><span class="en">SIM</span>のみ購入</button>
       <button class="a-top_b__tab" type="button" role="tab" aria-selected="false" data-tab="set"><span class="en">SIM</span>＋スマホセット購入</button>
     </div>
-
     <div class="a-top_b__panel" data-panel="sim">
       <p class="a-top_b__intro">お手持ちのスマートフォンで<br class="usp">ご利用可能かご不安な場合は<a href="#before-use">こちら<img src="img/application/Icon.png" class="inline-icon"></a></p>
       <div class="a-top_b__card">
-
         <div class="a-top_b__left">
-          <img class="a-top_b__product" src="img/application/saku_aus.png" alt="サクっとSIM AUS">
+          <img class="a-top_b__product" src="img/application/saku_pb.png" alt="サクっとSIM AUS">
           <img class="a-top_b__simsize" src="img/application/SIMsize.png" alt="サクっとSIM AUSが対応するSIMカードの種類比較図。Nano・Micro・Standard対応の3 in 1 SIMカードと、スマートフォン内蔵型のeSIMの2種類から選択可能">
-
           <div class="c-accordion">
             <details class="c-accordion__item">
               <summary class="c-accordion__head">スペック詳細<span class="c-accordion__mark">＋</span></summary>
@@ -494,33 +480,28 @@
                 <p class="is-indent">standard/micro/nanoに対応</p>
                 <p class="is-indent">（３in１タイプ）</p>
                 <p class="is-label">【利用可能地域】</p>
-                <p>オーストラリア</p>
+                <p>カナダ</p>
                 <p class="is-label">【国内音声通話】</p>
                 <p>無制限</p>
                 <p class="is-label">【国内SMS】</p>
                 <p>無制限</p>
                 <p class="is-label">【国際通話】</p>
-                <p>日本を除く15カ国対応<br>（4G/LTEプランは不可）</p>
-                <p class="is-label">【国際通話オプション】</p>
-                <p>月額＄7プラン</p>
-                <p class="is-indent">国際通話：120分/国際SMS：無制限</p>
-                <p>月額＄10プラン</p>
-                <p class="is-indent">国際通話：300分/国際SMS：無制限</p>
+                <p>日本を含む対象国へ1,000分無料通話可能<br>※対象国以外へ発信した場合は有料になります。</p>
                 <p class="is-label">【データ通信】</p>
                 <p>可能</p>
                 <p>※プランにより通信量は異なります</p>
                 <p class="is-label">【ボイスメール】</p>
                 <p>可能</p>
                 <p class="is-label">【Wi-Fi通話】</p>
-                <p>可能</p>
+                <p>不可</p>
                 <p class="is-label">【テザリング】</p>
                 <p>可能</p>
                 <p class="is-label">【SIMご利用可能スマートフォン】</p>
                 <p>iPhone：最新のiOSに対応したSIMフリーのiPhone<br>Android：Google Pixel (最新のOSに対応したSIMフリーのスマートフォン)<br>Google Pixel以外のスマートフォンは下記の周波数に対応しているかご確認ください。</p>
                 <p class="is-em">iPhoneの中国版モデルや一部のシリーズでは、ご利用予定のSIMが対応していない場合がございます。お手持ちのスマートフォンが、ご希望のSIM (eSIMまたはSIMカード) に対応しているか、必ず事前にご確認をお願いいたします。</p>
                 <div class="a-top_b__band">
-                  <span class="a-top_b__band-label">4G LTE Band</span><span class="a-top_b__band-val">3/28/7</span>
-                  <span class="a-top_b__band-label a-top_b__band-label--5g">5G Band</span><span class="a-top_b__band-val a-top_b__band-val--5g">n78/n5</span>
+                  <span class="a-top_b__band-label">4G LTE Band</span><span class="a-top_b__band-val">2/4/5/7/12/13/17/29</span>
+                  <span class="a-top_b__band-label a-top_b__band-label--5g">5G Band</span><span class="a-top_b__band-val a-top_b__band-val--5g">n71/n66/n78</span>
                 </div>
               </div>
             </details>
@@ -539,54 +520,56 @@
             </details>
           </div>
         </div>
-
         <div class="a-top_b__right">
           <p class="a-top_b__bar">ご利用プランはSIMご購入後、<br>開通申込みを行なう際にお選びいただけます。</p>
-
           <div class="a-top_b__selects">
             <label class="a-top_b__select">
               <select required aria-label="SIMタイプを選択">
                 <option value="" selected disabled hidden>SIMタイプを選択</option>
-                <option value="esim">eSIM</option>
-                <option value="sim">SIMカード</option>
+                <option value="3500" data-plm="1">eSIM</option>
+                <option value="3000" data-plm="2">SIMカード</option>
               </select>
             </label>
             <label class="a-top_b__select">
               <select required aria-label="盗難補償を選択">
                 <option value="" selected disabled hidden>盗難補償を選択</option>
-                <option value="none">なし</option>
-                <option value="sim">SIM盗難補償</option>
-                <option value="phone">スマホ盗難補償</option>
+                <option value="0" data-plm="1">盗難補償 なし(＋0円)</option>
+                <option value="860" data-plm="6">SIM盗難補償 6ヶ月(＋860円)</option>
+                <option value="1520" data-plm="12">SIM盗難補償 1年(＋1,520円)</option>
+                <option value="1980" data-plm="24">SIM盗難補償 2年(＋1,980円)</option>
+                <option value="3300" data-plm="sp6">スマホ盗難補償 6ヶ月(＋3,300円)</option>
+                <option value="5500" data-plm="sp12">スマホ盗難補償 1年(＋5,500円)</option>
+                <option value="8800" data-plm="sp24">スマホ盗難補償 2年(＋8,800円)</option>
               </select>
             </label>
             <label class="a-top_b__select">
               <select required aria-label="SIMサイズを選択">
                 <option value="" selected disabled hidden>SIMタイプから選択してください</option>
-                <option value="nano">ナノSIM</option>
-                <option value="micro">マイクロSIM</option>
-                <option value="standard">標準SIM</option>
+                <option value="" selected disabled hidden>配送方法を選択</option>
+                <option value="0" data-plm="1">日本国内ポスト投函(＋0円)</option>
+                <option value="550" data-plm="S550">日時指定(＋550円)</option>
+                <option value="1100" data-plm="S1100">日時指定/北海道・沖縄・離島(＋1,100円)</option>
+                <option value="1100" data-plm="K1100">オーストラリア配送(＋1,100円)</option>
+                <option value="" selected disabled hidden>必要事項の確認</option>
+                <option value="0" data-plm="1">eSIM搭載端末か確認しメールでの配送を了承した</option>
               </select>
             </label>
           </div>
-
           <a class="common_btn is-pinkwhite" href="https://www.telstrawholesale.com.au/products/mobiles/coverage.html">
             <span class="icon-circle">
-          <img src="img/application/cart.png">
-        </span>
-        <span class="text">SIMを購入</span>
-        <span class="arrow"></span>
+              <img src="img/application/cart.png">
+            </span>
+            <span class="text">SIMを購入</span>
+            <span class="arrow"></span>
           </a>
-
           <p class="a-top_b__bar">本サイトは1枚ずつの購入になります。<br>複数ご希望の方は下記よりご購入ください。</p>
-
           <a class="common_btn is-pinkwhite" href="https://www.yellowmobile.jp/view/item/000000000179">
             <span class="icon-circle">
-          <img src="img/application/cart.png">
-        </span>
-        <span class="text">SIMを複数購入</span>
-        <span class="arrow"></span>
+              <img src="img/application/cart.png">
+            </span>
+            <span class="text">SIMを複数購入</span>
+            <span class="arrow"></span>
           </a>
-
           <div class="a-top_b__notes">
             <p>※盗難保証の詳細は<a href="delivery.html#shield">こちら<img src="img/planpage/plan/inlineicon.png" class="inline-icon"></a></p>
             <p>※盗難補償のお支払いは1回のみです。</p>
@@ -596,17 +579,13 @@
             <p>※配送方法と送料の詳細は<a href="delivery.html#delivery">こちら<img src="img/planpage/plan/inlineicon.png" class="inline-icon"></a></p>
           </div>
         </div>
-
       </div>
     </div>
-
     <div class="a-top_b__panel" data-panel="set" hidden>
       <p class="a-top_b__intro">お手持ちのスマートフォンが対応していない場合は、スマホセットのご利用がおすすめです。</p>
       <div class="a-top_b__card">
-
         <div class="a-top_b__left">
-          <img class="a-top_b__setphone" src="img/application/phonesaku_aus.png" alt="サクっとSIM AUS スマホセット（iPhone・Google Pixel）" width="280" height="267">
-
+          <img class="a-top_b__setphone" src="img/application/phonesaku_pb.png" alt="サクっとSIM AUS スマホセット（iPhone・Google Pixel）" width="280" height="267">
           <div class="c-accordion">
             <details class="c-accordion__item">
               <summary class="c-accordion__head">スペック詳細<span class="c-accordion__mark">＋</span></summary>
@@ -620,19 +599,16 @@
             </details>
           </div>
         </div>
-
         <div class="a-top_b__right">
           <p class="a-top_b__bar">iPhone・Google Pixel<br>（SIMフリー・リファービッシュ品）</p>
           <p class="a-top_b__setlead">レンタルではないため、ご購入いただいたスマートフォンは<br class="sp">ご帰国後もそのままご利用いただけます。</p>
-
           <a class="common_btn is-pinkwhite" href="https://www.yellowmobile.jp/view/category/device-saku-aus-long">
             <span class="icon-circle">
-          <img src="img/application/cart.png">
-        </span>
-        <span class="text">スマホセットを購入</span>
-        <span class="arrow"></span>
+              <img src="img/application/cart.png">
+            </span>
+            <span class="text">スマホセットを購入</span>
+            <span class="arrow"></span>
           </a>
-
           <div class="a-top_b__notes">
             <p>※盗難保証の詳細は<a href="delivery.html#shield">こちら<img src="img/planpage/plan/inlineicon.png" class="inline-icon"></a></p>
             <p>※盗難補償のお支払いは1回のみです。</p>
@@ -642,12 +618,10 @@
             <p>※配送方法と送料の詳細は<a href="delivery.html#delivery">こちら<img src="img/planpage/plan/inlineicon.png" class="inline-icon"></a></p>
           </div>
         </div>
-
       </div>
     </div>
-
-  </div></section>
-
+  </div>
+</section>
 </main>
 
 <!-- ============================ l-footer ============================ -->

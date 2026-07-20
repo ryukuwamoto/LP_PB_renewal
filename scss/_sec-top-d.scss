@@ -120,7 +120,7 @@
   position: relative;
   height: 270px;
   margin: 40px 0 0 30px;
-  background-image: url("../img/select/scene_buildings.png");
+  background-image: url("../img/sec-top-d/scene_buildings.png");
   background-size: 733px 270px;
   background-repeat: no-repeat;
   background-position: center;
@@ -134,20 +134,20 @@
   position: relative;
   height: 630px;
   margin-top: -78px;
-  background-image: url("../img/select/scene_ground.png");
+  background-image: url("../img/sec-top-d/scene_ground.png");
   background-size: 1920px 630px;
   background-repeat: no-repeat;
   background-position: center;
 
   @media (max-width: 768px){
-    background-image: url("../img/select/scene_sp.png");
+    background-image: url("../img/sec-top-d/scene_sp.png");
     height: 539px;
     background-size: auto 539px;
     margin-top: 40px;
   }
 
   @media (min-width: 1920px){
-    background-image: url("../img/select/scene_ground.png");
+    background-image: url("../img/sec-top-d/scene_ground.png");
     background-size: 100% 630px;
   }
 }
