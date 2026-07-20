@@ -359,7 +359,7 @@
   margin: 0 auto;
 
   @media (max-width: 768px){
-    // SP でも横並び 2 カード（160×2）を維持
+    max-width: 540px;
     gap: 20px;
     padding: 24px 15px;
   }
@@ -400,8 +400,7 @@
   }
 
   @media (max-width: 768px){
-    width: 160px;
-    flex: 0 1 160px;   // 2 枚並びで 160+20+160=340px にフィット
+    width: 100%;
   }
 }
 
@@ -446,7 +445,7 @@
     row-gap: 4px;
     column-gap: 2px;
 
-    .ttl-jp{ font-size: 21px; }
+    .ttl-jp{ font-size: 20px; }
     .ttl-days{
       font-size: 12px;
       white-space: nowrap;   // (30日) や (31日以上) を単位で折り返さない
@@ -469,13 +468,16 @@
   height: 84px;
   background: var(--ink);
   color: #fff;
-  padding: 0 8px;
+  padding: 12px 8px;
   align-items: center;
   @include font-gen(bold);
   font-size: 12px;
   line-height: 1.6;
+  text-align: center;
 
-  p{ margin: 0; }
+  p{ 
+    margin: 0;
+  }
 
   .hl{ color: var(--yellow); } /* 💡 $pb-hl-yellow から変更 */
 
@@ -486,6 +488,21 @@
   @media (max-width: 768px){
     padding: 10px;
     line-height: 1.55;
+    min-height: 95px;
+    height: 100%;
+
+    .pc {
+      display: none;
+    }
+  }
+  @media (max-width: 481px){
+    min-height: 114px;
+  }
+  @media (max-width: 409px){
+    min-height: 133px;
+  }
+  @media (max-width: 361px){
+    min-height: 151px;
   }
 }
 
@@ -515,15 +532,21 @@
   @media (max-width: 768px){
     // 縦積み：データ容量が上・月額料金が下
     flex-direction: column;
-    min-height: 0;
+    min-height: 251px;
+    margin: 0 8px;
 
     .price-col{
       width: 100%;
-      padding: 15px 8px;
+      padding: 15px 0;
+      gap: 4px;
 
       &:first-child{
         border-right: none;
-        border-bottom: 1px dashed rgba(0,0,0,.4);
+        border-bottom: 2px dotted var(--ink);
+      }
+
+      &.sp {
+        padding: 0 0 7px 0;
       }
     }
   }
@@ -562,18 +585,18 @@
   .price-extra{
     display: inline-flex;
     align-items: baseline;
-    gap: 4px;
+    gap: 0;
     color: var(--card-color);
     line-height: 1.2;
 
     .extra-tag{
       @include font-gen(500);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .extra-amount .en{
       @include font-sofia(700);
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 }
@@ -658,17 +681,32 @@
 
 // ---------- 「全プラン共通基本サービス」ラベル ----------
 .plan-card-common{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 15px 15px 0;
   text-align: center;
   @include font-gen(500);
   font-size: 14px;
   color: var(--ink);
   background: #fff;
+  gap: 6px;
+
+  .sp {
+    display: none;
+  }
 
   @media (max-width: 768px){
     // 幅が狭いので 2 行折り返し（「全プラン共通 / 基本サービス」）
     line-height: 1.4;
-    padding: 10px 8px 0;
+    padding: 10px 8px;
+  }
+  @media (max-width: 469px){
+    gap: 14px;
+
+    .sp{
+      display: inline;
+    }
   }
 }
 
@@ -802,12 +840,12 @@
     padding: 10px 6px;
     gap: 4px;
 
-    .feat-mark{ height: 11px; }
+    .feat-mark{ height: 10px; }
 
     .feat-text{
-      font-size: 12px;
-      .en{ font-size: 14px; }
-      .lg{ font-size: 14px; }
+      font-size: 11px;
+      .en{ font-size: 13px; }
+      .lg{ font-size: 13px; }
     }
   }
 }
@@ -849,6 +887,7 @@
 
   @media (max-width: 768px){
     padding: 15px 0;
+    min-height: 178px;
 
     .check{
       padding: 0 10px;
@@ -862,7 +901,17 @@
       line-height: 1.4;
     }
   }
+  @media (max-width: 471px){
+    min-height: 198px;
+  }
+  @media (max-width: 371px){
+    min-height: 236px;
+  }
+  @media (max-width: 359px){
+    min-height: 257px;
+  }
 }
+  
 
 // ---------- 注意書き ----------
 .plan-note{
@@ -874,9 +923,9 @@
   color: var(--ink);
 
   @media (max-width: 768px){
-    max-width: 560px;
+    max-width: 540px;
     padding: 0 20px;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .note-link{

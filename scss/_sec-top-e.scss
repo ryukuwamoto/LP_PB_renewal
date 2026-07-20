@@ -213,6 +213,7 @@
   @media (max-width: 768px) {
     width: calc(50% - 5px); 
     flex: none;
+    margin-bottom: 0px;
   }
 
   .carrier-feature{
@@ -305,7 +306,7 @@
   @media (max-width: 768px){
     order: 0;
     width: 100%;
-    height: 235px;
+    height: 265px;
     flex: none;
 
     &::before {
@@ -330,7 +331,7 @@
       }
 
       @media (max-width: 768px){
-        margin-bottom: 3px;
+        margin-bottom: 10px;
       }
     }
 
@@ -343,9 +344,10 @@
       }
 
     @media (max-width: 768px){
-        text-align: center;
-        line-height: normal;
-        padding: 0;
+      width: fit-content;
+      line-height: normal;
+      padding: 0;
+      margin: 0 auto;
         .sp {
         display: none;
       }
@@ -360,12 +362,13 @@
       position: absolute;
       width: 77px;
       height: auto;
-      bottom: 16px;
-      right: 22px;
+      bottom: 32px;
+      right: 14px;
 
       @media (max-width: 768px){
         right: calc(50%);
         translate: 50%;
+        bottom: 10px;
         width: 100px;
       }
     }
