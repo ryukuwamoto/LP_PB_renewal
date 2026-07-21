@@ -318,6 +318,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // .top_b セクション内のタブ要素とパネル要素をすべて取得
+  const tabs = document.querySelectorAll('.a-top_b-s__tab');
+  const panels = document.querySelectorAll('.a-top_b-s__panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 1. クリックされたタブの data-tab 属性の値を取得 (例: "sim" や "set")
+      const targetTab = tab.getAttribute('data-tab');
+
+      // 2. すべてのタブの活性化状態（クラス、aria属性）をクリア
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      // 3. クリックされたタブだけをアクティブにする
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // 4. すべてのパネルを一度非表示 [hidden] にする
+      panels.forEach(panel => {
+        panel.setAttribute('hidden', '');
+      });
+
+      // 5. data-panel の値が、取得した data-tab と一致するパネルだけを表示（hiddenを解除）
+      const targetPanel = document.querySelector(`.a-top_b-s__panel[data-panel="${targetTab}"]`);
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+      }
+    });
+  });
+});
+
 // =========================================================
 // application プルダウン
 // =========================================================
@@ -386,19 +420,84 @@ document.addEventListener('DOMContentLoaded', () => {
   updateDeliveryOptions();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.a-top_b__tab');
+  const panels = document.querySelectorAll('.a-top_b__panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-tab');
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      panels.forEach(panel => {
+        panel.setAttribute('hidden', '');
+      });
+      const targetPanel = document.querySelector(`.a-top_b__panel[data-panel="${targetTab}"]`);
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+      }
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const selectWrapper = document.querySelector('.a-top_b-s__selects');
+  if (!selectWrapper) return;
+
+  const selects = selectWrapper.querySelectorAll('select');
+  const simTypeSelect = selects[0];
+  const deliverySelect = selects[2];
+  const optionsMap = {
+    default: `<option value="" selected disabled hidden>SIMタイプから選択してください</option>`,
+
+    esim: `
+      <option value="" selected disabled hidden>必要事項の確認</option>
+      <option value="0" data-plm="1">eSIM搭載端末か確認しメールでの配送を了承した</option>
+    `,
+
+    simCard: `
+      <option value="" selected disabled hidden>配送方法を選択</option>
+      <option value="0" data-plm="1">日本国内ポスト投函(＋0円)</option>
+      <option value="550" data-plm="S550">日時指定(＋550円)</option>
+      <option value="1100" data-plm="S1100">日時指定/北海道・沖縄・離島(＋1,100円)</option>
+      <option value="1100" data-plm="K1100">アメリカ/カナダ配送(＋1,100円)</option>
+    `
+  };
+
+  function updateDeliveryOptions() {
+    const selectedValue = simTypeSelect.value;
+
+    if (selectedValue === "3500") {
+      deliverySelect.innerHTML = optionsMap.esim;
+    } else if (selectedValue === "3000") {
+      deliverySelect.innerHTML = optionsMap.simCard;
+    } else {
+      deliverySelect.innerHTML = optionsMap.default;
+    }
+  }
+
+  simTypeSelect.addEventListener('change', updateDeliveryOptions);
+
+  updateDeliveryOptions();
+});
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const select = document.querySelector('.js-link-select');
+  // すべての .js-link-select を取得
+  const selects = document.querySelectorAll('.js-link-select');
 
-  if (select) {
+  selects.forEach((select) => {
     select.addEventListener('change', (e) => {
       const url = e.target.value;
       
-      // 選択された値が空や「#」でない場合にページ遷移する
       if (url && url !== '#') {
         window.location.href = url;
       }
     });
-  }
+  });
 });

@@ -43,7 +43,6 @@
     <script src="js/script.js" defer></script>
 </head>
 <body data-screen-label="LP">
-
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
@@ -321,7 +320,7 @@
         <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
           <option value="" selected disabled hidden>選択してください</option>
           <option value="application-l.html#application">長期用SIM</option>
-          <option value="#">短期用SIM</option>
+          <option value="application-s.html#application">短期用SIM</option>
         </select>
       </label>
       <a class=" common_btn is-whitepink phone-sp" href="tel:0474724818">
@@ -335,7 +334,7 @@
           </span>
           <span class="text">で聞く</span>
         </a>
-        <label class="common_btn is-pinkwhite apply-sp is-pulldown">
+        <label class="common_btn is-pinkwhite apply-sp is-pulldown js-link-select">
           <span class="icon-circle">
             <img src="img/sec-top-a/buttonicon.png">
           </span>
@@ -343,13 +342,12 @@
           <select class="c-os-select" required aria-label="購入方法の選択">
             <option value="" selected disabled hidden>選択してください</option>
             <option value="application-l.html#application">長期用SIM</option>
-            <option value="#">短期用SIM</option>
+            <option value="application-s.html#application">短期用SIM</option>
           </select>
         </label>
     </div>
   </div>
 </header>
-
 <!-- HERO -->
 <section class="hero" data-screen-label="Hero" id="pagetop">
   <div class="target-line"></div>
@@ -362,15 +360,13 @@
   <div class="item item-yellow"></div>
   </div>
 </section>
-
 <section class="sec-top-a">
   <div class="sec-top-a-inner">
-
     <!-- 主訴求カード -->
     <article class="support-card">
       <div class="support-card-body">
         <div class="support-card-badge">
-        <img src="img/sec-top-a/saport.png" alt="あんしん設定サポート LINEで簡単">
+          <img src="img/sec-top-a/saport.png" alt="あんしん設定サポート LINEで簡単">
         </div>
         <div class="support-card-text">
           <h2>
@@ -381,15 +377,13 @@
           </p>
         </div>
       </div>
-        <a class="common_btn is-whitepink" target="_blank" href="https://www.yellowmobile.jp/view/page/setting_support">
-          <span class="text">詳しくはこちら</span>
-          <span class="arrow"></span>
-        </a>
+      <a class="common_btn is-whitepink" target="_blank" href="https://www.yellowmobile.jp/view/page/setting_support">
+        <span class="text">詳しくはこちら</span>
+        <span class="arrow"></span>
+      </a>
     </article>
-
     <!-- 特徴カード3枚 -->
     <div class="feature-cards">
-
       <article class="feature-card">
         <img src="img/sec-top-a/phone.png" alt="">
         <p class="feature-card-text">
@@ -397,29 +391,25 @@
           <span class="en">eSIM / SIM</span>カード
         </p>
       </article>
-
       <article class="feature-card">
-          <img src="img/sec-top-a/net.png" alt="">
+        <img src="img/sec-top-a/net.png" alt="">
         <p class="feature-card-text">
           カナダ<span class="en">No.1</span><br>
           <span class="en">TELUS</span>回線
         </p>
       </article>
-
       <article class="feature-card has-tag">
         <span class="feature-card-tag">
           <span class="en">eSIM</span>
           <span class="jp">限定</span>
         </span>
-          <img src="img/sec-top-a/time.png" alt="">
+        <img src="img/sec-top-a/time.png" alt="">
         <p class="feature-card-text">
           最短<span class="en">1</span>時間以内に<br>
           ご利用開始
         </p>
       </article>
-
     </div>
-
   </div>
 </section>
 <section class="sec-top-b">
@@ -437,326 +427,284 @@
 <section class="sec-top-c">
   <div class="wrap-wide">
     <div class="w-support">
-
-  <!-- ヘッダー：Wサポート ロゴ -->
-  <div class="ws-title">
-    <img class="ws-title-img" src="img/sec-top-c/title-w-support.png" alt="Wサポート カナダ×日本" width="255" height="82">
-  </div>
-
-  <!-- 比較ボックス：PhoneBox × イエローモバイル -->
-  <div class="ws-compare">
-    <div class="ws-compare-box ws-compare-phonebox">
-      <p class="cb-tag">カナダの通信会社</p>
-      <img class="cb-logo" src="img/sec-top-c/logo-phonebox.png" alt="PhoneBox" width="216" height="40">
-      <p class="cb-desc">現地店舗や電話、メール等によるサポート</p>
-    </div>
-    <div class="ws-compare-box ws-compare-ym">
-      <p class="cb-tag">正規代理店</p>
-      <img class="cb-logo" src="img/sec-top-c/logo-yellow-mobile.png" alt="イエローモバイル" width="220" height="30">
-      <p class="cb-desc">渡航前から到着後もマルっとサポート</p>
-    </div>
-    <img class="xross" src="img/sec-top-c/xross.png">
-  </div>
-
-  <!-- 説明文 -->
-  <div class="ws-lead">
-    <p>カナダ現地サポート×日本国内サポートの<span class="hl">“<span class="en">W</span>体制”</span>だから安心！</p>
-    <p>イエローモバイルでは、カナダ現地の担当者と日本国内のサポート窓口が連携。渡航前の相談から、カナダ到着後のちょっとしたお困りごとまで、スピーディー＆柔軟に対応します。</p>
-  </div>
-
-  <hr class="ws-divider">
-
-  <!-- もっと安心 -->
-  <div class="ws-mote">
-    <div class="ws-mote-line">
-      <span class="ws-mote-badge">
-        <span class="mote-sub">もっと</span>
-        <span class="mote-main">安心</span>
-      </span>
-      <img class="ws-mote-logo" src="img/sec-top-c/logo-yellow-mobile.png" alt="イエローモバイル" width="190" height="25">
-      <span class="ws-mote-nara">なら</span>
-    </div>
-    <p class="ws-mote-sub">
-      <span class="lg">日本クオリティ</span>の<span class="lg">サポート</span>で、<br class="sp">海外でも<span class="hl lg">“日本の安心”</span>を
-    </p>
-  </div>
-
-  <!-- 特徴カード -->
-  <div class="ws-features">
-
-    <article class="ws-feature">
-      <header class="ws-feature-head">
-        <p>日本人スタッフによる迅速・丁寧な対応</p>
-      </header>
-      <div class="ws-feature-body">
-        <p>
-          <span class="strong">サポートはすべて“日本品質”</span>「返事が来ない」「英語対応が不安」といった<span class="strong underline">心配は不要</span>です!<br>
-          ご利用前の不安や渡航中のトラブルも、<span class="en">LINE</span>やお電話で気軽に相談できます。<span class="strong underline">“海外でも、日本と同じように安心して使える”</span>それが、イエローモバイルのこだわりです。
+      <div class="ws-title">
+        <img class="ws-title-img" src="img/sec-top-c/title-w-support.png" alt="Wサポート カナダ×日本" width="255" height="82">
+      </div>
+      <div class="ws-compare">
+        <div class="ws-compare-box ws-compare-phonebox">
+          <p class="cb-tag">カナダの通信会社</p>
+          <img class="cb-logo" src="img/sec-top-c/logo-phonebox.png" alt="PhoneBox" width="216" height="40">
+          <p class="cb-desc">現地店舗や電話、メール等によるサポート</p>
+        </div>
+        <div class="ws-compare-box ws-compare-ym">
+          <p class="cb-tag">正規代理店</p>
+          <img class="cb-logo" src="img/sec-top-c/logo-yellow-mobile.png" alt="イエローモバイル" width="220" height="30">
+          <p class="cb-desc">渡航前から到着後もマルっとサポート</p>
+        </div>
+        <img class="xross" src="img/sec-top-c/xross.png">
+      </div>
+      <div class="ws-lead">
+        <p>カナダ現地サポート×日本国内サポートの<span class="hl">“<span class="en">W</span>体制”</span>だから安心！</p>
+        <p>イエローモバイルでは、カナダ現地の担当者と日本国内のサポート窓口が連携。渡航前の相談から、カナダ到着後のちょっとしたお困りごとまで、スピーディー＆柔軟に対応します。</p>
+      </div>
+      <hr class="ws-divider">
+      <div class="ws-mote">
+        <div class="ws-mote-line">
+          <span class="ws-mote-badge">
+            <span class="mote-sub">もっと</span>
+            <span class="mote-main">安心</span>
+          </span>
+          <img class="ws-mote-logo" src="img/sec-top-c/logo-yellow-mobile.png" alt="イエローモバイル" width="190" height="25">
+          <span class="ws-mote-nara">なら</span>
+        </div>
+        <p class="ws-mote-sub">
+          <span class="lg">日本クオリティ</span>の<span class="lg">サポート</span>で、<br class="sp">海外でも<span class="hl lg">“日本の安心”</span>を
         </p>
       </div>
-    </article>
-
-    <article class="ws-feature">
-      <header class="ws-feature-head">
-        <p>開通希望日<span class="en">2</span>日前に電話番号・<span class="en">eSIM</span>を発行</p>
-      </header>
-      <div class="ws-feature-body">
-        <p>
-          <span class="en">PhoneBox</span>に直接申し込んだ場合、電話番号と<span class="en">eSIM</span>は開通希望日当日に発行されます。イエローモバイルなら、<span class="strong underline">開通希望日<span class="en">2</span>日前に発行</span>なので、<span class="strong underline">現地に着いた瞬間からすぐに通信が使えます！</span><br>
-          準備に追われる出発前でも、安心してご利用を始められます。
-        </p>
+      <div class="ws-features">
+        <article class="ws-feature">
+          <header class="ws-feature-head">
+            <p>日本人スタッフによる迅速・丁寧な対応</p>
+          </header>
+          <div class="ws-feature-body">
+            <p>
+              <span class="strong">サポートはすべて“日本品質”</span>「返事が来ない」「英語対応が不安」といった<span class="strong underline">心配は不要</span>です!<br>
+              ご利用前の不安や渡航中のトラブルも、<span class="en">LINE</span>やお電話で気軽に相談できます。<span class="strong underline">“海外でも、日本と同じように安心して使える”</span>それが、イエローモバイルのこだわりです。
+            </p>
+          </div>
+        </article>
+        <article class="ws-feature">
+          <header class="ws-feature-head">
+            <p>開通希望日<span class="en">2</span>日前に電話番号・<span class="en">eSIM</span>を発行</p>
+          </header>
+          <div class="ws-feature-body">
+            <p>
+              <span class="en">PhoneBox</span>に直接申し込んだ場合、電話番号と<span class="en">eSIM</span>は開通希望日当日に発行されます。イエローモバイルなら、<span class="strong underline">開通希望日<span class="en">2</span>日前に発行</span>なので、<span class="strong underline">現地に着いた瞬間からすぐに通信が使えます！</span><br>
+              準備に追われる出発前でも、安心してご利用を始められます。
+            </p>
+          </div>
+        </article>
       </div>
-    </article>
-
+    </div>
   </div>
-
-</div>
-  </div>
-  
   <div class="head-wrap c-head" id="plan">
     <div class="sec-head">
-    <img class="sec-ico cico" src="img/sec-top-c/hukidashi.png">
-    <h2 class="sec-en"><span class="line-l"></span>Recommended&nbsp;&nbsp;Plan<span class="line-r"></span></h2>
-    <p class="sec-jp">おすすめプラン</p>
+      <img class="sec-ico cico" src="img/sec-top-c/hukidashi.png">
+      <h2 class="sec-en"><span class="line-l"></span>Recommended&nbsp;&nbsp;Plan<span class="line-r"></span></h2>
+      <p class="sec-jp">おすすめプラン</p>
+    </div>
   </div>
-  </div>
-
   <div class="plan-cards">
-
-  <!-- ============================================ -->
-  <!-- 長期用（31日以上）プラン                     -->
-  <!-- ============================================ -->
-  <article class="plan-card plan-card-longterm">
-
-    <div class="plan-card-head">
-      <h3 class="plan-card-title">
-        <span class="ttl-jp">長期用</span>
-        <span class="ttl-days">(<span class="en">31</span>日以上)</span>
-        <span class="ttl-plan">プラン</span>
-      </h3>
-    </div>
-
-    <div class="plan-card-desc">
-      <p>解約するまで毎月継続利用できる月額制タイプ 。<br class="pc">プランのデータ容量を使い切った場合、<br class="pc"><span class="hl">1<span class="en">GB</span>ごとに<span class="en">$15＋Tax</span></span>が自動で追加請求されます。</p>
-    </div>
-
-    <div class="plan-card-price">
-
-      <div class="price-col sp">
-        <p class="price-label">データ容量</p>
-        <p class="price-value">
-          <span class="num">75</span><span class="unit">GB</span>
-        </p>
-        <p class="price-extra">
-          <span class="extra-tag">【データ超過】</span>
-          <span class="extra-amount"><span class="en">$15/1GB</span></span>
+    <!-- ============================================ -->
+    <!-- 長期用（31日以上）プラン                     -->
+    <!-- ============================================ -->
+    <article class="plan-card plan-card-longterm">
+      <div class="plan-card-head">
+        <h3 class="plan-card-title">
+          <span class="ttl-jp">長期用</span>
+          <span class="ttl-days">(<span class="en">31</span>日以上)</span>
+          <span class="ttl-plan">プラン</span>
+        </h3>
+      </div>
+      <div class="plan-card-desc">
+        <p>解約するまで毎月継続利用できる月額制タイプ 。<br class="pc">プランのデータ容量を使い切った場合、<br class="pc"><span class="hl">1<span class="en">GB</span>ごとに<span class="en">$15＋Tax</span></span>が自動で追加請求されます。</p>
+      </div>
+      <div class="plan-card-price">
+        <div class="price-col sp">
+          <p class="price-label">データ容量</p>
+          <p class="price-value">
+            <span class="num">75</span><span class="unit">GB</span>
+          </p>
+          <p class="price-extra">
+            <span class="extra-tag">【データ超過】</span>
+            <span class="extra-amount"><span class="en">$15/1GB</span></span>
+          </p>
+        </div>
+        <div class="price-col">
+          <p class="price-label">月額料金</p>
+          <p class="price-value">
+            <span class="currency">＄</span><span class="num">35</span>
+          </p>
+        </div>
+      </div>
+      <div class="plan-card-phone">
+        <p class="phone-lead">開通希望日の</p>
+        <p class="phone-body">
+          <img class="phone-cal" src="img/sec-top-c/icon-calendar-red.png" alt="" width="25" height="25">
+          <span class="phone-note">原則</span>
+          <span class="phone-num">2</span>
+          <span class="phone-suffix"><span class="lg">日前</span>に</span>
+          <span class="phone-tail">電話番号発行</span>
         </p>
       </div>
-
-      <div class="price-col">
-        <p class="price-label">月額料金</p>
-        <p class="price-value">
-          <span class="currency">＄</span><span class="num">35</span>
-        </p>
-      </div>
-
-    </div>
-
-    <div class="plan-card-phone">
-      <p class="phone-lead">開通希望日の</p>
-      <p class="phone-body">
-        <img class="phone-cal" src="img/sec-top-c/icon-calendar-red.png" alt="" width="25" height="25">
-        <span class="phone-note">原則</span>
-        <span class="phone-num">2</span>
-        <span class="phone-suffix"><span class="lg">日前</span>に</span>
-        <span class="phone-tail">電話番号発行</span>
+      <p class="plan-card-common"><span>-</span>全プラン共通<br class="sp">基本サービス<span>-</span></p>
+      <ul class="plan-services">
+        <li class="service">
+          <p class="service-name">国内<span class="en">SMS</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-sms-domestic.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service">
+          <p class="service-name">国内通話</p>
+          <img class="service-icon" src="img/sec-top-c/icon-phone-domestic.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service">
+          <p class="service-name">国際<span class="en">SMS</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-sms-intl.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service service-intl">
+          <p class="service-name">国際通話<span class="asterisk">*</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-phone-intl.png" alt="" width="30" height="30">
+          <p class="service-value">
+            <span class="target">日本宛</span>
+            <span class="free">無料</span>
+          </p>
+          <p class="service-sub">1,000分/月</p>
+        </li>
+      </ul>
+      <p class="plan-card-feat">
+        <span class="feat-mark left"></span>
+        <span class="feat-text">長期用<span class="en">SIM</span>の<span class="lg">特徴</span></span>
+        <span class="feat-mark right"></span>
       </p>
-    </div>
-
-    <p class="plan-card-common"><span>-</span>全プラン共通<br class="sp">基本サービス<span>-</span></p>
-
-    <ul class="plan-services">
-      <li class="service">
-        <p class="service-name">国内<span class="en">SMS</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-sms-domestic.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service">
-        <p class="service-name">国内通話</p>
-        <img class="service-icon" src="img/sec-top-c/icon-phone-domestic.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service">
-        <p class="service-name">国際<span class="en">SMS</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-sms-intl.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service service-intl">
-        <p class="service-name">国際通話<span class="asterisk">*</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-phone-intl.png" alt="" width="30" height="30">
-        <p class="service-value">
-          <span class="target">日本宛</span>
-          <span class="free">無料</span>
-        </p>
-        <p class="service-sub">1,000分/月</p>
-      </li>
-    </ul>
-
-    <p class="plan-card-feat">
-      <span class="feat-mark left"></span>
-      <span class="feat-text">長期用<span class="en">SIM</span>の<span class="lg">特徴</span></span>
-      <span class="feat-mark right"></span>
-    </p>
-
-    <ul class="plan-card-checks">
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
-        <span class="check-text">帰国日が未定<span class="en">or</span>延長の可能性がある</span>
-      </li>
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
-        <span class="check-text">ご利用期間の制限なし(解約必要)</span>
-      </li>
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
-        <span class="check-text">通信制限なしで快適に利用したい<br>(データ超過時は追加請求)</span>
-      </li>
-    </ul>
-
-  </article>
-
-  <!-- ============================================ -->
-  <!-- トラベル用（30日）プラン                     -->
-  <!-- ============================================ -->
-  <article class="plan-card plan-card-travel">
-
-    <div class="plan-card-head">
-      <h3 class="plan-card-title">
-        <span class="ttl-jp">トラベル用</span>
-        <span class="ttl-days">(<span class="en">30</span>日)</span>
-        <span class="ttl-plan">プラン</span>
-      </h3>
-    </div>
-
-    <div class="plan-card-desc">
-      <p>プランのデータ容量を使い切った時点<span class="en">or</span>30日経過時点で、<br class="pc">データ通信は自動的に停止するプリペイドタイプ。</p>
-    </div>
-
-    <div class="plan-card-price">
-
-      <div class="price-col">
-        <p class="price-label">データ容量</p>
-        <p class="price-value">
-          <span class="num">75</span><span class="unit">GB</span>
+      <ul class="plan-card-checks">
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
+          <span class="check-text">帰国日が未定<span class="en">or</span>延長の可能性がある</span>
+        </li>
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
+          <span class="check-text">ご利用期間の制限なし(解約必要)</span>
+        </li>
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square.png" alt="" width="15" height="15">
+          <span class="check-text">通信制限なしで快適に利用したい<br>(データ超過時は追加請求)</span>
+        </li>
+      </ul>
+    </article>
+    <!-- ============================================ -->
+    <!-- トラベル用（30日）プラン                     -->
+    <!-- ============================================ -->
+    <article class="plan-card plan-card-travel">
+      <div class="plan-card-head">
+        <h3 class="plan-card-title">
+          <span class="ttl-jp">トラベル用</span>
+          <span class="ttl-days">(<span class="en">30</span>日)</span>
+          <span class="ttl-plan">プラン</span>
+        </h3>
+      </div>
+      <div class="plan-card-desc">
+        <p>プランのデータ容量を使い切った時点<span class="en">or</span>30日経過時点で、<br class="pc">データ通信は自動的に停止するプリペイドタイプ。</p>
+      </div>
+      <div class="plan-card-price">
+        <div class="price-col">
+          <p class="price-label">データ容量</p>
+          <p class="price-value">
+            <span class="num">75</span><span class="unit">GB</span>
+          </p>
+        </div>
+        <div class="price-col">
+          <p class="price-label">プラン料金</p>
+          <p class="price-value">
+            <span class="currency">＄</span><span class="num">35</span>
+          </p>
+        </div>
+      </div>
+      <div class="plan-card-phone">
+        <p class="phone-lead">開通希望日の</p>
+        <p class="phone-body">
+          <img class="phone-cal" src="img/sec-top-c/icon-calendar-blue.png" alt="" width="25" height="25">
+          <span class="phone-note">原則</span>
+          <span class="phone-num">2</span>
+          <span class="phone-suffix"><span class="lg">日前</span>に</span>
+          <span class="phone-tail">電話番号発行</span>
         </p>
       </div>
-
-      <div class="price-col">
-        <p class="price-label">プラン料金</p>
-        <p class="price-value">
-          <span class="currency">＄</span><span class="num">35</span>
-        </p>
-      </div>
-
-    </div>
-
-    <div class="plan-card-phone">
-      <p class="phone-lead">開通希望日の</p>
-      <p class="phone-body">
-        <img class="phone-cal" src="img/sec-top-c/icon-calendar-blue.png" alt="" width="25" height="25">
-        <span class="phone-note">原則</span>
-        <span class="phone-num">2</span>
-        <span class="phone-suffix"><span class="lg">日前</span>に</span>
-        <span class="phone-tail">電話番号発行</span>
+      <p class="plan-card-common"><span>-</span>全プラン共通<br class="sp">基本サービス<span>-</span></p>
+      <ul class="plan-services">
+        <li class="service">
+          <p class="service-name">国内<span class="en">SMS</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-sms-domestic.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service">
+          <p class="service-name">国内通話</p>
+          <img class="service-icon" src="img/sec-top-c/icon-phone-domestic.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service">
+          <p class="service-name">国際<span class="en">SMS</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-sms-intl.png" alt="" width="30" height="30">
+          <p class="service-value">無制限</p>
+        </li>
+        <li class="service service-intl">
+          <p class="service-name">国際通話<span class="asterisk">*</span></p>
+          <img class="service-icon" src="img/sec-top-c/icon-phone-intl.png" alt="" width="30" height="30">
+          <p class="service-value">
+            <span class="target">日本宛</span>
+            <span class="free">無料</span>
+          </p>
+          <p class="service-sub">1,000分</p>
+        </li>
+      </ul>
+      <p class="plan-card-feat">
+        <span class="feat-mark left"></span>
+        <span class="feat-text">トラベル用<span class="en">SIM</span>の<span class="lg">特徴</span></span>
+        <span class="feat-mark right"></span>
       </p>
-    </div>
-
-    <p class="plan-card-common"><span>-</span>全プラン共通<br class="sp">基本サービス<span>-</span></p>
-
-    <ul class="plan-services">
-      <li class="service">
-        <p class="service-name">国内<span class="en">SMS</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-sms-domestic.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service">
-        <p class="service-name">国内通話</p>
-        <img class="service-icon" src="img/sec-top-c/icon-phone-domestic.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service">
-        <p class="service-name">国際<span class="en">SMS</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-sms-intl.png" alt="" width="30" height="30">
-        <p class="service-value">無制限</p>
-      </li>
-      <li class="service service-intl">
-        <p class="service-name">国際通話<span class="asterisk">*</span></p>
-        <img class="service-icon" src="img/sec-top-c/icon-phone-intl.png" alt="" width="30" height="30">
-        <p class="service-value">
-          <span class="target">日本宛</span>
-          <span class="free">無料</span>
-        </p>
-        <p class="service-sub">1,000分</p>
-      </li>
-    </ul>
-
-    <p class="plan-card-feat">
-      <span class="feat-mark left"></span>
-      <span class="feat-text">トラベル用<span class="en">SIM</span>の<span class="lg">特徴</span></span>
-      <span class="feat-mark right"></span>
-    </p>
-
-    <ul class="plan-card-checks">
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
-        <span class="check-text">観光や短期出張など30日以内の滞在</span>
-      </li>
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
-        <span class="check-text">30日経過で回線自動停止(解約不要)</span>
-      </li>
-      <li class="check">
-        <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
-        <span class="check-text">データ超過時は回線自動停止で<br>追加請求の心配なし</span>
-      </li>
-    </ul>
-
-  </article>
-
-</div>
-
+      <ul class="plan-card-checks">
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
+          <span class="check-text">観光や短期出張など30日以内の滞在</span>
+        </li>
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
+          <span class="check-text">30日経過で回線自動停止(解約不要)</span>
+        </li>
+        <li class="check">
+          <img class="check-icon" src="img/sec-top-c/check-square-alt.png" alt="" width="15" height="15">
+          <span class="check-text">データ超過時は回線自動停止で<br>追加請求の心配なし</span>
+        </li>
+      </ul>
+    </article>
+  </div>
   <p class="plan-note">
     *国際通話の対象国は<a href="delivery.html#delivery" class="note-link">こちら</a><img src="img/sec-top-c/linkicon.png" class="inline-icon"><br>
     対象国以外への通話は有料になります。通話料に関しては、PhoneBoxへご確認ください。
   </p>
-
   <div class="plan-actions">
     <a class="common_btn is-whitepink" href="plan.html#plans">
         <span class="text">すべてのプランを見る</span>
         <span class="arrow"></span>
     </a>
-    <a class="common_btn is-pinkwhite" href="application.html#application">
+    <label class="common_btn is-pinkwhite is-pulldown">
         <span class="icon-circle">
           <img src="img/sec-top-a/buttonicon.png">
         </span>
         <span class="text">お申し込みはこちら</span>
         <span class="arrow"></span>
-    </a>
-  </div>
+        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
+          <option value="" selected disabled hidden>選択してください</option>
+          <option value="application-l.html#application">長期用SIM</option>
+          <option value="application-s.html#application">短期用SIM</option>
+        </select>
+    </label>
   </div>
 </section>
 <section class="sec-top-d">
   <div class="head-wrap">
-  <div class="sec-head" id="select">
-    <img class="sec-ico dico" src="img/sec-top-d/choice.png">
-    <h2 class="sec-en"><span class="line-l"></span>Select<span class="line-r"></span></h2>
-    <p class="sec-jp">カナダ<span class="en">SIM</span>の選び方</p>
-  </div>
+    <div class="sec-head" id="select">
+      <img class="sec-ico dico" src="img/sec-top-d/choice.png">
+      <h2 class="sec-en"><span class="line-l"></span>Select<span class="line-r"></span></h2>
+      <p class="sec-jp">カナダ<span class="en">SIM</span>の選び方</p>
+    </div>
   </div>
   <div class="buildingsimg"></div>
   <div class="select-visual">
     <img class="simkichiwalk" src="img/sec-top-d/SIMkichi.png">
-      <div class="d-content-wrap">
+    <div class="d-content-wrap">
       <ul class="feature-cards-d">
         <li class="feature-card-d">
           <span class="card-top"><span class="en">SMS</span>認証が届くので</span>
@@ -784,20 +732,18 @@
         </li>
       </ul>
     </div>
-      <p class="visual-msg">
-        海外で安心してスマホを使いたい!<br>
-        そのために…
-      </p>
-      </div>
+    <p class="visual-msg">
+      海外で安心してスマホを使いたい!<br>
+      そのために…
+    </p>
+  </div>
 </section>
 <section class="sec-top-e">
   <div class="wrap-wide">
-
     <h2 class="sec-top-e-title">
       <span class="title-sm"><span class="en">SIM</span>選びで大切な</span>
       <span class="title-lg"><span class="num">3</span>つのポイントをチェック！</span>
     </h2>
-
     <!-- ========================================== -->
     <!-- 01 通信キャリアで選ぶ                       -->
     <!-- ========================================== -->
@@ -806,15 +752,13 @@
         <img class="point-num" src="img/sec-top-e/01.png" alt="01" width="60" height="40">
         <h3 class="point-title">通信キャリアで選ぶ</h3>
       </div>
-
       <p class="point-desc desc1">
         カナダの生活では、回線の繋がりやすさはもちろん、<br class="sp">
         サポート体制や初期費用も重要です。<br>
         <span class="hl-yellow">学校や郊外でも使いやすい回線は、渡航後の安心</span>につながります。
       </p>
-
       <div class="carrier-grid">
-   <div class="carrier-item carrier-item-active">
+        <div class="carrier-item carrier-item-active">
           <div class="carrier-name">Telstra</div>
           <p class="carrier-tag">サクっと<span class="en">SIM AUS</span>の使用回線</p>
           <p class="carrier-feature">国内大手キャリア</p>
@@ -841,12 +785,9 @@
             <span>・初期費用$80</span>
           </p>
         </div>
-
       </div>
-
       <img class="point-mascot mascot-01" src="img/sec-top-e/simkichi01.png">
     </article>
-
     <!-- ========================================== -->
     <!-- 02 電話番号付きで選ぶ                       -->
     <!-- ========================================== -->
@@ -855,7 +796,6 @@
         <img class="point-num" src="img/sec-top-e/02.png" alt="02" width="60" height="40">
         <h3 class="point-title">電話番号付きで選ぶ</h3>
       </div>
-
       <p class="point-desc desc2">
         留学・ワーホリなど現地生活では、<span class="hl-yellow">現地の人との連絡や本人確認のため、電話番号付き<span class="en">SIM</span>が必須です。</span>
       </p>
@@ -904,25 +844,24 @@
         <p>eSIMもSIMカードも電話番号付き</p>
       </div>
       <div class="phone-unlimited">
-          <div class="boxs">
-            <div class="box">
-              <img src="img/sec-top-e/phone.png">
-              <p>国内通話</p>
-            </div>
-            <div class="box">
-              <img src="img/sec-top-e/sms.png">
-              <p>国内SMS</p>
-            </div>
+        <div class="boxs">
+          <div class="box">
+            <img src="img/sec-top-e/phone.png">
+            <p>国内通話</p>
           </div>
-          <div class="text">
-            <p class="phone-unlimited-tag">サクっとSIMなら</p>
-            <p class="phone-unlimited-text">無制限</p>
+          <div class="box">
+            <img src="img/sec-top-e/sms.png">
+            <p>国内SMS</p>
           </div>
-          <img class="phone-infinity" src="img/sec-top-e/infinity.png" alt="∞" width="80" height="40">
+        </div>
+        <div class="text">
+          <p class="phone-unlimited-tag">サクっとSIMなら</p>
+          <p class="phone-unlimited-text">無制限</p>
+        </div>
+        <img class="phone-infinity" src="img/sec-top-e/infinity.png" alt="∞" width="80" height="40">
       </div>
       <img class="point-mascot mascot-02" src="img/sec-top-e/simkichi02.png" alt="" width="120" height="140">
     </article>
-
     <!-- ========================================== -->
     <!-- 03 サービスで選ぶ                           -->
     <!-- ========================================== -->
@@ -931,23 +870,22 @@
         <img class="point-num" src="img/sec-top-e/03.png" alt="03" width="60" height="40">
         <h3 class="point-title">サービスで選ぶ</h3>
       </div>
-
       <p class="service-tagline">
         カナダ大手回線 <span class="cross">×</span> 日本語サポート
       </p>
-
       <p class="point-desc desc3">
         イエローモバイルのカナダ<span class="en">SIM</span>は、<span class="en">TELUS</span>正規回線を利用した電話番号付き<span class="en">SIM</span>です。<br class="sp">通話・<span class="en">SMS</span>対応はもちろん、万全な日本語サポートが付いているため、カナダへの留学やワーホリ<br class="sp">などの長期滞在でも、渡航前から安心して準備・ご利用いただけます。
       </p>
       <div class="service-table-wrapper">
-      <div class="scroll-hint-overlay">
-      <img src="img/sec-top-c/scroll.png" alt="横スクロールできます">
+        <div class="scroll-hint-overlay">
+          <img src="img/sec-top-c/scroll.png" alt="横スクロールできます">
+        </div>
+        <div class="service-table-scroll">
+          <img class="table_pc" src="img/sec-top-e/table.png" alt="サクっとSIM AUSの競合比較表。Telstra正規回線・eSIM最短24時間発行・日本人スタッフによる日本語サポートで、一般的な海外SIMサービスとは一線を画す安心・快適なオーストラリアSIMです。">
+          <img class="table_sp" src="img/sec-top-e/table_sp.png" alt="サクっとSIM AUSの競合比較表。Telstra正規回線・eSIM最短24時間発行・日本人スタッフによる日本語サポートで、一般的な海外SIMサービスとは一線を画す安心・快適なオーストラリアSIMです。">
+        </div>
       </div>
-      <div class="service-table-scroll">
-        <img class="table_pc" src="img/sec-top-e/table.png" alt="サクっとSIM AUSの競合比較表。Telstra正規回線・eSIM最短24時間発行・日本人スタッフによる日本語サポートで、一般的な海外SIMサービスとは一線を画す安心・快適なオーストラリアSIMです。">
-        <img class="table_sp" src="img/sec-top-e/table_sp.png" alt="サクっとSIM AUSの競合比較表。Telstra正規回線・eSIM最短24時間発行・日本人スタッフによる日本語サポートで、一般的な海外SIMサービスとは一線を画す安心・快適なオーストラリアSIMです。">
-      </div>
-      </div>
+    </article>
   </div>
 </section>
 <section class="sec-top-f">
@@ -1057,15 +995,12 @@
 <section class="sec-top-g">
   <div class="head-wrap c-head" id="howtouse">
     <div class="sec-head">
-    <img class="sec-ico gico" src="img/sec-top-g/top_ico_g.png">
-    <h2 class="sec-en"><span class="line-l"></span>How&nbsp;to&nbsp;use<span class="line-r"></span></h2>
-    <p class="sec-jp">ご利用の流れ</p>
+      <img class="sec-ico gico" src="img/sec-top-g/top_ico_g.png">
+      <h2 class="sec-en"><span class="line-l"></span>How&nbsp;to&nbsp;use<span class="line-r"></span></h2>
+      <p class="sec-jp">ご利用の流れ</p>
+    </div>
   </div>
-  </div>
-
   <div class="wrap-wide wrap-g">
-
-    <!-- タブ -->
     <div class="g-tabs" role="tablist">
       <button class="g-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="g-panel-esim" data-target="g-panel-esim">
         <span class="en">eSIM</span>
@@ -1074,14 +1009,10 @@
         <span class="en">SIM</span><span class="jp">カード</span>
       </button>
     </div>
-
-    <!-- 黄色パネル -->
     <div class="g-panel-wrap">
-
       <!-- ▼ eSIM ▼ -->
       <div class="g-panel is-active" id="g-panel-esim" role="tabpanel" aria-labelledby="tab-esim">
         <ul class="g-steps tab-esim">
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1096,7 +1027,6 @@
               ご購入後30分以内にお申込みのご案内メールが届きます。
             </p>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1110,7 +1040,6 @@
               メールを受信しましたらご利用ガイドの手順に沿ってマイアカウントの作成と開通申込みを行なってください。
             </p>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1134,7 +1063,6 @@
               </div>
             </div>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1149,7 +1077,6 @@
               ※スマートフォンに日本のeSIM/SIMカードが入っている場合は、設定から回線の変更が必要になります。
             </p>
           </li>
-
           <li class="g-step">
             <div class="g-step-head">
               <img src="img/sec-top-g/step5.png">
@@ -1164,15 +1091,11 @@
               トラベル用SIMをご利用のお客様は、30日後に回線が自動停止するため、解約は不要です。
             </p>
           </li>
-
         </ul>
       </div>
-      <!-- ▲ eSIM ▲ -->
-
       <!-- ▼ SIMカード ▼ -->
       <div class="g-panel" id="g-panel-sim" role="tabpanel" aria-labelledby="tab-sim" hidden>
         <ul class="g-steps tab-sim">
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1187,7 +1110,6 @@
               定休日を除く14時までのお申込みで、当日発送いたします。
             </p>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1201,7 +1123,6 @@
               商品が到着しましたら、同封されているご利用ガイドに沿って、SIMカード装着テストを行なってください。問題なければ、マイアカウントの作成と開通申込みを行なってください。
             </p>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1215,7 +1136,6 @@
               開通希望日の原則2日前に、メールにて電話番号が届きます。日本の回線を利用しなくなるタイミングでSIMカードを差し替えてください。
             </p>
           </li>
-
           <li class="g-step">
             <div class="window-shape"></div>
             <div class="g-step-head">
@@ -1230,7 +1150,6 @@
               ※日本の回線をeSIMにてご利用のお客様は、設定から回線の変更が必要になります。
             </p>
           </li>
-
           <li class="g-step">
             <div class="g-step-head">
               <img class="g-step-ico" src="img/sec-top-g/step5.png" alt="" width="36" height="54">
@@ -1245,13 +1164,9 @@
               トラベル用SIMをご利用のお客様は、30日後に回線が自動停止するため、解約は不要です。
             </p>
           </li>
-
         </ul>
       </div>
-      <!-- ▲ SIMカード ▲ -->
-
     </div>
-
     <div class="g-actions">
       <a class="common_btn is-pinkwhite" href="application.html#application">
         <span class="icon-circle">
@@ -1259,573 +1174,558 @@
         </span>
         <span class="text">お申し込みはこちら</span>
         <span class="arrow"></span>
-    </a>
+      </a>
     </div>
-
   </div>
 </section>
 <section class="sec-top-h">
   <div class="sec-top-h-wave-top" aria-hidden="true"></div>
   <div class="wrap-wide">
-  <!-- ===================== Study & Work Guide ===================== -->
-  <div class="h-block-guide">
-
-    <div class="head-wrap h-head" id="book">
-    <div class="sec-head">
-    <img class="sec-ico h1ico" src="img/sec-top-h/top_ico_h.png">
-    <h2 class="sec-en"><span class="line-l"></span>Study&nbsp;&&nbsp;Work&nbsp;Guide<span class="line-r"></span></h2>
-    <p class="sec-jp">留学・ワーホリのためのSIM選び</p>
-  </div>
-  </div>
-    <div class="h-handbook">
-
-      <!-- 左：目次 -->
-      <ul class="h-toc">
-        <li class="h-toc-item is-active" data-target="h-page-00">
-          <span class="h-toc-num">00</span>
-          <span class="h-toc-text">トップページ</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-01">
-          <span class="h-toc-num">01</span>
-          <span class="h-toc-text">生活の多くの場面で<br>電話番号が必須</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-02">
-          <span class="h-toc-num">02</span>
-          <span class="h-toc-text"><span class="en">Telstra</span>正規回線は<br>郊外でもつながりやすい</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-03">
-          <span class="h-toc-num">03</span>
-          <span class="h-toc-text">現地トラブルの多くは<br><span class="en">SIM</span>選びで防げる!</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-04">
-          <span class="h-toc-num">04</span>
-          <span class="h-toc-text">サクっと<span class="en">SIM AUS</span>が<br>選ばれる安心ポイント</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-05">
-          <span class="h-toc-num">05</span>
-          <span class="h-toc-text">データ容量別<br>使用アプリの目安</span>
-        </li>
-        <li class="h-toc-item" data-target="h-page-06">
-          <span class="h-toc-num">06</span>
-          <span class="h-toc-text">留学やワーホリに<br>おすすめのプラン</span>
-        </li>
-      </ul>
-
-      <!-- 中央：ページビューワー -->
-      <div class="h-pages">
-
-        <!-- === 00 表紙 === -->
-        <article class="h-page h-page-cover is-active" id="h-page-00" data-index="0">
-          <a class="h-cover-cta" href="#h-page-01" data-target="h-page-01">
-            <span>ガイドを読む</span>
-            <img class="cta-arrow" src="img/sec-top-h/arow.png" alt="サクっとSIM AUSのWeb限定コンテンツ『はじめてのワーホリ・留学向け。オーストラリアSIM完全攻略ガイド』の表紙。現地生活のイメージや、アプリ別データ使用量など必須ノウハウを凝縮。" width="16" height="16">
-          </a>
-        </article>
-
-        <!-- === 01 === -->
-        <article class="h-page" id="h-page-01" data-index="1" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">01</div>
-                <div class="title">渡航の2日前に現地の<br>電話番号がわかる</div>
-              </div>
-              <img class="page3-img" src="img/sec-top-h/page1-img.png">
-              <div class="big-read">
-                <p>イエローモバイルだけ<br>渡航前に現地の電話番号を取得!</p>
-              </div>
-              <div class="read">
-                <p>バイト応募・学校連絡・各種サービス登録をご渡航の2日前に進めることができます。</p>
-              </div>
-              <div class="inforead">
-                <p>※電話番号を使った通話・SMSは、カナダ国内でのみご利用いただけます。</p>
-              </div>
-              <div class="checkpoint">
-                <div class="title">CHECK POINT</div>
-                <div class="read">到着前に電話番号があると現地の生活準備がスムーズです。</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
-          </div>
-        </article>
-
-        <!-- === 02 === -->
-        <article class="h-page" id="h-page-02" data-index="2" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">02</div>
-                <div class="title">生活の多くの場面で<br>電話番号が必須</div>
-              </div>
-              <img class="page1-img" src="img/sec-top-h/page2-img.png">
-              <div class="big-read">
-                <p>現地の生活では<br>電話番号・SMS認証が必須!</p>
-              </div>
-              <div class="read">
-                <ul class="check-list">
-                  <li><p>国内通話/SMS無制限</p></li>
-                  <li><p>各種サービス登録</p></li>
-                  <li><p>シェアハウス連絡</p></li>
-                  <li><p>銀行口座開設</p></li>
-                  <li><p>銀行の送金サービス</p></li>
-                </ul>
-              </div>
-              <div class="checkpoint">
-                <div class="title">CHECK POINT</div>
-                <div class="read">データ専用SIMではライフラインの確保が難しい。</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
-          </div>
-        </article>
-
-        <!-- === 03 === -->
-        <article class="h-page" id="h-page-03" data-index="3" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">03</div>
-                <div class="title">TELUS回線は<br>郊外でも繋がりやすい</div>
-              </div>
-              <img class="page1-img" src="img/sec-top-h/page3-img.png">
-              <div class="big-read">
-                <p>留学生・ワーホリは住む場所や<br>働く場所が 郊外になりがち!</p>
-              </div>
-              <div class="read">
-                <p>〜 TELUS回線の特長 〜</p>
-                <ul class="lists">
-                  <li>・都市部から地方まで、カナダ全土を<br>&nbsp;&nbsp;&nbsp;&nbsp;網羅</li>
-                  <li>・高速5G・4G/LTE通信</li>
-                  <li>・国内トップクラスの通信速度と安定<br>&nbsp;&nbsp;&nbsp;&nbsp;性</li>
-                </ul>
-              </div>
-              <div class="checkpoint">
-                <div class="title">CHECK POINT</div>
-                <div class="read">カナダ全土で安定した通信が利用できます。</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
-          </div>
-        </article>
-
-        <!-- === 04 === -->
-        <article class="h-page" id="h-page-04" data-index="4" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">04</div>
-                <div class="title">イエローモバイルが<br>選ばれる安心ポイント</div>
-              </div>
-              <img class="page1-img page4-img" src="img/sec-top-h/page4-img.png">
-              <div class="read">
-                <ul class="check-list">
-                  <li><p>国内通話/SMS無制限</p></li>
-                  <li><p>国際SMS 無制限</p></li>
-                  <li><p>1,000分/月 日本への通話が無料</p></li>
-                  <li><p>TELUS高速通信</p></li>
-                  <li><p>渡航後も日本語サポート</p></li>
-                </ul>
-              </div>
-              <div class="checkpoint">
-                <div class="title">CHECK POINT</div>
-                <div class="read">現地の生活に必要な通信機能がすべてプランに含まれています。</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
-          </div>
-        </article>
-
-        <!-- === 05 === -->
-        <article class="h-page" id="h-page-05" data-index="5" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">05</div>
-                <div class="title">データ容量別<br>使用アプリの目安</div>
-              </div>
-              <img class="page1-img page5-img" src="img/sec-top-h/page5-img.png">
-              <div class="bubble">
-                <img src="img/sec-top-h/29gb.png">
-                <img src="img/sec-top-h/100gb.png">
-              </div>
-              <div class="graph-wrap firstgraph">
-                <img class="media1" src="img/sec-top-h/media1.png">
-                <div class="graph">
-                  <div>約<span class="num">75</span>時間</div>
-                  <div>約<span class="num">120</span>時間</div>
-                </div>
-                <div class="bottom-attention">高画質(720p)</div>
-              </div>
-              <div class="graph-wrap">
-                <img class="media2" src="img/sec-top-h/media2.png">
-                <div class="graph">
-                  <div>約<span class="num">75~100</span>時間</div>
-                  <div>約<span class="num">120~160</span>時間</div>
-                </div>
-                <div class="bottom-attention">リール/動画閲覧</div>
-              </div>
-              <div class="graph-wrap">
-                <img class="media3" src="img/sec-top-h/media3.png">
-                <div class="top-attention">音声通話</div>
-                <div class="graph">
-                  <div>約<span class="num">3750</span>時間以上</div>
-                  <div>約<span class="num">6000</span>時間以上</div>
-                </div>
-                <div class="top-attention top-ate2">ビデオ通話</div>
-                <div class="graph">
-                  <div>約<span class="num">500</span>時間以上</div>
-                  <div>約<span class="num">800</span>時間以上</div>
-                </div>
-              </div>
-              <div class="graph-wrap">
-                <img class="media4" src="img/sec-top-h/media4.png">
-                <div class="top-attention">周辺検索</div>
-                <div class="graph">
-                  <div class="ja">実質無制限*</div>
-                  <div class="ja">実質無制限*</div>
-                </div>
-                <div class="top-attention top-ate2">ナビ使用</div>
-                <div class="graph">
-                  <div class="ja">実質無制限*</div>
-                  <div class="ja">実質無制限*</div>
-                </div>
-                <div class="bottom-attention">*24時間1ヵ月起動したままでも使いきれない</div>
-              </div>
-              <div class="graph-wrap">
-                <img class="media5" src="img/sec-top-h/media5.png">
-                <div class="graph">
-                  <div>約<span class="num">75</span>時間</div>
-                  <div>約<span class="num">120</span>時間</div>
-                </div>
-                <div class="bottom-attention">標準画質</div>
-              </div>
-              <div class="graph-wrap">
-                <img class="media1" src="img/sec-top-h/media6.png">
-                <div class="graph">
-                  <div>約<span class="num">500</span>時間</div>
-                  <div>約<span class="num">800</span>時間</div>
-                </div>
-                <div class="bottom-attention">標準音質</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
-          </div>
-        </article>
-        <!-- === 06 === -->
-        <article class="h-page" id="h-page-06" data-index="6" hidden>
-          <div class="h-page-imgwrap">
-            <div class="scroll-hint-overlay">
-              <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
-              <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
-            </div>
-            <div class="content-wrap">
-              <div class="head">
-                <div class="num">06</div>
-                <div class="title">留学やワーホリ向け<br>おすすめのプラン</div>
-              </div>
-              <img class="page1-img" src="img/sec-top-h/page6-img.png">
-              <div class="boxs">
-                <div class="box">
-                  <p>バランス派タイプ</p>
-                  <p>SNS・地図・動画など<br>日常利用に十分なデータ容量</p>
-                  <p>＄<span class="num">35</span>プラン<span class="num">75</span>GB</p>
-                </div>
-                <div class="box">
-                  <p>アクティブタイプ</利用p>
-                  <p>動画視聴やテザリングなど<br>データをたくさん使う人におすすめ</p>
-                  <p>＄<span class="num">50</span>プラン<span class="num">120</span>GB</p>
-                </div>
-              </div>
-              <div class="checkpoint">
-                <div class="title">CHECK POINT</div>
-                <div class="read">渡航直後は通信環境が分からないため、データ超過を防ぐためにも余裕のあるプランがおすすめです。現地でデータ使用量を確認後、最適なプランへ変更しましょう。</div>
-              </div>
-            </div>
-          </div>
-          <div class="h-page-nav">
-            <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
-            <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
-            <button class="h-nav-no" type="button">次へ&nbsp;»</button>
-          </div>
-        </article>
-
+    <!-- ===================== Study & Work Guide ===================== -->
+    <div class="h-block-guide">
+      <div class="head-wrap h-head" id="book">
+        <div class="sec-head">
+          <img class="sec-ico h1ico" src="img/sec-top-h/top_ico_h.png">
+          <h2 class="sec-en"><span class="line-l"></span>Study&nbsp;&&nbsp;Work&nbsp;Guide<span class="line-r"></span></h2>
+          <p class="sec-jp">留学・ワーホリのためのSIM選び</p>
+        </div>
       </div>
-
-      <!-- 右：SIM AUS ロゴ -->
-      <div class="h-handbook-logo">
-        <img src="img/sec-top-h/SIM_AUS.png" alt="サクっとSIM AUS for iPhone">
+      <div class="h-handbook">
+        <!-- 左：目次 -->
+        <ul class="h-toc">
+          <li class="h-toc-item is-active" data-target="h-page-00">
+            <span class="h-toc-num">00</span>
+            <span class="h-toc-text">トップページ</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-01">
+            <span class="h-toc-num">01</span>
+            <span class="h-toc-text">生活の多くの場面で<br>電話番号が必須</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-02">
+            <span class="h-toc-num">02</span>
+            <span class="h-toc-text"><span class="en">Telstra</span>正規回線は<br>郊外でもつながりやすい</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-03">
+            <span class="h-toc-num">03</span>
+            <span class="h-toc-text">現地トラブルの多くは<br><span class="en">SIM</span>選びで防げる!</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-04">
+            <span class="h-toc-num">04</span>
+            <span class="h-toc-text">サクっと<span class="en">SIM AUS</span>が<br>選ばれる安心ポイント</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-05">
+            <span class="h-toc-num">05</span>
+            <span class="h-toc-text">データ容量別<br>使用アプリの目安</span>
+          </li>
+          <li class="h-toc-item" data-target="h-page-06">
+            <span class="h-toc-num">06</span>
+            <span class="h-toc-text">留学やワーホリに<br>おすすめのプラン</span>
+          </li>
+        </ul>
+        <!-- 中央：ページビューワー -->
+        <div class="h-pages">
+          <!-- === 00 表紙 === -->
+          <article class="h-page h-page-cover is-active" id="h-page-00" data-index="0">
+            <a class="h-cover-cta" href="#h-page-01" data-target="h-page-01">
+              <span>ガイドを読む</span>
+              <img class="cta-arrow" src="img/sec-top-h/arow.png" alt="サクっとSIM AUSのWeb限定コンテンツ『はじめてのワーホリ・留学向け。オーストラリアSIM完全攻略ガイド』の表紙。現地生活のイメージや、アプリ別データ使用量など必須ノウハウを凝縮。" width="16" height="16">
+            </a>
+          </article>
+          <!-- === 01 === -->
+          <article class="h-page" id="h-page-01" data-index="1" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">01</div>
+                  <div class="title">渡航の2日前に現地の<br>電話番号がわかる</div>
+                </div>
+                <img class="page3-img" src="img/sec-top-h/page1-img.png">
+                <div class="big-read">
+                  <p>イエローモバイルだけ<br>渡航前に現地の電話番号を取得!</p>
+                </div>
+                <div class="read">
+                  <p>バイト応募・学校連絡・各種サービス登録をご渡航の2日前に進めることができます。</p>
+                </div>
+                <div class="inforead">
+                  <p>※電話番号を使った通話・SMSは、カナダ国内でのみご利用いただけます。</p>
+                </div>
+                <div class="checkpoint">
+                  <div class="title">CHECK POINT</div>
+                  <div class="read">到着前に電話番号があると現地の生活準備がスムーズです。</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+            </div>
+          </article>
+          <!-- === 02 === -->
+          <article class="h-page" id="h-page-02" data-index="2" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">02</div>
+                  <div class="title">生活の多くの場面で<br>電話番号が必須</div>
+                </div>
+                <img class="page1-img" src="img/sec-top-h/page2-img.png">
+                <div class="big-read">
+                  <p>現地の生活では<br>電話番号・SMS認証が必須!</p>
+                </div>
+                <div class="read">
+                  <ul class="check-list">
+                    <li><p>国内通話/SMS無制限</p></li>
+                    <li><p>各種サービス登録</p></li>
+                    <li><p>シェアハウス連絡</p></li>
+                    <li><p>銀行口座開設</p></li>
+                    <li><p>銀行の送金サービス</p></li>
+                  </ul>
+                </div>
+                <div class="checkpoint">
+                  <div class="title">CHECK POINT</div>
+                  <div class="read">データ専用SIMではライフラインの確保が難しい。</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+            </div>
+          </article>
+          <!-- === 03 === -->
+          <article class="h-page" id="h-page-03" data-index="3" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">03</div>
+                  <div class="title">TELUS回線は<br>郊外でも繋がりやすい</div>
+                </div>
+                <img class="page1-img" src="img/sec-top-h/page3-img.png">
+                <div class="big-read">
+                  <p>留学生・ワーホリは住む場所や<br>働く場所が 郊外になりがち!</p>
+                </div>
+                <div class="read">
+                  <p>〜 TELUS回線の特長 〜</p>
+                  <ul class="lists">
+                    <li>・都市部から地方まで、カナダ全土を<br>&nbsp;&nbsp;&nbsp;&nbsp;網羅</li>
+                    <li>・高速5G・4G/LTE通信</li>
+                    <li>・国内トップクラスの通信速度と安定<br>&nbsp;&nbsp;&nbsp;&nbsp;性</li>
+                  </ul>
+                </div>
+                <div class="checkpoint">
+                  <div class="title">CHECK POINT</div>
+                  <div class="read">カナダ全土で安定した通信が利用できます。</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+            </div>
+          </article>
+          <!-- === 04 === -->
+          <article class="h-page" id="h-page-04" data-index="4" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">04</div>
+                  <div class="title">イエローモバイルが<br>選ばれる安心ポイント</div>
+                </div>
+                <img class="page1-img page4-img" src="img/sec-top-h/page4-img.png">
+                <div class="read">
+                  <ul class="check-list">
+                    <li><p>国内通話/SMS無制限</p></li>
+                    <li><p>国際SMS 無制限</p></li>
+                    <li><p>1,000分/月 日本への通話が無料</p></li>
+                    <li><p>TELUS高速通信</p></li>
+                    <li><p>渡航後も日本語サポート</p></li>
+                  </ul>
+                </div>
+                <div class="checkpoint">
+                  <div class="title">CHECK POINT</div>
+                  <div class="read">現地の生活に必要な通信機能がすべてプランに含まれています。</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+            </div>
+          </article>
+          <!-- === 05 === -->
+          <article class="h-page" id="h-page-05" data-index="5" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">05</div>
+                  <div class="title">データ容量別<br>使用アプリの目安</div>
+                </div>
+                <img class="page1-img page5-img" src="img/sec-top-h/page5-img.png">
+                <div class="bubble">
+                  <img src="img/sec-top-h/29gb.png">
+                  <img src="img/sec-top-h/100gb.png">
+                </div>
+                <div class="graph-wrap firstgraph">
+                  <img class="media1" src="img/sec-top-h/media1.png">
+                  <div class="graph">
+                    <div>約<span class="num">75</span>時間</div>
+                    <div>約<span class="num">120</span>時間</div>
+                  </div>
+                  <div class="bottom-attention">高画質(720p)</div>
+                </div>
+                <div class="graph-wrap">
+                  <img class="media2" src="img/sec-top-h/media2.png">
+                  <div class="graph">
+                    <div>約<span class="num">75~100</span>時間</div>
+                    <div>約<span class="num">120~160</span>時間</div>
+                  </div>
+                  <div class="bottom-attention">リール/動画閲覧</div>
+                </div>
+                <div class="graph-wrap">
+                  <img class="media3" src="img/sec-top-h/media3.png">
+                  <div class="top-attention">音声通話</div>
+                  <div class="graph">
+                    <div>約<span class="num">3750</span>時間以上</div>
+                    <div>約<span class="num">6000</span>時間以上</div>
+                  </div>
+                  <div class="top-attention top-ate2">ビデオ通話</div>
+                  <div class="graph">
+                    <div>約<span class="num">500</span>時間以上</div>
+                    <div>約<span class="num">800</span>時間以上</div>
+                  </div>
+                </div>
+                <div class="graph-wrap">
+                  <img class="media4" src="img/sec-top-h/media4.png">
+                  <div class="top-attention">周辺検索</div>
+                  <div class="graph">
+                    <div class="ja">実質無制限*</div>
+                    <div class="ja">実質無制限*</div>
+                  </div>
+                  <div class="top-attention top-ate2">ナビ使用</div>
+                  <div class="graph">
+                    <div class="ja">実質無制限*</div>
+                    <div class="ja">実質無制限*</div>
+                  </div>
+                  <div class="bottom-attention">*24時間1ヵ月起動したままでも使いきれない</div>
+                </div>
+                <div class="graph-wrap">
+                  <img class="media5" src="img/sec-top-h/media5.png">
+                  <div class="graph">
+                    <div>約<span class="num">75</span>時間</div>
+                    <div>約<span class="num">120</span>時間</div>
+                  </div>
+                  <div class="bottom-attention">標準画質</div>
+                </div>
+                <div class="graph-wrap">
+                  <img class="media1" src="img/sec-top-h/media6.png">
+                  <div class="graph">
+                    <div>約<span class="num">500</span>時間</div>
+                    <div>約<span class="num">800</span>時間</div>
+                  </div>
+                  <div class="bottom-attention">標準音質</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-next" type="button" data-step="1">次へ&nbsp;»</button>
+            </div>
+          </article>
+          <!-- === 06 === -->
+          <article class="h-page" id="h-page-06" data-index="6" hidden>
+            <div class="h-page-imgwrap">
+              <div class="scroll-hint-overlay">
+                <img src="img/sec-top-h/scroll.png" alt="下にスクロールできます">
+                <img src="img/sec-top-h/scroll_pc.png" alt="下にスクロールできます">
+              </div>
+              <div class="content-wrap">
+                <div class="head">
+                  <div class="num">06</div>
+                  <div class="title">留学やワーホリ向け<br>おすすめのプラン</div>
+                </div>
+                <img class="page1-img" src="img/sec-top-h/page6-img.png">
+                <div class="boxs">
+                  <div class="box">
+                    <p>バランス派タイプ</p>
+                    <p>SNS・地図・動画など<br>日常利用に十分なデータ容量</p>
+                    <p>＄<span class="num">35</span>プラン<span class="num">75</span>GB</p>
+                  </div>
+                  <div class="box">
+                    <p>アクティブタイプ</利用p>
+                    <p>動画視聴やテザリングなど<br>データをたくさん使う人におすすめ</p>
+                    <p>＄<span class="num">50</span>プラン<span class="num">120</span>GB</p>
+                  </div>
+                </div>
+                <div class="checkpoint">
+                  <div class="title">CHECK POINT</div>
+                  <div class="read">渡航直後は通信環境が分からないため、データ超過を防ぐためにも余裕のあるプランがおすすめです。現地でデータ使用量を確認後、最適なプランへ変更しましょう。</div>
+                </div>
+              </div>
+            </div>
+            <div class="h-page-nav">
+              <button class="h-nav-prev" type="button" data-step="-1">«&nbsp;前へ</button>
+              <img src="img/sec-top-h/under-arrow.png" class="scroll-arrow">
+              <button class="h-nav-no" type="button">次へ&nbsp;»</button>
+            </div>
+          </article>
+        </div>
+        <!-- 右：SIM AUS ロゴ -->
+        <div class="h-handbook-logo">
+          <img src="img/sec-top-h/SIM_AUS.png" alt="サクっとSIM AUS for iPhone">
+        </div>
       </div>
+    </div>
+    <!-- ===================== Customer Reviews ===================== -->
+    <div class="h-block-reviews">
 
+      <div class="head-wrap h-head" id="review">
+      <div class="sec-head">
+      <img class="sec-ico h2ico" src="img/sec-top-h/top_ico_h.png">
+      <h2 class="sec-en"><span class="line-l"></span>Customer&nbsp;Reviews<span class="line-r"></span></h2>
+      <p class="sec-jp">ご利用者様のお声</p>
+    </div>
     </div>
 
-  </div>
+      <!-- スライダー枠（中身は手動で差し替え） -->
+      <div class="f-slider-wrap">
+                  <div class="f-slider">
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>01</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice1-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Yさん</div>
+                              <ul class="hashtag">
+                                <li>親御さんのお声</li>
+                                <li>トラブル</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「家族まで安心できるサポート」</h3>
+                          <p class="comment">海外でのトラブル時もすぐに対応していただき、本人だけでなく家族との間にも入って状況を共有してくださいました。原因の説明や事後報告も丁寧で、契約期間中ずっと安心して任せることができました。不安な状況でもすぐ理解して対応してもらえ、本当に心強かったです。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>02</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice2-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Mさん</div>
+                              <ul class="hashtag">
+                                <li>親御さんのお声</li>
+                                <li>長期留学サポート</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「長期留学でも安心」</h3>
+                          <p class="comment">子どものカナダ留学で3年半お世話になりました。 日本語で丁寧に対応してもらえるので安心でき、現地では子どもとの大切な連絡手段としてとても役立ちました。 次の兄弟のときも、ぜひ利用したいと思っています。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>03</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice3-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Tさん</div>
+                              <ul class="hashtag">
+                                <li>通信・電波</li>
+                                <li>LINEサポート</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「現地で起きたトラブルもすぐ解決」</h3>
+                          <p class="comment">現地で接続がうまくいかずLINEとLINE通話でお問い合わせました。すぐ調べてもらい、日本語で丁寧に説明してもらって15分ほどで解決しました。 電波も概ね良好で、安心して使えました。また利用したいです。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>04</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice4-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Aさん</div>
+                              <ul class="hashtag">
+                                <li>初めての海外</li>
+                                <li>事前サポート</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「海外初心者でも安心」</h3>
+                          <p class="comment">アメリカ短期語学留学をきっかけにお世話になりました。設定やプラン変更など、どのご担当の方もいつも丁寧に対応して下さり、安心して利用できました。また海外に行く頻度が上がったらぜひ利用させていただきたいと思います。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>05</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice5-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Nさん</div>
+                              <ul class="hashtag">
+                                <li>留学生のお声</li>
+                                <li>安心</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「対応が早くて丁寧」</h3>
+                          <p class="comment">留学の際に利用しました。 分からないことが多かったのですが、お問い合わせるとメールや電話で丁寧かつ素早く対応していただき、安心して使えました。 また留学に行く際はお願いしたいと思います。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>06</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice6-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Kさん</div>
+                              <ul class="hashtag">
+                                <li>ワーホリ利用者のお声</li>
+                                <li>LINEサポート</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「困ったときもLINEで聞けて頼れる」</h3>
+                          <p class="comment">オーストラリアで利用しています。ワーホリエージェントで紹介してもらった会社なのですが、 通信やSIMで困ったときも、とても親身に対応してもらえて助かりました。 海外にいてもLINE通話で相談できるのは本当にありがたいです。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>07</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice7-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Eさん</div>
+                              <ul class="hashtag">
+                                <li>トラブル</li>
+                                <li>即解決</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/no-star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「すぐ直った！」</h3>
+                          <p class="comment">最初はモバイルデータ通信ができませんでしたが、すぐ対応してもらい無事に使えるようになりました。 素早い対応に感謝しています。</p>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="voice-card" >
+                          <div class="num">VOICE<span>08</span></div>
+                          <div class="head">
+                            <figure class="icon">
+                              <img src="img/sec-top-h/voice8-icon.png" alt="" class="img-fluid">
+                            </figure>
+                            <div>
+                              <div class="name">Sさん</div>
+                              <ul class="hashtag">
+                                <li>海外長期利用者のお声</li>
+                                <li>安心価格</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="star">
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                            <figure><img src="img/sec-top-h/star.png" alt=""></figure>
+                          </div>
+                          <h3 class="title">「長年使っても安心」</h3>
+                          <p class="comment">到着日からすぐ使えて本当に助かりました。 6年以上利用しましたが通信で困ることはなく、現地の携帯料金より安かったです。 帰国後も、また海外に行く際は必ず利用したいと思います。</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
 
-  <!-- ===================== Customer Reviews ===================== -->
-  <div class="h-block-reviews">
-
-    <div class="head-wrap h-head" id="review">
-    <div class="sec-head">
-    <img class="sec-ico h2ico" src="img/sec-top-h/top_ico_h.png">
-    <h2 class="sec-en"><span class="line-l"></span>Customer&nbsp;Reviews<span class="line-r"></span></h2>
-    <p class="sec-jp">ご利用者様のお声</p>
-  </div>
-  </div>
-
-    <!-- スライダー枠（中身は手動で差し替え） -->
-    <div class="f-slider-wrap">
-                <div class="f-slider">
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>01</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice1-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Yさん</div>
-                            <ul class="hashtag">
-                              <li>親御さんのお声</li>
-                              <li>トラブル</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「家族まで安心できるサポート」</h3>
-                        <p class="comment">海外でのトラブル時もすぐに対応していただき、本人だけでなく家族との間にも入って状況を共有してくださいました。原因の説明や事後報告も丁寧で、契約期間中ずっと安心して任せることができました。不安な状況でもすぐ理解して対応してもらえ、本当に心強かったです。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>02</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice2-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Mさん</div>
-                            <ul class="hashtag">
-                              <li>親御さんのお声</li>
-                              <li>長期留学サポート</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「長期留学でも安心」</h3>
-                        <p class="comment">子どものカナダ留学で3年半お世話になりました。 日本語で丁寧に対応してもらえるので安心でき、現地では子どもとの大切な連絡手段としてとても役立ちました。 次の兄弟のときも、ぜひ利用したいと思っています。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>03</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice3-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Tさん</div>
-                            <ul class="hashtag">
-                              <li>通信・電波</li>
-                              <li>LINEサポート</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「現地で起きたトラブルもすぐ解決」</h3>
-                        <p class="comment">現地で接続がうまくいかずLINEとLINE通話でお問い合わせました。すぐ調べてもらい、日本語で丁寧に説明してもらって15分ほどで解決しました。 電波も概ね良好で、安心して使えました。また利用したいです。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>04</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice4-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Aさん</div>
-                            <ul class="hashtag">
-                              <li>初めての海外</li>
-                              <li>事前サポート</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「海外初心者でも安心」</h3>
-                        <p class="comment">アメリカ短期語学留学をきっかけにお世話になりました。設定やプラン変更など、どのご担当の方もいつも丁寧に対応して下さり、安心して利用できました。また海外に行く頻度が上がったらぜひ利用させていただきたいと思います。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>05</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice5-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Nさん</div>
-                            <ul class="hashtag">
-                              <li>留学生のお声</li>
-                              <li>安心</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「対応が早くて丁寧」</h3>
-                        <p class="comment">留学の際に利用しました。 分からないことが多かったのですが、お問い合わせるとメールや電話で丁寧かつ素早く対応していただき、安心して使えました。 また留学に行く際はお願いしたいと思います。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>06</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice6-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Kさん</div>
-                            <ul class="hashtag">
-                              <li>ワーホリ利用者のお声</li>
-                              <li>LINEサポート</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「困ったときもLINEで聞けて頼れる」</h3>
-                        <p class="comment">オーストラリアで利用しています。ワーホリエージェントで紹介してもらった会社なのですが、 通信やSIMで困ったときも、とても親身に対応してもらえて助かりました。 海外にいてもLINE通話で相談できるのは本当にありがたいです。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>07</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice7-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Eさん</div>
-                            <ul class="hashtag">
-                              <li>トラブル</li>
-                              <li>即解決</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/no-star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「すぐ直った！」</h3>
-                        <p class="comment">最初はモバイルデータ通信ができませんでしたが、すぐ対応してもらい無事に使えるようになりました。 素早い対応に感謝しています。</p>
-                      </div>
-                    </div>
-                    <div class="slide">
-                      <div class="voice-card" >
-                        <div class="num">VOICE<span>08</span></div>
-                        <div class="head">
-                          <figure class="icon">
-                            <img src="img/sec-top-h/voice8-icon.png" alt="" class="img-fluid">
-                          </figure>
-                          <div>
-                            <div class="name">Sさん</div>
-                            <ul class="hashtag">
-                              <li>海外長期利用者のお声</li>
-                              <li>安心価格</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="star">
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                          <figure><img src="img/sec-top-h/star.png" alt=""></figure>
-                        </div>
-                        <h3 class="title">「長年使っても安心」</h3>
-                        <p class="comment">到着日からすぐ使えて本当に助かりました。 6年以上利用しましたが通信で困ることはなく、現地の携帯料金より安かったです。 帰国後も、また海外に行く際は必ず利用したいと思います。</p>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-  </div>
+    </div>
   </div>
   <div class="sec-top-h-wave-bottom" aria-hidden="true"></div>
 </section>

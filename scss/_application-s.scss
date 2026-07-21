@@ -3,11 +3,11 @@
 /* =========================================================
    top_a … eSIM概要・端末・決済セクション
    ========================================================= */
-.a-top_a {
+.a-top_a-s {
   background-color: #fff;
   background-image: 
-    radial-gradient(circle at 3px 2.8px, color-mix(in srgb, #FFD5DB 35%, transparent) 3px, transparent 3.6px), 
-    radial-gradient(circle at 16px 15.9px, color-mix(in srgb, #FFD5DB 35%, transparent) 3px, transparent 3.6px);
+    radial-gradient(circle at 3px 2.8px, color-mix(in srgb, #DBF4FD 35%, transparent) 3px, transparent 3.6px), 
+    radial-gradient(circle at 16px 15.9px, color-mix(in srgb, #DBF4FD 35%, transparent) 3px, transparent 3.6px);
   background-size: 27px 27px;
   padding: 30px 0 120px;
 
@@ -159,7 +159,7 @@
     &-desc {
       width: 100%;
       max-width: 598px;
-      background: var(--teal);
+      background: var(--red);
       border-radius: 5px;
       padding: 12px 20px;
       font-weight: 500;
@@ -208,7 +208,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--red);
+      background: var(--teal);
       border-radius: 5px;
       font-weight: 700;
       font-size: 21px;
@@ -228,7 +228,7 @@
       .is-lg {
         font-weight: 900;
         font-size: 16px;
-        color: var(--red);
+        color: var(--teal);
       }
     }
 
@@ -285,7 +285,7 @@
 
     p:last-child {
       padding: 1px 0 0 0px;
-      color: var(--red);
+      color: var(--teal);
       font-style: italic;
       font-weight: 700;
       margin-left: -24px;
@@ -301,7 +301,7 @@
     position: relative;
     width: 100%;
     margin-top: 10px;
-    background: #FFD5DB;
+    background: #DBF4FD;
     border-radius: 5px;
     padding: 12px 16px;
 
@@ -322,7 +322,7 @@
       }
 
       span {
-        background: linear-gradient(transparent 60%, var(--red) 60%);
+        background: linear-gradient(transparent 60%, var(--teal) 60%);
       }
     }
 
@@ -391,7 +391,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--red);
+      background: var(--teal);
       border-radius: 5px;
       font-weight: 700;
       font-size: 16px;
@@ -426,7 +426,7 @@
 
       &--em {
         font-weight: 700;
-        color: var(--red);
+        color: var(--teal);
       }
 
       @media (max-width: 480px) {
@@ -440,7 +440,7 @@
     max-width: 700px;
     width: 100%;
     margin: 0 auto 20px;
-    background-color: var(--red);
+    background-color: var(--teal);
     color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -502,7 +502,7 @@
     }
 
     @media (max-width: 768px) {
-      padding: 20px 10px 20px 100px;
+      padding: 20px 10px 20px 80px;
 
       &-title{
         font-size: 12px;
@@ -515,15 +515,15 @@
         font-weight: 700;
 
         .num {
-          font-size: 25px;
+          font-size: 21px;
         }
 
         .bg {
-          font-size: 20px;
+          font-size: 16px;
         }
 
         .en {
-          font-size: 21px;
+          font-size: 18px;
         }
 
         .sp {
@@ -594,9 +594,9 @@
 /* =========================================================
    top_b … タブ切り替え・商品購入セクション
    ========================================================= */
-.a-top_b {
+.a-top_b-s {
   position: relative;
-  background: var(--red);
+  background: var(--teal);
   padding-bottom: 60px;
   margin: 0 0 120px;
 
@@ -648,7 +648,7 @@
     height: 50px; // 閉じている時は50px
     border: 0;
     border-radius: 10px 10px 0 0;
-    background: #FFD5DB;
+    background: #DBF4FD;
     color: #fff;
     font-weight: 700;
     font-size: 22px;
@@ -663,7 +663,7 @@
 
     &.is-active {
       height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
-      background: var(--red);
+      background: var(--teal);
       color: #fff;
     }
 
@@ -876,7 +876,7 @@
   &__bar {
     width: 100%;
     margin: 0;
-    background: var(--teal);
+    background: var(--red);
     border-radius: 5px;
     padding: 9px 12px;
     font-weight: 700;
@@ -1083,7 +1083,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 1.7;
-    color: var(--teal);
+    color: var(--red);
     text-align: center;
   }
 
