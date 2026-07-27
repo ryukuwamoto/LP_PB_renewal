@@ -341,282 +341,274 @@
 </header>
 
 <main class="plan">
-<section class="p-fv" id="pagetop">
-  
-    <div class="head-wrap plan-head">
+<!-- p-fv -->
+<section class="p-fv" id="pagetop">  
+  <div class="head-wrap plan-head">
     <div class="sec-head">
-    <img class="sec-ico cico" src="img/plan/hukidashi.png">
-    <h2 class="sec-en"><span class="line-l"></span>Payment&nbsp;Cycle&nbsp;/&nbsp;Fees<span class="line-r"></span></h2>
-    <p class="sec-jp">請求サイクルとご利用料金</p>
-  </div>
+      <img class="sec-ico cico" src="img/sec-top-c/hukidashi.png">
+      <h2 class="sec-en"><span class="line-l"></span>Payment&nbsp;Cycle&nbsp;/&nbsp;Fees<span class="line-r"></span></h2>
+      <p class="sec-jp">請求サイクルとご利用料金</p>
+    </div>
   </div>
   <div class="wrap-wide">
     <nav class="c-anchor">
       <a class="c-anchor__item" href="#cycle"><span class="c-anchor__icon"><img src="img/planpage/head/cycle.png" alt=""></span>請求サイクルに<br class="sp">ついて<span class="c-anchor__arrow">▶</span><span class="c-anchor__uarrow">▼</span></a>
       <a class="c-anchor__item" href="#fees"><span class="c-anchor__icon"><img src="img/planpage/head/fee.png" alt=""></span>初期費用に<br class="sp">ついて<span class="c-anchor__arrow">▶</span><span class="c-anchor__uarrow">▼</span></a>
       <a class="c-anchor__item" href="#plans"><span class="c-anchor__icon"><img src="img/planpage/head/star.png" alt=""></span>プラン表<br class="sp">&nbsp;<span class="c-anchor__arrow">▶</span><span class="c-anchor__uarrow">▼</span></a>
-      <a class="c-anchor__item" href="#option"><span class="c-anchor__icon"><img src="img/planpage/head/option.png" alt=""></span>国際通話<br class="sp">オプション<span class="c-anchor__arrow">▶</span><span class="c-anchor__uarrow">▼</span></a>
-      <a class="c-anchor__item" href="#short"><span class="c-anchor__icon"><img src="img/planpage/head/bubble.png" alt=""></span>短期ご渡航の<br class="sp">お客様へ<span class="c-anchor__arrow">▶</span><span class="c-anchor__uarrow">▼</span></a>
     </nav>
   </div>
 </section>
-  <!-- ============================ p-cycle ============================ -->
-  <section id="cycle" class="p-cycle l-container">
-    <div class="wrap-wide">
-    <h2 class="c-headline">請求サイクルについて</h2>
-
-    <div class="p-cycle__list">
-
+<!-- p-cycle -->
+<section id="cycle" class="p-cycle l-container">
+  <h2 class="c-headline">請求サイクルについて</h2>
+  <div class="p-cycle__back">
+  <div class="p-cycle__inner">
+    <div class="p-cycle__tabs" role="tablist">
+    <button class="p-cycle__tab is-active" type="button" role="tab" aria-selected="true" data-tab="sim"><span class="en">SIM</span>のみ購入</button>
+    <button class="p-cycle__tab" type="button" role="tab" aria-selected="false" data-tab="set"><span class="en">SIM</span>＋スマホセット購入</button>
+    </div>
+    <div class="p-cycle__panel" data-panel="sim">
+      <div class="p-cycle__list">
       <!-- PHASE 1 -->
       <div class="p-cycle__card">
         <img class="p-cycle__badge" src="img/planpage/cycle/phase1.png" alt="PHASE 1">
         <h3 class="p-cycle__heading">ご購入時の初期費用</h3>
         <img class="p-cycle__pay" src="img/planpage/cycle/phase1-img.png" alt="日本円1回払い：事務手数料＋任意で盗難補償">
-        <p class="p-cycle__text">初期費用として、事務手数料と盗難補償(任意加入)を<strong>ご購入時に日本円でお支払いいただきます。</strong></p>
-        <p class="p-cycle__text">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
+        <p class="p-cycle__text">初期費用として、事務手数料と盗難補償(任意加入)をご購入時に日本円でお支払いいただきます。</p>
         <p class="p-cycle__text">盗難補償の詳細は<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"><br>
-           配送方法と送料の詳細は<a class="p-cycle__link" href="delivery.html#delivery">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
-        <img class="p-cycle__photo" src="img/planpage/cycle/character.png" alt="マスコットキャラクター">
+        <p class="p-cycle__text">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
       </div>
-
       <!-- PHASE 2 -->
       <div class="p-cycle__card">
         <img class="p-cycle__badge" src="img/planpage/cycle/phase2.png" alt="PHASE 2">
-        <h3 class="p-cycle__heading">開通希望日の数日前〜当日</h3>
+        <h3 class="p-cycle__heading">開通申込み時</h3>
         <img class="p-cycle__pay" src="img/planpage/cycle/phase2-img.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
-        <p class="p-cycle__text"><strong>プラン料金はオーストラリアドルでの決済となり、毎月28日〜翌月27日を1サイクルとして、ご登録のクレジットカードまたはデビットカードより引落しとなります。</strong></p>
-        <p class="p-cycle__text">初回請求は、開通日から27日までの日割り分+翌月1サイクル分の金額です。開通希望日の数日前〜当日にかけて、登録カードより引落されます。</p>
-        <div class="p-cycle__example">
-          <dl>
-            <dt>例1)</dt><dd><b>8月15日開通の場合…</b><br>8月分日割り(8/15〜8/27)料金＋9月分料金</dd>
-            <dt>例2)</dt><dd><b>8月28日開通の場合…</b><br>9月分(8/28〜9/27)料金のみ</dd>
-            <dt>例3)</dt><dd><b>8月30日開通の場合…</b><br>9月分日割り(8/30〜9/27)料金＋10月分料金</dd>
-          </dl>
-        </div>
+        <p class="p-cycle__text">プラン料金はカナダドルでの決済となり、<strong>毎月2日〜翌月1日を1サイクル</strong>とします。</p>
+        <p class="p-cycle__text">初回請求は、開通日から翌月1日までの日割り分+翌月1サイクル分の金額です。開通予約時に登録したクレジットカードから、そのまま引落されます。</p>
       </div>
-
       <!-- PHASE 3 -->
       <div class="p-cycle__card">
         <img class="p-cycle__badge" src="img/planpage/cycle/phase3.png" alt="PHASE 3">
         <h3 class="p-cycle__heading">ご利用期間中</h3>
         <img class="p-cycle__pay" src="img/planpage/cycle/phase3-img.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
-        <p class="p-cycle__text"><strong>毎月1日に、その月のプラン料金がご登録のクレジットカードまたはデビットカードから自動引落しされます。</strong></p>
-        <p class="p-cycle__text">クレジットカードのご利用明細には、「TELCO PAYMENT SERVS」などの名義で請求が表示されます。</p>
-        <div class="p-cycle__example">
-          <dl>
-            <dt>例1)</dt><dd><b>8月15日開通の場合…</b><br>10月1日に2回目、以降毎月1日に引落し</dd>
-            <dt>例2)</dt><dd><b>8月28日開通の場合…</b><br>10月1日に2回目、以降毎月1日に引落し</dd>
-            <dt>例3)</dt><dd><b>8月30日開通の場合…</b><br>11月1日に2回目、以降毎月1日に引落し</dd>
-          </dl>
-        </div>
+        <p class="p-cycle__text">毎月中旬に、次月分(翌月2日〜翌々月1日)のプラン料金請求通知が入り、数日後にご登録の決済方法から自動で引落されます。</p>
+        <p class="p-cycle__text space">なお、<strong>毎月25日を過ぎてのお支払い、または残債がある場合は、遅延損害金が加算されます。</strong></p>
+        <p class="p-cycle__text">いかなる場合もご利用料金を支払う義務がございます。「PhoneBoxからの請求通知メールが届かない」といった理由によるお支払いの免除はいたしかねます。定期的にお客様ご自身でPhoneBoxマイアカウントをご確認ください。</strong></p>
       </div>
-
       <!-- PHASE 4 -->
       <div class="p-cycle__card">
         <img class="p-cycle__badge" src="img/planpage/cycle/phase4.png" alt="PHASE 4">
         <h3 class="p-cycle__heading">ご利用終了</h3>
-        <p class="p-cycle__text"><strong>最終月は日割りできません。</strong>帰国時は、電話や問い合わせフォームから簡単に解約が可能です。ストライキ等により渡航期間が急遽延長になる場合もございますので、<strong>帰国後の解約を推奨しております。</strong></p>
-        <img class="p-cycle__notice" src="img/planpage/cycle/phase4-img.png" alt="サクっとSIM AUSの解約タイミング案内。締め日27日までに解約すれば当月分のみ、28日以降は翌月1ヶ月分の料金が発生するため、27日解約を推奨。">
-        <div class="btn-wrap">
-          <a class="common_btn is-whitepink" target="_blank" href="https://www.yellowmobile.jp/view/page/product#p02">
-            <span class="text">データ通信SIMを購入</span>
-            <span class="arrow"></span>
-          </a>  
-        </div>
-      </div>
-
-    </div>
-    <div class="p-accordion">
-      <details class="p-accordion__item">
-        <summary class="p-accordion__head">01<span class="bar">|</span>ご購入時の初期費用<span class="p-accordion__mark">＋</span></summary>
-        <div class="p-accordion__inner">
-          <img class="p-accordion__pay" src="img/planpage/cycle/phase1-img_sp.png" alt="日本円1回払い：事務手数料＋任意で盗難補償">
-        <p class="p-accordion__text">初期費用として、事務手数料と盗難補償(任意加入)を<strong>ご購入時に日本円でお支払いいただきます。</strong></p>
-        <p class="p-accordion__text">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
-        <p class="p-accordion__text">盗難補償の詳細は<a class="p-accordion__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"><br>
-           配送方法と送料の詳細は<a class="p-accordion__link" href="delivery.html#delivery">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
-        </div>
-      </details>
-      <details class="p-accordion__item">
-        <summary class="p-accordion__head">02<span class="bar">|</span>開通希望日の数日前~当日<span class="p-accordion__mark">＋</span></summary>
-        <div class="p-accordion__inner">
-        <img class="p-cycle__pay" src="img/planpage/cycle/phase2-img_sp.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
-        <p class="p-cycle__text"><strong>プラン料金はオーストラリアドルでの決済となり、毎月28日〜翌月27日を1サイクルとして、ご登録のクレジットカードまたはデビットカードより引落しとなります。</strong></p>
-        <p class="p-cycle__text">初回請求は、開通日から27日までの日割り分+翌月1サイクル分の金額です。開通希望日の数日前〜当日にかけて、登録カードより引落されます。</p>
+        <img class="p-cycle__pay" src="img/planpage/cycle/phase4-img.png" alt="サクっとSIM AUSの解約タイミング案内。締め日27日までに解約すれば当月分のみ、28日以降は翌月1ヶ月分の料金が発生するため、27日解約を推奨。">
+        <p class="p-cycle__text">前払いでプラン料金をいただいているので、余剰分があればご返金いたします。また、<strong>データ通信量も日割りとなります。データ通信量を超えた場合には超過料金が発生します</strong>ので、ご注意ください。</p>
+        <p class="p-cycle__text">ご返金方法につきましては、後日PhoneBoxよりメールが届きます。<strong>返金完了までは、クレジットカードを解約しないでください。</strong></p>
         <div class="p-cycle__example">
-          <dl>
-            <dt>例1)</dt><dd><b>8月15日開通の場合…</b><br>8月分日割り(8/15〜8/27)料金＋9月分料金</dd>
-            <dt>例2)</dt><dd><b>8月28日開通の場合…</b><br>9月分(8/28〜9/27)料金のみ</dd>
-            <dt>例3)</dt><dd><b>8月30日開通の場合…</b><br>9月分日割り(8/30〜9/27)料金＋10月分料金</dd>
-          </dl>
+          <p>長期用SIMご利用のお客様は<br><strong>解約手続き</strong>が<strong>必要</strong>です</p>
         </div>
-        </div>
-      </details>
-      <details class="p-accordion__item">
-        <summary class="p-accordion__head">03<span class="bar">|</span>ご利用期間中<span class="p-accordion__mark">＋</span></summary>
-        <div class="p-accordion__inner">
-          <img class="p-cycle__pay" src="img/planpage/cycle/phase3-img_sp.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
-            <p class="p-cycle__text"><strong>毎月1日に、その月のプラン料金がご登録のクレジットカードまたはデビットカードから自動引落しされます。</strong></p>
-            <p class="p-cycle__text">クレジットカードのご利用明細には、「TELCO PAYMENT SERVS」などの名義で請求が表示されます。</p>
-          <div class="p-cycle__example">
-            <dl>
-              <dt>例1)</dt><dd><b>8月15日開通の場合…</b><br>10月1日に2回目、以降毎月1日に引落し</dd>
-              <dt>例2)</dt><dd><b>8月28日開通の場合…</b><br>10月1日に2回目、以降毎月1日に引落し</dd>
-              <dt>例3)</dt><dd><b>8月30日開通の場合…</b><br>11月1日に2回目、以降毎月1日に引落し</dd>
-            </dl>
+        <p class="p-cycle__text">帰国時は、電話やフォームから簡単に解約が可能です。</p>
+      </div>
+      </div>
+      <div class="p-accordion">
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">01<span class="bar">|</span>ご購入時の初期費用<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-accordion__pay" src="img/planpage/cycle/phase1-img_sp.png" alt="日本円1回払い：事務手数料＋任意で盗難補償">
+            <p class="p-accordion__text">初期費用として、事務手数料と盗難補償(任意加入)をご購入時に日本円でお支払いいただきます。</p>
+            <p class="p-accordion__text">盗難補償の詳細は<a class="p-accordion__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+            <p class="p-accordion__text">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
+          </div>
+        </details>
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">02<span class="bar">|</span>開通申込み時<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-cycle__pay" src="img/planpage/cycle/phase2-img_sp.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
+            <p class="p-cycle__text">プラン料金はカナダドルでの決済となり、<strong>毎月2日〜翌月1日を1サイクル</strong>とします。</p>
+            <p class="p-cycle__text">初回請求は、開通日から翌月1日までの日割り分+翌月1サイクル分の金額です。開通予約時に登録したクレジットカードから、そのまま引落しされます。</p>
+          </div>
+        </details>
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">03<span class="bar">|</span>ご利用期間中<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-cycle__pay" src="img/planpage/cycle/phase3-img_sp.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
+            <p class="p-cycle__text">毎月中旬に、次月分(翌月2日〜翌々月1日)のプラン料金請求通知が入り、数日後にご登録の決済方法から自動で引落されます。</p>
+            <p class="p-cycle__text space">なお、<strong>毎月25日を過ぎてのお支払い、または残債がある場合は、遅延損害金が加算されます。</strong></p>
+            <p class="p-cycle__text">いかなる場合もご利用料金を支払う義務がございます。「PhoneBoxからの請求通知メールが届かない」といった理由によるお支払いの免除はいたしかねます。定期的にお客様ご自身でPhoneBoxマイアカウントをご確認ください。</p>
+          </div>
+        </details>
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">04<span class="bar">|</span>ご利用終了<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-cycle__pay" src="img/planpage/cycle/phase4-img.png" alt="サクっとSIM AUSの解約タイミング案内。締め日27日までに解約すれば当月分のみ、28日以降は翌月1ヶ月分の料金が発生するため、27日解約を推奨。">
+            <p class="p-cycle__text">前払いでプラン料金をいただいているので、余剰分があればご返金いたします。また、<strong>データ通信量も日割りとなります。データ通信量を超えた場合には超過料金が発生します</strong>ので、ご注意ください。</p>
+            <p class="p-cycle__text">ご返金方法につきましては、後日PhoneBoxよりメールが届きます。<strong>返金完了までは、クレジットカードを解約しないでください。</strong></p>
+            <div class="p-cycle__example">
+              <p>長期用SIMご利用のお客様は<br><strong>解約手続き</strong>が<strong>必要</strong>です</p>
+            </div>
+            <p class="p-cycle__text">帰国時は、電話やフォームから簡単に解約が可能です。</p>
+          </div>
+        </details>
+      </div>
+      <div class="p-cycle__about">
+        <div class="p-cycle__about__wrap">
+          <div class="p-cycle__about__headline">請求サイクルについて</div>
+          <div class="p-cycle__about__inner">
+            <div class="p-cycle__about__list">
+              <p>●</p><p>データ量の上限はプランごとに決められており、無制限ではございません。</p>
+            </div>
+            <div class="p-cycle__about__list">
+              <p>●</p><p>初月はデータ容量が日割り計算されるため、上限に達しやすくなっておりますのでご注意ください。</p>
+            </div>
+            <div class="p-cycle__about__list">
+              <p>●</p><p>データ利用上限を超過しても速度制限はなく、1GBごとに$15+Taxが追加請求されます。ご利用開始から30日以内はプランのデータ利用料を超えても通知はされません。ご利用のスマートフォン上での管理が必要となりますのでご注意ください。<br>盗難補償の詳細は<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+            </div>
           </div>
         </div>
-      </details>
-      <details class="p-accordion__item">
-        <summary class="p-accordion__head">04<span class="bar">|</span>ご利用終了<span class="p-accordion__mark">＋</span></summary>
-        <div class="p-accordion__inner">
-          <p class="p-cycle__text"><strong>最終月は日割りできません。</strong>帰国時は、電話や問い合わせフォームから簡単に解約が可能です。ストライキ等により渡航期間が急遽延長になる場合もございますので、<strong>帰国後の解約を推奨しております。</strong></p>
-        <img class="p-accordion__notice" src="img/planpage/cycle/phase4-img_sp.png" alt="サクっとSIM AUSの解約タイミング案内。締め日27日までに解約すれば当月分のみ、28日以降は翌月1ヶ月分の料金が発生するため、27日解約を推奨。">
-        <div class="btn-wrap">
-          <a class="common_btn is-whitepink" target="_blank" href="https://www.yellowmobile.jp/view/page/product#p02">
-            <span class="text">データ通信SIMを購入</span>
-            <span class="arrow"></span>
-          </a>  
+        <div class="p-cycle__about__wrap">
+          <div class="p-cycle__about__headline">請求サイクルについて</div>
+          <div class="p-cycle__about__inner">
+            <p>PhoneBoxのマイアカウントを作成していただくことにより、プラン確認/変更/請求書発行/お支払い方法の変更等が可能です。</p>
+            <div class="p-cycle__about__link">
+              <p>PhoneBoxマイアカウントは<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+              <p>PhoneBoxマイアカウントのご利用方法は<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="p-cycle__panel" data-panel="set" hidden>
+      <div class="p-cycle__list2">
+      <!-- PHASE 1 -->
+      <div class="p-cycle__card2">
+        <img class="p-cycle__badge" src="img/planpage/cycle/phase1-t.png" alt="PHASE 1">
+        <h3 class="p-cycle__heading travel">ご購入時の初期費用</h3>
+        <img class="p-cycle__pay" src="img/planpage/cycle/phase1-t-img.png" alt="日本円1回払い：事務手数料＋任意で盗難補償">
+        <p class="p-cycle__text travel">初期費用として、事務手数料と盗難補償(任意加入)をご購入時に日本円でお支払いいただきます。</p>
+        <p class="p-cycle__text travel">盗難補償の詳細は<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+        <p class="p-cycle__text travel">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
+      </div>
+      <!-- PHASE 2 -->
+      <div class="p-cycle__card2">
+        <img class="p-cycle__badge" src="img/planpage/cycle/phase2-t.png" alt="PHASE 2">
+        <h3 class="p-cycle__heading travel">開通申込み時</h3>
+        <img class="p-cycle__pay" src="img/planpage/cycle/phase2-t-img.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
+        <p class="p-cycle__text travel">プラン料金はカナダドルでの決済となり、開通申込時にご登録いただいたクレジットカードから、引落されます。</p>
+        <p class="p-cycle__text travel"><strong>日未満のご利用の場合でも、30日分の料金をいただきます。</strong></p>
+      </div>
+      <!-- PHASE 3 -->
+      <div class="p-cycle__card2">
+        <img class="p-cycle__badge" src="img/planpage/cycle/phase3-t.png" alt="PHASE 3">
+        <h3 class="p-cycle__heading travel">ご利用終了</h3>
+        <p class="p-cycle__text travel">トラブル用SIMはプリペイドタイプのため追加料金はございません。</p>
+        <p class="p-cycle__text travel">ご利用終了時、イエローモバイルへの連絡は不要です。ご利用期間の延長・データの追加はできませんので、ご注意ください。</p>
+        <div class="p-cycle__example">
+          <p>30日後に<br><strong>回線</strong>が<strong>自動停止</strong>します</p>
         </div>
-      </details>
+      </div>
+      </div>
+      <div class="p-accordion">
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">01<span class="bar">|</span>ご購入時の初期費用<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-accordion__pay" src="img/planpage/cycle/phase1-t-img_sp.png" alt="日本円1回払い：事務手数料＋任意で盗難補償">
+            <p class="p-cycle__text travel">初期費用として、事務手数料と盗難補償(任意加入)をご購入時に日本円でお支払いいただきます。</p>
+            <p class="p-cycle__text travel">盗難補償の詳細は<a class="p-cycle__link" href="delivery.html#shield">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></p>
+            <p class="p-cycle__text travel">離島などの一部地域・日時指定での配送の場合は、別途料金がかかります。</p>
+          </div>
+        </details>
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">02<span class="bar">|</span>開通申込み時<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <img class="p-cycle__pay" src="img/planpage/cycle/phase2-t-img_sp.png" alt="オーストラリアドル払い：プラン料金＋国際通話オプション">
+            <p class="p-cycle__text travel">プラン料金はカナダドルでの決済となり、開通申込時にご登録いただいたクレジットカードから、引落されます。</p>
+            <p class="p-cycle__text travel"><strong>日未満のご利用の場合でも、30日分の料金をいただきます。</strong></p>
+          </div>
+        </details>
+        <details class="p-accordion__item">
+          <summary class="p-accordion__head">04<span class="bar">|</span>ご利用終了<span class="p-accordion__mark">＋</span></summary>
+          <div class="p-accordion__inner">
+            <p class="p-cycle__text travel">トラブル用SIMはプリペイドタイプのため追加料金はございません。</p>
+            <p class="p-cycle__text travel">ご利用終了時、イエローモバイルへの連絡は不要です。ご利用期間の延長・データの追加はできませんので、ご注意ください。</p>
+            <div class="p-cycle__example">
+              <p>30日後に<br><strong>回線</strong>が<strong>自動停止</strong>します</p>
+            </div>
+          </div>
+        </details>
+      </div>
     </div>
-    </div>
-  </section>
-
-  <!-- ============================ p-fees ============================ -->
-  <section id="fees" class="p-fees">
-    <div class="wrap-wide">
-      <h2 class="c-headline">ご利用料金について</h2>
+  </div>
+  </div>
+</section>
+<!-- p-fees -->
+<section id="fees" class="p-fees">
+  <div class="wrap-wide">
+    <h2 class="c-headline">ご利用料金について</h2>
     <div class="p-fees__wrap">
-    <p>初期費用</p>
+      <p>初期費用</p>
       <img class="p-fees__photo" src="img/planpage/fees/firstfees.png" alt="オーストラリアSIM「サクっとSIM AUS」初期費用の内訳。SIM代金0円・送料0円〜・事務手数料eSIM3,000円／SIMカード3,500円（税込）。任意でスマホ盗難補償（最大8,800円）・SIM盗難補償（最大1,980円）あり">
       <img class="p-fees__photo_sp" src="img/planpage/fees/firstfees_sp.png" alt="オーストラリアSIM「サクっとSIM AUS」初期費用の内訳。SIM代金0円・送料0円〜・事務手数料eSIM3,000円／SIMカード3,500円（税込）。任意でスマホ盗難補償（最大8,800円）・SIM盗難補償（最大1,980円）あり">
     </div>
-    
-
     <span class="p-fees__label">初期費用について</span>
-    <p class="p-fees__lead">SIMの本体代金が0円のため、渡航前の初期費用を大幅に抑えられます。必要な初期費用は事務手数料と送料（0円〜）です。最短即日発行のeSIMは3,000円（税込）、SIMカードは3,500円（税込）となっており、eSIMなら500円安くご利用いただけます。盗難補償などの有料オプションはすべて任意選択です。不要な追加料金が発生する心配はなく、安心してご契約いただけます。</p>
-
+    <p class="p-fees__lead">本サービスはSIMカード本体代金が無料のため、渡航前の初期コストを最小限に抑えられます。初期費用となる契約事務手数料は、即時発行可能なeSIMなら1,650円（税込）となり、通常のSIMカード（2,150円・税込・国内送料0円〜）よりも500円安く設定されているため大変お得です。盗難補償等の有料オプションはすべて任意選択ですので、不要な追加料金の心配なく安心してご契約いただけます。</p>
     <div class="c-btnarea c-btnarea--pair">
       <a class="common_btn is-whitepink" href="delivery.html#delivery">
         <span class="text">送料の詳細はこちら</span>
         <span class="arrow"></span>
-    </a>
+      </a>
       <a class="common_btn is-whitepink" href="delivery.html#shield">
         <span class="text">盗難保証の詳細はこちら</span>
         <span class="arrow"></span>
-    </a>
+      </a>
     </div>  
-    </div>
-    
-  </section>
-
-  <div class="c-plus">+</div>
-
-  <!-- ============================ p-plan ============================ -->
-  <section id="plans" class="p-plan">
-    <div class="wrap-wide">
+  </div>
+</section>
+<div class="c-plus">+</div>
+<!-- p-plan -->
+<section id="plans" class="p-plan">
+  <div class="wrap-wide">
     <div class="p-plan__banner">
-      <div class="p-plan__banner-head">料金プラン <small>豊富なプランをご用意しています!</small></div>
+      <div class="p-plan__banner-head">料金プラン</div>
       <div class="p-plan__banner-sub">プランは商品到着後の開通申込み時にお選びいただけます。</div>
     </div>
-
-    <div class="p-plan__list">
-      <!-- 5G対応プラン -->
-      <img class="p-plan__table" src="img/planpage/plan/5Gplan.png" alt="5G対応プラン：全プラン共通サービス（テザリング○／国内通話無制限／国内SMS無制限／国際通話・SMSは日本不可・15カ国対応）。29GB $34/月（No.1）、40GB $44/月、65GB $49/月、100GB $55/月（大容量）、120GB $65/月、150GB $75/月、180GB $85/月">
-      <img class="p-plan__table_sp" src="img/planpage/plan/5Gplan_sp.png" alt="5G対応プラン：全プラン共通サービス（テザリング○／国内通話無制限／国内SMS無制限／国際通話・SMSは日本不可・15カ国対応）。29GB $34/月（No.1）、40GB $44/月、65GB $49/月、100GB $55/月（大容量）、120GB $65/月、150GB $75/月、180GB $85/月">
-
-      <!-- 4G/LTE対応プラン -->
-      <div>
-        <img class="p-plan__table" src="img/planpage/plan/LTEplan.png" alt="4G/LTE対応プラン(5G未対応)：全プラン共通サービス（テザリング○／国内通話無制限／国内SMS無制限／国際通話・SMSは×）。10GB $24/月（最安値）、15GB $29/月">
-        <img class="p-plan__table_sp" src="img/planpage/plan/LTEplan_sp.png" alt="4G/LTE対応プラン(5G未対応)：全プラン共通サービス（テザリング○／国内通話無制限／国内SMS無制限／国際通話・SMSは×）。10GB $24/月（最安値）、15GB $29/月">
-        <div class="p-plan__aside">
-          <div class="p-plan__note">
-            <p>渡航直後は<strong>現地の通信環境が分からないので通信制限を防ぐために余裕を持ったプラン選びをしましょう。</strong></p>
-            <p class="mr">現地でのデータ使用量を確認してから最適なプランへ変更をお勧めします!</p>
+    <div class="p-plan__back">
+      <div class="p-plan__inner">
+        <div class="p-plan__tabs" role="tablist">
+        <button class="p-plan__tab is-active" type="button" role="tab" aria-selected="true" data-tab="sim"><span class="en">SIM</span>のみ購入</button>
+        <button class="p-plan__tab" type="button" role="tab" aria-selected="false" data-tab="set"><span class="en">SIM</span>＋スマホセット購入</button>
+        </div>
+        <div class="p-plan__panel" data-panel="sim">
+          <div class="p-plan__imgwrap">
+            <img src="img/planpage/plan/campaign.png">
+            <img src="img/planpage/plan/plan-l.png">
+            <div>
+              <span class="p-plan__label">初期費用について</span>
+              <div class="p-plan__body">※データ利用上限を超過しても速度制限はなく、1GBごとに$15＋Taxが追加請求が発生します。</div>
+              <div class="p-plan__body">※開通日から30日間は利用量を超えても通知はされません。ご利用のスマートフォン上での管理が必要となりますのでご注意ください。</div>
+              <div class="p-plan__body">※データ利用上限を超過しても速度制限はなく、1GBごとに$15＋Taxが追加請求が発生します。</div>
+              <div class="p-plan__body">※プランは購入後の開通申込み時にお選びいただけます。</div>
+              <div class="p-plan__body">※プラン料金・データ超過料金には別途Taxがかかります。Taxは滞在先の州によって異なります。</div>
+              <div class="p-plan__body">※プラン内容および料金は予告なく変更される場合がございます。</div>
+              <div class="p-plan__body">※際通話は、日本を含む対象国へ毎月1,000分無料でご利用いただけます。対象国は<a target="_blank" href="https://op.yellowmobile.jp/guide/service-guide.pdf#page=3" class="link">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"><br></div>
+              <div class="p-plan__body">&nbsp;&nbsp;&nbsp;&nbsp;対象国以外への通話は有料になります。通話料に関しては、PhoneBoxへご確認ください。</div>
+            </div>
           </div>
-          <img class="p-plan__photo" src="img/planpage/plan/character.png" alt="マスコットキャラクター">
+        </div>
+        <div class="p-plan__panel" data-panel="set" hidden>
+          <div class="p-plan__imgwrap">
+            <img src="img/planpage/plan/campaign.png">
+            <img src="img/planpage/plan/plan-s.png">
+            <div>
+              <span class="p-plan__label travel">初期費用について</span>
+              <div class="p-plan__body">※ご利用期間は30日間です。30日間経過すると回線が停止します。通話・SMS・データ通信すべてご利用いただけなくなります。ご利用期間の延長はできませんのでご注意ください。</div>
+              <div class="p-plan__body">※30日未満のご利用の場合でも、30日間分の料金をいただいております。（日割計算はできません）</div>
+              <div class="p-plan__body">※プランに含まれる既定のデータ容量を使い切った場合、データ通信は停止します。通話・SMSは引き続きご利用いただけます。ご利用のスマートフォン上での管理が必要となりますのでご注意ください。</div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- 補足（アコーディオン） -->
-    <div class="c-accordion">
-      <details class="c-accordion__item">
-        <summary class="c-accordion__head">注意事項<span class="c-accordion__mark">＋</span></summary>
-        <div class="c-accordion__body">※プランに含まれる既定のデータ容量を使い切った場合、データ通信は出来なくなります。データの使用量はご利用のスマートフォン上での管理が必要となりますのでご注意ください。</div>
-        <div class="c-accordion__body">※データ使用量の管理方法は<a target="_blank" href="https://op.yellowmobile.jp/guide/service-guide.pdf#page=3" class="link">こちら</a><img src="img/planpage/plan/inlineicon.png" class="inline-icon"></div>
-        <div class="c-accordion__body">※【179】の番号に【bal】と入力しSMS送信をすると、データ残量の確認が出来ます。</div>
-        <div class="c-accordion__body">※プラン料金には別途Tax(10%)がかかります。プラン内容および月額料金は予告なく変更される場合がございます。</div>
-      </details>
-      <details class="c-accordion__item">
-        <summary class="c-accordion__head">プラン変更について<span class="c-accordion__mark">＋</span></summary>
-        <div class="c-accordion__body">※毎月25日までにご連絡をいただくことで、次サイクルからプランを変更することが可能です。(ご利用サイクルは毎月28日開始の翌月27日締めとなります)</div>
-      </details>
-      <details class="c-accordion__item">
-        <summary class="c-accordion__head">国際通話/SMS　対応国一覧<span class="c-accordion__mark">＋</span></summary>
-        <div class="c-accordion__body">※中国・香港・フランス・ドイツ・ギリシャ・インド・アイルランド・マレーシア・ニュージーランド・シンガポール・韓国・タイ・イギリス・アメリカ・ベトナム</div>
-        <div class="c-accordion__body">※日本を含む対象国以外の通話は別途オプションの追加が必要です。</div>
-      </details>
-    </div>
-    </div>
-  </section>
-
-  <div class="c-plus">+</div>
-
-  <!-- ============================ p-option ============================ -->
-  <section id="option" class="p-option">
-    <div class="wrap-wide">
-      <div class="p-option__frame">
-      <span class="p-option__tab">オプション</span>
-      <div class="p-option__innner">
-        <h3 class="p-option__heading"><span>日本への国際通話が<br class="sp">もっとお得に。</span></h3>
-          <p class="p-option__lead">日本への国際通話をリーズナブルに利用できる新オプションパックが登場しました。</p>
-        <div class="p-option__list">
-          <img class="p-option__item" src="img/planpage/option/monthlyfees.png" alt="オーストラリアSIM「サクっとSIM AUS」の国際オプション料金表示：月額料金に$7追加で、日本を含む対象国への国際通話120分と国際SMS無制限が利用可能">
-          <img class="p-option__item_sp" src="img/planpage/option/monthlyfees_sp.png" alt="オーストラリアSIM「サクっとSIM AUS」の国際オプション料金表示：月額料金に$7追加で、日本を含む対象国への国際通話120分と国際SMS無制限が利用可能">
-          <img class="p-option__item" src="img/planpage/option/monthlyfees$10.png" alt="オーストラリアSIM「サクっとSIM AUS」の国際オプション料金表示。月額料金に$10追加で日本を含む対象国への国際通話300分と国際SMS無制限が利用可能">
-          <img class="p-option__item_sp" src="img/planpage/option/monthlyfees$10_sp.png" alt="オーストラリアSIM「サクっとSIM AUS」の国際オプション料金表示。月額料金に$10追加で日本を含む対象国への国際通話300分と国際SMS無制限が利用可能">
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="btn-wrap">
-      <a class="common_btn is-whitepink" target="_blank" href="https://op.yellowmobile.jp/guide/IDD_Countries.pdf">
-        <span class="text">国際通話 対応国一覧</span>
-        <span class="arrow"></span>
-      </a>  
-    </div>
-    </div>
-    
-  </section>
-
-  <!-- ============================ p-short ============================ -->
-  <section id="short" class="p-short">
-    <div class="wrap-wide">
-      <img class="p-short__photo" src="img/planpage/short/short-termtravelers.png" alt="重要!! 短期渡航をご検討中のお客様。サクっとSIM AUSの初回のプラン料金のお支払いは、開通日から開通月27日までの日割りのご利用料金と、翌月のご利用料金の合算が最低プラン料金となりますのでご注意ください。※事務手数料は別途かかります。最低ご利用期間：8月15日開通の場合／8月28日開通の場合／8月30日開通の場合。最低ご利用料金：SIMご購入時（事務手数料＋盗難補償 任意）＋ 開通後（最低ご利用期間のプラン料金＋オプション 任意）">
-      <img class="p-short__photo_sp" src="img/planpage/short/short-termtravelers_sp.png" alt="重要!! 短期渡航をご検討中のお客様。サクっとSIM AUSの初回のプラン料金のお支払いは、開通日から開通月27日までの日割りのご利用料金と、翌月のご利用料金の合算が最低プラン料金となりますのでご注意ください。※事務手数料は別途かかります。最低ご利用期間：8月15日開通の場合／8月28日開通の場合／8月30日開通の場合。最低ご利用料金：SIMご購入時（事務手数料＋盗難補償 任意）＋ 開通後（最低ご利用期間のプラン料金＋オプション 任意）">
-      <div class="banner_title">
-        <span class="bar">/</span>
-        <div class="title">
-          <p>サクっとSIM AUSとは別のサービスで</p>
-          <p>もっと<span class="yellowline"><span class="big">手軽</span>に</span><span class="big">シンプルプラン！</span><br class="sp"><span class="yellowline"><span class="big">ネット</span>だけ</span><span class="big">使いたい</span>方はこちら</p>
-        </div>
-        <span class="bar">/</span>
-      </div>
-      <img class="p-short__banner" src="img/planpage/short/eSIM-banner.png" alt="QRコードを読み込むだけ イー!SIM E-SIMデータ通信専用プラン。短期でのご渡航の方におすすめ データ通信専用SIM! 24時間いつでも最短30分でメールにてお届け! 電話番号は発行されません。ご注意ください。">
-      <img class="p-short__banner_sp" src="img/planpage/short/eSIM-banner_sp.png" alt="QRコードを読み込むだけ イー!SIM E-SIMデータ通信専用プラン。短期でのご渡航の方におすすめ データ通信専用SIM! 24時間いつでも最短30分でメールにてお届け! 電話番号は発行されません。ご注意ください。">
-    </div>
-    <div class="btn-wrap">
-      <a class="common_btn is-whitepink" target="_blank" href="https://www.yellowmobile.jp/view/page/product#p02">
-        <span class="text">データ通信SIMを購入</span>
-        <span class="arrow"></span>
-      </a>  
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
 <!-- ============================ l-footer ============================ -->

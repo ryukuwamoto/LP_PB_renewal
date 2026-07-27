@@ -1,4 +1,8 @@
+// =========================================================
+// planpage
+// =========================================================
 @use "variables" as *;
+
 main {
   &.plan {
     .wrap-wide {
@@ -19,20 +23,17 @@ main {
   }  
 }
 
-
-// ==========================================
-// Common Components (.c-)
-// ==========================================
+// ---------- Common Components ----------
 .c-headline {
   display: table;
-  margin: 120px auto 40px;
+  margin: 120px auto;
   font-size: 21px;
   @include font-gen(700);
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
 
   @media (max-width: 768px) {
-    margin: 60px auto 30px;
+    margin: 60px auto 85px;
   }
 }
 
@@ -54,11 +55,11 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 2px solid var(--teal); // 変数対応
+    border: 2px solid var(--teal);
     border-radius: 8px;
     padding: 14px 18px;
     color: var(--ink);
-    @include font-mix(700); // 混成フォントミックスイン
+    @include font-mix(700);
     font-size: 14px;
     background: #fff;
     transition: background .2s, color .2s;
@@ -83,7 +84,6 @@ main {
       }
     }
   }
-
 
   &__icon {
     flex: 0 0 23px;
@@ -131,8 +131,6 @@ main {
   }
 }
 
-// ※ベース側に、より高機能な立体デザインの「.common_btn」が定義されているため、
-// 特殊な丸型パーツなどで「.c-btn」を単体利用する場合のフォント・変数を最適化
 .c-btn {
   display: inline-flex;
   align-items: center;
@@ -144,7 +142,7 @@ main {
   @include font-mix(900);
   font-size: 15px;
   color: var(--ink);
-  box-shadow: 4px 4px 0 var(--pink); // 変数対応
+  box-shadow: 4px 4px 0 var(--pink);
   transition: transform .12s, box-shadow .12s;
 
   &:hover {
@@ -188,7 +186,7 @@ main {
   }
 
   &__item {
-    border-bottom: 1.5px solid var(--ink); // 柔らかい境界線変数
+    border-bottom: 1.5px solid var(--ink);
 
     &:first-child{
       border-top: 1.5px solid var(--ink);
@@ -338,13 +336,7 @@ main {
   }
 }
 
-// ==========================================
-// Page Specific Blocks (.p-)
-// ==========================================
-
-// ─── First View 見出し ───
-// ベース側の「.head-wrap .sec-head」と構造・線のデザインが酷似しているため、
-// 共通のミックスインとプロパティを割り当てて再定義
+// ---------- Page Specific Blocks ----------
 .p-fv {
   text-align: center;
   padding: 70px 0 0px;
@@ -356,7 +348,7 @@ main {
   }
 
   &__en {
-    @include font-sofia(500); // ベースの .sec-en と統一
+    @include font-sofia(500);
     font-style: italic;
     font-size: 38px;
     color: var(--ink);
@@ -384,19 +376,130 @@ main {
   }
 
   &__heading {
-    @include font-gen(bold); // ベースの .sec-jp と統一
+    @include font-gen(bold);
     font-size: 19px;
     margin-top: 6px;
     color: var(--ink);
   }
 }
 
-// ─── Cycle Section ───
 .p-cycle {
+  &__back{
+    position: relative;
+    background: var(--red);
+    transition: background-color 0.3s ease;
+
+    &[data-active-tab="set"] {
+      background: var(--teal);
+    }
+
+    @media (max-width: 768px) {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flow-root;
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__panel {
+    &[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
+    justify-content: center;
+    gap: 18px;
+    max-width: 1030px;
+    
+    /* 💡ここがガタつき防止のポイント */
+    height: 70px;          // エリア全体の高さを最大値の70pxに固定
+    margin: -70px auto 0;  // 高さに合わせたネガティブマージン
+
+    @media (max-width: 768px) {
+      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      margin-top: -50px;
+      gap: 8px;
+    }
+  }
+
+  /* タブ単体 */
+  &__tab {
+    flex: 0 1 356px;
+    height: 50px; // 閉じている時は50px
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    background: #FFD5DB;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s, color .2s, height .2s;
+    text-align: center;
+
+    .en {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    &[data-tab="sim"] {
+      background: #FFD5DB;
+    }
+    &[data-tab="set"] {
+      background: #DBF4FD;
+    }
+
+    /* 💡 各タブごとのアクティブ時背景色 */
+    &[data-tab="sim"].is-active {
+      background: var(--red);
+    }
+    &[data-tab="set"].is-active {
+      background: var(--teal);
+    }
+
+    &.is-active {
+      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* レスポンシブ（スマホ版） */
+    @media (max-width: 768px) {
+      font-size: 15px;
+      height: 38px; // スマホ版：閉じている時（50pxより少し低く）
+
+      &.is-active {
+        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
+      }
+
+      .en {
+        font-size: 17px;
+      }
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 36px;
+    margin: 70px 0 36px;
 
     @media (max-width: 768px) {
       display: none;
@@ -406,7 +509,32 @@ main {
   &__card {
     border: 2px solid var(--ink);
     border-radius: 14px;
-    padding: 32px 40px 30px;
+    padding: 32px 40px 35px;
+    background: #fff;
+
+    @media (max-width: 480px) {
+      padding: 28px 18px 26px;
+    }
+  }
+
+  &__list2 {
+    display: grid;
+    /* 💡 自動で列数を調整する設定 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; // 3列並びにするためギャップを少し調整（お好みで36pxでもOK）
+    margin: 70px 0;
+
+    @media (max-width: 768px) {
+      display: none; // スマホ表示で非表示にする既存設定
+    }
+  }
+
+  &__card2 {
+    position: relative; // バッジやイラストの配置用に記述しておくと便利です
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    padding: 32px 24px 35px; // 横幅に合わせてパディングを少しスリムに調整
+    background: #fff;
 
     @media (max-width: 480px) {
       padding: 28px 18px 26px;
@@ -421,10 +549,14 @@ main {
 
   &__heading {
     text-align: center;
-    color: var(--teal);
+    color: var(--red);
     font-size: 19px;
     @include font-gen(900);
     margin-bottom: 30px;
+
+    &.travel{
+      color: var(--teal);
+    }
   }
 
   &__pay {
@@ -438,9 +570,18 @@ main {
     line-height: 1.6;
     margin-bottom: 1px;
 
+    &.space{
+      padding-top: 20px;
+    }
+
     strong {
-      color: var(--teal);
+      color: var(--red);
       @include font-gen(700);
+    }
+    &.travel{
+      strong {
+        color: var(--teal);
+      }
     }
   }
 
@@ -466,30 +607,65 @@ main {
   }
 
   &__example {
-    background: var(--yellow-soft); // 柔らかい黄色の背景変数に変更
+    background: var(--yellow);
     border-radius: 10px;
-    padding: 22px 24px;
-    margin-top: 30px;
+    padding: 12px 20px;
+    margin: 20px 0;
+    text-align: center;
 
-    dl {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 4px 14px;
-    }
-    dt {
-      @include font-gen(900);
-      font-size: 14.5px;
-      white-space: nowrap;
-    }
-    dd {
+    P{
       font-size: 16px;
-      margin-bottom: 16px;
-      &:last-child { margin-bottom: 0; }
+      line-height: 1.6;
 
-      b {
-        display: block;
-        margin-bottom: -10px;
+      strong{
+        font-size: 21px;
+        font-weight: 700;
       }
+    }
+  }
+
+  &__about{
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 70px;
+
+    &__headline{
+      display: table;
+      margin: 0 auto;
+      color: var(--red);
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--red);
+    }
+
+    &__inner {
+      padding: 15px;
+    }
+
+    &__list {
+      display: flex;
+      gap: 3px;
+    }
+
+    &__link {
+      justify-content: center;
+      display: flex;
+      gap: 50px;
+      padding-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 6px;
+
+      &__link {
+      flex-direction: column;
+      gap: 15px;
+      padding-top: 15px;
+    }
     }
   }
 
@@ -502,7 +678,7 @@ main {
   .p-accordion{
     display: none;
     max-width: 1030px;
-    margin: 0 auto 0;
+    margin: 30px auto;
 
     @media (max-width: 768px) {
       display: block;
@@ -512,6 +688,7 @@ main {
     border: 2px solid var(--ink);
     border-radius: 10px;
     margin-bottom: 10px;
+    background: #fff;
 
     &[open] {
       .c-accordion__mark {
@@ -607,7 +784,7 @@ main {
   }
 }
 
-// ─── Fees Section ───
+// ---------- Fees Section ----------
 .p-fees {
   .c-headline {
     margin-bottom: 60px;
@@ -671,7 +848,7 @@ main {
   &__label {
     display: block;
     text-align: center;
-    background: var(--yellow-soft);
+    background: #FFD5DB;
     color: var(--ink);
     @include font-gen(700);
     font-size: 16px;
@@ -698,12 +875,13 @@ main {
   }
 }
 
-// ─── Plan Section ───
+// ---------- Plan Section ----------
 .p-plan {
   &__banner {
     border: 2px solid var(--ink);
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 110px;
 
     &-head {
       background: var(--ink);
@@ -734,7 +912,7 @@ main {
       padding: 16px;
       font-size: 18px;
       @include font-gen(900);
-      color: var(--teal);
+      color: var(--red);
 
       @media (max-width: 768px) {
         padding: 10px 30px;
@@ -746,335 +924,162 @@ main {
     }
   }
 
-  &__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
+  &__back{
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--red);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 120px;
+
+    &[data-active-tab="set"] {
+      border: 1px solid var(--teal);
+    }
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 35px;
-      margin-top: 35px;
+      margin: 0 0 80px;
+      border-radius: 0 0 10px 10px;
     }
   }
 
-  &__table {
-    width: 100%;
+  &__inner {
+    position: relative;
+    display: flow-root;
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__panel {
+    &[hidden] {
       display: none;
     }
-  }
-
-  &__table_sp {
-    width: 100%;
-    display: none;
-    @media (max-width: 768px) {
-      display: block;
-    }
-  }
-
-  &__aside {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    margin-top: 50px;
-
-    @media (max-width: 900px){
-      margin-top: 35px;
-    }
-  }
-
-  &__note {
-    background: var(--yellow-soft);
-    border-radius: 12px;
-    padding: 15px;
-    font-size: 16px;
-    margin-right: 80px;
-    line-height: 1.6;
-
-    strong {
-      color: var(--pink); // 警告等の強いアクセントカラーを変数化
-      @include font-gen(700);
-    }
-
-    .mr {
-      margin-right: 110px;
-    }
-
-    @media (max-width: 900px){
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px){
-      margin-right: 55px;
-
-      .mr {
-        margin-right: 60px;
-      }
-    }
-  }
-
-  &__photo {
-    position: absolute;
-    width: 148px;
-    top: 90px;
-    right: 30px;
-
-    @media (max-width: 900px){
-      width: 110px;
-      top: 80px;
-      right: 50px;
-    }
-
-    @media (max-width: 768px){
-      width: 100px;
-      top: 40px;
-      right: 10px;
-    }
-
-    @media (max-width: 460px){
-      width: 100px;
-      top: 86px;
-      right: 10px;
-    }
-  }
-}
-
-// ─── Option Section ───
-.p-option {
-  &__frame {
-    position: relative;
-    border: 2px solid var(--ink);
-    border-radius: 10px;
-    padding: 6px;
-    margin-top: 30px;
-    background-color: var(--yellow);
-  }
-
-  &__tab {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 0 40px;
-    font-size: 21px;
-    @include font-gen(900);
 
     @media (max-width: 768px) {
-      top: -10px;
-      font-size: 17px;
+      max-width: 440px;
+      margin: 0 auto;
       padding: 0 20px;
     }
   }
 
-  &__innner {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 50px 20px;
-
-    @media (max-width: 768px) {
-      padding: 50px 20px 20px;
-    }
-  }
-
-  &__heading {
-    text-align: center;
-    font-size: 27px;
-    @include font-gen(900);
-    margin-bottom: 30px;
-
-    @media (max-width: 768px) {
-      line-height: 1.6;
-    }
-
-    span {
-      // マーカー風グラデーションの背景色を設定（上部透明、下部に黄色）
-      background: linear-gradient(transparent 60%, var(--yellow) 60%);
-    }
-
-    .sp {
-      display: none;
-
-      @media (max-width: 768px) {
-        display: inline;
-      }
-    }
-  }
-
-  &__lead {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 56px;
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-    max-width: 880px;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &__item {
-    width: 100%;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  &__item_sp {
-    display: none;
-    max-width: 360px;
-    width: 100%;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
-  }
-
-  .btn-wrap {
+  &__tabs {
     display: flex;
+    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
     justify-content: center;
-    margin: 46px auto 0;
-  }
-}
-
-// ─── Short Section ───
-.p-short {
-  &__photo {
-    width: 100%;
-    margin-top: 120px;
+    gap: 18px;
+    max-width: 1030px;
+    
+    /* 💡ここがガタつき防止のポイント */
+    height: 70px;          // エリア全体の高さを最大値の70pxに固定
+    margin: -71px auto 0;  // 高さに合わせたネガティブマージン
 
     @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  &__photo_sp {
-    width: 100%;
-    margin-top: 60px;
-    display: none;
-
-    @media (max-width: 768px) {
-      display: block;
+      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      margin-top: -51px;
+      gap: 8px;
     }
   }
 
-  .banner_title {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 120px 0 10px;
+  /* タブ単体 */
+  &__tab {
+    flex: 0 1 356px;
+    height: 50px; // 閉じている時は50px
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    background: #FFD5DB;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s, color .2s, height .2s;
+    text-align: center;
 
-    @media (max-width: 768px) {
-      margin: 56px 0 10px;
-    }
-
-    .bar {
-      font-size: 40px;
-      font-weight: 900;
-      margin-top: 10px;
-
-      @media (max-width: 768px) {
-        font-size: 50px;
-        font-weight: 400;
-        margin-top: 27px;
-      }
-
-      @media (max-width: 400px) {
-        font-size: 40px;
-        font-weight: 400;
-        margin-top: 27px;
-      }
-
-      &:nth-of-type(1) {
-        transform: scaleX(-1);
-      }
-    }
-
-    .title {
-      text-align: center;
+    .en {
       font-weight: 700;
-      line-height: 1.4;
+      font-size: 24px;
+    }
 
-      @media (max-width: 400px) {
-        font-size: 14px;
+    &[data-tab="sim"] {
+      background: #FFD5DB;
+    }
+    &[data-tab="set"] {
+      background: #DBF4FD;
+    }
+
+    /* 💡 各タブごとのアクティブ時背景色 */
+    &[data-tab="sim"].is-active {
+      background: var(--red);
+    }
+    &[data-tab="set"].is-active {
+      background: var(--teal);
+    }
+
+    &.is-active {
+      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* レスポンシブ（スマホ版） */
+    @media (max-width: 768px) {
+      font-size: 15px;
+      height: 38px;
+
+      &.is-active {
+        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
       }
 
-      p:nth-of-type(2){
-        font-size: 18px;
-        font-weight: 900;
-
-        @media (max-width: 400px) {
-          font-size: 16px;
-        }
-
-        .yellowline{
-          background: linear-gradient(transparent 65%, var(--yellow) 65%);
-        }
-
-        .big {
-          font-size: 21px;
-
-          @media (max-width: 400px) {
-            font-size: 18px;
-          }
-        }
-
-        .sp {
-          display: none;
-
-          @media (max-width: 768px) {
-            display: inline;
-          }
-        }
+      .en {
+        font-size: 17px;
       }
     }
   }
 
-  &__banner {
-    width: 100%;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  &__banner_sp {
-    width: 100%;
-    display: none;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
-  }
-
-  &__note {
-    text-align: center;
-    margin-top: 14px;
-    font-size: 12px;
-    color: #888888;
-    line-height: 1.7;
-  }
-
-  .btn-wrap {
+  &__imgwrap {
+    max-width: 740px;
+    margin: 60px auto;
     display: flex;
-    justify-content: center;
-    margin: 40px auto 160px;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  &__label {
+    display: block;
+    text-align: center;
+    background: #DBF4FD;
+    color: var(--ink);
+    @include font-gen(700);
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    margin-bottom: 20px;
+
+    &.travel {
+      background: #FFD5DB;
+    }
 
     @media (max-width: 768px) {
-      margin: 35px auto 90px;
+      margin: 35px 20px ;
+    }
+  }
+  
+  &__body {
+    padding-right: 24px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.6;
+    padding-left: calc(1.2em + 10px);
+    text-indent: -1.2em;
+
+    .link {
+      color: #46c9f4;
+      text-decoration: underline;
     }
   }
 }

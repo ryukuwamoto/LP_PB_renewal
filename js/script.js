@@ -501,3 +501,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.p-cycle__tab');
+  const panels = document.querySelectorAll('.p-cycle__panel');
+  const cycleBack = document.querySelector('.p-cycle__back'); // 💡 追加
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-tab');
+
+      // 💡 背景要素にアクティブなタブ情報を付与
+      if (cycleBack) {
+        cycleBack.setAttribute('data-active-tab', targetTab);
+      }
+
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(panel => {
+        panel.setAttribute('hidden', '');
+      });
+
+      const targetPanel = document.querySelector(`.p-cycle__panel[data-panel="${targetTab}"]`);
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+      }
+    });
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.p-plan__tab');
+  const panels = document.querySelectorAll('.p-plan__panel');
+  const cycleBack = document.querySelector('.p-plan__back'); // 💡 追加
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-tab');
+
+      // 💡 背景要素にアクティブなタブ情報を付与
+      if (cycleBack) {
+        cycleBack.setAttribute('data-active-tab', targetTab);
+      }
+
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(panel => {
+        panel.setAttribute('hidden', '');
+      });
+
+      const targetPanel = document.querySelector(`.p-plan__panel[data-panel="${targetTab}"]`);
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+      }
+    });
+  });
+});
