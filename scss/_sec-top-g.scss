@@ -216,12 +216,12 @@
     &:nth-of-type(1) {
       .window-shape {
         position: absolute;
-        height: 280px;
+        height: 326px;
         width: 100%;
         top: 0;
         left: 0;
         background-image: url("../img/sec-top-g/windowsim1.png");
-        background-size: 100% 280px;
+        background-size: 100% 326px;
         background-repeat: no-repeat;
         background-position: top center;
 
@@ -301,12 +301,12 @@
     &:nth-of-type(1) {
       .window-shape {
         position: absolute;
-        height: 280px;
+        height: 326px;
         width: 100%;
         top: 0;
         left: 0;
         background-image: url("../img/sec-top-g/windowsim1.png");
-        background-size: 100% 280px;
+        background-size: 100% 326px;
         background-repeat: no-repeat;
         background-position: top center;
 
@@ -467,8 +467,12 @@
     }
   }
 
+  .sp{display: none;}
+
   @media (max-width: 768px){
     font-size: 13px;
+
+    .sp{display: block;}
   }
 }
 

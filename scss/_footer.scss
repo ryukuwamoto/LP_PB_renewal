@@ -227,6 +227,8 @@
           .thumnail {
             width: 100%;
             height: auto;
+			aspect-ratio: 217 / 144;
+            object-fit: cover;
           }
 
           div {

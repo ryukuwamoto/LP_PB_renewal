@@ -17,12 +17,6 @@
     }
   }
 
-  .sp {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
   .usp {
       display: none;
 
@@ -30,6 +24,12 @@
         display: inline;
       }
     }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   &__lead {
     margin: 60px 0;
@@ -230,6 +230,9 @@
         font-size: 16px;
         color: var(--red);
       }
+      .is-sm {
+        font-size: 12px;
+      }
     }
 
     &-note {
@@ -417,7 +420,7 @@
     }
 
     &-sub {
-      padding: 0 20px;
+      padding: 0 4px;
       font-weight: 500;
       font-size: 16px;
       line-height: 26px;
@@ -591,6 +594,16 @@
   }
 }
 
+.c-brands2 {
+  padding: 0 5px;
+  width: 100%;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
 /* =========================================================
    top_b … タブ切り替え・商品購入セクション
    ========================================================= */
@@ -603,6 +616,14 @@
   @media (max-width: 768px) {
     margin: 0 0 80px;
   }
+
+  .usp {
+      display: none;
+
+      @media (max-width: 600px) {
+        display: inline;
+      }
+    }
 
   .sp {
     @media (max-width: 768px) {

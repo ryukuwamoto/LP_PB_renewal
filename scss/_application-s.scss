@@ -17,12 +17,6 @@
     }
   }
 
-  .sp {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
   .usp {
       display: none;
 
@@ -30,6 +24,12 @@
         display: inline;
       }
     }
+
+  .sp {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   &__lead {
     margin: 60px 0;
@@ -603,6 +603,14 @@
   @media (max-width: 768px) {
     margin: 0 0 80px;
   }
+
+  .usp {
+      display: none;
+
+      @media (max-width: 600px) {
+        display: inline;
+      }
+    }
 
   .sp {
     @media (max-width: 768px) {

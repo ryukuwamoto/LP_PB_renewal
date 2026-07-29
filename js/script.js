@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <option value="0" data-plm="1">日本国内ポスト投函(＋0円)</option>
       <option value="550" data-plm="S550">日時指定(＋550円)</option>
       <option value="1100" data-plm="S1100">日時指定/北海道・沖縄・離島(＋1,100円)</option>
-      <option value="1100" data-plm="K1100">オーストラリア配送(＋1,100円)</option>
+      <option value="1100" data-plm="K1100">カナダ配送(＋1,100円)</option>
     `
   };
 

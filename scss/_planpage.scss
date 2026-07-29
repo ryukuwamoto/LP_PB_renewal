@@ -978,8 +978,13 @@ main {
     margin: -71px auto 0;  // 高さに合わせたネガティブマージン
 
     @media (max-width: 768px) {
+      position: absolute;
+      width: calc(100% + 2px);
+      top: -51px;
+      left: 50%;
+      transform: translateX(-50%);
       height: 50px;        // スマホ版のエリア全体高さを50pxに固定
-      margin-top: -51px;
+      margin-top: 0px;
       gap: 8px;
     }
   }
@@ -1045,6 +1050,27 @@ main {
     display: flex;
     flex-direction: column;
     gap: 36px;
+
+    @media (max-width: 768px) {
+      margin: 20px auto;
+      gap: 20px;
+    }
+  }
+
+  &__pc {
+    display: block;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__sp {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   &__label {
@@ -1062,20 +1088,19 @@ main {
     &.travel {
       background: #FFD5DB;
     }
-
-    @media (max-width: 768px) {
-      margin: 35px 20px ;
-    }
   }
   
   &__body {
-    padding-right: 24px;
     font-size: 12px;
     font-weight: 400;
     color: var(--ink);
     line-height: 1.6;
-    padding-left: calc(1.2em + 10px);
-    text-indent: -1.2em;
+    padding-left: calc(1.2em + 6px);
+    text-indent: -1.1em;
+
+    @media (max-width: 768px) {
+      padding-left: calc(1.2em + 2px);
+    }
 
     .link {
       color: #46c9f4;

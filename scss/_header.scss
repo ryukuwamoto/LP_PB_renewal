@@ -350,11 +350,31 @@
     &.fill-box::after {
       border-bottom-color: #fff;
     }
+
+    &.fill-box-l::after {
+      border-bottom-color: #fff;
+    }
+
+    &.fill-box-s::after {
+      border-bottom-color: #fff;
+    }
   }
 
   .fill-box {
     border: none;
     background-color: var(--teal);
+    color: #fff;
+  }
+
+  .fill-box-l {
+    border: 1px solid var(--red);
+    background-color: color-mix(in srgb, var(--red) 75%, transparent);
+    color: #fff;
+  }
+
+  .fill-box-s {
+    border: 1px solid var(--teal);
+    background-color: color-mix(in srgb, var(--teal) 75%, transparent);
     color: #fff;
   }
 }
@@ -618,6 +638,19 @@
         height: 100%;
       }
     }
+
+    .content-box4 {
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      width: 100%;
+      flex: 1;
+
+      a {
+        flex: 1;
+        height: 100%;
+      }
+    }
   }
 
   .box {
@@ -679,6 +712,23 @@
 
         p {
         padding-bottom: 12px; 
+        }
+      }
+
+      &.fill-box-l,&.fill-box-s{
+
+        img {
+          width: 28px;
+          height: auto;
+          padding-top: 14px;
+        }
+
+        p {
+        padding-bottom: 8px;
+
+        span{
+          font-size: 12px;
+        }
         }
       }
     }
@@ -785,6 +835,17 @@
           flex: none;
           width: calc(50% - 8px);
           height: calc(50% - 8px);
+        }
+      }
+
+      .content-box4 {
+        flex-wrap: wrap;
+        gap: 16px;
+        height: 100px;
+        width: 100%;
+
+        .box {
+          width: calc(50% - 8px);
         }
       }
     }
@@ -994,6 +1055,8 @@
           .thumnail {
             width: 100%;
             height: auto;
+            aspect-ratio: 217 / 144;
+            object-fit: cover;
           }
 
           div {

@@ -248,11 +248,15 @@
     color: var(--red);
   }
 
+  .sp{display: none;}
+
   @media (max-width: 768px){
     font-size: 14px;
     line-height: 24px;
 
     .lg{ font-size: 19px; }
+
+    .sp{display: inline;}
   }
 }
 
@@ -329,7 +333,7 @@
   }
 
   .en{
-    @include font-sofia(700);
+    @include font-sofia(500);
   }
 
   @media (max-width: 768px){
@@ -750,8 +754,6 @@
     .en{
       @include font-sofia(700);
     }
-
-    .asterisk{ color: var(--card-color); }
   }
 
   .service-icon{
