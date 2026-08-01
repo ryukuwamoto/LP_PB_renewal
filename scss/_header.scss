@@ -1591,6 +1591,34 @@
       }
     }
   }
+}
 
+// ---------- campaign ----------
 
+.campaign_header{
+  display: block;
+  margin-bottom: 20px;
+
+  .menubanner_pc{
+    width: 100%;
+    height: auto;
+  }
+
+  .menubanner_sp{
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+
+    .menubanner_pc{
+      display: none;
+    }
+
+    .menubanner_sp{
+      display: block;
+    }
+  }
 }

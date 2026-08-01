@@ -2163,6 +2163,31 @@ ul {
   display: block;
 }
 
+.campaign_header {
+  display: block;
+  margin-bottom: 20px;
+}
+.campaign_header .menubanner_pc {
+  width: 100%;
+  height: auto;
+}
+.campaign_header .menubanner_sp {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .campaign_header {
+    margin-bottom: 16px;
+  }
+  .campaign_header .menubanner_pc {
+    display: none;
+  }
+  .campaign_header .menubanner_sp {
+    display: block;
+  }
+}
+
 .hero {
   background-image: url("../img/hero/back_anniversary.png"), radial-gradient(#f2f2f2 2px, transparent 3px);
   background-position: center bottom, 0 0;
@@ -8577,6 +8602,7 @@ ul {
 .p-cycle__about__headline {
   display: table;
   margin: 0 auto;
+  font-weight: 700;
   color: var(--red);
   padding-bottom: 3px;
   border-bottom: 1px solid var(--red);
@@ -10725,7 +10751,7 @@ ul {
 }
 @media (max-width: 768px) {
   .a-top_a__recommend-title {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .a-top_a__recommend-title span {
@@ -11892,6 +11918,9 @@ ul {
   font-size: 16px;
   color: var(--teal);
 }
+.a-top_a-s__device-model .is-sm {
+  font-size: 12px;
+}
 .a-top_a-s__device-note {
   margin: 0;
   font-weight: 500;
@@ -11975,7 +12004,7 @@ ul {
 }
 @media (max-width: 768px) {
   .a-top_a-s__recommend-title {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .a-top_a-s__recommend-title span {
@@ -12095,7 +12124,7 @@ ul {
   text-align: center;
 }
 .a-top_a-s__pay-sub {
-  padding: 0 20px;
+  padding: 0 4px;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -12260,6 +12289,15 @@ ul {
   width: 100%;
 }
 .c-brands img {
+  display: block;
+  height: auto;
+}
+
+.c-brands2 {
+  padding: 0 5px;
+  width: 100%;
+}
+.c-brands2 img {
   display: block;
   height: auto;
 }

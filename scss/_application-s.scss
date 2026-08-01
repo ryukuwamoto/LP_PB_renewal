@@ -230,6 +230,9 @@
         font-size: 16px;
         color: var(--teal);
       }
+      .is-sm {
+        font-size: 12px;
+      }
     }
 
     &-note {
@@ -318,7 +321,7 @@
       text-align: center;
 
       @media (max-width: 768px) {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       span {
@@ -417,7 +420,7 @@
     }
 
     &-sub {
-      padding: 0 20px;
+      padding: 0 4px;
       font-weight: 500;
       font-size: 16px;
       line-height: 26px;
@@ -583,6 +586,16 @@
 /* クレジットカードブランドロゴ */
 .c-brands {
   padding: 0 30px;
+  width: 100%;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
+.c-brands2 {
+  padding: 0 5px;
   width: 100%;
 
   img {
