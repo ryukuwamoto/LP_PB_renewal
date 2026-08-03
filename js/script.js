@@ -260,8 +260,8 @@ $(function () {
     autoplay: true,
     dots: true,
     variableWidth: true,
-    prevArrow: '<img src="../img/sec-top-h/sliderarrow.png" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="../img/sec-top-h/sliderarrow.png" class="slide-arrow next-arrow">',
+    prevArrow: '<img src="img/sec-top-h/sliderarrow.png" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="img/sec-top-h/sliderarrow.png" class="slide-arrow next-arrow">',
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -579,7 +579,6 @@ window.addEventListener('load', () => {
   if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
     if (target) {
-      // 読み込み完了後の正しい位置へ再スクロール
       target.scrollIntoView({ behavior: 'smooth' });
     }
   }
