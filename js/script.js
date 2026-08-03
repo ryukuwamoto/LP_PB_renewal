@@ -573,3 +573,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      // 読み込み完了後の正しい位置へ再スクロール
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
