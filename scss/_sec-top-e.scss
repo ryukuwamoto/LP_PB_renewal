@@ -15,7 +15,7 @@
 .sec-top-e-title{
   text-align: center;
   margin-bottom: 45px;
-  @include font-gen(bold);
+  font-weight: bold;
   color: #fff;
 
   .title-sm{
@@ -23,7 +23,7 @@
     font-size: 33px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 35px;
     }
   }
@@ -35,7 +35,7 @@
     font-weight: 900;
 
     .num{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 69px;
       color: #fff;
       margin-right: 2px;
@@ -87,7 +87,7 @@
   }
 
   .point-title{
-    @include font-gen(900);
+    font-weight: 900;
     font-size: 24px;
     color: var(--ink);
     padding-bottom: 8px;
@@ -102,7 +102,7 @@
 }
 
 .point-desc{
-  @include font-gen(500);
+  font-weight: 500;
   font-size: 16px;
   line-height: 26px;
   color: var(--ink);
@@ -133,12 +133,12 @@
   }
 
   .en{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 15px;
   }
 
   .hl-yellow{
-    @include font-gen(900);
+    font-weight: 900;
     color: var(--teal);
   }
 
@@ -217,14 +217,14 @@
   }
 
   .carrier-feature{
-      @include font-gen(bold);
+      font-weight: bold;
       font-size: 16px;
       margin: 20px 0;
       background: linear-gradient(transparent 65%, #98DADE 65%);
       display: inline-block;
       padding: 0 5px;
 
-      .en{ @include font-sofia(700); }
+      .en{ font-weight: 700;}
 
       @media (max-width: 768px){
         margin: 15px 0;
@@ -232,7 +232,7 @@
     }
 
   .carrier-name{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 23px;
     color: #fff;
     background-color: var(--teal);
@@ -245,7 +245,7 @@
   }
 
   .carrier-detail{
-    @include font-gen(bold);
+    font-weight: bold;
     font-size: 14px;
     color: var(--ink);
     text-align: left;
@@ -281,7 +281,7 @@
     }
 
     .carrier-tag{
-      @include font-gen(bold);
+      font-weight: bold;
       font-size: 14px;
       color: #fff;
       padding: 4px 0;
@@ -384,7 +384,7 @@
 // ============================================
 .phone-need-title{
   text-align: center;
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 21px;
   color: var(--ink);
   margin: 0 auto;
@@ -541,7 +541,7 @@
     padding: 0 23px 0 40px;
 
     .phone-unlimited-tag{
-      @include font-gen(bold);
+      font-weight: bold;
       font-size: 16px;
       color: var(--ink);
 
@@ -551,7 +551,7 @@
     }
 
     .phone-unlimited-text{
-      @include font-gen(bold);
+      font-weight: bold;
       font-size: 66px;
       color: var(--ink);
       line-height: 1.1;
@@ -594,7 +594,7 @@
 // ============================================
 .service-tagline{
   justify-content: center;
-  @include font-gen(900);
+  font-weight: 900;
   font-size: 16px;
   color: var(--teal);
   padding: 48px 0 10px;
@@ -604,7 +604,7 @@
   gap: 4px;
 
   .cross{
-    @include font-sofia(400);
+    font-weight: 400;
     font-size: 1.8rem;
     padding-bottom: 6px;
   }
@@ -615,7 +615,7 @@
     gap: 0;
 
     .cross{
-      @include font-sofia(400);
+      font-weight: 400;
       font-size: 1.8rem;
       padding-bottom: 6px;
       line-height: 0.8;

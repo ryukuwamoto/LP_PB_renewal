@@ -29,7 +29,7 @@
   }
 
   .sec-en{
-    @include font-sofia(500);
+    font-weight: 500;
     font-style: italic;
     font-size: 36px;
     color: var(--ink);
@@ -49,7 +49,7 @@
 
   .sec-jp{
     margin-top: 8px;
-    @include font-gen(bold);
+    font-weight: bold;
     font-size: 21px;
     color: var(--ink);
   }
@@ -81,7 +81,7 @@
   color: #959595;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 28px;
   display: inline-flex;
   align-items: center;
@@ -91,12 +91,12 @@
   padding: 0;
 
   .en{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 30px;
   }
 
   .jp{
-    @include font-gen(bold);
+    font-weight: bold;
     font-size: 28px;
   }
 
@@ -123,12 +123,12 @@
     height: 43px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 20px;
     }
 
     .jp{
-      @include font-gen(bold);
+      font-weight: bold;
       font-size: 18px;
     }
 
@@ -413,7 +413,7 @@
 }
 
 .g-step-label{
-  @include font-sofia(700);
+  font-weight: 700;
   font-size: 18px;
   line-height: 1;
   display: inline-flex;
@@ -423,7 +423,7 @@
 
   .step-num{
     font-size: 28px;
-    @include font-sofia(900);
+    font-weight: 900;
   }
 
   @media (max-width: 768px){
@@ -436,14 +436,13 @@
 }
 
 .g-step-name{
-  @include font-gen(bold);
   font-weight: 900;
   font-size: 21px;
   line-height: 26px;
   color: var(--teal);
 
   .en{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 23px;
   }
 }
@@ -452,7 +451,7 @@
   position: relative;
   max-width: 572px;
   width: 100%;
-  @include font-gen(500);
+  font-weight: 500;
   font-size: 16px;
   line-height: normal;
   color: var(--ink);
@@ -579,13 +578,13 @@
   width: 100%;
   background: var(--yellow);
   border-radius: 5px 0 0 5px;
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 14px;
   color: var(--ink);
   white-space: nowrap;
 
   .en{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 16px;
   }
 
@@ -599,7 +598,7 @@
 }
 
 .g-callout-text{
-  @include font-gen(500);
+  font-weight: 500;
   font-size: 14px;
   line-height: 23px;
   color: var(--ink);
@@ -633,7 +632,7 @@
   color: #fff;
   border-radius: 999px;
   border: 1px solid var(--pink);
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 17px;
   display: inline-flex;
   align-items: center;

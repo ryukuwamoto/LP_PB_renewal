@@ -28,7 +28,7 @@ main {
   display: table;
   margin: 120px auto;
   font-size: 21px;
-  @include font-gen(700);
+  font-weight: 700;
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
 
@@ -59,7 +59,7 @@ main {
     border-radius: 8px;
     padding: 14px 18px;
     color: var(--ink);
-    @include font-mix(700);
+    font-weight: 700;
     font-size: 14px;
     background: #fff;
     transition: background .2s, color .2s;
@@ -103,7 +103,7 @@ main {
   &__arrow {
     margin-left: auto;
     color: var(--teal);
-    @include font-gen(900);
+    font-weight: 900;
     font-size: 10px;
 
     @media (max-width: 768px) {
@@ -114,7 +114,7 @@ main {
   &__uarrow {
     display: none;
     color: var(--teal);
-    @include font-gen(900);
+    font-weight: 900;
     font-size: 10px;
 
     @media (max-width: 768px) {
@@ -139,7 +139,7 @@ main {
   border: 2px solid var(--ink);
   border-radius: 999px;
   padding: 14px 30px;
-  @include font-mix(900);
+  font-weight: 900;
   font-size: 15px;
   color: var(--ink);
   box-shadow: 4px 4px 0 var(--pink);
@@ -153,7 +153,7 @@ main {
   &__arrow {
     margin-left: 2px;
     font-size: 17px;
-    @include font-gen(900);
+    font-weight: 900;
     line-height: 1;
   }
 }
@@ -205,7 +205,7 @@ main {
     display: flex;
     align-items: center;
     padding: 18px 10px;
-    @include font-gen(700);
+    font-weight: 700;
     font-size: 16px;
 
     &::-webkit-details-marker {
@@ -216,7 +216,7 @@ main {
   &__mark {
     margin-left: auto;
     font-size: 22px;
-    @include font-gen(900);
+    font-weight: 900;
     color: var(--ink);
   }
 
@@ -247,7 +247,7 @@ main {
 .c-plus {
   text-align: center;
   font-size: 60px;
-  @include font-gen(900);
+  font-weight: 900;
   margin: 60px 0;
 
   @media (max-width: 768px) {
@@ -267,7 +267,7 @@ main {
     gap: 6px;
     color: var(--ink);
     font-size: 11px;
-    @include font-mix(700);
+    font-weight: 700;
   }
 
   &__circle {
@@ -287,7 +287,7 @@ main {
   &__heading {
     text-align: center;
     font-size: 15px;
-    @include font-gen(900);
+    font-weight: 900;
     margin-bottom: 14px;
   }
 
@@ -310,7 +310,7 @@ main {
 
   &__title {
     font-size: 13.5px;
-    @include font-gen(700);
+    font-weight: 700;
     line-height: 1.6;
 
     a:hover {
@@ -327,7 +327,7 @@ main {
 
   &__item {
     font-size: 13px;
-    @include font-mix(700);
+    font-weight: 700;
     color: var(--ink);
 
     &:hover {
@@ -348,7 +348,7 @@ main {
   }
 
   &__en {
-    @include font-sofia(500);
+    font-weight: 500;
     font-style: italic;
     font-size: 38px;
     color: var(--ink);
@@ -376,7 +376,7 @@ main {
   }
 
   &__heading {
-    @include font-gen(bold);
+    font-weight: bold;
     font-size: 19px;
     margin-top: 6px;
     color: var(--ink);
@@ -447,7 +447,7 @@ main {
     border: 0;
     border-radius: 10px 10px 0 0;
     background: #FFD5DB;
-    color: #fff;
+    color: #959595;
     font-weight: 700;
     font-size: 22px;
     cursor: pointer;
@@ -551,7 +551,7 @@ main {
     text-align: center;
     color: var(--red);
     font-size: 19px;
-    @include font-gen(900);
+    font-weight: 900;
     margin-bottom: 30px;
 
     &.travel{
@@ -576,7 +576,7 @@ main {
 
     strong {
       color: var(--red);
-      @include font-gen(700);
+      font-weight: 700;
     }
     &.travel{
       strong {
@@ -704,7 +704,7 @@ main {
     display: flex;
     align-items: center;
     padding: 14px;
-    @include font-gen(700);
+    font-weight: 700;
     font-size: 18px;
 
     &::-webkit-details-marker {
@@ -735,7 +735,7 @@ main {
 
     strong {
       color: var(--teal);
-      @include font-gen(700);
+      font-weight: 700;
     }
   }
 
@@ -756,7 +756,7 @@ main {
   &__mark {
     margin-left: auto;
     font-size: 22px;
-    @include font-gen(900);
+    font-weight: 900;
     color: var(--ink);
   }
 
@@ -851,7 +851,7 @@ main {
     text-align: center;
     background: #FFD5DB;
     color: var(--ink);
-    @include font-gen(700);
+    font-weight: 700;
     font-size: 16px;
     padding: 12px;
     border: 1px solid var(--ink);
@@ -890,7 +890,7 @@ main {
       text-align: center;
       padding: 18px;
       font-size: 22px;
-      @include font-gen(900);
+      font-weight: 900;
 
       @media (max-width: 768px) {
         font-size: 20px;
@@ -899,7 +899,7 @@ main {
 
       small {
         font-size: 16px;
-        @include font-gen(700);
+        font-weight: 700;
 
         @media (max-width: 768px) {
           display: block;
@@ -912,7 +912,7 @@ main {
       text-align: center;
       padding: 16px;
       font-size: 18px;
-      @include font-gen(900);
+      font-weight: 900;
       color: var(--red);
 
       @media (max-width: 768px) {
@@ -928,13 +928,13 @@ main {
   &__back{
     position: relative;
     background: #fff;
-    border: 1px solid var(--red);
+    border: 2px solid var(--red);
     border-radius: 10px;
     transition: background-color 0.3s ease;
     margin-bottom: 120px;
 
     &[data-active-tab="set"] {
-      border: 1px solid var(--teal);
+      border: 2px solid var(--teal);
     }
 
     @media (max-width: 768px) {
@@ -976,12 +976,12 @@ main {
     
     /* 💡ここがガタつき防止のポイント */
     height: 70px;          // エリア全体の高さを最大値の70pxに固定
-    margin: -71px auto 0;  // 高さに合わせたネガティブマージン
+    margin: -72px auto 0;  // 高さに合わせたネガティブマージン
 
     @media (max-width: 768px) {
       position: absolute;
-      width: calc(100% + 2px);
-      top: -51px;
+      width: calc(100% + 4px);
+      top: -52px;
       left: 50%;
       transform: translateX(-50%);
       height: 50px;        // スマホ版のエリア全体高さを50pxに固定
@@ -997,7 +997,7 @@ main {
     border: 0;
     border-radius: 10px 10px 0 0;
     background: #FFD5DB;
-    color: #fff;
+    color: #959595;
     font-weight: 700;
     font-size: 22px;
     cursor: pointer;
@@ -1079,7 +1079,7 @@ main {
     text-align: center;
     background: #DBF4FD;
     color: var(--ink);
-    @include font-gen(700);
+    font-weight: 700;
     font-size: 16px;
     padding: 12px;
     border: 1px solid var(--ink);

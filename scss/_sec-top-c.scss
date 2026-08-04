@@ -77,7 +77,6 @@
   &.ws-compare-ym{ border-color: var(--red);}
 
   .cb-tag{
-    @include font-gen(normal);
     font-weight: 300;
     font-size: 12px;
     color: var(--ink);
@@ -94,7 +93,7 @@
   }
 
   .cb-desc{
-    @include font-gen(500);
+    font-weight: 500;
     font-size: 13px;
     color: var(--ink);
     text-align: center;
@@ -135,7 +134,7 @@
   width: 100%;
   max-width: 800px;
   text-align: center;
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 16px;
   line-height: 28px;
   color: var(--ink);
@@ -146,7 +145,7 @@
     color: var(--red);
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
     }
   }
 
@@ -202,13 +201,11 @@
   flex-shrink: 0;
 
   .mote-sub{
-    @include font-gen(bold);
     font-weight: 900;
     font-size: 12px;
     margin-bottom: 2px;
   }
   .mote-main{
-    @include font-gen(bold);
     font-weight: 900;
     font-size: 19px;
   }
@@ -225,7 +222,7 @@
 }
 
 .ws-mote-nara{
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 16px;
   color: var(--ink);
   margin-top: 12px;
@@ -236,7 +233,7 @@
 }
 
 .ws-mote-sub{
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 16px;
   color: var(--ink);
   text-align: center;
@@ -295,13 +292,12 @@
   text-align: center;
 
   p{
-    @include font-gen(bold);
     font-weight: 900;
     font-size: 16px;
     line-height: 23px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 18px;
     }
   }
@@ -316,14 +312,14 @@
   flex: 1;
 
   p{
-    @include font-gen(500);
+    font-weight: 500;
     font-size: 16px;
     line-height: 26px;
     color: var(--ink);
   }
 
   .strong{
-    @include font-gen(bold);
+    font-weight: bold;
     color: var(--red);
   }
 
@@ -333,7 +329,7 @@
   }
 
   .en{
-    @include font-sofia(500);
+    font-weight: 500;
   }
 
   @media (max-width: 768px){
@@ -427,7 +423,6 @@
   align-items: baseline;
   gap: 6px;
   color: #fff;
-  @include font-gen(bold);
   font-weight: 900;
   line-height: 1;
 
@@ -436,7 +431,7 @@
     font-size: 16px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 18px;
     }
   }
@@ -474,7 +469,7 @@
   color: #fff;
   padding: 12px 8px;
   align-items: center;
-  @include font-gen(bold);
+  font-weight: bold;
   font-size: 12px;
   line-height: 1.6;
   text-align: center;
@@ -486,7 +481,7 @@
   .hl{ color: var(--yellow); } /* 💡 $pb-hl-yellow から変更 */
 
   .en{
-    @include font-sofia(700);
+    font-weight: 700;
   }
 
   @media (max-width: 768px){
@@ -556,7 +551,7 @@
   }
 
   .price-label{
-    @include font-gen(normal);
+    font-weight: normal;
     font-size: 14px;
     color: var(--ink);
   }
@@ -569,18 +564,17 @@
     gap: 2px;
 
     .num{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 45px;
     }
 
     .unit{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 29px;
       margin-left: 2px;
     }
 
     .currency{
-      @include font-gen(bold);
       font-weight: 900;
       font-size: 29px;
     }
@@ -594,12 +588,12 @@
     line-height: 1.2;
 
     .extra-tag{
-      @include font-gen(500);
+      font-weight: 500;
       font-size: 11px;
     }
 
     .extra-amount .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 13px;
     }
   }
@@ -618,7 +612,6 @@
 }
 
 .phone-lead{
-  @include font-gen(bold);
   font-weight: 900;
   font-size: 16px;
   line-height: 1.4;
@@ -634,7 +627,6 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  @include font-gen(bold);
   font-weight: 900;
 
   .phone-cal{
@@ -647,7 +639,7 @@
   .phone-note{ font-size: 16px; }
 
   .phone-num{
-    @include font-sofia(700);
+    font-weight: 700;
     font-size: 37px;
     line-height: 1;
     margin-bottom: 12px;
@@ -690,7 +682,7 @@
   align-items: center;
   padding: 15px 15px 0;
   text-align: center;
-  @include font-gen(500);
+  font-weight: 500;
   font-size: 14px;
   color: var(--ink);
   background: #fff;
@@ -748,11 +740,11 @@
   }
 
   .service-name{
-    @include font-gen(500);
+    font-weight: 500;
     font-size: 12px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
     }
   }
 
@@ -763,7 +755,6 @@
   }
 
   .service-value{
-    @include font-gen(bold);
     font-weight: 900;
     font-size: 19px;
     color: var(--card-color);
@@ -779,7 +770,6 @@
       line-height: 1;
 
       .target{
-        @include font-gen(bold);
         font-weight: 900;
         font-size: 9px;
         line-height: 1.2;
@@ -787,7 +777,6 @@
       }
 
       .free{
-        @include font-gen(bold);
         font-weight: 900;
         font-size: 19px;
         color: var(--card-color);
@@ -795,7 +784,6 @@
     }
 
     .service-sub{
-      @include font-gen(bold);
       font-weight: 900;
       font-size: 10px;
       color: var(--card-color);
@@ -824,14 +812,13 @@
   }
 
   .feat-text{
-    @include font-gen(bold);
     font-weight: 900;
     color: var(--card-color);
     line-height: 1;
     font-size: 16px;
 
     .en{
-      @include font-sofia(700);
+      font-weight: 700;
       font-size: 18px;
     }
 
@@ -877,14 +864,14 @@
   }
 
   .check-text{
-    @include font-gen(500);
+    font-weight: 500;
     font-size: 16px;
     color: var(--ink);
     line-height: 1.4;
+  }
 
     .en{
-      @include font-sofia(700);
-    }
+      font-weight: 700;
   }
 
   @media (max-width: 768px){
@@ -919,7 +906,7 @@
 .plan-note{
   max-width: 700px;
   margin: 24px auto 0;
-  @include font-gen(300);
+  font-weight: 300;
   font-size: 12px;
   line-height: 1.6;
   color: var(--ink);

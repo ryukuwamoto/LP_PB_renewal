@@ -398,9 +398,7 @@ ul {
   }
 }
 .head-wrap .sec-head .sec-en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-style: italic;
   font-size: 36px;
   color: var(--ink);
@@ -429,15 +427,19 @@ ul {
 }
 .head-wrap .sec-head .sec-jp {
   margin-top: 13px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 21px;
   color: var(--ink);
+}
+.head-wrap .sec-head .sec-jp .en {
+  font-size: 23px;
 }
 @media (max-width: 768px) {
   .head-wrap .sec-head .sec-jp {
     font-size: 15px;
+  }
+  .head-wrap .sec-head .sec-jp .en {
+    font-size: 16px;
   }
 }
 
@@ -595,9 +597,7 @@ ul {
   text-decoration: none;
   color: var(--ink);
   padding: 20px 0;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 14px;
 }
 .nav .nav-item-wrapper .nav-item::after {
@@ -870,7 +870,7 @@ ul {
   }
 }
 .mega-menu-inner .box {
-  border: 1px solid var(--teal);
+  border: 1.5px solid var(--teal);
   border-radius: 5px;
   position: relative;
   display: block;
@@ -2058,9 +2058,7 @@ ul {
 
 .pill-btn {
   border-radius: 0;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 11px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2515,9 +2513,7 @@ ul {
 }
 
 .support-card-text h2 {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--ink);
   line-height: 1.35;
 }
@@ -2661,9 +2657,7 @@ ul {
 }
 
 .feature-card-text {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--ink);
   font-size: 14px;
   line-height: 1.5;
@@ -2671,9 +2665,7 @@ ul {
   margin-top: auto;
 }
 .feature-card-text .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 16px;
 }
 @media (max-width: 1020px) {
@@ -2717,17 +2709,13 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--ink);
   line-height: 1.1;
   text-align: center;
 }
 .feature-card-tag .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 14px;
 }
 .feature-card-tag .jp {
@@ -2948,9 +2936,6 @@ ul {
   border-color: var(--red);
 }
 .ws-compare-box .cb-tag {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: normal;
-  font-style: normal;
   font-weight: 300;
   font-size: 12px;
   color: var(--ink);
@@ -2963,9 +2948,7 @@ ul {
   display: block;
 }
 .ws-compare-box .cb-desc {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 13px;
   color: var(--ink);
   text-align: center;
@@ -3003,9 +2986,7 @@ ul {
   width: 100%;
   max-width: 800px;
   text-align: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
   line-height: 28px;
   color: var(--ink);
@@ -3017,9 +2998,7 @@ ul {
   color: var(--red);
 }
 .ws-lead .hl .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .ws-lead {
@@ -3095,17 +3074,11 @@ ul {
       flex-shrink: 0;
 }
 .ws-mote-badge .mote-sub {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 12px;
   margin-bottom: 2px;
 }
 .ws-mote-badge .mote-main {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 19px;
 }
@@ -3122,9 +3095,7 @@ ul {
 }
 
 .ws-mote-nara {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
   color: var(--ink);
   margin-top: 12px;
@@ -3136,9 +3107,7 @@ ul {
 }
 
 .ws-mote-sub {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
   color: var(--ink);
   text-align: center;
@@ -3218,17 +3187,12 @@ ul {
   text-align: center;
 }
 .ws-feature-head p {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 16px;
   line-height: 23px;
 }
 .ws-feature-head p .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
 }
 
@@ -3243,17 +3207,13 @@ ul {
           flex: 1;
 }
 .ws-feature-body p {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 16px;
   line-height: 26px;
   color: var(--ink);
 }
 .ws-feature-body .strong {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--red);
 }
 .ws-feature-body .underline {
@@ -3261,9 +3221,7 @@ ul {
   text-underline-offset: 2px;
 }
 .ws-feature-body .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .ws-feature-body {
@@ -3366,9 +3324,6 @@ ul {
           align-items: baseline;
   gap: 6px;
   color: #fff;
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   line-height: 1;
 }
@@ -3379,9 +3334,7 @@ ul {
   font-size: 16px;
 }
 .plan-card-title .ttl-days .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
 }
 .plan-card-title .ttl-plan {
@@ -3438,9 +3391,7 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 12px;
   line-height: 1.6;
   text-align: center;
@@ -3453,9 +3404,7 @@ ul {
 }
 .plan-card-desc { /* 💡 $pb-hl-yellow から変更 */ }
 .plan-card-desc .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .plan-card-desc {
@@ -3542,9 +3491,7 @@ ul {
   }
 }
 .plan-card-price .price-label {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: normal;
-  font-style: normal;
   font-size: 14px;
   color: var(--ink);
 }
@@ -3560,22 +3507,15 @@ ul {
   gap: 2px;
 }
 .plan-card-price .price-value .num {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 45px;
 }
 .plan-card-price .price-value .unit {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 29px;
   margin-left: 2px;
 }
 .plan-card-price .price-value .currency {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 29px;
 }
@@ -3591,15 +3531,11 @@ ul {
   line-height: 1.2;
 }
 .plan-card-price .price-extra .extra-tag {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 11px;
 }
 .plan-card-price .price-extra .extra-amount .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 13px;
 }
 
@@ -3616,9 +3552,6 @@ ul {
 }
 
 .phone-lead {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 16px;
   line-height: 1.4;
@@ -3641,9 +3574,6 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 4px;
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
 }
 .phone-body .phone-cal {
@@ -3656,9 +3586,7 @@ ul {
   font-size: 16px;
 }
 .phone-body .phone-num {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 37px;
   line-height: 1;
   margin-bottom: 12px;
@@ -3720,9 +3648,7 @@ ul {
           align-items: center;
   padding: 15px 15px 0;
   text-align: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 14px;
   color: var(--ink);
   background: #fff;
@@ -3797,15 +3723,11 @@ ul {
   }
 }
 .plan-services .service-name {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 12px;
 }
 .plan-services .service-name .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 .plan-services .service-icon {
   width: 30px;
@@ -3813,9 +3735,6 @@ ul {
   display: block;
 }
 .plan-services .service-value {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 19px;
   color: var(--card-color);
@@ -3832,26 +3751,17 @@ ul {
   line-height: 1;
 }
 .plan-services .service-intl .service-value .target {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 9px;
   line-height: 1.2;
   color: var(--card-color);
 }
 .plan-services .service-intl .service-value .free {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 19px;
   color: var(--card-color);
 }
 .plan-services .service-intl .service-sub {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 10px;
   color: var(--card-color);
@@ -3887,18 +3797,13 @@ ul {
           transform: rotate(25deg);
 }
 .plan-card-feat .feat-text {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   color: var(--card-color);
   line-height: 1;
   font-size: 16px;
 }
 .plan-card-feat .feat-text .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
 }
 .plan-card-feat .feat-text .lg {
@@ -3955,17 +3860,13 @@ ul {
       flex-shrink: 0;
 }
 .plan-card-checks .check-text {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 16px;
   color: var(--ink);
   line-height: 1.4;
 }
-.plan-card-checks .check-text .en {
-  font-family: "sofia-pro-soft", sans-serif;
+.plan-card-checks .en {
   font-weight: 700;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .plan-card-checks {
@@ -4003,9 +3904,7 @@ ul {
 .plan-note {
   max-width: 700px;
   margin: 24px auto 0;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 300;
-  font-style: normal;
   font-size: 12px;
   line-height: 1.6;
   color: var(--ink);
@@ -4378,31 +4277,23 @@ ul {
   line-height: 1.3;
 }
 .feature-card-d .card-top {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--ink);
   font-size: 16px;
   line-height: 29px;
 }
 .feature-card-d .card-top .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
 }
 .feature-card-d .card-bottom {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--teal);
   font-size: 21px;
   line-height: 29px;
 }
 .feature-card-d .card-bottom .en-lg {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 23px;
   margin-left: 2px;
 }
@@ -4430,9 +4321,7 @@ ul {
 
 .visual-msg {
   margin-top: 70px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: #f5f5f5;
   font-size: 24px;
   text-align: center;
@@ -4462,9 +4351,7 @@ ul {
 .sec-top-e-title {
   text-align: center;
   margin-bottom: 45px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: #fff;
 }
 .sec-top-e-title .title-sm {
@@ -4472,9 +4359,7 @@ ul {
   font-size: 33px;
 }
 .sec-top-e-title .title-sm .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 35px;
 }
 .sec-top-e-title .title-lg {
@@ -4484,9 +4369,7 @@ ul {
   font-weight: 900;
 }
 .sec-top-e-title .title-lg .num {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 69px;
   color: #fff;
   margin-right: 2px;
@@ -4555,9 +4438,7 @@ ul {
       flex-shrink: 0;
 }
 .point-head .point-title {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   font-size: 24px;
   color: var(--ink);
   padding-bottom: 8px;
@@ -4578,9 +4459,7 @@ ul {
 }
 
 .point-desc {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 16px;
   line-height: 26px;
   color: var(--ink);
@@ -4610,15 +4489,11 @@ ul {
   }
 }
 .point-desc .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 15px;
 }
 .point-desc .hl-yellow {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--teal);
 }
 @media (max-width: 768px) {
@@ -4731,9 +4606,7 @@ ul {
   }
 }
 .carrier-item .carrier-feature {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
   margin: 20px 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, #98DADE));
@@ -4742,9 +4615,7 @@ ul {
   padding: 0 5px;
 }
 .carrier-item .carrier-feature .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .carrier-item .carrier-feature {
@@ -4752,9 +4623,7 @@ ul {
   }
 }
 .carrier-item .carrier-name {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 23px;
   color: #fff;
   background-color: var(--teal);
@@ -4767,9 +4636,7 @@ ul {
   }
 }
 .carrier-item .carrier-detail {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 14px;
   color: var(--ink);
   text-align: left;
@@ -4808,9 +4675,7 @@ ul {
   }
 }
 .carrier-item.carrier-item-active .carrier-tag {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 14px;
   color: #fff;
   padding: 4px 0;
@@ -4913,9 +4778,7 @@ ul {
 
 .phone-need-title {
   text-align: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 21px;
   color: var(--ink);
   margin: 0 auto;
@@ -5099,9 +4962,7 @@ ul {
   padding: 0 23px 0 40px;
 }
 .phone-unlimited .text .phone-unlimited-tag {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
   color: var(--ink);
 }
@@ -5111,9 +4972,7 @@ ul {
   }
 }
 .phone-unlimited .text .phone-unlimited-text {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 66px;
   color: var(--ink);
   line-height: 1.1;
@@ -5156,9 +5015,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   font-size: 16px;
   color: var(--teal);
   padding: 48px 0 10px;
@@ -5172,9 +5029,7 @@ ul {
   gap: 4px;
 }
 .service-tagline .cross {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 1.8rem;
   padding-bottom: 6px;
 }
@@ -5188,9 +5043,7 @@ ul {
     gap: 0;
   }
   .service-tagline .cross {
-    font-family: "sofia-pro-soft", sans-serif;
     font-weight: 400;
-    font-style: normal;
     font-size: 1.8rem;
     padding-bottom: 6px;
     line-height: 0.8;
@@ -5330,9 +5183,7 @@ ul {
   display: block;
 }
 .sec-head-on-teal .sec-en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-style: italic;
   font-size: 32px;
   color: #fff;
@@ -5365,16 +5216,12 @@ ul {
 }
 .sec-head-on-teal .sec-jp {
   margin-top: 6px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 15px;
   color: #fff;
 }
 .sec-head-on-teal .sec-jp .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 15px;
 }
 @media (max-width: 768px) {
@@ -5573,15 +5420,11 @@ ul {
   color: #fff;
 }
 .gp-num .gp-num-label {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 9px;
 }
 .gp-num .gp-num-value {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 32px;
   line-height: 0.8;
 }
@@ -5601,9 +5444,7 @@ ul {
 
 .gp-text {
   display: inline-block;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   color: var(--ink);
   font-size: 14px;
   line-height: 1.5;
@@ -5619,42 +5460,30 @@ ul {
 }
 .gp-text .gp-text-sub {
   font-size: 19px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 .gp-text .gp-text-sub .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 21px;
 }
 .gp-text .gp-text-sub sup {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 12px;
   vertical-align: super;
   margin-left: 1px;
 }
 .gp-text .gp-text-hl {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--teal);
   font-size: 22px;
   line-height: 1.3;
 }
 .gp-text .gp-text-hl .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 23px;
 }
 .gp-text .gp-text-hl sup {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 12px;
   color: var(--ink);
   vertical-align: super;
@@ -5750,9 +5579,6 @@ ul {
   list-style: none;
   padding: 0;
   margin: 24px 0 0;
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: normal;
-  font-style: normal;
   color: #fff;
   font-size: 12px;
   line-height: 1.7;
@@ -5812,9 +5638,7 @@ ul {
   display: block;
 }
 .sec-head .sec-en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-style: italic;
   font-size: 36px;
   color: var(--ink);
@@ -5838,9 +5662,7 @@ ul {
 }
 .sec-head .sec-jp {
   margin-top: 8px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 21px;
   color: var(--ink);
 }
@@ -5875,9 +5697,7 @@ ul {
   color: #959595;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 28px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -5894,15 +5714,11 @@ ul {
   padding: 0;
 }
 .g-tab .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 30px;
 }
 .g-tab .jp {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 28px;
 }
 .g-tab.is-active {
@@ -5926,15 +5742,11 @@ ul {
     height: 43px;
   }
   .g-tab .en {
-    font-family: "sofia-pro-soft", sans-serif;
     font-weight: 700;
-    font-style: normal;
     font-size: 20px;
   }
   .g-tab .jp {
-    font-family: "GenJyuuGothic", sans-serif;
     font-weight: bold;
-    font-style: normal;
     font-size: 18px;
   }
   .g-tab.is-active {
@@ -6219,9 +6031,7 @@ ul {
 }
 
 .g-step-label {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
   line-height: 1;
   display: -webkit-inline-box;
@@ -6237,9 +6047,7 @@ ul {
 }
 .g-step-label .step-num {
   font-size: 28px;
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 900;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .g-step-label {
@@ -6251,18 +6059,13 @@ ul {
 }
 
 .g-step-name {
-  font-family: "GenJyuuGothic", sans-serif;
-  font-weight: bold;
-  font-style: normal;
   font-weight: 900;
   font-size: 21px;
   line-height: 26px;
   color: var(--teal);
 }
 .g-step-name .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 23px;
 }
 
@@ -6270,9 +6073,7 @@ ul {
   position: relative;
   max-width: 572px;
   width: 100%;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 16px;
   line-height: normal;
   color: var(--ink);
@@ -6423,17 +6224,13 @@ ul {
   width: 100%;
   background: var(--yellow);
   border-radius: 5px 0 0 5px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 14px;
   color: var(--ink);
   white-space: nowrap;
 }
 .g-callout-pill .en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 16px;
 }
 @media (max-width: 768px) {
@@ -6446,9 +6243,7 @@ ul {
 }
 
 .g-callout-text {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 14px;
   line-height: 23px;
   color: var(--ink);
@@ -6485,9 +6280,7 @@ ul {
   color: #fff;
   border-radius: 999px;
   border: 1px solid var(--pink);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 17px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -6642,9 +6435,7 @@ ul {
   width: 48px;
   height: 32px;
   padding-left: 4px;
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-style: italic;
   font-size: 22px;
   color: #fff;
@@ -6653,9 +6444,7 @@ ul {
   transition: background-color 0.2s ease, clip-path 0.2s ease;
 }
 .h-toc-item .h-toc-text {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
 }
 @media (max-width: 1030px) {
@@ -7318,9 +7107,7 @@ ul {
   background: var(--red);
   color: #fff;
   border-radius: 999px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 16px;
 }
 @media (max-width: 1070px) {
@@ -7379,9 +7166,7 @@ ul {
           animation: bounceUpDown 2s ease-in-out infinite;
 }
 .h-page-nav button {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 12px;
   background: var(--red);
   color: #fff;
@@ -7921,9 +7706,7 @@ ul {
   display: table;
   margin: 120px auto;
   font-size: 21px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
 }
@@ -7967,7 +7750,6 @@ ul {
   border-radius: 8px;
   padding: 14px 18px;
   color: var(--ink);
-  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
   font-weight: 700;
   font-size: 14px;
   background: #fff;
@@ -8022,9 +7804,7 @@ ul {
 .c-anchor__arrow {
   margin-left: auto;
   color: var(--teal);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   font-size: 10px;
 }
 @media (max-width: 768px) {
@@ -8035,9 +7815,7 @@ ul {
 .c-anchor__uarrow {
   display: none;
   color: var(--teal);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   font-size: 10px;
 }
 @media (max-width: 768px) {
@@ -8066,7 +7844,6 @@ ul {
   border: 2px solid var(--ink);
   border-radius: 999px;
   padding: 14px 30px;
-  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
   font-weight: 900;
   font-size: 15px;
   color: var(--ink);
@@ -8086,9 +7863,7 @@ ul {
 .c-btn__arrow {
   margin-left: 2px;
   font-size: 17px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   line-height: 1;
 }
 
@@ -8145,9 +7920,7 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   padding: 18px 10px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 16px;
 }
 .c-accordion__head::-webkit-details-marker {
@@ -8156,9 +7929,7 @@ ul {
 .c-accordion__mark {
   margin-left: auto;
   font-size: 22px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--ink);
 }
 .c-accordion__body {
@@ -8184,9 +7955,7 @@ ul {
 .c-plus {
   text-align: center;
   font-size: 60px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   margin: 60px 0;
 }
 @media (max-width: 768px) {
@@ -8214,7 +7983,6 @@ ul {
   gap: 6px;
   color: var(--ink);
   font-size: 11px;
-  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
   font-weight: 700;
 }
 .c-pagetop__circle {
@@ -8238,9 +8006,7 @@ ul {
 .c-article__heading {
   text-align: center;
   font-size: 15px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   margin-bottom: 14px;
 }
 .c-article__photo {
@@ -8266,9 +8032,7 @@ ul {
 }
 .c-article__title {
   font-size: 13.5px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   line-height: 1.6;
 }
 .c-article__title a:hover {
@@ -8287,7 +8051,6 @@ ul {
 }
 .c-sns__item {
   font-size: 13px;
-  font-family: "sofia-pro-soft", "GenJyuuGothic", sans-serif;
   font-weight: 700;
   color: var(--ink);
 }
@@ -8305,9 +8068,7 @@ ul {
   margin: 0 auto 6px;
 }
 .p-fv__en {
-  font-family: "sofia-pro-soft", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-style: italic;
   font-size: 38px;
   color: var(--ink);
@@ -8343,9 +8104,7 @@ ul {
   }
 }
 .p-fv__heading {
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: bold;
-  font-style: normal;
   font-size: 19px;
   margin-top: 6px;
   color: var(--ink);
@@ -8421,7 +8180,7 @@ ul {
   border: 0;
   border-radius: 10px 10px 0 0;
   background: #FFD5DB;
-  color: #fff;
+  color: #959595;
   font-weight: 700;
   font-size: 22px;
   cursor: pointer;
@@ -8523,9 +8282,7 @@ ul {
   text-align: center;
   color: var(--red);
   font-size: 19px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   margin-bottom: 30px;
 }
 .p-cycle__heading.travel {
@@ -8546,9 +8303,7 @@ ul {
 }
 .p-cycle__text strong {
   color: var(--red);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 .p-cycle__text.travel strong {
   color: var(--teal);
@@ -8679,9 +8434,7 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   padding: 14px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 18px;
 }
 .p-cycle .p-accordion__head::-webkit-details-marker {
@@ -8707,9 +8460,7 @@ ul {
 }
 .p-cycle .p-accordion__text strong {
   color: var(--teal);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 .p-cycle .p-accordion__link {
   color: #46C9F4;
@@ -8725,9 +8476,7 @@ ul {
 .p-cycle .p-accordion__mark {
   margin-left: auto;
   font-size: 22px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--ink);
 }
 .p-cycle .p-accordion__body {
@@ -8816,9 +8565,7 @@ ul {
   text-align: center;
   background: #FFD5DB;
   color: var(--ink);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 16px;
   padding: 12px;
   border: 1px solid var(--ink);
@@ -8855,9 +8602,7 @@ ul {
   text-align: center;
   padding: 18px;
   font-size: 22px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .p-plan__banner-head {
@@ -8867,9 +8612,7 @@ ul {
 }
 .p-plan__banner-head small {
   font-size: 16px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 @media (max-width: 768px) {
   .p-plan__banner-head small {
@@ -8881,9 +8624,7 @@ ul {
   text-align: center;
   padding: 16px;
   font-size: 18px;
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: var(--red);
 }
 @media (max-width: 768px) {
@@ -8898,14 +8639,14 @@ ul {
 .p-plan__back {
   position: relative;
   background: #fff;
-  border: 1px solid var(--red);
+  border: 2px solid var(--red);
   border-radius: 10px;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   margin-bottom: 120px;
 }
 .p-plan__back[data-active-tab=set] {
-  border: 1px solid var(--teal);
+  border: 2px solid var(--teal);
 }
 @media (max-width: 768px) {
   .p-plan__back {
@@ -8949,13 +8690,13 @@ ul {
   max-width: 1030px;
   /* 💡ここがガタつき防止のポイント */
   height: 70px;
-  margin: -71px auto 0;
+  margin: -72px auto 0;
 }
 @media (max-width: 768px) {
   .p-plan__tabs {
     position: absolute;
-    width: calc(100% + 2px);
-    top: -51px;
+    width: calc(100% + 4px);
+    top: -52px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -8975,7 +8716,7 @@ ul {
   border: 0;
   border-radius: 10px 10px 0 0;
   background: #FFD5DB;
-  color: #fff;
+  color: #959595;
   font-weight: 700;
   font-size: 22px;
   cursor: pointer;
@@ -9061,9 +8802,7 @@ ul {
   text-align: center;
   background: #DBF4FD;
   color: var(--ink);
-  font-family: "GenJyuuGothic", sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 16px;
   padding: 12px;
   border: 1px solid var(--ink);
@@ -9150,7 +8889,6 @@ ul {
   font-weight: 700;
   font-size: 37px;
   line-height: 1;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
   margin-bottom: 6px;
 }
 @media (max-width: 768px) {
@@ -11127,7 +10865,7 @@ ul {
   border: 0;
   border-radius: 10px 10px 0 0;
   background: #FFD5DB;
-  color: #fff;
+  color: #959595;
   font-weight: 700;
   font-size: 22px;
   cursor: pointer;
@@ -12380,7 +12118,7 @@ ul {
   border: 0;
   border-radius: 10px 10px 0 0;
   background: #DBF4FD;
-  color: #fff;
+  color: #959595;
   font-weight: 700;
   font-size: 22px;
   cursor: pointer;

@@ -329,7 +329,7 @@ ul {
   }
 
   .sec-en{
-    @include font-sofia(500);
+    font-weight: 500;
     font-style: italic;
     font-size: 36px;
     color: var(--ink);
@@ -354,12 +354,20 @@ ul {
 
   .sec-jp{
     margin-top: 13px;
-    @include font-gen(bold);
+    font-weight: bold;
     font-size: 21px;
     color: var(--ink);
 
+    .en {
+      font-size: 23px;
+    }
+
     @media (max-width: 768px){
       font-size: 15px;
+
+      .en {
+        font-size: 16px;
+      }
     }
   }
 }
