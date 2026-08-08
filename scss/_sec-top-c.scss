@@ -939,3 +939,41 @@
     margin-top: 37px;
   }
 }
+
+// ---------- キャンペーンバナー ----------
+.top-c-campaign{
+  max-width: 700px;
+  margin: 40px auto;
+
+  .campaigntopbanner_pc{
+    width: 100%;
+    display: block;
+    margin: 0 auto 12px;
+  }
+
+  .campaigntopbanner_sp{
+    width: 100%;
+    display: none;
+    margin: 0 auto 12px;
+  }
+
+  p{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink);
+
+    .mark{
+      font-size: 20px;
+      line-height: 0.8;
+    }
+  }
+
+  @media (max-width: 768px){
+    max-width: 540px;
+    padding: 0 20px;
+    margin: 0 auto 10px;
+    .campaigntopbanner_pc{ display: none; }
+    .campaigntopbanner_sp{ display: block; }
+  }
+}

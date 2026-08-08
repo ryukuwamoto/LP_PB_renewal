@@ -3947,6 +3947,44 @@ ul {
   }
 }
 
+.top-c-campaign {
+  max-width: 700px;
+  margin: 40px auto;
+}
+.top-c-campaign .campaigntopbanner_pc {
+  width: 100%;
+  display: block;
+  margin: 0 auto 12px;
+}
+.top-c-campaign .campaigntopbanner_sp {
+  width: 100%;
+  display: none;
+  margin: 0 auto 12px;
+}
+.top-c-campaign p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.top-c-campaign p .mark {
+  font-size: 20px;
+  line-height: 0.8;
+}
+@media (max-width: 768px) {
+  .top-c-campaign {
+    max-width: 540px;
+    padding: 0 20px;
+    margin: 0 auto 10px;
+  }
+  .top-c-campaign .campaigntopbanner_pc {
+    display: none;
+  }
+  .top-c-campaign .campaigntopbanner_sp {
+    display: block;
+  }
+}
+
 .sec-top-d {
   background: #fff;
   position: relative;
