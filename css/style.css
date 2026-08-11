@@ -8819,6 +8819,9 @@ ul {
     gap: 20px;
   }
 }
+.p-plan__seotex {
+  line-height: 1.6;
+}
 .p-plan__pc {
   display: block;
 }
