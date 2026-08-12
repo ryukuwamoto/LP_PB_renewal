@@ -940,6 +940,7 @@ main {
       border-radius: 10px;
       z-index: 1; // 枠線と白背景の重ね順
       transition: border-color 0.3s ease;
+      pointer-events: none;
     }
 
     &[data-active-tab="set"]::before {
@@ -996,8 +997,7 @@ main {
       position: absolute;
       width: 100%;
       top: -49px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       height: 50px;        // スマホ版のエリア全体高さを50pxに固定
       margin-top: 0px;
       gap: 8px;

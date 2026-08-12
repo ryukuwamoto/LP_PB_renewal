@@ -8690,6 +8690,7 @@ ul {
   z-index: 1;
   -webkit-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
+  pointer-events: none;
 }
 .p-plan__back[data-active-tab=set]::before {
   border: 2px solid var(--teal);
@@ -8750,9 +8751,7 @@ ul {
     position: absolute;
     width: 100%;
     top: -49px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    left: 0;
     height: 50px;
     margin-top: 0px;
     gap: 8px;
