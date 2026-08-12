@@ -492,20 +492,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const select = label.matches('select') ? label : label.querySelector('select');
     if (!select) return;
 
-    // 遷移（従来どおり）
     select.addEventListener('change', (e) => {
       const url = e.target.value;
       if (url && url !== '#') window.location.href = url;
     });
 
-    // sticky ヘッダー内の select にフォーカスが当たると
-    // ブラウザが本来位置（先頭）へスクロールするのを打ち消す
     select.addEventListener('pointerdown', () => {
+      const root = document.scrollingElement || document.documentElement;
       const y = window.pageYOffset;
-      const keep = () => window.scrollTo(0, y);
+      const prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';           // スムーススクロールを一時停止
+      const keep = () => { if (window.pageYOffset !== y) window.scrollTo(0, y); };
       window.addEventListener('scroll', keep);
-      // プルダウン操作が終わる頃に解除して通常スクロールへ戻す
-      setTimeout(() => window.removeEventListener('scroll', keep), 400);
+      setTimeout(() => {                             // 操作が落ち着いたら復帰
+        window.removeEventListener('scroll', keep);
+        root.style.scrollBehavior = prev;
+      }, 500);
     });
   });
 });
