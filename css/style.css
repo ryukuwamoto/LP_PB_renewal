@@ -4716,23 +4716,13 @@ ul {
   font-weight: bold;
   font-size: 14px;
   color: #fff;
+  background-color: var(--ink);
   padding: 4px 0;
 }
 @media (max-width: 768px) {
   .carrier-item.carrier-item-active .carrier-tag {
     font-size: 12px;
   }
-}
-.carrier-item.carrier-item-active::before {
-  content: "";
-  position: absolute;
-  top: 41px;
-  left: -2px;
-  z-index: -1;
-  background-color: var(--ink);
-  pointer-events: none;
-  width: calc(100% + 4px);
-  height: 24px;
 }
 @media (max-width: 768px) {
   .carrier-item.carrier-item-active {
@@ -4744,17 +4734,6 @@ ul {
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
-  }
-  .carrier-item.carrier-item-active::before {
-    content: "";
-    position: absolute;
-    top: 37.5px;
-    left: -2px;
-    z-index: -1;
-    background-color: var(--ink);
-    pointer-events: none;
-    width: calc(100% + 4px);
-    height: 21px;
   }
 }
 .carrier-item.carrier-item-active .carrier-feature {
@@ -5881,150 +5860,105 @@ ul {
   }
 }
 
-.tab-esim .g-step:nth-of-type(1) .window-shape {
+.window-shape {
   position: absolute;
-  height: 326px;
-  width: 100%;
   top: 0;
   left: 0;
-  background-image: url("../img/sec-top-g/windowsim1.png");
-  background-size: 100% 326px;
-  background-repeat: no-repeat;
-  background-position: top center;
+  width: 100%;
+  color: #fff;
+  --ws-r: 10px;
+  --ws-tip: 49px;
+  pointer-events: none;
+}
+.window-shape .window-shape-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.window-shape .window-shape-svg path {
+  fill: currentColor;
+}
+
+.tab-esim .g-step:nth-of-type(1) .window-shape {
+  height: 326px;
 }
 @media (max-width: 768px) {
   .tab-esim .g-step:nth-of-type(1) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-esim .g-step:nth-of-type(2) .window-shape {
-  position: absolute;
   height: 258px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsim2.png");
-  background-size: 100% 258px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-esim .g-step:nth-of-type(2) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-esim .g-step:nth-of-type(3) .window-shape {
-  position: absolute;
   height: 531px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsim3.png");
-  background-size: 100% 531px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-esim .g-step:nth-of-type(3) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-esim .g-step:nth-of-type(4) .window-shape {
-  position: absolute;
   height: 294px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsim4.png");
-  background-size: 100% 294px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-esim .g-step:nth-of-type(4) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-esim .g-step:last-of-type {
   background-color: #fff;
   border-radius: 10px;
 }
+.tab-esim .g-step:last-of-type .window-shape {
+  display: none;
+}
 
 .tab-sim .g-step:nth-of-type(1) .window-shape {
-  position: absolute;
   height: 326px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsim1.png");
-  background-size: 100% 326px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-sim .g-step:nth-of-type(1) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-sim .g-step:nth-of-type(2) .window-shape {
-  position: absolute;
   height: 277px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsimcard2.png");
-  background-size: 100% 277px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-sim .g-step:nth-of-type(2) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-sim .g-step:nth-of-type(3) .window-shape {
-  position: absolute;
   height: 257px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsimcard3.png");
-  background-size: 100% 257px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-sim .g-step:nth-of-type(3) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-sim .g-step:nth-of-type(4) .window-shape {
-  position: absolute;
   height: 294px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url("../img/sec-top-g/windowsim4.png");
-  background-size: 100% 294px;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 @media (max-width: 768px) {
   .tab-sim .g-step:nth-of-type(4) .window-shape {
     height: calc(100% + 49px);
-    background-size: 100% 100%;
   }
 }
 .tab-sim .g-step:last-of-type {
   background-color: #fff;
   border-radius: 10px;
+}
+.tab-sim .g-step:last-of-type .window-shape {
+  display: none;
 }
 
 .g-step-head {

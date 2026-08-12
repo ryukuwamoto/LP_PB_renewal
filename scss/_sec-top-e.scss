@@ -284,6 +284,7 @@
       font-weight: bold;
       font-size: 14px;
       color: #fff;
+      background-color: var(--ink);
       padding: 4px 0;
 
       @media (max-width: 768px){
@@ -291,17 +292,7 @@
         }
     }
 
-    &::before {
-    content: "";
-    position: absolute;
-    top: 41px;
-    left: -2px;
-    z-index: -1;
-    background-color: var(--ink);
-    pointer-events: none;
-    width: calc(100% + 4px);
-    height: 24px
-  }
+    
 
   @media (max-width: 768px){
     order: 0;
@@ -309,17 +300,7 @@
     height: 265px;
     flex: none;
 
-    &::before {
-    content: "";
-    position: absolute;
-    top: 37.5px;
-    left: -2px;
-    z-index: -1;
-    background-color: var(--ink);
-    pointer-events: none;
-    width: calc(100% + 4px);
-    height: 21px;
-  }
+    
   }
 
   .carrier-feature{

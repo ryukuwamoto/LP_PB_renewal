@@ -575,11 +575,106 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.addEventListener('load', () => {
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+
+/* ===== window-shape：下向き五角形（とんがり以外の4角にR／幅可変でRが潰れない） ===== */
+(function () {
+  'use strict';
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  // 頂点＋各頂点の半径(px)から角丸パスdを生成。半径0の頂点は尖らせる
+  function roundedPolyPath(pts, radii) {
+  var n = pts.length, d = '';
+  var sub = function (a, b) { return { x: a.x - b.x, y: a.y - b.y }; };
+  var len = function (v) { return Math.hypot(v.x, v.y); };
+  var nrm = function (v) { var l = len(v) || 1; return { x: v.x / l, y: v.y / l }; };
+
+  // 1) 各頂点の「接点距離 dist」と内角 theta を算出（円弧半径R → 接線距離へ変換）
+  var seg = [];
+  for (var i = 0; i < n; i++) {
+    var p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n];
+    var v1 = nrm(sub(p0, p1)), v2 = nrm(sub(p2, p1));
+    var l1 = len(sub(p0, p1)), l2 = len(sub(p2, p1));
+    var r = radii[i] || 0;
+    var theta = Math.acos(Math.max(-1, Math.min(1, v1.x * v2.x + v1.y * v2.y)));
+    var dist = (r > 0 && theta > 0.01 && theta < Math.PI - 0.01)
+      ? r / Math.tan(theta / 2)   // 半径Rを保つための頂点→接点距離
+      : 0;
+    seg.push({ p1: p1, v1: v1, v2: v2, l1: l1, l2: l2, theta: theta, dist: dist });
   }
-});
+
+  // 2) 隣り合う角が同じ辺を食い合わないよう接点距離をクランプ（接線は維持）
+  for (var i = 0; i < n; i++) {
+    var cur = seg[i], nxt = seg[(i + 1) % n], edge = cur.l2; // cur.v2辺 = nxt.v1辺
+    var over = cur.dist + nxt.dist;
+    if (over > edge && over > 0) { var k = edge / over; cur.dist *= k; nxt.dist *= k; }
+  }
+
+  // 3) パス生成。dist>0 の角は「実半径 = dist*tan(θ/2)」で円弧を引く（=接線）
+  for (var i = 0; i < n; i++) {
+    var s = seg[i], p1 = s.p1;
+    if (s.dist <= 0.01) {
+      d += (i === 0 ? 'M' : 'L') + p1.x.toFixed(2) + ',' + p1.y.toFixed(2) + ' ';
+      continue;
+    }
+    var arcR = s.dist * Math.tan(s.theta / 2);
+    var t1 = { x: p1.x + s.v1.x * s.dist, y: p1.y + s.v1.y * s.dist };
+    var t2 = { x: p1.x + s.v2.x * s.dist, y: p1.y + s.v2.y * s.dist };
+    var sweep = (s.v1.x * s.v2.y - s.v1.y * s.v2.x) < 0 ? 1 : 0;
+    d += (i === 0 ? 'M' : 'L') + t1.x.toFixed(2) + ',' + t1.y.toFixed(2) + ' ';
+    d += 'A' + arcR.toFixed(2) + ',' + arcR.toFixed(2) + ' 0 0 ' + sweep + ' ' +
+         t2.x.toFixed(2) + ',' + t2.y.toFixed(2) + ' ';
+  }
+  return d + 'Z';
+}
+
+  function ensureSvg(shape) {
+    var svg = shape.querySelector('.window-shape-svg');
+    if (svg) return svg;
+    svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('class', 'window-shape-svg');
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.appendChild(document.createElementNS(SVGNS, 'path'));
+    shape.insertBefore(svg, shape.firstChild);
+    return svg;
+  }
+
+  function draw(shape) {
+    var W = shape.clientWidth, H = shape.clientHeight;
+    if (!W || !H) return;
+    var cs = getComputedStyle(shape);
+    var R = parseFloat(cs.getPropertyValue('--ws-r')) || 10;
+    var T = parseFloat(cs.getPropertyValue('--ws-tip')) || 49;
+    if (T > H) T = H;
+    var svg = ensureSvg(shape);
+    var pts = [
+      { x: 0, y: 0 }, { x: W, y: 0 },
+      { x: W, y: H - T }, { x: W / 2, y: H }, { x: 0, y: H - T }
+    ];
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.querySelector('path').setAttribute('d', roundedPolyPath(pts, [R, R, R, 0, R]));
+  }
+
+  function initWindowShape() {
+    var shapes = Array.prototype.slice.call(document.querySelectorAll('.window-shape'));
+    if (!shapes.length) return;
+    if ('ResizeObserver' in window) {
+      var ro = new ResizeObserver(function (entries) {
+        entries.forEach(function (e) { draw(e.target); });
+      });
+      shapes.forEach(function (s) { ro.observe(s); draw(s); });
+    } else {
+      var redraw = function () { shapes.forEach(draw); };
+      shapes.forEach(draw);
+      window.addEventListener('resize', redraw);
+      window.addEventListener('orientationchange', redraw);
+    }
+    window.addEventListener('load', function () { shapes.forEach(draw); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWindowShape);
+  } else {
+    initWindowShape();
+  }
+})();
