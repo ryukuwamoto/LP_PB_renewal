@@ -5790,7 +5790,6 @@ ul {
   .g-tab.is-active {
     height: 55px;
     background: var(--red);
-    color: var(--ink);
     margin-bottom: -1px;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -8676,19 +8675,30 @@ ul {
 }
 .p-plan__back {
   position: relative;
-  background: #fff;
-  border: 2px solid var(--red);
+  background: transparent;
   border-radius: 10px;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   margin-bottom: 120px;
 }
-.p-plan__back[data-active-tab=set] {
+.p-plan__back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  z-index: 1;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+.p-plan__back[data-active-tab=set]::before {
   border: 2px solid var(--teal);
 }
 @media (max-width: 768px) {
   .p-plan__back {
     margin: 0 0 80px;
+  }
+  .p-plan__back::before {
     border-radius: 0 0 10px 10px;
   }
 }
@@ -8704,6 +8714,9 @@ ul {
     padding: 0;
   }
 }
+.p-plan__panel {
+  z-index: 2;
+}
 .p-plan__panel[hidden] {
   display: none;
 }
@@ -8715,6 +8728,7 @@ ul {
   }
 }
 .p-plan__tabs {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8726,15 +8740,16 @@ ul {
           justify-content: center;
   gap: 18px;
   max-width: 1030px;
+  z-index: 0;
   /* 💡ここがガタつき防止のポイント */
   height: 70px;
-  margin: -72px auto 0;
+  margin: -69px auto 0;
 }
 @media (max-width: 768px) {
   .p-plan__tabs {
     position: absolute;
-    width: calc(100% + 4px);
-    top: -52px;
+    width: 100%;
+    top: -49px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -8785,6 +8800,7 @@ ul {
   height: 70px;
   background: var(--red);
   color: #fff;
+  z-index: 2;
 }
 .p-plan__tab {
   /* レスポンシブ（スマホ版） */

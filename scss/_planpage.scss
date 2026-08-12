@@ -927,19 +927,30 @@ main {
 
   &__back{
     position: relative;
-    background: #fff;
-    border: 2px solid var(--red);
+    background: transparent;
     border-radius: 10px;
     transition: background-color 0.3s ease;
     margin-bottom: 120px;
 
-    &[data-active-tab="set"] {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0; // top:0; right:0; bottom:0; left:0; と同じ
+      border: 2px solid var(--red);
+      border-radius: 10px;
+      z-index: 1; // 枠線と白背景の重ね順
+      transition: border-color 0.3s ease;
+    }
+
+    &[data-active-tab="set"]::before {
       border: 2px solid var(--teal);
     }
 
     @media (max-width: 768px) {
       margin: 0 0 80px;
-      border-radius: 0 0 10px 10px;
+      &::before {
+        border-radius: 0 0 10px 10px;
+      }
     }
   }
 
@@ -956,6 +967,7 @@ main {
   }
 
   &__panel {
+    z-index: 2;
     &[hidden] {
       display: none;
     }
@@ -968,20 +980,22 @@ main {
   }
 
   &__tabs {
+    position: relative;
     display: flex;
     align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
     justify-content: center;
     gap: 18px;
     max-width: 1030px;
+    z-index: 0;
     
     /* 💡ここがガタつき防止のポイント */
     height: 70px;          // エリア全体の高さを最大値の70pxに固定
-    margin: -72px auto 0;  // 高さに合わせたネガティブマージン
+    margin: -69px auto 0;  // 高さに合わせたネガティブマージン
 
     @media (max-width: 768px) {
       position: absolute;
-      width: calc(100% + 4px);
-      top: -52px;
+      width: 100%;
+      top: -49px;
       left: 50%;
       transform: translateX(-50%);
       height: 50px;        // スマホ版のエリア全体高さを50pxに固定
@@ -1028,6 +1042,7 @@ main {
       height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
       background: var(--red);
       color: #fff;
+      z-index: 2;
     }
 
     /* レスポンシブ（スマホ版） */
