@@ -1508,6 +1508,36 @@
     position: relative; // 💡 絶対配置の基準にするために必須
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+
+    .c-os-menu{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;                       // header(z-index:50)より前面
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  min-width: 100%;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid var(--pink);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+
+  li{
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--ink);
+    text-align: center;
+    cursor: pointer;
+
+    &:hover{ background: color-mix(in srgb, var(--pink) 12%, #fff); }
+  }
+
+  &[hidden]{ display: none; }         // hidden属性を確実に効かせる
+}
   }
 
   /* OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */

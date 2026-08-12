@@ -488,27 +488,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-link-select').forEach((label) => {
-    const select = label.matches('select') ? label : label.querySelector('select');
-    if (!select) return;
+  const triggers = document.querySelectorAll('.js-link-menu');
 
-    select.addEventListener('change', (e) => {
-      const url = e.target.value;
-      if (url && url !== '#') window.location.href = url;
+  const closeAll = (except) => {
+    triggers.forEach((t) => {
+      if (t === except) return;
+      const m = t.querySelector('.c-os-menu');
+      if (m) m.hidden = true;
+      t.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  triggers.forEach((trigger) => {
+    const menu = trigger.querySelector('.c-os-menu');
+    if (!menu) return;
+
+    const open  = () => { closeAll(trigger); menu.hidden = false; trigger.setAttribute('aria-expanded', 'true'); };
+    const close = () => { menu.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
+
+    trigger.addEventListener('click', (e) => {
+      if (e.target.closest('.c-os-menu')) return;    // 項目クリックは別処理
+      trigger.focus({ preventScroll: true });        // ← スクロールさせない
+      menu.hidden ? open() : close();
     });
 
-    select.addEventListener('pointerdown', () => {
-      const root = document.scrollingElement || document.documentElement;
-      const y = window.pageYOffset;
-      const prev = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';           // スムーススクロールを一時停止
-      const keep = () => { if (window.pageYOffset !== y) window.scrollTo(0, y); };
-      window.addEventListener('scroll', keep);
-      setTimeout(() => {                             // 操作が落ち着いたら復帰
-        window.removeEventListener('scroll', keep);
-        root.style.scrollBehavior = prev;
-      }, 500);
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : close(); }
+      else if (e.key === 'Escape') close();
     });
+
+    menu.querySelectorAll('[data-href]').forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const url = item.dataset.href;
+        if (url) window.location.href = url;
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.js-link-menu')) closeAll(null);
   });
 });
 

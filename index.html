@@ -321,16 +321,16 @@
         <img class="ico" src="img/header/line-icon-hover.png">
         で聞く
       </a>
-      <label class="pill-btn apply is-pulldown">
+      <div class="pill-btn apply is-pulldown js-link-menu" tabindex="0" role="button"
+          aria-haspopup="listbox" aria-expanded="false" aria-label="お申し込み方法の選択">
         <img class="ico" src="img/header/aplly-icon.png">
         <img class="ico" src="img/header/aplly-icon-hover.png">
         <span>お申込み</span>
-        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
-          <option value="" selected disabled hidden>選択してください</option>
-          <option value="application-l.html#application">長期用SIM</option>
-          <option value="application-s.html#application">トラベル用SIM</option>
-        </select>
-      </label>
+        <ul class="c-os-menu" role="listbox" hidden>
+          <li role="option" tabindex="-1" data-href="application-l.html#application">長期用SIM</li>
+          <li role="option" tabindex="-1" data-href="application-s.html#application">トラベル用SIM</li>
+        </ul>
+      </div>
       <a class=" common_btn is-whitepink phone-sp" href="tel:0474724818">
           <span class="icon-circle phone-icon-circle">
             <img src="img/header/Phone-black.png">
@@ -342,17 +342,15 @@
           </span>
           <span class="text">で聞く</span>
         </a>
-        <label class="common_btn is-pinkwhite apply-sp is-pulldown js-link-select">
-          <span class="icon-circle">
-            <img src="img/sec-top-a/buttonicon.png">
-          </span>
+        <div class="common_btn is-pinkwhite apply-sp is-pulldown js-link-menu" tabindex="0" role="button"
+            aria-haspopup="listbox" aria-expanded="false" aria-label="購入方法の選択">
+          <span class="icon-circle"><img src="img/sec-top-a/buttonicon.png"></span>
           <span class="text">お申し込み</span>
-          <select class="c-os-select" required aria-label="購入方法の選択">
-            <option value="" selected disabled hidden>選択してください</option>
-            <option value="application-l.html#application">長期用SIM</option>
-            <option value="application-s.html#application">トラベル用SIM</option>
-          </select>
-        </label>
+          <ul class="c-os-menu" role="listbox" hidden>
+            <li role="option" tabindex="-1" data-href="application-l.html#application">長期用SIM</li>
+            <li role="option" tabindex="-1" data-href="application-s.html#application">トラベル用SIM</li>
+          </ul>
+        </div>
     </div>
   </div>
 </header>
