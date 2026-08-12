@@ -995,9 +995,10 @@ main {
 
     @media (max-width: 768px) {
       position: absolute;
-      width: 100%;
+      width: auto;
       top: -49px;
       left: 0;
+      right: 0;
       height: 50px;        // スマホ版のエリア全体高さを50pxに固定
       margin-top: 0px;
       gap: 8px;

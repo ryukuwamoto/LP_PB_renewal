@@ -8749,9 +8749,10 @@ ul {
 @media (max-width: 768px) {
   .p-plan__tabs {
     position: absolute;
-    width: 100%;
+    width: auto;
     top: -49px;
     left: 0;
+    right: 0;
     height: 50px;
     margin-top: 0px;
     gap: 8px;
