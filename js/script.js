@@ -487,8 +487,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// =========================================================
+// お申し込みプルダウン（PC / SP 共通・自前メニュー）
+// stickyヘッダー内でもフォーカススクロールが起きない実装
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const triggers = document.querySelectorAll('.js-link-menu');
+  if (!triggers.length) return;
 
   const closeAll = (except) => {
     triggers.forEach((t) => {
@@ -504,19 +509,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!menu) return;
 
     const open  = () => { closeAll(trigger); menu.hidden = false; trigger.setAttribute('aria-expanded', 'true'); };
-    const close = () => { menu.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
+    const close = () => { menu.hidden = true;  trigger.setAttribute('aria-expanded', 'false'); };
 
+    // 開閉（項目クリックは下で別処理）
     trigger.addEventListener('click', (e) => {
-      if (e.target.closest('.c-os-menu')) return;    // 項目クリックは別処理
-      trigger.focus({ preventScroll: true });        // ← スクロールさせない
+      if (e.target.closest('.c-os-menu')) return;
+      trigger.focus({ preventScroll: true });   // ← スクロールを起こさない
       menu.hidden ? open() : close();
     });
 
+    // キーボード操作
     trigger.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : close(); }
       else if (e.key === 'Escape') close();
     });
 
+    // 項目クリックで遷移
     menu.querySelectorAll('[data-href]').forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -526,8 +534,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 外側クリック・Escで閉じる
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.js-link-menu')) closeAll(null);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll(null);
   });
 });
 

@@ -2090,38 +2090,6 @@ ul {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.pill-btn.is-pulldown .c-os-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  z-index: 60;
-  margin: 0;
-  padding: 4px 0;
-  list-style: none;
-  min-width: 100%;
-  white-space: nowrap;
-  background: #fff;
-  border: 1px solid var(--pink);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-.pill-btn.is-pulldown .c-os-menu li {
-  padding: 8px 14px;
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--ink);
-  text-align: center;
-  cursor: pointer;
-}
-.pill-btn.is-pulldown .c-os-menu li:hover {
-  background: color-mix(in srgb, var(--pink) 12%, #fff);
-}
-.pill-btn.is-pulldown .c-os-menu[hidden] {
-  display: none;
-}
 .pill-btn {
   /* OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */
 }
@@ -2220,6 +2188,43 @@ ul {
   .campaign_header .menubanner_sp {
     display: block;
   }
+}
+
+.common_btn.is-pulldown {
+  position: relative;
+}
+
+.c-os-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 60;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  min-width: 100%;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid var(--pink);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.c-os-menu li {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--ink);
+  text-align: center;
+  cursor: pointer;
+}
+.c-os-menu li:hover {
+  background: color-mix(in srgb, var(--pink) 12%, #fff);
+}
+.c-os-menu[hidden] {
+  display: none;
 }
 
 .hero {
