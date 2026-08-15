@@ -486,7 +486,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.js-link-select').forEach((label) => {
+    const select = label.matches('select') ? label : label.querySelector('select');
+    if (!select) return;
 
+    select.addEventListener('change', (e) => {
+      const url = e.target.value;
+      if (url && url !== '#') window.location.href = url;
+    });
+  });
+});
 // =========================================================
 // お申し込みプルダウン（PC / SP 共通・自前メニュー）
 // stickyヘッダー内でもフォーカススクロールが起きない実装

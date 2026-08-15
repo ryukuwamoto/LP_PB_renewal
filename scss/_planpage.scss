@@ -1128,4 +1128,70 @@ main {
       text-decoration: underline;
     }
   }
+
+  .service-table-wrapper{
+    .scroll-hint-overlay.planpage {
+    display: none; // 💡基本は非表示
+
+    @media (max-width: 768px) {
+      display: block; // 💡このセクションで横スクロールが発生する「607px以下」だけ表示
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none; // 💡画像の上からでもスワイプできるように透過
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+
+      img {
+        width: 76px; // 💡サイズは自由に調整してください
+        height: auto;
+      }
+
+      // JSでこのクラスがついたら非表示
+      &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+    .plan-table-scroll{
+      max-width: 700px;
+      margin: 0 auto;
+
+      .plantable-pc{
+        width: 100%;
+        height: auto;
+      }
+
+      .plantable-sp{
+        display: none;
+      }
+      @media (max-width: 768px){
+        max-width: none;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-shrink: 0;
+
+        .plantable-pc {
+          display: none;
+        }
+
+        .plantable-sp{
+          display: block;
+          width: 694px;
+          min-width: 694px;
+          height: auto;
+          flex-shrink: 0;
+        }
+      }
+
+      @media (max-width: 480px){
+        .plantable-sp{
+          width: 145vw;
+          min-width: 145vw;
+        }
+      }
+    }
+  }
 }

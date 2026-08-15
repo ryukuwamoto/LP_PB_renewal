@@ -602,7 +602,7 @@
 // ---------- 電話番号発行の帯 ----------
 .plan-card-phone{
   background: var(--card-color-soft);
-  padding: 15px 8px 2px;
+  padding: 15px 8px;
   text-align: center;
   color: var(--card-color);
 
@@ -612,12 +612,27 @@
 }
 
 .phone-lead{
+  display: flex;
   font-weight: 900;
   font-size: 16px;
   line-height: 1.4;
+  justify-content: center;
+  align-items: baseline;
+  gap: 3px;
+
+  .planlogo{
+    width: 156px;
+    height: auto;
+    margin-top: 4px;
+  }
 
   @media (max-width: 768px){
-    font-size: 14px;
+    font-size: 12px;
+
+    .planlogo{
+      width: 100px;
+      height: auto;
+    }
   }
 }
 
@@ -640,7 +655,7 @@
 
   .phone-num{
     font-weight: 700;
-    font-size: 37px;
+    font-size: 34px;
     line-height: 1;
     margin-bottom: 12px;
   }
@@ -649,11 +664,15 @@
     font-size: 16px;
 
     .lg{ font-size: 18px; }
+    .en{ font-size: 20px; }
   }
 
   .phone-tail{ font-size: 18px; }
 
+  
+
   @media (max-width: 768px){
+    margin-top: -2px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 2px;
@@ -661,14 +680,41 @@
 
     .phone-cal{ width: 21px; height: 21px; }
     .phone-note{ font-size: 14px;}
-    .phone-num{ font-size: 35px; }
+    .phone-num{ font-size: 32px; margin-bottom: 8px;}
     .phone-suffix{
-      font-size: 14px;
-      .lg{ font-size: 16px; }
+      font-size: 12px;
+      .lg{ font-size: 14px; }
+      .en{ font-size: 16px; }
     }
     // 「電話番号発行」を改行して次の行へ
     .phone-tail{
-      font-size: 16px;
+      margin-top: -6px;
+      font-size: 14px;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.phone-bodylast{
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 900;
+
+  .phone-tail{ font-size: 18px; }
+
+  @media (max-width: 768px){
+    margin-top: 6px;
+    line-height: 1.4;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    column-gap: 2px;
+
+    .phone-tail{
+      font-size: 14px;
       flex-basis: 100%;
       text-align: center;
     }
