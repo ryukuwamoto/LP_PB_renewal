@@ -1,12 +1,12 @@
+// =========================================================
+// ヘッダー：メガメニューの開閉（PC＝ホバー / SP＝タップ）
+// =========================================================
 $(function() {
-  // 全て閉じる関数
   function closeAllMenus() {
-    // 💡開くクラスを消して、閉じるクラスをしっかりつける
     $('.nav-item-wrapper').removeClass('is-open').addClass('is-close');
     $('html, body').removeClass('menu-open');
   }
 
-  // PC版：ホバー開閉（ここは元のままでOKです）
   $('.nav-item-wrapper').on('mouseenter', function() {
     if (window.innerWidth > 768) {
       $(this).addClass('is-open').removeClass('is-close');
@@ -19,27 +19,23 @@ $(function() {
     }
   });
 
-  // スマホ版：クリック開閉
   $('.nav-item').on('click', function(e) {
     if (window.innerWidth <= 768) {
-      e.stopPropagation(); 
-      
+      e.stopPropagation();
+
       var $wrapper = $(this).closest('.nav-item-wrapper');
-      
+
       if ($wrapper.hasClass('is-open')) {
         closeAllMenus();
       } else {
-        // 💡他のメニューの開閉クラスをリセット
         $('.nav-item-wrapper').not($wrapper).removeClass('is-open').addClass('is-close');
-        
-        // 💡ここがポイント：is-open を足すだけでなく、is-close をきっちり消す！
+
         $wrapper.addClass('is-open').removeClass('is-close');
-        $('html, body').addClass('menu-open'); 
+        $('html, body').addClass('menu-open');
       }
     }
   });
 
-  // 各種閉じるイベント（ここは元のままでOKです）
   $('.menu-close-btn').on('click', function(e) {
     e.stopPropagation();
     closeAllMenus();
@@ -52,18 +48,19 @@ $(function() {
   $(document).on('click', function(e) {
     if (window.innerWidth <= 768) {
       if (!$(e.target).closest('.nav-item-wrapper').length) {
-        closeAllMenus(); 
+        closeAllMenus();
       }
     }
   });
 });
 
-
-
+// =========================================================
+// sec-top-b：キャンペーンバナースライダー（slick）
+// =========================================================
 $(function () {
   $('.campaign-slider').slick({
-    variableWidth: true,   // 各スライドを 310px 固定幅で扱う
-    centerMode: true,      // アクティブスライドを中央に
+    variableWidth: true,
+    centerMode: true,
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 3,
@@ -79,69 +76,64 @@ $(function () {
   });
 });
 
-
+// =========================================================
+// plan.html：プラン表の横スクロールヒントを消す
+// =========================================================
 $(function() {
 
-  // 599px以下のプラン表エリアがスクロールされたら、最初の1回だけ実行
   $('.plan-table-scroll').one('scroll', function() {
-    // 同じグループ内にあるヒント画像（.scroll-hint-overlay）を探して非表示クラスを付与
     $(this).siblings('.scroll-hint-overlay').addClass('is-hidden');
   });
 
 });
 
+// =========================================================
+// sec-top-e：サービス早見表の横スクロールヒントを消す
+// =========================================================
 $(function() {
 
-  // サービス早見表（画像）エリアがスクロールされたら、最初の1回だけ実行
   $('.service-table-scroll').one('scroll', function() {
-    // 隣にあるヒント画像に非表示クラスを付与
     $(this).siblings('.scroll-hint-overlay').addClass('is-hidden');
   });
 
 });
 
+// =========================================================
+// sec-top-h：ハンドブック画像のスクロールヒントを消す
+// =========================================================
 $(function() {
 
-  // サービス早見表（画像）エリアがスクロールされたら、最初の1回だけ実行
   $('.h-page-imgwrap').one('scroll', function() {
     $(this).find('.scroll-hint-overlay').addClass('is-hidden');
   });
 
 });
 
-
 // =========================================================
-// sec-top-d — シム吉歩かせるアニメーション
+// sec-top-d：シム吉ウォークアニメーション
 // =========================================================
-
 $(function() {
-  
-  // 画面に入ったかどうかを判定する監視カメラ（Observer）を作成
+
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        // 💡 画面に入ったらアニメーション開始クラスを付与
         $(entry.target).addClass('is-animated');
-        
-        // 💡 【パターンA（1回だけ）の場合】：一度動いたら監視を解除して終了
+
         observer.unobserve(entry.target);
       }
     });
   }, {
-    // 画面の上下10%にキャラクターが入ってきたら発火（発火タイミングの微調整用）
-    rootMargin: '-30% 0px -30% 0px' 
+    rootMargin: '-30% 0px -30% 0px'
   });
 
-  // 対象のキャラクター（.simkichiwalk）を監視対象に登録する
   $('.simkichiwalk').each(function() {
     observer.observe(this);
   });
 
 });
 
-
 // =========================================================
-// sec-top-g — eSIM / SIMカード タブ切替
+// sec-top-g：eSIM / SIMカードのタブ切替
 // =========================================================
 (function () {
   'use strict';
@@ -157,14 +149,12 @@ $(function() {
       const targetId = tab.getAttribute('data-target');
       if (!targetId) return;
 
-      // タブ状態更新
       tabs.forEach(function (t) {
         const active = t === tab;
         t.classList.toggle('is-active', active);
         t.setAttribute('aria-selected', active ? 'true' : 'false');
       });
 
-      // パネル状態更新
       panels.forEach(function (p) {
         const active = p.id === targetId;
         p.classList.toggle('is-active', active);
@@ -178,16 +168,12 @@ $(function() {
   });
 })();
 
-
 // =========================================================
-// sec-top-h
-//   - ハンドブック（目次クリック / ページ内 前へ・次へ）
-//   - Customer Reviews スライダー（slick）
+// sec-top-h：ハンドブック（目次クリック / 前へ・次へ）
 // =========================================================
 (function ($) {
   'use strict';
 
-  // ---------- ハンドブック ----------
   const root = document.querySelector('.sec-top-h');
   if (root) {
     const tocItems = root.querySelectorAll('.h-toc-item');
@@ -195,7 +181,6 @@ $(function() {
     const ctaLink  = root.querySelector('.h-cover-cta');
 
     function showPage(targetId) {
-      // ページ表示切替
       pages.forEach(function (p) {
         const active = p.id === targetId;
         p.classList.toggle('is-active', active);
@@ -206,25 +191,22 @@ $(function() {
           if (imgWrap) {
             imgWrap.scrollTop = 0;
           }
-          
+
         } else {
           p.setAttribute('hidden', '');
         }
       });
-      // 目次状態
       tocItems.forEach(function (t) {
         t.classList.toggle('is-active', t.getAttribute('data-target') === targetId);
       });
     }
 
-    // 目次クリック
     tocItems.forEach(function (t) {
       t.addEventListener('click', function () {
         showPage(t.getAttribute('data-target'));
       });
     });
 
-    // 表紙の「ガイドを読む」
     if (ctaLink) {
       ctaLink.addEventListener('click', function (e) {
         e.preventDefault();
@@ -232,7 +214,6 @@ $(function() {
       });
     }
 
-    // ページ内 前へ / 次へ / ▼
     root.querySelectorAll('.h-page').forEach(function (page) {
       const idx = parseInt(page.getAttribute('data-index') || '0', 10);
 
@@ -240,7 +221,7 @@ $(function() {
         btn.addEventListener('click', function () {
           let next = idx;
           if (btn.classList.contains('h-nav-prev')) next = idx - 1;
-          else                                     next = idx + 1;     // next / down 共に +1
+          else                                     next = idx + 1;
 
           if (next < 0 || next > 6) return;
           showPage('h-page-' + String(next).padStart(2, '0'));
@@ -249,12 +230,12 @@ $(function() {
     });
   }
 
-  // ---------- Customer Reviews スライダー ----------
 
 })(window.jQuery);
 
-
-// f-slider
+// =========================================================
+// sec-top-h：お客様の声スライダー（slick）
+// =========================================================
 $(function () {
   $(".f-slider").slick({
     autoplay: true,
@@ -283,33 +264,29 @@ $(function () {
   });
 });
 
-
+// =========================================================
+// lineup.html：申し込みフォームのSIMタイプ タブ切替
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // .top_b セクション内のタブ要素とパネル要素をすべて取得
   const tabs = document.querySelectorAll('.a-top_b__tab');
   const panels = document.querySelectorAll('.a-top_b__panel');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // 1. クリックされたタブの data-tab 属性の値を取得 (例: "sim" や "set")
       const targetTab = tab.getAttribute('data-tab');
 
-      // 2. すべてのタブの活性化状態（クラス、aria属性）をクリア
       tabs.forEach(t => {
         t.classList.remove('is-active');
         t.setAttribute('aria-selected', 'false');
       });
 
-      // 3. クリックされたタブだけをアクティブにする
       tab.classList.add('is-active');
       tab.setAttribute('aria-selected', 'true');
 
-      // 4. すべてのパネルを一度非表示 [hidden] にする
       panels.forEach(panel => {
         panel.setAttribute('hidden', '');
       });
 
-      // 5. data-panel の値が、取得した data-tab と一致するパネルだけを表示（hiddenを解除）
       const targetPanel = document.querySelector(`.a-top_b__panel[data-panel="${targetTab}"]`);
       if (targetPanel) {
         targetPanel.removeAttribute('hidden');
@@ -318,32 +295,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// =========================================================
+// lineup30.html：申し込みフォームのSIMタイプ タブ切替
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // .top_b セクション内のタブ要素とパネル要素をすべて取得
   const tabs = document.querySelectorAll('.a-top_b-s__tab');
   const panels = document.querySelectorAll('.a-top_b-s__panel');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // 1. クリックされたタブの data-tab 属性の値を取得 (例: "sim" や "set")
       const targetTab = tab.getAttribute('data-tab');
 
-      // 2. すべてのタブの活性化状態（クラス、aria属性）をクリア
       tabs.forEach(t => {
         t.classList.remove('is-active');
         t.setAttribute('aria-selected', 'false');
       });
 
-      // 3. クリックされたタブだけをアクティブにする
       tab.classList.add('is-active');
       tab.setAttribute('aria-selected', 'true');
 
-      // 4. すべてのパネルを一度非表示 [hidden] にする
       panels.forEach(panel => {
         panel.setAttribute('hidden', '');
       });
 
-      // 5. data-panel の値が、取得した data-tab と一致するパネルだけを表示（hiddenを解除）
       const targetPanel = document.querySelector(`.a-top_b-s__panel[data-panel="${targetTab}"]`);
       if (targetPanel) {
         targetPanel.removeAttribute('hidden');
@@ -353,32 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================================
-// application プルダウン
+// lineup.html：SIMタイプに応じた配送方法プルダウンの出し分け
 // =========================================================
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.a-top_b__tab');
-  const panels = document.querySelectorAll('.a-top_b__panel');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetTab = tab.getAttribute('data-tab');
-      tabs.forEach(t => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-      panels.forEach(panel => {
-        panel.setAttribute('hidden', '');
-      });
-      const targetPanel = document.querySelector(`.a-top_b__panel[data-panel="${targetTab}"]`);
-      if (targetPanel) {
-        targetPanel.removeAttribute('hidden');
-      }
-    });
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const selectWrapper = document.querySelector('.a-top_b__selects');
   if (!selectWrapper) return;
@@ -420,30 +370,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateDeliveryOptions();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.a-top_b__tab');
-  const panels = document.querySelectorAll('.a-top_b__panel');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetTab = tab.getAttribute('data-tab');
-      tabs.forEach(t => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-      panels.forEach(panel => {
-        panel.setAttribute('hidden', '');
-      });
-      const targetPanel = document.querySelector(`.a-top_b__panel[data-panel="${targetTab}"]`);
-      if (targetPanel) {
-        targetPanel.removeAttribute('hidden');
-      }
-    });
-  });
-});
-
+// =========================================================
+// lineup30.html：SIMタイプに応じた配送方法プルダウンの出し分け
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const selectWrapper = document.querySelector('.a-top_b-s__selects');
   if (!selectWrapper) return;
@@ -485,7 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateDeliveryOptions();
 });
 
-
+// =========================================================
+// 共通：セレクトボックスの選択でページ遷移
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.js-link-select').forEach((label) => {
     const select = label.matches('select') ? label : label.querySelector('select');
@@ -498,12 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 // =========================================================
-// お申し込みプルダウン
-//   PC(769px〜) : ホバーで開く。ボタン直下に吹き出し
-//   SP(〜768px) : クリックで開く。画面中央にウィンドウ
-//   どちらもグレーレイヤーを表示（PC用/SP用の2枚をCSSで出し分け）
+// お申し込みプルダウン（PC＝ホバーでボタン直下に吹き出し）
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const triggers = document.querySelectorAll('.js-link-menu');
@@ -516,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
     overlays.forEach((o) => { o.hidden = !show; });
   };
 
-  // すべて閉じる＋レイヤーを隠す
   const closeAll = () => {
     triggers.forEach((t) => {
       const m = t.querySelector('.c-os-menu');
@@ -539,21 +465,15 @@ document.addEventListener('DOMContentLoaded', () => {
       setOverlay(true);
     };
 
-    // ---- PC：ホバーで開閉 ----
-    // .c-os-menu はボタンの子要素／隙間は透明の padding-top なので、
-    // ボタン → 吹き出し へマウスを移動しても mouseleave は発火しない
     trigger.addEventListener('mouseenter', () => { if (mqPc.matches) open(); });
     trigger.addEventListener('mouseleave', () => { if (mqPc.matches) closeAll(); });
 
-    // ---- キーボード操作（PCのみ）----
-    // SPは .js-apply-open（共有モーダル）側で処理するので、ここでは何もしない
     trigger.addEventListener('keydown', (e) => {
       if (!mqPc.matches) return;
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : closeAll(); }
       else if (e.key === 'Escape') closeAll();
     });
 
-    // ---- 項目クリックで遷移 ----
     menu.querySelectorAll('[data-href]').forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -563,7 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // レイヤー／外側クリック／Esc で閉じる
   overlays.forEach((o) => o.addEventListener('click', closeAll));
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.js-link-menu')) closeAll();
@@ -572,16 +491,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeAll();
   });
 
-  // ブレークポイントをまたいだら閉じる（PC↔SPで挙動が変わるため）
   if (mqPc.addEventListener) mqPc.addEventListener('change', closeAll);
   else mqPc.addListener(closeAll);
 });
 
-
 // =========================================================
-// SP：お申し込みモーダル
-//   ボタンをタップ → 画面いっぱいの半透明グレー＋中央の小窓
-//   グレー部分のどこかをタップ / Esc で閉じる
+// お申し込みモーダル（SP＝全画面グレー＋中央の小窓）
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const openers = document.querySelectorAll('.js-apply-open');
@@ -606,9 +521,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   openers.forEach((opener) => {
     opener.addEventListener('click', (e) => {
-      if (mqApplyPc.matches) return;            // PCはホバーの吹き出しを使うのでモーダルは出さない
-      e.stopPropagation();                      // 他の「外側クリックで閉じる」処理に拾わせない
-      opener.focus({ preventScroll: true });    // stickyヘッダーでのスクロール防止
+      if (mqApplyPc.matches) return;
+      e.stopPropagation();
+      opener.focus({ preventScroll: true });
       modal.hidden ? open() : close();
     });
 
@@ -619,13 +534,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // グレー部分をタップで閉じる（小窓の中は無視）
   modal.addEventListener('click', (e) => {
     if (e.target.closest('.c-os-menu__inner')) return;
     close();
   });
 
-  // 選択肢をタップで遷移
   modal.querySelectorAll('[data-href]').forEach((item) => {
     item.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -634,29 +547,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Esc で閉じる
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close();
   });
 
-  // PC幅にリサイズしたら閉じる
   const onApplyMqChange = () => { if (mqApplyPc.matches) close(); };
   if (mqApplyPc.addEventListener) mqApplyPc.addEventListener('change', onApplyMqChange);
   else mqApplyPc.addListener(onApplyMqChange);
 });
 
-
-
+// =========================================================
+// plan.html：ご利用サイクルのタブ切替
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.p-cycle__tab');
   const panels = document.querySelectorAll('.p-cycle__panel');
-  const cycleBack = document.querySelector('.p-cycle__back'); // 💡 追加
+  const cycleBack = document.querySelector('.p-cycle__back');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const targetTab = tab.getAttribute('data-tab');
 
-      // 💡 背景要素にアクティブなタブ情報を付与
       if (cycleBack) {
         cycleBack.setAttribute('data-active-tab', targetTab);
       }
@@ -681,18 +592,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
+// =========================================================
+// plan.html：料金プランのタブ切替
+// =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.p-plan__tab');
   const panels = document.querySelectorAll('.p-plan__panel');
-  const cycleBack = document.querySelector('.p-plan__back'); // 💡 追加
+  const cycleBack = document.querySelector('.p-plan__back');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const targetTab = tab.getAttribute('data-tab');
 
-      // 💡 背景要素にアクティブなタブ情報を付与
       if (cycleBack) {
         cycleBack.setAttribute('data-active-tab', targetTab);
       }
@@ -717,21 +628,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
-/* ===== window-shape：下向き五角形（とんがり以外の4角にR／幅可変でRが潰れない） ===== */
+// =========================================================
+// 共通：window-shape（下向き五角形をSVGで描画）
+// =========================================================
 (function () {
   'use strict';
   var SVGNS = 'http://www.w3.org/2000/svg';
 
-  // 頂点＋各頂点の半径(px)から角丸パスdを生成。半径0の頂点は尖らせる
   function roundedPolyPath(pts, radii) {
   var n = pts.length, d = '';
   var sub = function (a, b) { return { x: a.x - b.x, y: a.y - b.y }; };
   var len = function (v) { return Math.hypot(v.x, v.y); };
   var nrm = function (v) { var l = len(v) || 1; return { x: v.x / l, y: v.y / l }; };
 
-  // 1) 各頂点の「接点距離 dist」と内角 theta を算出（円弧半径R → 接線距離へ変換）
   var seg = [];
   for (var i = 0; i < n; i++) {
     var p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n];
@@ -740,19 +649,17 @@ document.addEventListener('DOMContentLoaded', () => {
     var r = radii[i] || 0;
     var theta = Math.acos(Math.max(-1, Math.min(1, v1.x * v2.x + v1.y * v2.y)));
     var dist = (r > 0 && theta > 0.01 && theta < Math.PI - 0.01)
-      ? r / Math.tan(theta / 2)   // 半径Rを保つための頂点→接点距離
+      ? r / Math.tan(theta / 2)
       : 0;
     seg.push({ p1: p1, v1: v1, v2: v2, l1: l1, l2: l2, theta: theta, dist: dist });
   }
 
-  // 2) 隣り合う角が同じ辺を食い合わないよう接点距離をクランプ（接線は維持）
   for (var i = 0; i < n; i++) {
-    var cur = seg[i], nxt = seg[(i + 1) % n], edge = cur.l2; // cur.v2辺 = nxt.v1辺
+    var cur = seg[i], nxt = seg[(i + 1) % n], edge = cur.l2;
     var over = cur.dist + nxt.dist;
     if (over > edge && over > 0) { var k = edge / over; cur.dist *= k; nxt.dist *= k; }
   }
 
-  // 3) パス生成。dist>0 の角は「実半径 = dist*tan(θ/2)」で円弧を引く（=接線）
   for (var i = 0; i < n; i++) {
     var s = seg[i], p1 = s.p1;
     if (s.dist <= 0.01) {
