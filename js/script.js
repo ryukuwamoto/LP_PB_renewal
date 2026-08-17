@@ -497,44 +497,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
 // =========================================================
-// お申し込みプルダウン（PC / SP 共通・自前メニュー）
-// stickyヘッダー内でもフォーカススクロールが起きない実装
+// お申し込みプルダウン
+//   PC(769px〜) : ホバーで開く。ボタン直下に吹き出し
+//   SP(〜768px) : クリックで開く。画面中央にウィンドウ
+//   どちらもグレーレイヤーを表示（PC用/SP用の2枚をCSSで出し分け）
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
   const triggers = document.querySelectorAll('.js-link-menu');
+  const overlays = document.querySelectorAll('.js-menu-overlay');
   if (!triggers.length) return;
 
-  const closeAll = (except) => {
+  const mqPc = window.matchMedia('(min-width: 769px)');
+
+  const setOverlay = (show) => {
+    overlays.forEach((o) => { o.hidden = !show; });
+  };
+
+  // すべて閉じる＋レイヤーを隠す
+  const closeAll = () => {
     triggers.forEach((t) => {
-      if (t === except) return;
       const m = t.querySelector('.c-os-menu');
       if (m) m.hidden = true;
+      t.classList.remove('is-open');
       t.setAttribute('aria-expanded', 'false');
     });
+    setOverlay(false);
   };
 
   triggers.forEach((trigger) => {
     const menu = trigger.querySelector('.c-os-menu');
     if (!menu) return;
 
-    const open  = () => { closeAll(trigger); menu.hidden = false; trigger.setAttribute('aria-expanded', 'true'); };
-    const close = () => { menu.hidden = true;  trigger.setAttribute('aria-expanded', 'false'); };
+    const open = () => {
+      closeAll();
+      menu.hidden = false;
+      trigger.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      setOverlay(true);
+    };
 
-    // 開閉（項目クリックは下で別処理）
+    // ---- PC：ホバーで開閉 ----
+    // .c-os-menu はボタンの子要素／隙間は透明の padding-top なので、
+    // ボタン → 吹き出し へマウスを移動しても mouseleave は発火しない
+    trigger.addEventListener('mouseenter', () => { if (mqPc.matches) open(); });
+    trigger.addEventListener('mouseleave', () => { if (mqPc.matches) closeAll(); });
+
+    // ---- SP：クリックで開閉 ----
     trigger.addEventListener('click', (e) => {
       if (e.target.closest('.c-os-menu')) return;
-      trigger.focus({ preventScroll: true });   // ← スクロールを起こさない
-      menu.hidden ? open() : close();
+      if (mqPc.matches) return;                 // PCはホバー制御なのでクリックは無視
+      trigger.focus({ preventScroll: true });   // stickyヘッダーでのスクロール防止
+      menu.hidden ? open() : closeAll();
     });
 
-    // キーボード操作
+    // ---- キーボード操作（PC/SP共通）----
     trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : close(); }
-      else if (e.key === 'Escape') close();
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : closeAll(); }
+      else if (e.key === 'Escape') closeAll();
     });
 
-    // 項目クリックで遷移
+    // ---- 項目クリックで遷移 ----
     menu.querySelectorAll('[data-href]').forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -544,13 +569,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 外側クリック・Escで閉じる
+  // レイヤー／外側クリック／Esc で閉じる
+  overlays.forEach((o) => o.addEventListener('click', closeAll));
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.js-link-menu')) closeAll(null);
+    if (!e.target.closest('.js-link-menu')) closeAll();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeAll(null);
+    if (e.key === 'Escape') closeAll();
   });
+
+  // ブレークポイントをまたいだら閉じる（PC↔SPで挙動が変わるため）
+  if (mqPc.addEventListener) mqPc.addEventListener('change', closeAll);
+  else mqPc.addListener(closeAll);
+});
+
+
+// =========================================================
+// SP：お申し込みモーダル
+//   ボタンをタップ → 画面いっぱいの半透明グレー＋中央の小窓
+//   グレー部分のどこかをタップ / Esc で閉じる
+// =========================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const openers = document.querySelectorAll('.js-apply-open');
+  const modal   = document.querySelector('.js-apply-modal');
+  if (!openers.length || !modal) return;
+
+  const open = () => {
+    modal.hidden = false;
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    openers.forEach((o) => o.setAttribute('aria-expanded', 'true'));
+  };
+
+  const close = () => {
+    modal.hidden = true;
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    openers.forEach((o) => o.setAttribute('aria-expanded', 'false'));
+  };
+
+  openers.forEach((opener) => {
+    opener.addEventListener('click', (e) => {
+      e.stopPropagation();                      // 他の「外側クリックで閉じる」処理に拾わせない
+      opener.focus({ preventScroll: true });    // stickyヘッダーでのスクロール防止
+      modal.hidden ? open() : close();
+    });
+
+    opener.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); modal.hidden ? open() : close(); }
+      else if (e.key === 'Escape') close();
+    });
+  });
+
+  // グレー部分をタップで閉じる（小窓の中は無視）
+  modal.addEventListener('click', (e) => {
+    if (e.target.closest('.c-os-menu__inner')) return;
+    close();
+  });
+
+  // 選択肢をタップで遷移
+  modal.querySelectorAll('[data-href]').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const url = item.dataset.href;
+      if (url) window.location.href = url;
+    });
+  });
+
+  // Esc で閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+
+  // PC幅にリサイズしたら閉じる
+  const mqApplyPc = window.matchMedia('(min-width: 769px)');
+  const onApplyMqChange = () => { if (mqApplyPc.matches) close(); };
+  if (mqApplyPc.addEventListener) mqApplyPc.addEventListener('change', onApplyMqChange);
+  else mqApplyPc.addListener(onApplyMqChange);
 });
 
 

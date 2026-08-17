@@ -1418,6 +1418,8 @@
     height: 46px;
     gap: 10px;
     padding-right: 20px;
+    position: relative;
+    z-index: 1;
   }
 
   .header-phone-link {
@@ -1629,35 +1631,149 @@
 // お申し込みプルダウン（PC / SP 共通メニュー）
 // =========================================================
 .common_btn.is-pulldown{
-  position: relative;   // SPメニューの絶対配置の基準（PCの .pill-btn.is-pulldown は既にrelative）
+  position: relative;
 }
 
+// ---------- グレーレイヤー（PC用） ----------
+// .header の背景より前面／.header-inner（白背景）より背面
+// → ヘッダーは明るいまま、ページ本文だけを暗くする
+.c-menu-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, .5);
+  cursor: pointer;
+
+  &[hidden]{ display: none; }
+
+  @media (max-width: 768px){
+    display: none;   // SPは .c-os-menu--modal 自体がグレー面になるので不要
+  }
+}
+
+// ---------- 選択肢ウィンドウ ----------
+// .c-os-menu       = 透明ラッパー（隙間を作る／ホバーを途切れさせない）
+// .c-os-menu__inner = 吹き出し本体
 .c-os-menu{
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 60;                       // header(z-index:50)より前面
-  margin: 0;
-  padding: 4px 0;
-  list-style: none;
-  min-width: 100%;
-  white-space: nowrap;
-  background: #fff;
-  border: 1px solid var(--pink);
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+  right: 15px;                 // ボタン右端に合わせる
+  left: auto;
+  transform: none;
+  z-index: 60;
+  padding-top: 14px;        // 💡 ヘッダーと吹き出しの隙間。透明なのでホバーは継続する
+  background: transparent;
 
-  li{
-    padding: 8px 14px;
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--ink);
-    text-align: center;
-    cursor: pointer;
+  &[hidden]{ display: none; }
 
-    &:hover{ background: color-mix(in srgb, var(--pink) 12%, #fff); }
+  &__inner{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    padding: 14px;
+    list-style: none;
+    white-space: nowrap;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+
+    // ボタン中央を指す三角（隙間の高さぶん＝14px）
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      right: 25px;          // .pill-btn の幅85pxの中央
+      border-style: solid;
+      border-width: 0 9px 14px;
+      border-color: transparent transparent #fff;
+
+      @media (max-width: 1100px){
+        right: 37px;        // .pill-btn が75pxになるため
+      }
+    }
   }
 
-  &[hidden]{ display: none; }         // hidden属性を確実に効かせる
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 95px;
+    height: 60px;
+    border: 2px solid;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .3s ease;
+
+    &--travel{
+      border-color: var(--teal);
+      color: var(--teal);
+
+      &:hover{ background-color: #DBF4FD;}
+    }
+
+    &--long{
+      border-color: var(--red);
+      color: var(--red);
+
+      &:hover{ background-color: #FFD5DB; }
+    }
+  }
+
+  &__icon{
+    width: auto;
+    height: 15px;
+  }
+
+}
+
+// ---------- SP：お申し込みモーダル ----------
+// 画面いっぱいの半透明グレー面（＝この要素自身）＋中央の小窓（.c-os-menu__inner）
+//
+// ⚠️ .common_btn には transform-style: preserve-3d が効いており、
+//    ボタンの内側に position: fixed を置くと「ボタン基準」になって画面いっぱいにならない。
+//    そのためモーダルは </header> の外（body直下）に置いている。
+.c-os-menu--modal{
+  display: none;              // PCでは使わない
+
+  @media (max-width: 768px){
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 100;             // .header(z-index:50) より前面
+    align-items: center;      // 小窓を画面中央へ
+    justify-content: center;
+    padding: 20px;            // 小窓が画面端に付かないための余白
+    background: rgba(0, 0, 0, .5);
+    cursor: pointer;          // グレーのどこを押しても閉じる
+
+    .c-os-menu__inner{
+      cursor: auto;
+      margin-top: 0;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 12px;
+
+      &::before{ display: none; }   // 三角は不要
+    }
+
+    .c-os-menu__item{
+      width: 120px;
+      height: 100px;
+      gap: 8px;
+      font-size: 13px;
+      border-radius: 10px;
+    }
+
+    .c-os-menu__icon{
+      height: 25px;
+    }
+  }
 }
