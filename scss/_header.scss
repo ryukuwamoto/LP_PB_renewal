@@ -1642,7 +1642,11 @@
   inset: 0;
   z-index: -1;
   background: rgba(0, 0, 0, .5);
-  cursor: pointer;
+
+  // 💡 見た目だけの層にする。マウス操作を一切拾わせない。
+  //    拾わせるとホバー中のボタンの上に乗った瞬間 mouseleave→閉じる→mouseenter→開く
+  //    のループが起き、画面全体がチカチカする
+  pointer-events: none;
 
   &[hidden]{ display: none; }
 
@@ -1684,13 +1688,12 @@
       position: absolute;
       bottom: 100%;
       right: 25px;          // .pill-btn の幅85pxの中央
-      border-style: solid;
-      border-width: 0 9px 14px;
-      border-color: transparent transparent #fff;
-
-      @media (max-width: 1100px){
-        right: 37px;        // .pill-btn が75pxになるため
-      }
+      width: 18px;
+      height: 15px;
+      margin-bottom: -1px;   // 吹き出し本体に1px重ねてサブピクセルの隙間を消す
+      background: #fff;
+      // 先端だけ半径2pxで丸める（重ねる1pxを足して高さ15px）
+      clip-path: path('M0,15 L7.29,2.86 A2,2 0 0 1 10.71,2.86 L18,15 Z');
     }
   }
 
@@ -1776,4 +1779,27 @@
       height: 25px;
     }
   }
+}
+// ---------- 中央寄せの吹き出し（セクション内のCTAボタン用） ----------
+// ヘッダーは右端揃え、セクションのボタンは中央揃えなので modifier で切り替える
+.c-os-menu--center{
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  // とんがりの位置はヘッダーと共通（.c-os-menu__inner::before の right: 25px）
+}
+
+// ---------- SP：ボタン内の吹き出しは使わない ----------
+// SPは body直下の .c-os-menu--modal（共有モーダル）に一本化する
+@media (max-width: 768px){
+  .is-pulldown > .c-os-menu{
+    display: none;
+  }
+}
+
+// ---------- PC：開いている間だけボタンをグレーレイヤーより前面へ ----------
+// .c-menu-overlay は .header(z-index:50) の中にあるため、
+// セクション側のボタンは z-index:60 まで上げないとグレーの下に潜る
+.common_btn.is-pulldown.is-open{
+  z-index: 60;
 }

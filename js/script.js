@@ -545,16 +545,10 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('mouseenter', () => { if (mqPc.matches) open(); });
     trigger.addEventListener('mouseleave', () => { if (mqPc.matches) closeAll(); });
 
-    // ---- SP：クリックで開閉 ----
-    trigger.addEventListener('click', (e) => {
-      if (e.target.closest('.c-os-menu')) return;
-      if (mqPc.matches) return;                 // PCはホバー制御なのでクリックは無視
-      trigger.focus({ preventScroll: true });   // stickyヘッダーでのスクロール防止
-      menu.hidden ? open() : closeAll();
-    });
-
-    // ---- キーボード操作（PC/SP共通）----
+    // ---- キーボード操作（PCのみ）----
+    // SPは .js-apply-open（共有モーダル）側で処理するので、ここでは何もしない
     trigger.addEventListener('keydown', (e) => {
+      if (!mqPc.matches) return;
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.hidden ? open() : closeAll(); }
       else if (e.key === 'Escape') closeAll();
     });
@@ -594,6 +588,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal   = document.querySelector('.js-apply-modal');
   if (!openers.length || !modal) return;
 
+  const mqApplyPc = window.matchMedia('(min-width: 769px)');
+
   const open = () => {
     modal.hidden = false;
     document.documentElement.classList.add('menu-open');
@@ -610,12 +606,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   openers.forEach((opener) => {
     opener.addEventListener('click', (e) => {
+      if (mqApplyPc.matches) return;            // PCはホバーの吹き出しを使うのでモーダルは出さない
       e.stopPropagation();                      // 他の「外側クリックで閉じる」処理に拾わせない
       opener.focus({ preventScroll: true });    // stickyヘッダーでのスクロール防止
       modal.hidden ? open() : close();
     });
 
     opener.addEventListener('keydown', (e) => {
+      if (mqApplyPc.matches) return;
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); modal.hidden ? open() : close(); }
       else if (e.key === 'Escape') close();
     });
@@ -642,7 +640,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // PC幅にリサイズしたら閉じる
-  const mqApplyPc = window.matchMedia('(min-width: 769px)');
   const onApplyMqChange = () => { if (mqApplyPc.matches) close(); };
   if (mqApplyPc.addEventListener) mqApplyPc.addEventListener('change', onApplyMqChange);
   else mqApplyPc.addListener(onApplyMqChange);

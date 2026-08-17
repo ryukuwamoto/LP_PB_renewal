@@ -2,7 +2,7 @@
 
 .sec-top-c{
   background: #fff;
-  padding: 60px 0 80px;     // PC: 左右最低 20px の隙間
+  padding: 60px 0 120px;    // PC: 左右最低 20px の隙間 ／ 申し込み吹き出し(107px)がoverflowで切れないよう確保
   overflow: hidden;
 
   @media (max-width: 768px){

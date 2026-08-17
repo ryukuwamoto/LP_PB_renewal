@@ -2,7 +2,7 @@
 
 .sec-top-g{
   background: #fff;
-  padding: 60px 0 80px;
+  padding: 60px 0 120px;    // 申し込み吹き出し(107px)がoverflowで切れないよう確保
   overflow: hidden;
 
   @media (max-width: 768px){

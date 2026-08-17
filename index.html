@@ -723,18 +723,30 @@
         <span class="text">すべてのプランを見る</span>
         <span class="arrow"></span>
     </a>
-    <label class="common_btn is-pinkwhite is-pulldown">
+    <div class="common_btn is-pinkwhite is-pulldown js-link-menu js-apply-open" tabindex="0" role="button"
+        aria-haspopup="listbox" aria-expanded="false" aria-label="お申し込み方法の選択">
         <span class="icon-circle">
           <img src="img/sec-top-a/buttonicon.png" width="29" height="38">
         </span>
         <span class="text">お申し込みはこちら</span>
         <span class="arrow"></span>
-        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
-          <option value="" selected disabled hidden>選択してください</option>
-          <option value="lineup.html#lineup">長期用SIM</option>
-          <option value="lineup30.html#lineup">トラベル用SIM</option>
-        </select>
-    </label>
+
+        <!-- PC用：ボタン直下の吹き出し（SPは共有モーダルを使うため非表示） -->
+        <div class="c-os-menu c-os-menu--center" hidden>
+          <ul class="c-os-menu__inner" role="listbox">
+            <li class="c-os-menu__item c-os-menu__item--travel" role="option" tabindex="-1"
+                data-href="lineup30.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Briefcase.png" alt="">
+              <span class="c-os-menu__text">トラベル用SIM</span>
+            </li>
+            <li class="c-os-menu__item c-os-menu__item--long" role="option" tabindex="-1"
+                data-href="lineup.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Calendar.png" alt="">
+              <span class="c-os-menu__text">長期用SIM</span>
+            </li>
+          </ul>
+        </div>
+    </div>
   </div>
 </section>
 <section class="sec-top-d">
@@ -1208,18 +1220,30 @@
       </div>
     </div>
     <div class="g-actions">
-      <label class="common_btn is-pinkwhite is-pulldown">
+      <div class="common_btn is-pinkwhite is-pulldown js-link-menu js-apply-open" tabindex="0" role="button"
+          aria-haspopup="listbox" aria-expanded="false" aria-label="お申し込み方法の選択">
         <span class="icon-circle">
           <img src="img/sec-top-a/buttonicon.png" width="29" height="38">
         </span>
         <span class="text">お申し込みはこちら</span>
         <span class="arrow"></span>
-        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
-          <option value="" selected disabled hidden>選択してください</option>
-          <option value="lineup.html#lineup">長期用SIM</option>
-          <option value="lineup30.html#lineup">トラベル用SIM</option>
-        </select>
-    </label>
+
+        <!-- PC用：ボタン直下の吹き出し（SPは共有モーダルを使うため非表示） -->
+        <div class="c-os-menu c-os-menu--center" hidden>
+          <ul class="c-os-menu__inner" role="listbox">
+            <li class="c-os-menu__item c-os-menu__item--travel" role="option" tabindex="-1"
+                data-href="lineup30.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Briefcase.png" alt="">
+              <span class="c-os-menu__text">トラベル用SIM</span>
+            </li>
+            <li class="c-os-menu__item c-os-menu__item--long" role="option" tabindex="-1"
+                data-href="lineup.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Calendar.png" alt="">
+              <span class="c-os-menu__text">長期用SIM</span>
+            </li>
+          </ul>
+        </div>
+    </div>
     </div>
   </div>
 </section>
