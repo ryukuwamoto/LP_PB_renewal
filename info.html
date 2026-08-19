@@ -46,6 +46,7 @@
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
+    <div class="c-menu-overlay js-menu-overlay" hidden></div>
     <a class="logo" href="index.html">
       <img src="img/header/logo.png" width="220" height="89">
     </a>
@@ -223,11 +224,11 @@
                 </a>
                 <div class="section-box">
                   <p class="section-title">プレスリリース</p>
-                  <a class="article" target="_blank" href="https://prtimes.jp/main/html/rd/p/000000014.000115721.html">
+                  <a class="article" target="_blank" href="https://prtimes.jp/main/html/rd/p/000000023.000115721.html">
                     <img class="thumnail" src="img/header/最新情報/サムネ.png" width="4000" height="2667">
                     <div>
-                      <p>2025/11/12</p>
-                      <p>【オーストラリア eSIMが初期費用0円】イエローモバイル10周年記念！サクっとSIM AUS「超ワーホリ割」＆紹介特典3倍の「3倍盛りキャンペーン」開始<img src="img/footer/linkicon.png" class="inline-icon" width="27" height="27"></p>
+                      <p>2026/8/5</p>
+                      <p>【カナダeSIM 初月$5 OFF】イエローモバイル10周年記念！PhoneBoxを頼むならイエローモバイル、紹介特典3倍の「3倍盛りキャンペーン」も開始<img src="img/footer/linkicon.png" class="inline-icon" width="27" height="27"></p>
                     </div>
                   </a>
                 </div>
@@ -321,16 +322,28 @@
         <img class="ico" src="img/header/line-icon-hover.png" width="33" height="30">
         で聞く
       </a>
-      <label class="pill-btn apply is-pulldown">
+      <div class="pill-btn apply is-pulldown js-link-menu" tabindex="0" role="button"
+          aria-haspopup="listbox" aria-expanded="false" aria-label="お申し込み方法の選択">
         <img class="ico" src="img/header/aplly-icon.png" width="23" height="28">
         <img class="ico" src="img/header/aplly-icon-hover.png" width="23" height="28">
         <span>お申込み</span>
-        <select class="c-os-select js-link-select" required aria-label="お申し込み方法の選択">
-          <option value="" selected disabled hidden>選択してください</option>
-          <option value="lineup.html#lineup">長期用SIM</option>
-          <option value="lineup30.html#lineup">トラベル用SIM</option>
-        </select>
-      </label>
+        <div class="c-os-menu" hidden>
+          <ul class="c-os-menu__inner" role="listbox">
+            <li class="c-os-menu__item c-os-menu__item--travel" role="option" tabindex="-1"
+                data-href="lineup30.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Briefcase.png" alt="" width="50" height="50">
+              <span class="c-os-menu__text">トラベル用SIM</span>
+              <span class="c-os-menu__text">（30日以内）</span>
+            </li>
+            <li class="c-os-menu__item c-os-menu__item--long" role="option" tabindex="-1"
+                data-href="lineup.html#lineup">
+              <img class="c-os-menu__icon" src="img/header/pulldown/Calendar.png" alt="" width="50" height="50">
+              <span class="c-os-menu__text">長期用SIM</span>
+              <span class="c-os-menu__text">（31日以上）</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <a class=" common_btn is-whitepink phone-sp" href="tel:0474724818">
           <span class="icon-circle phone-icon-circle">
             <img src="img/header/Phone-black.png" width="26" height="26">
@@ -342,17 +355,11 @@
           </span>
           <span class="text">で聞く</span>
         </a>
-        <label class="common_btn is-pinkwhite apply-sp is-pulldown js-link-select">
-          <span class="icon-circle">
-            <img src="img/sec-top-a/buttonicon.png" width="29" height="38">
-          </span>
+        <div class="common_btn is-pinkwhite apply-sp is-pulldown js-apply-open" tabindex="0" role="button"
+            aria-haspopup="dialog" aria-expanded="false" aria-label="購入方法の選択">
+          <span class="icon-circle"><img src="img/sec-top-a/buttonicon.png" width="29" height="38"></span>
           <span class="text">お申し込み</span>
-          <select class="c-os-select" required aria-label="購入方法の選択">
-            <option value="" selected disabled hidden>選択してください</option>
-            <option value="lineup.html#lineup">長期用SIM</option>
-            <option value="lineup30.html#lineup">トラベル用SIM</option>
-          </select>
-        </label>
+        </div>
     </div>
   </div>
 </header>
