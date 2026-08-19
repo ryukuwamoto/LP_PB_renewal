@@ -1,14 +1,15 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-f 6つのPOINT
+// =========================================================
 .sec-top-f{
   background: var(--teal);
   position: relative;
-  padding: 0;             // 内部の wave + inner で制御
+  padding: 0;
 }
 
 // ---------- 上下の波線（ジグザグ） ----------
-// CSS ジグザグで実装。実画像 (SVG) と差し替えたい時は
-// `background: url('../img/sec-top-f/wave-yellow-top.svg') ...` に変更。
 .sec-top-f-wave-top,
 .sec-top-f-wave-bottom{
   height: 75px;
@@ -28,7 +29,6 @@
   background-position: center;
 }
 
-
 // ---------- 見出し（ティール背景上の白文字バージョン） ----------
 .f-head {
   padding: 30px 20px 50px;
@@ -41,70 +41,6 @@
       background: #fff;
       }
     }
-
-    
-  }
-  
-  
-}
-
-.sec-head-on-teal{
-  text-align: center;
-  margin-bottom: 36px;
-  color: #fff;
-
-  .sec-ico{
-    width: 40px;
-    height: auto;
-    margin: 0 auto 8px;
-    display: block;
-  }
-
-  .sec-en{
-    font-weight: 500;
-    font-style: italic;
-    font-size: 32px;
-    color: #fff;
-    line-height: 1.2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-
-    .line-l, .line-r{
-      display: inline-block;
-      width: 240px;
-      height: 1px;
-      background: #fff;
-    }
-
-    @media (max-width: 768px){
-      font-size: 22px;
-      gap: 10px;
-
-      .line-l, .line-r{ width: 50px; }
-    }
-  }
-
-  .sec-jp{
-    margin-top: 6px;
-    font-weight: bold;
-    font-size: 15px;
-    color: #fff;
-
-    .en{
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    @media (max-width: 768px){
-      font-size: 12px;
-      .en{ font-size: 12px; }
-    }
-  }
-
-  @media (max-width: 768px){
-    margin-bottom: 20px;
   }
 }
 
@@ -136,12 +72,12 @@
   position: relative;
   justify-content: center;
   min-height: 100px;
-  
+
   @media (max-width: 940px){
     padding: 14px 20px 14px 40px;
     gap: 5px;
   }
-  
+
   @media (max-width: 768px){
     padding: 14px 14px 14px 50px;
     gap: 25px;
@@ -263,7 +199,7 @@
   }
 }
 
-// POINT N バッジ（左上）
+// ---------- POINT N バッジ（左上） ----------
 .gp-num{
   position: absolute;
   top: -10px;
@@ -300,7 +236,7 @@
   }
 }
 
-// テキスト
+// ---------- テキスト ----------
 .gp-text{
   display: inline-block;
   font-weight: bold;
@@ -311,7 +247,6 @@
   flex-direction: column;
   max-width: 220px;
   width: 100%;
-
 
   .gp-text-sub{
     font-size: 19px;
@@ -371,7 +306,7 @@
       }
     }
   }
-  
+
   @media (max-width: 768px){
     font-size: 12px;
     max-width: 170px;

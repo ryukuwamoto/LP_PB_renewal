@@ -1,12 +1,15 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-g ご利用までの流れ（STEP）
+// =========================================================
 .sec-top-g{
   background: #fff;
-  padding: 60px 0 120px;    // 申し込み吹き出し(107px)がoverflowで切れないよう確保
+  padding: 60px 0 120px;
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 40px 0 60px;  // SP は仮値（後日デザイン入稿時に調整）
+    padding: 40px 0 60px;
   }
 }
 
@@ -20,7 +23,6 @@
 
 // ---------- 見出し ----------
 .sec-head{
-
   .sec-ico{
     width: 40px;
     height: auto;
@@ -77,7 +79,7 @@
   width: 356px;
   height: 50px;
   border: none;
-  background: #FFD5DB;        // 非アクティブ背景（淡黄色）
+  background: #FFD5DB;
   color: #959595;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
@@ -100,13 +102,11 @@
     font-size: 28px;
   }
 
-  
-
   &.is-active{
     height: 70px;
     background: var(--red);
     color: #fff;
-    margin-bottom: -1px;      // パネルとシームレスに繋ぐ
+    margin-bottom: -1px;
     align-items: center;
 
     .en{
@@ -135,7 +135,7 @@
     &.is-active{
       height: 55px;
       background: var(--red);
-      margin-bottom: -1px;      // パネルとシームレスに繋ぐ
+      margin-bottom: -1px;
       align-items: center;
 
       .en{
@@ -215,9 +215,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  color: #fff;          // ← PNGの塗り色に合わせる（白想定）
-  --ws-r: 10px;         // 角丸：px固定なので幅が縮んでもRが潰れない
-  --ws-tip: 49px;       // とんがりの下方向への張り出し
+  color: #fff;
+  --ws-r: 10px;
+  --ws-tip: 49px;
   pointer-events: none;
 
   .window-shape-svg{
@@ -442,23 +442,6 @@
   }
 }
 
-.g-callout-illust1{
-  width: 94px;
-  height: auto;
-  display: block;
-  margin: 7px 0 0 27px;
-
-  @media (max-width: 768px){
-    width: 74px;
-    margin: 17px 0 0 25px;
-  }
-
-  @media (max-width: 400px){
-    width: 70px;
-    margin: 17px 0 0 15px;
-  }
-}
-
 .g-callout-illust2{
   width: 103px;
   height: auto;
@@ -476,23 +459,6 @@
   }
 }
 
-.g-callout-illust3{
-  width: 94px;
-  height: auto;
-  display: block;
-  margin: 13px 0 0 27px;
-
-  @media (max-width: 768px){
-    width: 74px;
-    margin: 26px 0 0 25px;
-  }
-
-  @media (max-width: 400px){
-    width: 70px;
-    margin: 30px 0 0 15px;
-  }
-}
-
 .g-callout-body{
   display: flex;
   width: 268px;
@@ -500,22 +466,10 @@
   align-items: center;
   gap: 21px;
 
-  &.simcard {
-    gap: 14px;
-  }
-
   @media (max-width: 768px){
     max-width: 160px;
     width: 100%;
     gap: 8px;
-
-    &.simcard {
-      gap: 8px;
-
-      .sp {
-        display: none;
-      }
-    }
   }
 }
 
@@ -572,43 +526,4 @@
   display: flex;
   justify-content: center;
   margin-top: 42px;
-}
-
-.btn-apply{
-  width: 285px;
-  height: 51px;
-  background: var(--pink);
-  color: #fff;
-  border-radius: 999px;
-  border: 1px solid var(--pink);
-  font-weight: bold;
-  font-size: 17px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  position: relative;
-  transition: background-color .3s ease, color .3s ease;
-
-  .btn-apply-icon{
-    width: 22px;
-    height: auto;
-  }
-
-  .btn-arrow{
-    position: absolute;
-    right: 22px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 14px;
-  }
-
-  &:hover{
-    background: #fff;
-    color: var(--pink);
-
-    // 矢印・アイコンを色反転で見せたい場合は別アセットを差し替え
-  }
 }

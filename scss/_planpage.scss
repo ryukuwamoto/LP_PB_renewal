@@ -1,8 +1,8 @@
-// =========================================================
-// planpage
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// plan.html：料金プランページ
+// =========================================================
 main {
   &.plan {
     .wrap-wide {
@@ -20,7 +20,7 @@ main {
     @media (max-width: 768px) {
       padding-bottom: 60px;
     }
-  }  
+  }
 }
 
 // ---------- Common Components ----------
@@ -131,33 +131,6 @@ main {
   }
 }
 
-.c-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 14px 30px;
-  font-weight: 900;
-  font-size: 15px;
-  color: var(--ink);
-  box-shadow: 4px 4px 0 var(--pink);
-  transition: transform .12s, box-shadow .12s;
-
-  &:hover {
-    transform: translate(4px, 4px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
-  }
-
-  &__arrow {
-    margin-left: 2px;
-    font-size: 17px;
-    font-weight: 900;
-    line-height: 1;
-  }
-}
-
 .c-btnarea {
   text-align: center;
   margin-top: 28px;
@@ -256,86 +229,6 @@ main {
   }
 }
 
-.c-pagetop {
-  text-align: center;
-  padding: 30px 0 0;
-
-  &__link {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: var(--ink);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  &__circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--teal);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-  }
-}
-
-.c-article {
-  &__heading {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 900;
-    margin-bottom: 14px;
-  }
-
-  &__photo {
-    background: #fff;
-    border-radius: 8px;
-    aspect-ratio: 16 / 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #bbb;
-    font-size: 12px;
-  }
-
-  &__date {
-    font-size: 12px;
-    color: #888888;
-    margin: 12px 0 4px;
-  }
-
-  &__title {
-    font-size: 13.5px;
-    font-weight: 700;
-    line-height: 1.6;
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.c-sns {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  padding: 18px 0 4px;
-
-  &__item {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--ink);
-
-    &:hover {
-      color: var(--teal);
-    }
-  }
-}
-
 // ---------- Page Specific Blocks ----------
 .p-fv {
   text-align: center;
@@ -424,26 +317,25 @@ main {
 
   &__tabs {
     display: flex;
-    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
+    align-items: flex-end;
     justify-content: center;
     gap: 18px;
     max-width: 1030px;
-    
-    /* 💡ここがガタつき防止のポイント */
-    height: 70px;          // エリア全体の高さを最大値の70pxに固定
-    margin: -70px auto 0;  // 高さに合わせたネガティブマージン
+
+    height: 70px;
+    margin: -70px auto 0;
 
     @media (max-width: 768px) {
-      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      height: 50px;
       margin-top: -50px;
       gap: 8px;
     }
   }
 
-  /* タブ単体 */
+  // タブ単体
   &__tab {
     flex: 0 1 356px;
-    height: 50px; // 閉じている時は50px
+    height: 50px;
     border: 0;
     border-radius: 10px 10px 0 0;
     background: #FFD5DB;
@@ -466,7 +358,6 @@ main {
       background: #DBF4FD;
     }
 
-    /* 💡 各タブごとのアクティブ時背景色 */
     &[data-tab="sim"].is-active {
       background: var(--red);
     }
@@ -475,18 +366,18 @@ main {
     }
 
     &.is-active {
-      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
+      height: 70px;
       background: var(--red);
       color: #fff;
     }
 
-    /* レスポンシブ（スマホ版） */
+    // レスポンシブ（スマホ版）
     @media (max-width: 768px) {
       font-size: 15px;
-      height: 38px; // スマホ版：閉じている時（50pxより少し低く）
+      height: 38px;
 
       &.is-active {
-        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
+        height: 50px;
       }
 
       .en {
@@ -519,21 +410,20 @@ main {
 
   &__list2 {
     display: grid;
-    /* 💡 自動で列数を調整する設定 */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px; // 3列並びにするためギャップを少し調整（お好みで36pxでもOK）
+    gap: 24px;
     margin: 70px 0;
 
     @media (max-width: 768px) {
-      display: none; // スマホ表示で非表示にする既存設定
+      display: none;
     }
   }
 
   &__card2 {
-    position: relative; // バッジやイラストの配置用に記述しておくと便利です
+    position: relative;
     border: 2px solid var(--ink);
     border-radius: 14px;
-    padding: 32px 24px 35px; // 横幅に合わせてパディングを少しスリムに調整
+    padding: 32px 24px 35px;
     background: #fff;
 
     @media (max-width: 480px) {
@@ -869,7 +759,7 @@ main {
     line-height: 1.6;
     padding: 20px;
     margin: 0 auto;
-    
+
     @media (max-width: 768px) {
       padding: 0 20px 20px;
     }
@@ -935,10 +825,10 @@ main {
     &::before {
       content: "";
       position: absolute;
-      inset: 0; // top:0; right:0; bottom:0; left:0; と同じ
+      inset: 0;
       border: 2px solid var(--red);
       border-radius: 10px;
-      z-index: 1; // 枠線と白背景の重ね順
+      z-index: 1;
       transition: border-color 0.3s ease;
       pointer-events: none;
     }
@@ -983,15 +873,14 @@ main {
   &__tabs {
     position: relative;
     display: flex;
-    align-items: flex-end; // 下辺を揃えて上に向かって伸ばす
+    align-items: flex-end;
     justify-content: center;
     gap: 18px;
     max-width: 1030px;
     z-index: 0;
-    
-    /* 💡ここがガタつき防止のポイント */
-    height: 70px;          // エリア全体の高さを最大値の70pxに固定
-    margin: -69px auto 0;  // 高さに合わせたネガティブマージン
+
+    height: 70px;
+    margin: -69px auto 0;
 
     @media (max-width: 768px) {
       position: absolute;
@@ -999,16 +888,16 @@ main {
       top: -49px;
       left: 0;
       right: 0;
-      height: 50px;        // スマホ版のエリア全体高さを50pxに固定
+      height: 50px;
       margin-top: 0px;
       gap: 8px;
     }
   }
 
-  /* タブ単体 */
+  // タブ単体
   &__tab {
     flex: 0 1 356px;
-    height: 50px; // 閉じている時は50px
+    height: 50px;
     border: 0;
     border-radius: 10px 10px 0 0;
     background: #FFD5DB;
@@ -1031,7 +920,6 @@ main {
       background: #DBF4FD;
     }
 
-    /* 💡 各タブごとのアクティブ時背景色 */
     &[data-tab="sim"].is-active {
       background: var(--red);
     }
@@ -1040,19 +928,19 @@ main {
     }
 
     &.is-active {
-      height: 70px; // 開いている時は70px（親の高さ制限ぴったりまで伸びる）
+      height: 70px;
       background: var(--red);
       color: #fff;
       z-index: 2;
     }
 
-    /* レスポンシブ（スマホ版） */
+    // レスポンシブ（スマホ版）
     @media (max-width: 768px) {
       font-size: 15px;
       height: 38px;
 
       &.is-active {
-        height: 50px; // スマホ版：開いている時（親の高さ50pxぴったりまで伸びる）
+        height: 50px;
       }
 
       .en {
@@ -1110,7 +998,7 @@ main {
       background: #FFD5DB;
     }
   }
-  
+
   &__body {
     font-size: 12px;
     font-weight: 400;
@@ -1131,20 +1019,20 @@ main {
 
   .service-table-wrapper{
     .scroll-hint-overlay.planpage {
-    display: none; // 💡基本は非表示
+    display: none;
 
     @media (max-width: 768px) {
-      display: block; // 💡このセクションで横スクロールが発生する「607px以下」だけ表示
+      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      pointer-events: none; // 💡画像の上からでもスワイプできるように透過
+      pointer-events: none;
       transition: opacity 0.5s ease, visibility 0.5s ease;
 
       img {
-        width: 76px; // 💡サイズは自由に調整してください
+        width: 76px;
         height: auto;
       }
 

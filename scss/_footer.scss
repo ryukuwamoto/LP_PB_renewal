@@ -1,3 +1,7 @@
+// =========================================================
+// フッター
+// =========================================================
+// ---------- フッター本体 ----------
 .footer {
 	text-align: center;
 	background-color: #eff0f1;
@@ -79,6 +83,7 @@
 	}
 }
 
+// ---------- ページトップへ戻る ----------
 .footer_gotop {
 	position: absolute;
 	top: -26px;
@@ -103,46 +108,7 @@
 	}
 }
 
-.side_nav {
-	position: fixed;
-	z-index: 90;
-	right: 85px;
-	bottom: 135px;
-
-	ul {
-		li {
-			position: relative;
-			margin-bottom: 15px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			img {
-				position: relative;
-				z-index: 10;
-
-				filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, .16));
-			}
-
-			.close {
-				position: absolute;
-				z-index: 12;
-				top: 0;
-				right: -10px;
-				display: block;
-				width: 28px;
-				height: 28px;
-				cursor: pointer;
-				background-image: url(./img/common/side_ico_00@2x.png);
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-size: 28px;
-			}
-		}
-	}
-}
-
+// ---------- SNSアイコン ----------
 .common_sns {
 	margin-top: 60px;
 
@@ -177,6 +143,7 @@
     }
 }
 
+// ---------- 運営者情報 ----------
 .footer_press {
     padding-top: 100px;
     width: 100%;
@@ -232,7 +199,6 @@
           }
 
           div {
-
             text-align: left;
 
             p:nth-of-type(1){

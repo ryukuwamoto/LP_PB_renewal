@@ -1,5 +1,8 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-b キャンペーンバナースライダー
+// =========================================================
 .sec-top-b{
   background: #fff;
   padding: 120px 0 30px;
@@ -14,8 +17,8 @@
   position: relative;
 }
 
+// ---------- スライダー本体 ----------
 .campaign-slider{
-  // slick 初期化前は中身を隠してチラつき防止
   visibility: hidden;
 
   &.slick-initialized{
@@ -24,7 +27,7 @@
 
   .slide{
     width: 310px;
-    margin: 0 8px;       // 左右 8px = スライド間隔 16px
+    margin: 0 8px;
     outline: none;
 
     img{
@@ -36,9 +39,9 @@
     }
   }
 
-  // ----- slick-track / list -----
+  // ---------- slick-track / list ----------
   .slick-list{
-    overflow: visible;   // 中央以外のスライドも見えるように
+    overflow: visible;
   }
 
   .slick-track{
@@ -46,7 +49,8 @@
     align-items: center;
   }
 
-  // ----- ドット（ページネーション） -----
+  // ---------- ドット（ページネーション） ----------
+// ---------- ドット ----------
 .b-slide-dots {
     display: flex;
     justify-content: center;
@@ -70,7 +74,7 @@
 
   @media (max-width: 768px){
     .slide{
-      margin: 0 10px;    // SP は間隔 20px
+      margin: 0 10px;
     }
 
     .slick-dots{

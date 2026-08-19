@@ -1,11 +1,8 @@
 // =========================================================
-// LP.html master stylesheet
-// Compile with: sass scss/main.scss styles.css
+// LP_PB_renewal 共通スタイルシート（エントリ）
 // =========================================================
-
 @use "variables" as *;
 @use "base";
-@use "responsive";
 @use "header";
 @use "hero";
 @use "sec-top-a";
@@ -21,4 +18,3 @@
 @use "planpage";
 @use "delivery";
 @use "application";
-@use "application-s";

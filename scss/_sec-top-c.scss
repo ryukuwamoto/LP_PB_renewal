@@ -1,12 +1,15 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-c Wサポート / 料金プラン比較
+// =========================================================
 .sec-top-c{
   background: #fff;
-  padding: 60px 0 120px;    // PC: 左右最低 20px の隙間 ／ 申し込み吹き出し(107px)がoverflowで切れないよう確保
+  padding: 60px 0 120px;
   overflow: hidden;
 
   @media (max-width: 768px){
-    padding: 20px 0 60px;       // SP: テーブルが横スクロールするため左右 0
+    padding: 20px 0 60px;
   }
 }
 
@@ -88,8 +91,6 @@
     height: auto;
     max-width: 220px;
     display: block;
-
-    // PhoneBox 用と ym 用でロゴ寸法が違うので個別に
   }
 
   .cb-desc{
@@ -106,20 +107,20 @@
   }
 }
 
-// PhoneBox 側のロゴ寸法
+// ---------- PhoneBox 側のロゴ寸法 ----------
 .ws-compare-phonebox .cb-logo{
   width: 216px;
   height: 40px;
 }
 
-// イエローモバイル 側のロゴ寸法
+// ---------- イエローモバイル 側のロゴ寸法 ----------
 .ws-compare-ym .cb-logo{
   width: 220px;
   height: 30px;
   margin: 5px 0;
 }
 
-// 中央の「×」
+// ---------- 中央の「×」 ----------
 .xross{
   width: 36px;
   height: auto;
@@ -342,7 +343,6 @@
   }
 }
 
-
 // ---------- 見出し ----------
 .c-head {
   padding-bottom: 35px;
@@ -365,9 +365,7 @@
   }
 }
 
-// =========================================================
-// カード本体
-// =========================================================
+// ---------- カード本体 ----------
 .plan-card{
   width: 336px;
   border: 2px solid var(--ink);
@@ -377,7 +375,6 @@
   display: flex;
   flex-direction: column;
 
-  // 💡 カラーテーマ（デフォルト値をvar(--red)系に変更）
   --card-color: var(--red);
   --card-color-soft: #FFD5DB;
 
@@ -413,7 +410,6 @@
   align-items: center;
 
   @media (max-width: 768px){
-    // 「トラベル用(30日)」を1行に収めるため横パディングを詰める
     padding: 10px 2px;
   }
 }
@@ -447,7 +443,7 @@
     .ttl-jp{ font-size: 20px; }
     .ttl-days{
       font-size: 12px;
-      white-space: nowrap;   // (30日) や (31日以上) を単位で折り返さない
+      white-space: nowrap;
       .en{ font-size: 14px; }
     }
     // 「プラン」だけ改行
@@ -474,11 +470,11 @@
   line-height: 1.6;
   text-align: center;
 
-  p{ 
+  p{
     margin: 0;
   }
 
-  .hl{ color: var(--yellow); } /* 💡 $pb-hl-yellow から変更 */
+  .hl{ color: var(--yellow); }
 
   .en{
     font-weight: 700;
@@ -529,7 +525,6 @@
   }
 
   @media (max-width: 768px){
-    // 縦積み：データ容量が上・月額料金が下
     flex-direction: column;
     min-height: 251px;
     margin: 0 8px;
@@ -644,15 +639,6 @@
   gap: 4px;
   font-weight: 900;
 
-  .phone-cal{
-    width: 17px;
-    height: 20px;
-    display: inline-block;
-    margin-bottom: 3px;
-  }
-
-  .phone-note{ font-size: 16px; }
-
   .phone-num{
     font-weight: 700;
     font-size: 34px;
@@ -669,8 +655,6 @@
 
   .phone-tail{ font-size: 18px; }
 
-  
-
   @media (max-width: 768px){
     margin-top: -2px;
     display: flex;
@@ -678,8 +662,6 @@
     row-gap: 2px;
     column-gap: 2px;
 
-    .phone-cal{ width: 21px; height: 21px; }
-    .phone-note{ font-size: 14px;}
     .phone-num{ font-size: 32px; margin-bottom: 8px;}
     .phone-suffix{
       font-size: 12px;
@@ -739,7 +721,6 @@
   }
 
   @media (max-width: 768px){
-    // 幅が狭いので 2 行折り返し（「全プラン共通 / 基本サービス」）
     line-height: 1.4;
     padding: 10px 8px;
   }
@@ -946,7 +927,6 @@
     min-height: 257px;
   }
 }
-  
 
 // ---------- 注意書き ----------
 .plan-note{

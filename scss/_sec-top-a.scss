@@ -1,5 +1,8 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-a 主訴求カード
+// =========================================================
 .sec-top-a{
   background: var(--red);
   padding: 37px 0;
@@ -128,7 +131,7 @@
       @include font-sofia(700);
       font-size: 16px;
     }
-    
+
     @media (max-width: 1020px){
       font-size: 12px;
       line-height: 1.5;
@@ -151,8 +154,6 @@
     }
   }
 }
-
-
 
 // ---------- 特徴カード3枚 ----------
 .feature-cards{
@@ -197,7 +198,6 @@
   }
 
   @media (max-width: 768px){
-
     img{ max-height: 35px; }
   }
 

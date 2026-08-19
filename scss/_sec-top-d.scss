@@ -1,5 +1,8 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-d シム吉 / サクっとSIM の特徴
+// =========================================================
 .sec-top-d{
   background: #fff;
   position: relative;
@@ -36,7 +39,6 @@
 
 @keyframes walkDiagonal {
   0% {
-    /* 【スタート：右上奥】 */
     top: -110px;
     left: calc(50% + 100px);
     transform: scale(0.5) rotate(0deg);
@@ -45,48 +47,43 @@
   10% {
     opacity: 1;
   }
-  
-  /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
+
   22% {
-    top: calc(-110px + 14px - 3px); /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
-    left: calc(50% + 94px);    /* 横に6px左へ進む */
-    transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
+    top: calc(-110px + 14px - 3px);
+    left: calc(50% + 94px);
+    transform: scale(0.7) rotate(6deg);
   }
-  
+
   45% {
-    top: calc(-100px + 18px);       /* 縦に8px進む（着地） */
-    right: calc(10px + 12px);    /* 横に12px左へ進む */
-    transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
+    top: calc(-100px + 18px);
+    right: calc(10px + 12px);
+    transform: scale(0.78) rotate(-6deg);
   }
-  
+
   67% {
-    top: calc(-100px + 22px - 3px); /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
-    right: calc(10px + 18px);     /* 横に18px左へ進む */
-    transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
+    top: calc(-100px + 22px - 3px);
+    right: calc(10px + 18px);
+    transform: scale(0.9) rotate(6deg);
   }
-  
+
   90% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
-    transform: scale(1.0) rotate(0deg); /* 最後は正面に戻る */
+    transform: scale(1.0) rotate(0deg);
     opacity: 1;
   }
 
   100% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
-    transform: scale(1.0) rotate(0deg); /* 最後は正面に戻る */
+    transform: scale(1.0) rotate(0deg);
     opacity: 1;
   }
 }
 
 @keyframes walkDiagonal-sp {
   0% {
-    top: -10px; // スマホ用の位置
+    top: -10px;
     left: calc(50% + 60px);
     transform: scale(0.5) rotate(0deg);
     opacity: 0;
@@ -108,7 +105,7 @@
     transform: scale(0.9) rotate(6deg);
   }
   90%, 100% {
-    top: 32px; // スマホ用の位置
+    top: 32px;
     left: calc(50% + 20px);
     transform: scale(1.0) rotate(0deg);
     opacity: 1;
@@ -152,12 +149,6 @@
   }
 }
 
-.visual-teal {
-    background-color: var(--teal);
-    margin-top: -1px;
-    height: 268px;
-}
-
 .d-content-wrap {
   padding-top: 160px;
 
@@ -166,22 +157,7 @@
   }
 }
 
-// サクッとSIM ロゴ
-.visual-logo{
-  display: block;
-  margin: 0 auto 35px;
-  width: 220px;
-  height: auto;
-  position: relative;
-  z-index: 3;
-
-  @media (max-width: 768px){
-    width: 209px;
-    margin-bottom: 20px;
-  }
-}
-
-// 特徴カード 6枚
+// ---------- 特徴カード 6枚 ----------
 .feature-cards-d{
   display: grid;
   grid-template-columns: repeat(3, 220px);
@@ -261,7 +237,7 @@
   }
 }
 
-// 「そのために…」メッセージ
+// ---------- 「そのために…」メッセージ ----------
 .visual-msg{
   margin-top: 70px;
   font-weight: bold;
@@ -277,4 +253,3 @@
     font-size: 16px;
   }
 }
-

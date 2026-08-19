@@ -1,8 +1,6 @@
 // =========================================================
-// Design tokens — colors / typography
+// 変数・mixin・Webフォント読み込み
 // =========================================================
-
-// Brand
 $teal:        #46C9F4;
 $yellow:      #FFD700;
 $yellow-soft: #FFEF99;
@@ -10,12 +8,10 @@ $pink:        #FF0064;
 $green:       #06C755;
 $red:       #FF3250;
 
-// Neutrals
 $ink:       #000;
 $ink-soft:      #e6e6e6;
 $footer:     #EFF0F1;
 
-// Typography stacks
 $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
 
 @mixin font-face($weight, $file) {
@@ -68,7 +64,7 @@ $font-path: 'https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/';
   font-weight: $weight;
 }
 
-// CSS custom-property mirror — lets runtime Tweaks override without recompile
+// ---------- CSSカスタムプロパティ（再コンパイルなしで上書き可能にするための写し） ----------
 :root{
   --teal:#{$teal};
   --yellow:#{$yellow};

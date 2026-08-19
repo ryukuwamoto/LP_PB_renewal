@@ -1,8 +1,8 @@
-// =========================================================
-// sec-top-h — Study & Work Guide（ハンドブック）+ Customer Reviews
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-h ハンドブック / お客様の声
+// =========================================================
 .sec-top-h{
   background: var(--teal);
   position: relative;
@@ -39,9 +39,7 @@
 }
 }
 
-// =========================================================
-// Study & Work Guide
-// =========================================================
+// ---------- Study & Work Guide ----------
 .h-block-guide{
   margin-bottom: 80px;
   @media (max-width: 768px) {
@@ -91,7 +89,7 @@
   transition: color .2s ease, font-weight .2s ease;
 
   &:not(:last-child) {
-      border-bottom: 3px dotted #fff; /* ドットの色や太さは任意で調整 */
+      border-bottom: 3px dotted #fff;
     }
 
   // 番号：通常は文字のみ、アクティブ時は黄色フラッグで装飾
@@ -113,10 +111,10 @@
 
   .h-toc-text{
     font-weight: bold;
-    font-size: 16px; 
+    font-size: 16px;
 
   @media (max-width: 1030px) {
-    font-size: 1.5534vw; 
+    font-size: 1.5534vw;
   }
     line-height: 1.25;
     color: #fff;
@@ -126,7 +124,6 @@
   &.is-active{
     .h-toc-num{
       background: var(--teal);
-      // 旗（右側に矢羽根）の形を clip-path で抜く
       clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
     }
   }
@@ -136,7 +133,7 @@
   }
 }
 
-// ---------- ページビューワー----------
+// ---------- ページビューワー ----------
 .h-pages{
   width: 42.1359%;
   max-width: 100%;
@@ -146,7 +143,7 @@
   background: #fff;
   border-radius: 10px;
   position: relative;
-  overflow: hidden;          // 角丸を保ったままページ側でスクロール
+  overflow: hidden;
 
   @media (max-width: 768px) {
     max-width: 340px;
@@ -160,7 +157,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr auto; /* 上（画像）は残りの高さ全て、下（ナビ）は文字の高さ */
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 
   &[hidden]{ display: none; }
@@ -169,10 +166,9 @@
     position: relative;
     width: 100%;
     height: 100%;
-    overflow-y: auto;  /* 👈 ここでスクロールバーを出します */
+    overflow-y: auto;
     overflow-x: hidden;
 
-    // スクロールバー（控えめ）の設定
     scrollbar-width: thin;
     scrollbar-color: var(--ink-soft) transparent;
 
@@ -193,13 +189,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; // 💡ヒント画像の上からでも裏のコンテンツをスクロールできるようにする
+    pointer-events: none;
     z-index: 10;
     opacity: 1;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
     img {
-      width: 70px; // 💡デザインに合わせてサイズは微調整してください
+      width: 70px;
       height: auto;
 
       &:nth-of-type(1) {
@@ -219,7 +215,7 @@
       }
     }
 
-    /* スクロールされたら消すクラス */
+    // スクロールされたら消すクラス
     &.is-hidden {
       opacity: 0;
       visibility: hidden;
@@ -227,10 +223,10 @@
   }
   }
 
-  /* ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼ */
+  // ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼
   .content-wrap {
     width: 100%;
-    height: auto;      /* 👈 縦に潰れず、本来の比率で縦長に表示されます */
+    height: auto;
     display: block;
     padding: 10% 5% 5%;
     text-align: center;
@@ -248,17 +244,17 @@
         color: var(--teal);
         font-weight: bold;
         text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
-        
+
         @media (max-width: 1070px) {
-          font-size: 2.80vw; 
+          font-size: 2.80vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 30px; 
+          font-size: 30px;
         }
 
         @media (max-width: 380px) {
-          font-size: 7.89vw; 
+          font-size: 7.89vw;
         }
       }
 
@@ -268,15 +264,15 @@
         line-height: 1.3;
 
         @media (max-width: 1070px) {
-          font-size: 1.86vw; 
+          font-size: 1.86vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 21px; 
+          font-size: 21px;
         }
 
         @media (max-width: 380px) {
-          font-size: 5.43vw; 
+          font-size: 5.43vw;
         }
       }
     }
@@ -311,15 +307,15 @@
         font-size: 16px;
 
         @media (max-width: 1070px) {
-          font-size: 1.50vw; 
+          font-size: 1.50vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 16px; 
+          font-size: 16px;
         }
 
         @media (max-width: 380px) {
-          font-size: 4.21vw; 
+          font-size: 4.21vw;
         }
       }
     }
@@ -331,15 +327,15 @@
       font-size: 16px;
 
       @media (max-width: 1070px) {
-        font-size: 1.50vw; 
+        font-size: 1.50vw;
       }
 
       @media (max-width: 768px) {
-        font-size: 16px; 
+        font-size: 16px;
       }
 
       @media (max-width: 380px) {
-        font-size: 4.21vw; 
+        font-size: 4.21vw;
       }
 
       .lists {
@@ -349,7 +345,6 @@
       }
 
       .check-list {
-
         li {
           display: flex;
           align-items: start;
@@ -361,7 +356,7 @@
           }
 
           &::before {
-            content: ""; /* 💡中身は空っぽにする */
+            content: "";
             display: inline-block;
             width: 4%;
             aspect-ratio: 1 / 1;
@@ -371,14 +366,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-          }
-
-          .bold {
-            font-weight: 700;
-
-            .normal {
-              font-weight: 500;
-            }
           }
         }
       }
@@ -391,15 +378,15 @@
       font-size: 12px;
 
       @media (max-width: 1070px) {
-        font-size: 1.12vw; 
+        font-size: 1.12vw;
       }
 
       @media (max-width: 768px) {
-        font-size: 12px; 
+        font-size: 12px;
       }
 
       @media (max-width: 380px) {
-        font-size: 3.16vw; 
+        font-size: 3.16vw;
       }
     }
 
@@ -418,15 +405,15 @@
         font-size: 16px;
 
         @media (max-width: 1070px) {
-          font-size: 1.50vw; 
+          font-size: 1.50vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 16px; 
+          font-size: 16px;
         }
 
         @media (max-width: 380px) {
-          font-size: 4.21vw; 
+          font-size: 4.21vw;
         }
       }
 
@@ -512,47 +499,47 @@
           font-weight: 700;
 
           @media (max-width: 1070px) {
-            font-size: 1.12vw; 
+            font-size: 1.12vw;
           }
 
           @media (max-width: 768px) {
-            font-size: 12px; 
+            font-size: 12px;
           }
 
           @media (max-width: 380px) {
-            font-size: 3.16vw; 
+            font-size: 3.16vw;
           }
 
           .num {
             font-size: 18px;
 
             @media (max-width: 1070px) {
-              font-size: 1.68vw; 
+              font-size: 1.68vw;
             }
 
             @media (max-width: 768px) {
-              font-size: 18px; 
+              font-size: 18px;
             }
 
             @media (max-width: 380px) {
-              font-size: 4.74vw; 
+              font-size: 4.74vw;
             }
           }
-          
+
           &.ja {
             font-size: 14px;
             padding-top: 3%;
 
             @media (max-width: 1070px) {
-              font-size: 1.31vw; 
+              font-size: 1.31vw;
             }
 
             @media (max-width: 768px) {
-              font-size: 14px; 
+              font-size: 14px;
             }
 
             @media (max-width: 380px) {
-              font-size: 3.68vw; 
+              font-size: 3.68vw;
             }
           }
         }
@@ -565,15 +552,15 @@
         padding-bottom: 3%;
 
         @media (max-width: 1070px) {
-          font-size: 1.12vw; 
+          font-size: 1.12vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 12px; 
+          font-size: 12px;
         }
 
         @media (max-width: 380px) {
-          font-size: 3.16vw; 
+          font-size: 3.16vw;
         }
 
         &.top-ate2 {
@@ -588,21 +575,20 @@
         padding-top: 3%;
 
         @media (max-width: 1070px) {
-          font-size: 1.12vw; 
+          font-size: 1.12vw;
         }
 
         @media (max-width: 768px) {
-          font-size: 12px; 
+          font-size: 12px;
         }
 
         @media (max-width: 380px) {
-          font-size: 3.16vw; 
+          font-size: 3.16vw;
         }
       }
     }
 
     .boxs {
-      
       .box {
         width: 100%;
         height: auto;
@@ -630,15 +616,15 @@
             background: linear-gradient(transparent 90%, var(--ink) 90%);
 
             @media (max-width: 1070px) {
-              font-size: 1.12vw; 
+              font-size: 1.12vw;
             }
 
             @media (max-width: 768px) {
-              font-size: 12px; 
+              font-size: 12px;
             }
 
             @media (max-width: 380px) {
-              font-size: 3.16vw; 
+              font-size: 3.16vw;
             }
           }
 
@@ -647,30 +633,30 @@
             padding: 10% 0 4%;
 
             @media (max-width: 1070px) {
-              font-size: 1.12vw; 
+              font-size: 1.12vw;
             }
 
             @media (max-width: 768px) {
-              font-size: 12px; 
+              font-size: 12px;
             }
 
             @media (max-width: 380px) {
-              font-size: 3.16vw; 
+              font-size: 3.16vw;
             }
 
             .en {
               font-size: 15px;
 
               @media (max-width: 1070px) {
-                font-size: 1.40vw; 
+                font-size: 1.40vw;
               }
 
               @media (max-width: 768px) {
-                font-size: 15px; 
+                font-size: 15px;
               }
 
               @media (max-width: 380px) {
-                font-size: 3.95vw; 
+                font-size: 3.95vw;
               }
             }
           }
@@ -680,17 +666,17 @@
             font-weight: 900;
 
             @media (max-width: 1070px) {
-              font-size: 1.96vw; 
+              font-size: 1.96vw;
             }
 
             @media (max-width: 768px) {
-              font-size: 21px; 
+              font-size: 21px;
             }
 
             @media (max-width: 380px) {
-              font-size: 5.53vw; 
+              font-size: 5.53vw;
             }
-            
+
             .num {
               font-size: 43px;
               color: var(--teal);
@@ -698,15 +684,15 @@
               text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 0px 1px 0 #000, 0 -1px 0 #000, -1px 0 0 #000, 1px 0 0 #000;
 
               @media (max-width: 1070px) {
-                font-size: 4.02vw; 
+                font-size: 4.02vw;
               }
 
               @media (max-width: 768px) {
-                font-size: 43px; 
+                font-size: 43px;
               }
 
               @media (max-width: 380px) {
-                font-size: 11.32vw; 
+                font-size: 11.32vw;
               }
             }
           }
@@ -716,7 +702,7 @@
   }
 }
 
-// ===== 00 表紙 =====
+// ---------- 00 表紙 ----------
 .h-page-cover{
   align-items: center;
   text-align: center;
@@ -738,20 +724,19 @@
   color: #fff;
   border-radius: 999px;
   font-weight: bold;
-  font-size: 16px; 
+  font-size: 16px;
 
   @media (max-width: 1070px) {
-    font-size: 1.50vw; 
+    font-size: 1.50vw;
   }
 
   @media (max-width: 768px) {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
   @media (max-width: 380px) {
-    font-size: 4.21vw; 
+    font-size: 4.21vw;
   }
-
 
   text-decoration: none;
   transition: opacity .25s ease;
@@ -764,12 +749,12 @@
   &:hover{ opacity: .85; }
 }
 
-// ページ内ナビ：スクロールしてもページ下部に固定
+// ---------- ページ内ナビ：スクロールしてもページ下部に固定 ----------
 .h-page-nav{
   position: relative;
   width: 100%;
   padding: 15px 10px;
-  background: #fff;               // スクロールするコンテンツの上に乗せるため不透明
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -783,7 +768,6 @@
   width: 6%;
   height: auto;
 
-  // 💡 2秒かけて上下にフワフワと無限ループ（infinite）させる
   animation: bounceUpDown 2.0s ease-in-out infinite;
 }
 
@@ -809,10 +793,10 @@
 
 @keyframes bounceUpDown {
   0%, 100% {
-    transform: translateY(0); // 最初と最後は元の位置
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(60%); // 💡真ん中のタイミングで下に12px沈む
+    transform: translateY(60%);
   }
 }
 
@@ -835,9 +819,7 @@
   }
 }
 
-// =========================================================
-// Customer Reviews
-// =========================================================
+// ---------- Customer Reviews ----------
 .f-slider-wrap {
     padding-bottom: 40px;
     @media (max-width: 1070px) {
@@ -852,7 +834,7 @@
     }
 }
 
-// sec-f-slider
+// ---------- sec-f-slider ----------
 .f-slider {
   position: relative;
   display: block;
@@ -926,8 +908,6 @@
           font-size: 12px;
           font-weight: 400;
           padding-bottom: 6px;
-
-          
         }
         .hashtag {
           display: flex;
@@ -1003,4 +983,3 @@
     }
   }
 }
-

@@ -1,5 +1,8 @@
 @use "variables" as *;
 
+// =========================================================
+// index：sec-top-e eSIM・SIMカードの選び方 / 比較表
+// =========================================================
 .sec-top-e{
   background: var(--red);
   padding: 60px 0 80px;
@@ -148,20 +151,20 @@
   }
 }
 
-// マスコットキャラ
+// ---------- マスコットキャラ ----------
 .point-mascot{
   position: absolute;
   height: auto;
   pointer-events: none;
 
-  &.mascot-01{ 
-    width: 102px; 
-    right: 35px;  
-    bottom: 34px; 
+  &.mascot-01{
+    width: 102px;
+    right: 35px;
+    bottom: 34px;
 
     @media (max-width: 1069px){
-      width: 90px; 
-      right: calc(50% - 400px); 
+      width: 90px;
+      right: calc(50% - 400px);
       bottom: 205px;
     }
 
@@ -170,19 +173,16 @@
     }
   }
   &.mascot-02{ width: 94px; right: calc(50% - 290px);  bottom: 34px; }
-  &.mascot-03{ left: 16px;   top: 220px; }
 
   @media (max-width: 768px){
     display: none;
   }
 }
 
-// ============================================
-// 01 通信キャリアで選ぶ
-// ============================================
+// ---------- 01 通信キャリアで選ぶ ----------
 .carrier-grid{
   display: flex;
-  align-items: end;             // PC: 下端揃え（中央が上に飛び出す）
+  align-items: end;
   gap: 20px;
   max-width: 799px;
   margin: 0 auto;
@@ -194,7 +194,7 @@
     max-width: 500px;
     align-items: stretch;
     gap: 10px;
-    display: flex;              // SP: order を効かせるため flex に
+    display: flex;
     flex-wrap: wrap;
 
     .carrier-item:nth-child(2) { order: 0; }
@@ -211,7 +211,7 @@
   margin-bottom: 30px;
 
   @media (max-width: 768px) {
-    width: calc(50% - 5px); 
+    width: calc(50% - 5px);
     flex: none;
     margin-bottom: 0px;
   }
@@ -292,15 +292,11 @@
         }
     }
 
-    
-
   @media (max-width: 768px){
     order: 0;
     width: 100%;
     height: 265px;
     flex: none;
-
-    
   }
 
   .carrier-feature{
@@ -360,9 +356,7 @@
   }
 }
 
-// ============================================
-// 02 電話番号付きで選ぶ
-// ============================================
+// ---------- 02 電話番号付きで選ぶ ----------
 .phone-need-title{
   text-align: center;
   font-weight: bold;
@@ -374,12 +368,12 @@
   p {
     display: inline-block;
     background-image: radial-gradient(circle, var(--teal) 1.5px, transparent 1.5px);
-  background-size: 6px 3px; /* 1つ目の数字：ドットの間隔 / 2つ目の数字：ドットの縦幅（直径） */
+  background-size: 6px 3px;
   background-repeat: repeat-x;
   background-position: bottom;
     padding-bottom: 3px;
   }
-  
+
   @media (max-width: 768px){
     font-size: 18px;
   }
@@ -426,7 +420,7 @@
       width: 22px;
       height: auto;
     }
-    
+
     .small {
       font-size: 15px;
     }
@@ -441,7 +435,7 @@
     align-items: center;
     line-height: 22px;
     padding-left: 6%;
-  } 
+  }
 
   @media (max-width: 768px){
     flex-direction: column;
@@ -460,7 +454,7 @@
       width: 17px;
       height: auto;
       }
-    
+
       .small {
         font-size: 12px;
       }
@@ -536,10 +530,8 @@
       font-size: 66px;
       color: var(--ink);
       line-height: 1.1;
-
-      
     }
-    
+
     @media (max-width: 768px){
       padding: 0;
 
@@ -570,9 +562,7 @@
   }
 }
 
-// ============================================
-// 03 サービスで選ぶ
-// ============================================
+// ---------- 03 サービスで選ぶ ----------
 .service-tagline{
   justify-content: center;
   font-weight: 900;
@@ -619,26 +609,26 @@
   }
 }
 
-// 比較表
+// ---------- 比較表 ----------
 .service-table-wrapper {
-  position: relative; // 💡画像を中央配置するための基準
+  position: relative;
   width: 100%;
 
   .scroll-hint-overlay {
-    display: none; // 💡基本は非表示
+    display: none;
 
     @media (max-width: 607px) {
-      display: block; // 💡このセクションで横スクロールが発生する「607px以下」だけ表示
+      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      pointer-events: none; // 💡画像の上からでもスワイプできるように透過
+      pointer-events: none;
       transition: opacity 0.5s ease, visibility 0.5s ease;
 
       img {
-        width: 76px; // 💡サイズは自由に調整してください
+        width: 76px;
         height: auto;
       }
 

@@ -1,8 +1,8 @@
-// =========================================================
-// Hero — teal background with burst shape and floating items
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// ヒーロー（メインビジュアル）
+// =========================================================
 .hero{
   background-image: url("../img/hero/back_anniversary.png"), radial-gradient(#f2f2f2 2px, transparent 3px);
   background-position: center bottom, 0 0;
@@ -119,27 +119,27 @@
   }
 }
 
-/* 2. 右下(画面外) → 右上 */
+// ---------- キーフレーム ----------
 @keyframes fly-right-top {
   0% {
-    transform: translateY(0); /* 最初は元の位置 */
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
+    transform: translateY(-15px);
   }
   100% {
-    transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+    transform: translateY(0);
   }
 }
 
 @keyframes fly-right-top_ph {
   0% {
-    transform: translateY(0); /* 最初は元の位置 */
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* 💡 1.5秒かけて上に15px浮き上がる */
+    transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+    transform: translateY(0);
   }
 }

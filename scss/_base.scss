@@ -1,8 +1,9 @@
-// =========================================================
-// Reset + base typography
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// リセット / ベースタイポグラフィ / 共通ボタン
+// =========================================================
+// ---------- リセット ----------
 *{
   box-sizing: border-box;
   margin: 0;
@@ -33,12 +34,10 @@ html, body{
   overflow-x: clip;
 
   &.menu-open {
-    // PCはこれだけで背後を完全ロック！（スマホは上のJSが自動でfixed化してくれます）
-    overflow: clip; 
+    overflow: clip;
     overscroll-behavior: none;
   }
 }
-
 
 img{
   max-width: 100%;
@@ -58,12 +57,6 @@ button{
   background: none;
 }
 
-.container{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 section {
     position: relative;
 }
@@ -72,6 +65,7 @@ ul {
     list-style: none;
 }
 
+// ---------- 共通ボタン（ぷっくりピル） ----------
 @mixin btn-color($main, $shadow) {
   background-color: $main;
   &::before {
@@ -120,21 +114,20 @@ ul {
 
   &.is-pulldown {
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; // スマホ特有のタップ時青文字ハイライトを消す
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* 💡 OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */
   .c-os-select {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0; // 💡 完全に透明にする（見た目は立体ボタンのまま）
+    opacity: 0;
     cursor: pointer;
     -webkit-appearance: none;
-    appearance: none; // ブラウザのデフォルトの見た目をリセット
-    z-index: 2; // 💡 3Dアニメーションの最前面（矢印や文字より上）に来るようにして、確実にタップを奪う
+    appearance: none;
+    z-index: 2;
   }
 
   .icon-circle {
@@ -148,7 +141,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     img {
       width: 53%;
       height: auto;
@@ -205,7 +198,7 @@ ul {
 
     &:hover {
   transform: translate(3px, 3px);
-  
+
   &::before {
     transform: translate(-1.5px, -1.5px) translateZ(-1px);
   }
@@ -231,8 +224,6 @@ ul {
         margin-right: 2px;
       }
     }
-
-    
   }
 
   &.content-sp {
@@ -252,6 +243,7 @@ ul {
   }
 }
 
+// ---------- セクション見出し ----------
 .head-wrap {
   padding: 0 20px;
   margin: 0 auto;
@@ -348,7 +340,6 @@ ul {
     @media (max-width: 768px){
       font-size: 25px;
       gap: 18px;
-
     }
   }
 
@@ -373,6 +364,7 @@ ul {
 }
 }
 
+// ---------- 幅決めラッパー ----------
 .wrap-wide {
   position: relative;
   max-width: 1070px;
@@ -384,4 +376,20 @@ ul {
   position: absolute;
   top: -60px;
   left: 0;
+}
+
+// ---------- ユーティリティ ----------
+// 目には見えないが、検索エンジンとスクリーンリーダーには読まれる
+// （display:none や visibility:hidden は読まれないため使わない）
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }

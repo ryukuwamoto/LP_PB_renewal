@@ -1,8 +1,8 @@
-// =========================================================
-// Sticky header — logo / nav / CTA buttons
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// ヘッダー（ロゴ / メガメニュー / CTA / お申し込みメニュー）
+// =========================================================
 .header{
   position: sticky;
   top: 0;
@@ -36,21 +36,21 @@
 
   img {
     width: 110px;
-    height: auto;  
+    height: auto;
   }
-  
+
   @media (max-width: 768px){
     height: 46px;
 
     img{
       width: 100px;
-    } 
+    }
   }
 
   @media (max-width: 400px){
     img{
       width: 100px;
-    } 
+    }
   }
 }
 
@@ -115,20 +115,18 @@
 
       &::after {
         content: '';
-        position: fixed; // 画面全体に固定
+        position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5); // 👈 0.5 で暗さを調整できます
-        
-        // メニュー本体（z-index: -1）の「さらに後ろ」に敷くための指定
-        z-index: -2; 
-        
-        // メニューが閉じているときは触れないようにする
-        pointer-events: none; 
+        background-color: rgba(0, 0, 0, 0.5);
+
+        z-index: -2;
+
+        pointer-events: none;
       }
-      
+
     }
 
     .white {
@@ -163,13 +161,12 @@
   }
 
   @media (max-width: 768px) {
-    order: 3;             /* 💡ロゴ(1)・ボタン(2)の後に並ぶように「3番目」に指定 */
-    flex: 0 0 100%;       /* 💡横幅いっぱいに広げて強制的に下段へ落とす */
+    order: 3;
+    flex: 0 0 100%;
     width: 100%;
     background-color: var(--teal);
     padding: 10px 20px 0;
-    
-    // スマホでのメニューの並び順や余白（必要に応じて調整してください）
+
     justify-content: space-around;
     align-items: baseline;
     gap: 0;
@@ -177,15 +174,14 @@
     @media (max-width: 660px) {
       padding: 6px 20px 0;
     }
-    
-    .nav-item-wrapper {
 
+    .nav-item-wrapper {
       &.is-open {
-    background-color: #b5ebff; // 💡メニューが開いている間、この色をキープ
+    background-color: #b5ebff;
     border-radius: 4px 4px 0 0;
 
-    .nav-item::after { 
-      transform: scale(1, 1); 
+    .nav-item::after {
+      transform: scale(1, 1);
     }
     .mega-menu {
       opacity: 1 !important;
@@ -201,7 +197,7 @@
       }
       .nav-item {
         text-align: center;
-        padding: 12px 10px; /* スマホ用に上下の余白を少しスマートに */
+        padding: 12px 10px;
         font-size: 14px;
         color: #fff;
 
@@ -217,7 +213,7 @@
         img {
           display: inline-block;
           padding-bottom: 10px;
-          
+
           @media (max-width: 660px) {
               padding-bottom: 6px;
             }
@@ -379,7 +375,7 @@
   }
 }
 
-// service
+// ---------- service ----------
 .menu-service {
   .content-box1 {
     display: flex;
@@ -434,11 +430,10 @@
 
       p {
         padding-bottom: 24px;
-        
+
       }
 
       &:nth-of-type(1) {
-
         img {
           width: 21px;
           height: auto;
@@ -447,7 +442,6 @@
       }
 
       &:nth-of-type(2) {
-
         img {
           width: 21px;
           height: auto;
@@ -472,7 +466,6 @@
       }
 
       &:nth-of-type(3) {
-
         img {
           width: 20px;
           height: auto;
@@ -481,7 +474,6 @@
       }
 
       &:nth-of-type(4) {
-
         img {
           width: 18px;
           height: auto;
@@ -498,7 +490,7 @@
         height: auto;
         padding-top: 24px;
       }
-      
+
       p:nth-of-type(1) {
         font-size: 26px;
         font-weight: 700;
@@ -568,7 +560,6 @@
         }
 
         > a {
-
           display: none;
         }
 
@@ -606,7 +597,7 @@
   }
 }
 
-// process
+// ---------- process ----------
 .menu-process {
   .content-box1 {
     display: flex;
@@ -668,11 +659,10 @@
       justify-content: space-between;
 
       p {
-        padding-bottom: 24px; 
+        padding-bottom: 24px;
       }
 
       &:nth-of-type(1) {
-
         img {
           width: 20px;
           height: auto;
@@ -681,7 +671,6 @@
       }
 
       &:nth-of-type(2) {
-
         img {
           width: 20px;
           height: auto;
@@ -690,7 +679,6 @@
       }
 
       &:nth-of-type(3) {
-
         img {
           width: 20px;
           height: auto;
@@ -698,12 +686,11 @@
         }
 
         p {
-        padding-bottom: 12px; 
+        padding-bottom: 12px;
         }
       }
 
       &:nth-of-type(4) {
-
         img {
           width: 18px;
           height: auto;
@@ -711,12 +698,11 @@
         }
 
         p {
-        padding-bottom: 12px; 
+        padding-bottom: 12px;
         }
       }
 
       &.fill-box-l,&.fill-box-s{
-
         img {
           width: 28px;
           height: auto;
@@ -852,7 +838,7 @@
   }
 }
 
-// payment
+// ---------- payment ----------
 .menu-payment {
   .content-box1 {
     display: flex;
@@ -890,11 +876,10 @@
       justify-content: space-between;
 
       p {
-        padding-bottom: 24px; 
+        padding-bottom: 24px;
       }
 
       &:nth-of-type(1) {
-
         img {
           width: 17px;
           height: auto;
@@ -903,7 +888,6 @@
       }
 
       &:nth-of-type(2) {
-
         img {
           width: 15px;
           height: auto;
@@ -912,7 +896,6 @@
       }
 
       &:nth-of-type(3) {
-
         img {
           width: 20px;
           height: auto;
@@ -990,7 +973,7 @@
   }
 }
 
-// news
+// ---------- news ----------
 .menu-news {
   max-width: 1070px;
   padding: 40px 20px;
@@ -1174,7 +1157,7 @@
   }
 }
 
-// saport
+// ---------- saport ----------
 .menu-saport {
   .content-box1 {
     display: flex;
@@ -1230,8 +1213,6 @@
         font-weight: 700;
       }
 
-    
-
     &.box-bottom {
       flex-direction: row;
       justify-content: center;
@@ -1240,7 +1221,7 @@
       p {
         font-size: 16px;
       }
-      
+
       &:nth-of-type(1) {
         img {
         width: 17px;
@@ -1376,11 +1357,10 @@
 
             p {
               font-size: 14px;
-              padding-bottom: 24px; 
+              padding-bottom: 24px;
             }
 
             &:nth-of-type(1) {
-
               img {
                 width: 18px;
                 height: auto;
@@ -1389,7 +1369,6 @@
             }
 
             &:nth-of-type(2) {
-
               img {
                 width: 20px;
                 height: auto;
@@ -1403,8 +1382,7 @@
   }
 }
 
-
-// contact
+// ---------- contact ----------
 .header-cta{
   display: flex;
   flex: 1;
@@ -1435,7 +1413,6 @@
     @media (max-width: 768px) {
       display: none;
     }
-    
 
   .phone-num-box {
     display: inline-flex;
@@ -1459,7 +1436,7 @@
   .phone-sub-text {
     display: block;
     margin-top: 6px;
-    font-size: 11px; 
+    font-size: 11px;
     color: var(--pink);
   }
 
@@ -1507,23 +1484,23 @@
   }
 
   &.is-pulldown {
-    position: relative; // 💡 絶対配置の基準にするために必須
+    position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */
+  // OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる
   .c-os-select {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0; /* 完全に透明にする */
+    opacity: 0;
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-    z-index: 5; /* ホバー画像などよりも前面に来るように高めの数値を設定 */
+    z-index: 5;
   }
 
   &.contact{
@@ -1543,12 +1520,12 @@
         display: none;
       }
     }
-    
+
     &:hover {
       background-color: #fff;
       color: var(--green);
       border-color: var(--green);
-      
+
       .ico {
         &:nth-of-type(1) {
           display: none;
@@ -1627,45 +1604,36 @@
   }
 }
 
-// =========================================================
-// お申し込みプルダウン（PC / SP 共通メニュー）
-// =========================================================
+// ---------- お申し込みプルダウン（PC / SP 共通メニュー） ----------
 .common_btn.is-pulldown{
   position: relative;
 }
 
 // ---------- グレーレイヤー（PC用） ----------
-// .header の背景より前面／.header-inner（白背景）より背面
-// → ヘッダーは明るいまま、ページ本文だけを暗くする
 .c-menu-overlay{
   position: fixed;
   inset: 0;
   z-index: -1;
   background: rgba(0, 0, 0, .5);
 
-  // 💡 見た目だけの層にする。マウス操作を一切拾わせない。
-  //    拾わせるとホバー中のボタンの上に乗った瞬間 mouseleave→閉じる→mouseenter→開く
-  //    のループが起き、画面全体がチカチカする
   pointer-events: none;
 
   &[hidden]{ display: none; }
 
   @media (max-width: 768px){
-    display: none;   // SPは .c-os-menu--modal 自体がグレー面になるので不要
+    display: none;
   }
 }
 
 // ---------- 選択肢ウィンドウ ----------
-// .c-os-menu       = 透明ラッパー（隙間を作る／ホバーを途切れさせない）
-// .c-os-menu__inner = 吹き出し本体
 .c-os-menu{
   position: absolute;
   top: 100%;
-  right: 15px;                 // ボタン右端に合わせる
+  right: 15px;
   left: auto;
   transform: none;
   z-index: 60;
-  padding-top: 14px;        // 💡 ヘッダーと吹き出しの隙間。透明なのでホバーは継続する
+  padding-top: 14px;
   background: transparent;
 
   &[hidden]{ display: none; }
@@ -1675,7 +1643,7 @@
     display: flex;
     gap: 10px;
     margin-top: 5px;
-    padding: 14px;
+    padding: 12px;
     list-style: none;
     white-space: nowrap;
     background: #fff;
@@ -1687,12 +1655,11 @@
       content: '';
       position: absolute;
       bottom: 100%;
-      right: 25px;          // .pill-btn の幅85pxの中央
+      right: 25px;
       width: 18px;
       height: 15px;
-      margin-bottom: -1px;   // 吹き出し本体に1px重ねてサブピクセルの隙間を消す
+      margin-bottom: -1px;
       background: #fff;
-      // 先端だけ半径2pxで丸める（重ねる1pxを足して高さ15px）
       clip-path: path('M0,15 L7.29,2.86 A2,2 0 0 1 10.71,2.86 L18,15 Z');
     }
   }
@@ -1704,7 +1671,7 @@
     justify-content: center;
     gap: 4px;
     width: 95px;
-    height: 60px;
+    height: 66px;
     border: 2px solid;
     border-radius: 8px;
     background: #fff;
@@ -1730,6 +1697,11 @@
     }
   }
 
+  // 2行目（期間の注記）は1行目と詰めて1セットに見せる
+  &__text + &__text{
+    margin-top: -2px;
+  }
+
   &__icon{
     width: auto;
     height: 15px;
@@ -1738,24 +1710,19 @@
 }
 
 // ---------- SP：お申し込みモーダル ----------
-// 画面いっぱいの半透明グレー面（＝この要素自身）＋中央の小窓（.c-os-menu__inner）
-//
-// ⚠️ .common_btn には transform-style: preserve-3d が効いており、
-//    ボタンの内側に position: fixed を置くと「ボタン基準」になって画面いっぱいにならない。
-//    そのためモーダルは </header> の外（body直下）に置いている。
 .c-os-menu--modal{
-  display: none;              // PCでは使わない
+  display: none;
 
   @media (max-width: 768px){
     display: flex;
     position: fixed;
     inset: 0;
-    z-index: 100;             // .header(z-index:50) より前面
-    align-items: center;      // 小窓を画面中央へ
+    z-index: 100;
+    align-items: center;
     justify-content: center;
-    padding: 20px;            // 小窓が画面端に付かないための余白
+    padding: 20px;
     background: rgba(0, 0, 0, .5);
-    cursor: pointer;          // グレーのどこを押しても閉じる
+    cursor: pointer;
 
     .c-os-menu__inner{
       cursor: auto;
@@ -1764,7 +1731,7 @@
       padding: 20px;
       border-radius: 12px;
 
-      &::before{ display: none; }   // 三角は不要
+      &::before{ display: none; }
     }
 
     .c-os-menu__item{
@@ -1775,22 +1742,23 @@
       border-radius: 10px;
     }
 
+    .c-os-menu__text + .c-os-menu__text{
+      margin-top: -4px;
+    }
+
     .c-os-menu__icon{
       height: 25px;
     }
   }
 }
 // ---------- 中央寄せの吹き出し（セクション内のCTAボタン用） ----------
-// ヘッダーは右端揃え、セクションのボタンは中央揃えなので modifier で切り替える
 .c-os-menu--center{
   right: auto;
   left: 50%;
   transform: translateX(-50%);
-  // とんがりの位置はヘッダーと共通（.c-os-menu__inner::before の right: 25px）
 }
 
 // ---------- SP：ボタン内の吹き出しは使わない ----------
-// SPは body直下の .c-os-menu--modal（共有モーダル）に一本化する
 @media (max-width: 768px){
   .is-pulldown > .c-os-menu{
     display: none;
@@ -1798,8 +1766,6 @@
 }
 
 // ---------- PC：開いている間だけボタンをグレーレイヤーより前面へ ----------
-// .c-menu-overlay は .header(z-index:50) の中にあるため、
-// セクション側のボタンは z-index:60 まで上げないとグレーの下に潜る
 .common_btn.is-pulldown.is-open{
   z-index: 60;
 }

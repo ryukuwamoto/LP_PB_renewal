@@ -1,8 +1,8 @@
-// =========================================================
-// delivery
-// =========================================================
 @use "variables" as *;
 
+// =========================================================
+// info.html：配送・サポートページ
+// =========================================================
 .top_a {
   background: #fff;
 
@@ -25,7 +25,7 @@
     }
   }
 
-  /* ヘッダー帯 */
+  // ヘッダー帯
   &__header {
     position: relative;
     width: 1030px;
@@ -81,7 +81,7 @@
     }
   }
 
-  /* eSIMとは */
+  // eSIMとは
   &__about {
     position: relative;
     width: 629px;
@@ -99,7 +99,7 @@
       text-align: center;
       margin: 16px auto 0;
     }
-    
+
     .wrap {
       position: absolute;
       left: 173px;
@@ -272,7 +272,7 @@
     }
   }
 
-  /* 最短1時間バンド（旧: 24時間） */
+  // 最短1時間バンド（旧: 24時間）
   &__band24 {
     position: relative;
     width: 100%;
@@ -330,7 +330,7 @@
           font-size: 11px;
         }
       }
-    } 
+    }
   }
 
   .ast-text {
@@ -345,11 +345,11 @@
         }
   }
 
-  /* LINE 設定サポート枠 */
+  // LINE 設定サポート枠
   &__support {
     width: 100%;
     margin-bottom: 58px;
-    
+
     .btn-wrap {
       display: flex;
       justify-content: center;
@@ -373,7 +373,7 @@
     }
   }
 
-  /* 3STEP */
+  // 3STEP
   &__steps {
     display: flex;
     justify-content: center;
@@ -522,10 +522,6 @@
   }
 }
 
-
-/* =========================================================
-   top_b … 配送について（Figma node 5005:6622 に忠実）
-   ========================================================= */
 .top_b {
   position: relative;
   margin-top: 120px;
@@ -540,7 +536,7 @@
     }
   }
 
-  /* セクションヘッダー */
+  // セクションヘッダー
   &__head {
     display: flex;
     align-items: center;
@@ -612,7 +608,7 @@
     }
   }
 
-  /* 注意事項（黄色い帯） */
+  // 注意事項（黄色い帯）
   &__notice {
     width: 100%;
     background-color: var(--red);
@@ -650,7 +646,7 @@
     }
   }
 
-  /* 下部カード型リンク・コンテンツ群 */
+  // 下部カード型リンク・コンテンツ群
   &__cards {
     display: flex;
     align-items: flex-start;
@@ -676,7 +672,7 @@
     }
   }
 
-  /* 注記・フットノート */
+  // 注記・フットノート
   &__footnote {
     margin: 0;
     font-weight: 400;
@@ -688,10 +684,6 @@
   }
 }
 
-
-/* =========================================================
-   top_c … 盗難補償について（Figma node 1877:41054 に忠実）
-   ========================================================= */
 .top_c {
   background: #fff;
   margin-bottom: 150px;
@@ -704,7 +696,7 @@
     }
   }
 
-  /* セクションヘッダー */
+  // セクションヘッダー
   &__head {
     display: flex;
     align-items: center;
@@ -765,7 +757,7 @@
     }
   }
 
-  /* 補償プランカード */
+  // 補償プランカード
   &__plan {
     position: relative;
     width: 1030px;
@@ -851,7 +843,7 @@
       color: var(--red);
       text-align: center;
     }
-    
+
     .top_c__rate-img {
       @media (max-width: 768px) {
         display: none;
@@ -872,7 +864,7 @@
     .c-accordion {
       margin: 0 auto;
     }
-    
+
     &--sim {
     border: 2px solid var(--red);
     border-radius: 10px 10px 10px 10px;
@@ -888,7 +880,7 @@
   }
   }
 
-  /* 加入条件・リンク */
+  // 加入条件・リンク
   &__terms {
     width: 100%;
     display: flex;
@@ -959,7 +951,7 @@
     }
   }
 
-  /* 補償の流れ */
+  // 補償の流れ
   &__flow {
     width: 1030px;
     max-width: 100%;
@@ -1004,7 +996,7 @@
     }
   }
 
-  /* 各ステップカード */
+  // 各ステップカード
   &__step {
     position: relative;
     background: #fff;

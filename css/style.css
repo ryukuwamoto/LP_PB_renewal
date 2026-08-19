@@ -117,12 +117,6 @@ button {
   background: none;
 }
 
-.container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 section {
   position: relative;
 }
@@ -186,9 +180,6 @@ ul {
 .common_btn.is-pulldown {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-.common_btn {
-  /* 💡 OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */
 }
 .common_btn .c-os-select {
   position: absolute;
@@ -456,58 +447,19 @@ ul {
   left: 0;
 }
 
-@media (max-width: 900px) {
-  .assurance-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .assure-card.main {
-    grid-column: 1/-1;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-  }
-  .plan-grid {
-    grid-template-columns: 90px 1fr 1fr 1fr;
-  }
-  .plan-head .big {
-    font-size: 28px;
-  }
-  .plan-cell.amount {
-    font-size: 18px;
-  }
-  .select-benefits,
-  .carriers,
-  .gp-grid,
-  .guide-grid,
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-  .phone-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .sec-label {
-    font-size: 28px;
-  }
-  .hero-title {
-    font-size: 40px;
-  }
-  .plan-cta {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .step {
-    grid-template-columns: 80px 1fr;
-    padding: 16px;
-  }
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
+
 .header {
   position: sticky;
   top: 0;
@@ -685,10 +637,10 @@ ul {
   .nav {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
-            order: 3; /* 💡ロゴ(1)・ボタン(2)の後に並ぶように「3番目」に指定 */
+            order: 3;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
-            flex: 0 0 100%; /* 💡横幅いっぱいに広げて強制的に下段へ落とす */
+            flex: 0 0 100%;
     width: 100%;
     background-color: var(--teal);
     padding: 10px 20px 0;
@@ -724,7 +676,7 @@ ul {
   }
   .nav .nav-item-wrapper .nav-item {
     text-align: center;
-    padding: 12px 10px; /* スマホ用に上下の余白を少しスマートに */
+    padding: 12px 10px;
     font-size: 14px;
     color: #fff;
   }
@@ -2092,21 +2044,18 @@ ul {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.pill-btn {
-  /* OS標準のセレクトボックスをボタンと全く同じサイズで透明化して重ねる */
-}
 .pill-btn .c-os-select {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* 完全に透明にする */
+  opacity: 0;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-  z-index: 5; /* ホバー画像などよりも前面に来るように高めの数値を設定 */
+  z-index: 5;
 }
 .pill-btn.contact {
   background: var(--green);
@@ -2233,7 +2182,7 @@ ul {
   display: flex;
   gap: 10px;
   margin-top: 5px;
-  padding: 14px;
+  padding: 12px;
   list-style: none;
   white-space: nowrap;
   background: #fff;
@@ -2268,7 +2217,7 @@ ul {
           justify-content: center;
   gap: 4px;
   width: 95px;
-  height: 60px;
+  height: 66px;
   border: 2px solid;
   border-radius: 8px;
   background: #fff;
@@ -2293,6 +2242,9 @@ ul {
 }
 .c-os-menu__item--long:hover {
   background-color: #FFD5DB;
+}
+.c-os-menu__text + .c-os-menu__text {
+  margin-top: -2px;
 }
 .c-os-menu__icon {
   width: auto;
@@ -2336,6 +2288,9 @@ ul {
     gap: 8px;
     font-size: 13px;
     border-radius: 10px;
+  }
+  .c-os-menu--modal .c-os-menu__text + .c-os-menu__text {
+    margin-top: -4px;
   }
   .c-os-menu--modal .c-os-menu__icon {
     height: 25px;
@@ -2485,61 +2440,61 @@ ul {
   }
 }
 
-/* 2. 右下(画面外) → 右上 */
 @-webkit-keyframes fly-right-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* 最初は元の位置 */
+            transform: translateY(0);
   }
   50% {
     -webkit-transform: translateY(-15px);
-            transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
+            transform: translateY(-15px);
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+            transform: translateY(0);
   }
 }
+
 @keyframes fly-right-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* 最初は元の位置 */
+            transform: translateY(0);
   }
   50% {
     -webkit-transform: translateY(-15px);
-            transform: translateY(-15px); /* 💡 1.5秒かけて上に15px浮き上がる */
+            transform: translateY(-15px);
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+            transform: translateY(0);
   }
 }
 @-webkit-keyframes fly-right-top_ph {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* 最初は元の位置 */
+            transform: translateY(0);
   }
   50% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px); /* 💡 1.5秒かけて上に15px浮き上がる */
+            transform: translateY(-10px);
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+            transform: translateY(0);
   }
 }
 @keyframes fly-right-top_ph {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* 最初は元の位置 */
+            transform: translateY(0);
   }
   50% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px); /* 💡 1.5秒かけて上に15px浮き上がる */
+            transform: translateY(-10px);
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); /* さらに1.5秒かけて元の位置に戻る */
+            transform: translateY(0);
   }
 }
 .sec-top-a {
@@ -3573,7 +3528,6 @@ ul {
 .plan-card-desc .hl {
   color: var(--yellow);
 }
-.plan-card-desc { /* 💡 $pb-hl-yellow から変更 */ }
 .plan-card-desc .en {
   font-weight: 700;
 }
@@ -3766,15 +3720,6 @@ ul {
   gap: 4px;
   font-weight: 900;
 }
-.phone-body .phone-cal {
-  width: 17px;
-  height: 20px;
-  display: inline-block;
-  margin-bottom: 3px;
-}
-.phone-body .phone-note {
-  font-size: 16px;
-}
 .phone-body .phone-num {
   font-weight: 700;
   font-size: 34px;
@@ -3805,13 +3750,6 @@ ul {
     -webkit-column-gap: 2px;
        -moz-column-gap: 2px;
             column-gap: 2px;
-  }
-  .phone-body .phone-cal {
-    width: 21px;
-    height: 21px;
-  }
-  .phone-body .phone-note {
-    font-size: 14px;
   }
   .phone-body .phone-num {
     font-size: 32px;
@@ -4259,7 +4197,6 @@ ul {
 
 @-webkit-keyframes walkDiagonal {
   0% {
-    /* 【スタート：右上奥】 */
     top: -110px;
     left: calc(50% + 100px);
     -webkit-transform: scale(0.5) rotate(0deg);
@@ -4269,48 +4206,42 @@ ul {
   10% {
     opacity: 1;
   }
-  /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
   22% {
-    top: -99px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
-    left: calc(50% + 94px); /* 横に6px左へ進む */
+    top: -99px;
+    left: calc(50% + 94px);
     -webkit-transform: scale(0.7) rotate(6deg);
-            transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
+            transform: scale(0.7) rotate(6deg);
   }
   45% {
-    top: -82px; /* 縦に8px進む（着地） */
-    right: 22px; /* 横に12px左へ進む */
+    top: -82px;
+    right: 22px;
     -webkit-transform: scale(0.78) rotate(-6deg);
-            transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
+            transform: scale(0.78) rotate(-6deg);
   }
   67% {
-    top: -81px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
-    right: 28px; /* 横に18px左へ進む */
+    top: -81px;
+    right: 28px;
     -webkit-transform: scale(0.9) rotate(6deg);
-            transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
+            transform: scale(0.9) rotate(6deg);
   }
   90% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
+            transform: scale(1) rotate(0deg);
     opacity: 1;
   }
   100% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
+            transform: scale(1) rotate(0deg);
     opacity: 1;
   }
 }
 
 @keyframes walkDiagonal {
   0% {
-    /* 【スタート：右上奥】 */
     top: -110px;
     left: calc(50% + 100px);
     -webkit-transform: scale(0.5) rotate(0deg);
@@ -4320,41 +4251,36 @@ ul {
   10% {
     opacity: 1;
   }
-  /* --- 💡 左右の揺れ（rotate）を強め、上下のバウンドもはっきりさせる --- */
   22% {
-    top: -99px; /* 縦に4px進みつつ、3px上にピョコッと跳ねる */
-    left: calc(50% + 94px); /* 横に6px左へ進む */
+    top: -99px;
+    left: calc(50% + 94px);
     -webkit-transform: scale(0.7) rotate(6deg);
-            transform: scale(0.7) rotate(6deg); /* 💡 右に強めに傾く */
+            transform: scale(0.7) rotate(6deg);
   }
   45% {
-    top: -82px; /* 縦に8px進む（着地） */
-    right: 22px; /* 横に12px左へ進む */
+    top: -82px;
+    right: 22px;
     -webkit-transform: scale(0.78) rotate(-6deg);
-            transform: scale(0.78) rotate(-6deg); /* 💡 左に強めに傾く */
+            transform: scale(0.78) rotate(-6deg);
   }
   67% {
-    top: -81px; /* 縦に12px進みつつ、3px上にピョコッと跳ねる */
-    right: 28px; /* 横に18px左へ進む */
+    top: -81px;
+    right: 28px;
     -webkit-transform: scale(0.9) rotate(6deg);
-            transform: scale(0.9) rotate(6deg); /* 💡 再び右に強めに傾く */
+            transform: scale(0.9) rotate(6deg);
   }
   90% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
+            transform: scale(1) rotate(0deg);
     opacity: 1;
   }
   100% {
-    /* 【ゴール：左下手前】
-       初期位置から「下へ15px」「左へ25px」移動（斜め約29pxの移動） */
     top: -60px;
     left: calc(50% + 60px);
     -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg); /* 最後は正面に戻る */
+            transform: scale(1) rotate(0deg);
     opacity: 1;
   }
 }
@@ -4471,33 +4397,12 @@ ul {
   }
 }
 
-.visual-teal {
-  background-color: var(--teal);
-  margin-top: -1px;
-  height: 268px;
-}
-
 .d-content-wrap {
   padding-top: 160px;
 }
 @media (max-width: 768px) {
   .d-content-wrap {
     padding-top: 175px;
-  }
-}
-
-.visual-logo {
-  display: block;
-  margin: 0 auto 35px;
-  width: 220px;
-  height: auto;
-  position: relative;
-  z-index: 3;
-}
-@media (max-width: 768px) {
-  .visual-logo {
-    width: 209px;
-    margin-bottom: 20px;
   }
 }
 
@@ -4803,10 +4708,6 @@ ul {
   right: calc(50% - 290px);
   bottom: 34px;
 }
-.point-mascot.mascot-03 {
-  left: 16px;
-  top: 220px;
-}
 @media (max-width: 768px) {
   .point-mascot {
     display: none;
@@ -5039,7 +4940,7 @@ ul {
 .phone-need-title p {
   display: inline-block;
   background-image: radial-gradient(circle, var(--teal) 1.5px, transparent 1.5px);
-  background-size: 6px 3px; /* 1つ目の数字：ドットの間隔 / 2つ目の数字：ドットの縦幅（直径） */
+  background-size: 6px 3px;
   background-repeat: repeat-x;
   background-position: bottom;
   padding-bottom: 3px;
@@ -5421,73 +5322,6 @@ ul {
 }
 .f-head .sec-head .sec-en .line-l, .f-head .sec-head .sec-en .line-r, .f-head .sec-head .sec-jp .line-l, .f-head .sec-head .sec-jp .line-r {
   background: #fff;
-}
-
-.sec-head-on-teal {
-  text-align: center;
-  margin-bottom: 36px;
-  color: #fff;
-}
-.sec-head-on-teal .sec-ico {
-  width: 40px;
-  height: auto;
-  margin: 0 auto 8px;
-  display: block;
-}
-.sec-head-on-teal .sec-en {
-  font-weight: 500;
-  font-style: italic;
-  font-size: 32px;
-  color: #fff;
-  line-height: 1.2;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 24px;
-}
-.sec-head-on-teal .sec-en .line-l, .sec-head-on-teal .sec-en .line-r {
-  display: inline-block;
-  width: 240px;
-  height: 1px;
-  background: #fff;
-}
-@media (max-width: 768px) {
-  .sec-head-on-teal .sec-en {
-    font-size: 22px;
-    gap: 10px;
-  }
-  .sec-head-on-teal .sec-en .line-l, .sec-head-on-teal .sec-en .line-r {
-    width: 50px;
-  }
-}
-.sec-head-on-teal .sec-jp {
-  margin-top: 6px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #fff;
-}
-.sec-head-on-teal .sec-jp .en {
-  font-weight: 700;
-  font-size: 15px;
-}
-@media (max-width: 768px) {
-  .sec-head-on-teal .sec-jp {
-    font-size: 12px;
-  }
-  .sec-head-on-teal .sec-jp .en {
-    font-size: 12px;
-  }
-}
-@media (max-width: 768px) {
-  .sec-head-on-teal {
-    margin-bottom: 20px;
-  }
 }
 
 .good-point-list {
@@ -6328,25 +6162,6 @@ ul {
   }
 }
 
-.g-callout-illust1 {
-  width: 94px;
-  height: auto;
-  display: block;
-  margin: 7px 0 0 27px;
-}
-@media (max-width: 768px) {
-  .g-callout-illust1 {
-    width: 74px;
-    margin: 17px 0 0 25px;
-  }
-}
-@media (max-width: 400px) {
-  .g-callout-illust1 {
-    width: 70px;
-    margin: 17px 0 0 15px;
-  }
-}
-
 .g-callout-illust2 {
   width: 103px;
   height: auto;
@@ -6366,25 +6181,6 @@ ul {
   }
 }
 
-.g-callout-illust3 {
-  width: 94px;
-  height: auto;
-  display: block;
-  margin: 13px 0 0 27px;
-}
-@media (max-width: 768px) {
-  .g-callout-illust3 {
-    width: 74px;
-    margin: 26px 0 0 25px;
-  }
-}
-@media (max-width: 400px) {
-  .g-callout-illust3 {
-    width: 70px;
-    margin: 30px 0 0 15px;
-  }
-}
-
 .g-callout-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6399,20 +6195,11 @@ ul {
           align-items: center;
   gap: 21px;
 }
-.g-callout-body.simcard {
-  gap: 14px;
-}
 @media (max-width: 768px) {
   .g-callout-body {
     max-width: 160px;
     width: 100%;
     gap: 8px;
-  }
-  .g-callout-body.simcard {
-    gap: 8px;
-  }
-  .g-callout-body.simcard .sp {
-    display: none;
   }
 }
 
@@ -6477,48 +6264,6 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 42px;
-}
-
-.btn-apply {
-  width: 285px;
-  height: 51px;
-  background: var(--pink);
-  color: #fff;
-  border-radius: 999px;
-  border: 1px solid var(--pink);
-  font-weight: bold;
-  font-size: 17px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  position: relative;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.btn-apply .btn-apply-icon {
-  width: 22px;
-  height: auto;
-}
-.btn-apply .btn-arrow {
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 8px;
-  height: 14px;
-}
-.btn-apply:hover {
-  background: #fff;
-  color: var(--pink);
 }
 
 .sec-top-h {
@@ -6624,7 +6369,7 @@ ul {
   transition: color 0.2s ease, font-weight 0.2s ease;
 }
 .h-toc-item:not(:last-child) {
-  border-bottom: 3px dotted #fff; /* ドットの色や太さは任意で調整 */
+  border-bottom: 3px dotted #fff;
 }
 .h-toc-item .h-toc-num {
   -ms-flex-negative: 0;
@@ -6695,7 +6440,7 @@ ul {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr auto; /* 上（画像）は残りの高さ全て、下（ナビ）は文字の高さ */
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 }
 .h-page[hidden] {
@@ -6705,7 +6450,7 @@ ul {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* 👈 ここでスクロールバーを出します */
+  overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--ink-soft) transparent;
@@ -6762,19 +6507,13 @@ ul {
     display: none;
   }
 }
-.h-page .h-page-imgwrap .scroll-hint-overlay {
-  /* スクロールされたら消すクラス */
-}
 .h-page .h-page-imgwrap .scroll-hint-overlay.is-hidden {
   opacity: 0;
   visibility: hidden;
 }
-.h-page {
-  /* ▼ [変更] 中の画像自体は100%の幅で素直に表示させます ▼ */
-}
 .h-page .content-wrap {
   width: 100%;
-  height: auto; /* 👈 縦に潰れず、本来の比率で縦長に表示されます */
+  height: auto;
   display: block;
   padding: 10% 5% 5%;
   text-align: center;
@@ -6914,7 +6653,7 @@ ul {
   padding-bottom: 0;
 }
 .h-page .content-wrap .read .check-list li::before {
-  content: ""; /* 💡中身は空っぽにする */
+  content: "";
   display: inline-block;
   width: 4%;
   aspect-ratio: 1/1;
@@ -6925,12 +6664,6 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-.h-page .content-wrap .read .check-list li .bold {
-  font-weight: 700;
-}
-.h-page .content-wrap .read .check-list li .bold .normal {
-  font-weight: 500;
 }
 .h-page .content-wrap .inforead {
   width: 90%;
@@ -7730,40 +7463,6 @@ ul {
   text-transform: uppercase;
 }
 
-.side_nav {
-  position: fixed;
-  z-index: 90;
-  right: 85px;
-  bottom: 135px;
-}
-.side_nav ul li {
-  position: relative;
-  margin-bottom: 15px;
-}
-.side_nav ul li:last-child {
-  margin-bottom: 0;
-}
-.side_nav ul li img {
-  position: relative;
-  z-index: 10;
-  -webkit-filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.16));
-          filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.16));
-}
-.side_nav ul li .close {
-  position: absolute;
-  z-index: 12;
-  top: 0;
-  right: -10px;
-  display: block;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  background-image: url(./img/common/side_ico_00@2x.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 28px;
-}
-
 .common_sns {
   margin-top: 60px;
 }
@@ -8038,41 +7737,6 @@ ul {
   }
 }
 
-.c-btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 14px 30px;
-  font-weight: 900;
-  font-size: 15px;
-  color: var(--ink);
-  -webkit-box-shadow: 4px 4px 0 var(--pink);
-          box-shadow: 4px 4px 0 var(--pink);
-  -webkit-transition: -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
-  transition: -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
-  transition: transform 0.12s, box-shadow 0.12s;
-  transition: transform 0.12s, box-shadow 0.12s, -webkit-transform 0.12s, -webkit-box-shadow 0.12s;
-}
-.c-btn:hover {
-  -webkit-transform: translate(4px, 4px);
-          transform: translate(4px, 4px);
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
-}
-.c-btn__arrow {
-  margin-left: 2px;
-  font-size: 17px;
-  font-weight: 900;
-  line-height: 1;
-}
-
 .c-btnarea {
   text-align: center;
   margin-top: 28px;
@@ -8169,99 +7833,6 @@ ul {
     font-size: 50px;
     margin: 50px 0;
   }
-}
-
-.c-pagetop {
-  text-align: center;
-  padding: 30px 0 0;
-}
-.c-pagetop__link {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 6px;
-  color: var(--ink);
-  font-size: 11px;
-  font-weight: 700;
-}
-.c-pagetop__circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 18px;
-}
-
-.c-article__heading {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 900;
-  margin-bottom: 14px;
-}
-.c-article__photo {
-  background: #fff;
-  border-radius: 8px;
-  aspect-ratio: 16/9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #bbb;
-  font-size: 12px;
-}
-.c-article__date {
-  font-size: 12px;
-  color: #888888;
-  margin: 12px 0 4px;
-}
-.c-article__title {
-  font-size: 13.5px;
-  font-weight: 700;
-  line-height: 1.6;
-}
-.c-article__title a:hover {
-  text-decoration: underline;
-}
-
-.c-sns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 22px;
-  padding: 18px 0 4px;
-}
-.c-sns__item {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink);
-}
-.c-sns__item:hover {
-  color: var(--teal);
 }
 
 .p-fv {
@@ -8364,7 +7935,6 @@ ul {
           justify-content: center;
   gap: 18px;
   max-width: 1030px;
-  /* 💡ここがガタつき防止のポイント */
   height: 70px;
   margin: -70px auto 0;
 }
@@ -8374,9 +7944,6 @@ ul {
     margin-top: -50px;
     gap: 8px;
   }
-}
-.p-cycle {
-  /* タブ単体 */
 }
 .p-cycle__tab {
   -webkit-box-flex: 0;
@@ -8404,9 +7971,6 @@ ul {
 .p-cycle__tab[data-tab=set] {
   background: #DBF4FD;
 }
-.p-cycle__tab {
-  /* 💡 各タブごとのアクティブ時背景色 */
-}
 .p-cycle__tab[data-tab=sim].is-active {
   background: var(--red);
 }
@@ -8417,9 +7981,6 @@ ul {
   height: 70px;
   background: var(--red);
   color: #fff;
-}
-.p-cycle__tab {
-  /* レスポンシブ（スマホ版） */
 }
 @media (max-width: 768px) {
   .p-cycle__tab {
@@ -8457,7 +8018,6 @@ ul {
 }
 .p-cycle__list2 {
   display: grid;
-  /* 💡 自動で列数を調整する設定 */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   margin: 70px 0;
@@ -8911,7 +8471,6 @@ ul {
   gap: 18px;
   max-width: 1030px;
   z-index: 0;
-  /* 💡ここがガタつき防止のポイント */
   height: 70px;
   margin: -69px auto 0;
 }
@@ -8926,9 +8485,6 @@ ul {
     margin-top: 0px;
     gap: 8px;
   }
-}
-.p-plan {
-  /* タブ単体 */
 }
 .p-plan__tab {
   -webkit-box-flex: 0;
@@ -8956,9 +8512,6 @@ ul {
 .p-plan__tab[data-tab=set] {
   background: #DBF4FD;
 }
-.p-plan__tab {
-  /* 💡 各タブごとのアクティブ時背景色 */
-}
 .p-plan__tab[data-tab=sim].is-active {
   background: var(--red);
 }
@@ -8970,9 +8523,6 @@ ul {
   background: var(--red);
   color: #fff;
   z-index: 2;
-}
-.p-plan__tab {
-  /* レスポンシブ（スマホ版） */
 }
 @media (max-width: 768px) {
   .p-plan__tab {
@@ -9137,9 +8687,6 @@ ul {
   width: 100%;
   height: 100%;
 }
-.top_a {
-  /* ヘッダー帯 */
-}
 .top_a__header {
   position: relative;
   width: 1030px;
@@ -9198,9 +8745,6 @@ ul {
   .top_a__subtitle {
     font-size: 12px;
   }
-}
-.top_a {
-  /* eSIMとは */
 }
 .top_a__about {
   position: relative;
@@ -9413,9 +8957,6 @@ ul {
   line-height: 26px;
   color: var(--red);
 }
-.top_a {
-  /* 最短1時間バンド（旧: 24時間） */
-}
 .top_a__band24 {
   position: relative;
   width: 100%;
@@ -9493,9 +9034,6 @@ ul {
     margin: 8px 0 20px;
   }
 }
-.top_a {
-  /* LINE 設定サポート枠 */
-}
 .top_a__support {
   width: 100%;
   margin-bottom: 58px;
@@ -9522,9 +9060,6 @@ ul {
   .top_a__support-sp {
     display: block;
   }
-}
-.top_a {
-  /* 3STEP */
 }
 .top_a__steps {
   display: -webkit-box;
@@ -9705,9 +9240,6 @@ ul {
   }
 }
 
-/* =========================================================
-   top_b … 配送について（Figma node 5005:6622 に忠実）
-   ========================================================= */
 .top_b {
   position: relative;
   margin-top: 120px;
@@ -9721,9 +9253,6 @@ ul {
   .top_b .wrap-wide {
     max-width: 540px;
   }
-}
-.top_b {
-  /* セクションヘッダー */
 }
 .top_b__head {
   display: -webkit-box;
@@ -9795,9 +9324,6 @@ ul {
     display: block;
   }
 }
-.top_b {
-  /* 注意事項（黄色い帯） */
-}
 .top_b__notice {
   width: 100%;
   background-color: var(--red);
@@ -9839,9 +9365,6 @@ ul {
     font-size: 13px;
   }
 }
-.top_b {
-  /* 下部カード型リンク・コンテンツ群 */
-}
 .top_b__cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9875,9 +9398,6 @@ ul {
     max-width: 400px;
   }
 }
-.top_b {
-  /* 注記・フットノート */
-}
 .top_b__footnote {
   margin: 0;
   font-weight: 400;
@@ -9889,9 +9409,6 @@ ul {
       align-self: stretch;
 }
 
-/* =========================================================
-   top_c … 盗難補償について（Figma node 1877:41054 に忠実）
-   ========================================================= */
 .top_c {
   background: #fff;
   margin-bottom: 150px;
@@ -9903,9 +9420,6 @@ ul {
   .top_c .wrap-wide {
     max-width: 540px;
   }
-}
-.top_c {
-  /* セクションヘッダー */
 }
 .top_c__head {
   display: -webkit-box;
@@ -9968,9 +9482,6 @@ ul {
   .top_c__lead {
     font-size: 17px;
   }
-}
-.top_c {
-  /* 補償プランカード */
 }
 .top_c__plan {
   position: relative;
@@ -10099,9 +9610,6 @@ ul {
 .top_c__plan--sim .top_c__terms-bar {
   background: #FFD5DB;
 }
-.top_c {
-  /* 加入条件・リンク */
-}
 .top_c__terms {
   width: 100%;
   display: -webkit-box;
@@ -10178,9 +9686,6 @@ ul {
     margin-top: 0px;
   }
 }
-.top_c {
-  /* 補償の流れ */
-}
 .top_c__flow {
   width: 1030px;
   max-width: 100%;
@@ -10230,9 +9735,6 @@ ul {
     max-width: 400px;
     margin: 20px auto 0;
   }
-}
-.top_c {
-  /* 各ステップカード */
 }
 .top_c__step {
   position: relative;
@@ -10406,9 +9908,57 @@ ul {
   }
 }
 
-/* =========================================================
-   top_a … eSIM概要・端末・決済セクション
-   ========================================================= */
+.c-check {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 63px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("../assets/application/check-badge.svg") center/contain no-repeat;
+  color: #fff;
+}
+.c-check__label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+}
+.c-check__num {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.c-brands {
+  padding: 0 30px;
+  width: 100%;
+}
+.c-brands img {
+  display: block;
+  height: auto;
+}
+
+.c-brands2 {
+  padding: 0 5px;
+  width: 100%;
+}
+.c-brands2 img {
+  display: block;
+  height: auto;
+}
+
 .a-top_a {
   background-color: #fff;
   background-image: radial-gradient(circle at 3px 2.8px, color-mix(in srgb, #FFD5DB 35%, transparent) 3px, transparent 3.6px), radial-gradient(circle at 16px 15.9px, color-mix(in srgb, #FFD5DB 35%, transparent) 3px, transparent 3.6px);
@@ -10446,9 +9996,6 @@ ul {
   .a-top_a__lead {
     margin: 30px 0;
   }
-}
-.a-top_a {
-  /* ナビゲーション */
 }
 .a-top_a__nav {
   display: -webkit-box;
@@ -10508,9 +10055,6 @@ ul {
           transform: translateY(-50%);
   width: 63px;
   height: auto;
-}
-.a-top_a {
-  /* メインコンテンツカード */
 }
 .a-top_a__cards {
   display: -webkit-box;
@@ -10611,9 +10155,6 @@ ul {
     padding: 12px;
     max-width: 320px;
   }
-}
-.a-top_a {
-  /* 対応端末エリア */
 }
 .a-top_a__devices {
   display: -webkit-box;
@@ -10752,9 +10293,6 @@ ul {
 .a-top_a__freq p:last-child span {
   margin-left: 2px;
 }
-.a-top_a {
-  /* おすすめバナー（マスコット付き） */
-}
 .a-top_a__recommend {
   position: relative;
   width: 100%;
@@ -10820,9 +10358,6 @@ ul {
     right: 8px;
     bottom: 14px;
   }
-}
-.a-top_a {
-  /* お支払い方法エリア */
 }
 .a-top_a__pays {
   display: -webkit-box;
@@ -11020,65 +10555,6 @@ ul {
   }
 }
 
-/* =========================================================
-   共通コンポーネントパーツ（独立クラスとしてネスト化）
-   ========================================================= */
-/* チェックバッジ */
-.c-check {
-  position: relative;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 63px;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: url("../assets/application/check-badge.svg") center/contain no-repeat;
-  color: #fff;
-}
-.c-check__label {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1;
-}
-.c-check__num {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1;
-}
-
-/* クレジットカードブランドロゴ */
-.c-brands {
-  padding: 0 30px;
-  width: 100%;
-}
-.c-brands img {
-  display: block;
-  height: auto;
-}
-
-.c-brands2 {
-  padding: 0 5px;
-  width: 100%;
-}
-.c-brands2 img {
-  display: block;
-  height: auto;
-}
-
-/* =========================================================
-   top_b … タブ切り替え・商品購入セクション
-   ========================================================= */
 .a-top_b {
   position: relative;
   background: var(--red);
@@ -11115,10 +10591,6 @@ ul {
     padding: 0;
   }
 }
-.a-top_b {
-  /* タブメニュー */
-  /* タブメニュー（親要素） */
-}
 .a-top_b__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11131,7 +10603,6 @@ ul {
           justify-content: center;
   gap: 18px;
   max-width: 1030px;
-  /* 💡ここがガタつき防止のポイント */
   height: 70px;
   margin: -70px auto 0;
 }
@@ -11141,9 +10612,6 @@ ul {
     margin-top: -50px;
     gap: 8px;
   }
-}
-.a-top_b {
-  /* タブ単体 */
 }
 .a-top_b__tab {
   -webkit-box-flex: 0;
@@ -11170,9 +10638,6 @@ ul {
   background: var(--red);
   color: #fff;
 }
-.a-top_b__tab {
-  /* レスポンシブ（スマホ版） */
-}
 @media (max-width: 768px) {
   .a-top_b__tab {
     font-size: 15px;
@@ -11184,9 +10649,6 @@ ul {
   .a-top_b__tab .en {
     font-size: 17px;
   }
-}
-.a-top_b {
-  /* 導入テキスト */
 }
 .a-top_b__intro {
   margin: 60px 0 0;
@@ -11214,9 +10676,6 @@ ul {
   .a-top_b__intro {
     margin: 25px 0 0;
   }
-}
-.a-top_b {
-  /* メインカード */
 }
 .a-top_b__card {
   max-width: 1030px;
@@ -11251,9 +10710,6 @@ ul {
     padding: 30px 30px;
     margin: 25px auto 0;
   }
-}
-.a-top_b {
-  /* カード内：左カラム（商品画像・アコーディオン等） */
 }
 .a-top_b__left {
   -webkit-box-flex: 0;
@@ -11309,9 +10765,6 @@ ul {
     width: 100%;
   }
 }
-.a-top_b {
-  /* 左カラム：アコーディオン（details/summary） */
-}
 .a-top_b__acc {
   width: 282px;
   max-width: 100%;
@@ -11340,9 +10793,6 @@ ul {
 .a-top_b__acc-body .is-em {
   font-weight: 700;
   color: var(--red);
-}
-.a-top_b {
-  /* 左カラム：対応バンド表 */
 }
 .a-top_b__band {
   display: grid;
@@ -11379,9 +10829,6 @@ ul {
 }
 .a-top_b__band-val--5g {
   color: var(--red);
-}
-.a-top_b {
-  /* カード内：右カラム（セレクトボックス・購入ボタン等） */
 }
 .a-top_b__right {
   -webkit-box-flex: 1;
@@ -11481,9 +10928,6 @@ ul {
   background: var(--ink);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
-.a-top_b {
-  /* カート・購入ボタン */
-}
 .a-top_b__btn {
   position: relative;
   width: 285px;
@@ -11557,17 +11001,11 @@ ul {
   font-size: 16px;
   color: #fff;
 }
-.a-top_b__btn {
-  /* カートボタンバリエーション */
-}
 .a-top_b__btn--cart {
   background: #A7A7A7;
   -webkit-box-shadow: 0 4px 0 #7e7e7e;
           box-shadow: 0 4px 0 #7e7e7e;
   cursor: default;
-}
-.a-top_b__btn--cart .top_b__btn-ico ion-icon {
-  color: #A7A7A7;
 }
 .a-top_b__btn--cart.is-ready {
   background: #FF0064;
@@ -11575,19 +11013,10 @@ ul {
           box-shadow: 0 4px 0 #c2004c;
   cursor: pointer;
 }
-.a-top_b__btn--cart.is-ready .top_b__btn-ico ion-icon {
-  color: #FF0064;
-}
 .a-top_b__btn--multi {
   background: #FF0064;
   -webkit-box-shadow: 0 4px 0 #c2004c;
           box-shadow: 0 4px 0 #c2004c;
-}
-.a-top_b__btn--multi .top_b__btn-ico ion-icon {
-  color: #FF0064;
-}
-.a-top_b {
-  /* 注記エリア */
 }
 .a-top_b__notes {
   width: 100%;
@@ -11616,9 +11045,6 @@ ul {
   font-size: 10px;
   color: #46C9F4;
 }
-.a-top_b {
-  /* セット端末・その他の要素 */
-}
 .a-top_b__setphone {
   width: 280px;
   max-width: 100%;
@@ -11644,9 +11070,6 @@ ul {
     padding: 0 20px;
   }
 }
-.a-top_b {
-  /* 未選択状態などのプレースホルダー */
-}
 .a-top_b__placeholder {
   max-width: 1030px;
   margin: 40px auto 0;
@@ -11659,9 +11082,6 @@ ul {
   color: #00A3AD;
 }
 
-/* =========================================================
-   top_a … eSIM概要・端末・決済セクション
-   ========================================================= */
 .a-top_a-s {
   background-color: #fff;
   background-image: radial-gradient(circle at 3px 2.8px, color-mix(in srgb, #DBF4FD 35%, transparent) 3px, transparent 3.6px), radial-gradient(circle at 16px 15.9px, color-mix(in srgb, #DBF4FD 35%, transparent) 3px, transparent 3.6px);
@@ -11699,9 +11119,6 @@ ul {
   .a-top_a-s__lead {
     margin: 30px 0;
   }
-}
-.a-top_a-s {
-  /* ナビゲーション */
 }
 .a-top_a-s__nav {
   display: -webkit-box;
@@ -11761,9 +11178,6 @@ ul {
           transform: translateY(-50%);
   width: 63px;
   height: auto;
-}
-.a-top_a-s {
-  /* メインコンテンツカード */
 }
 .a-top_a-s__cards {
   display: -webkit-box;
@@ -11864,9 +11278,6 @@ ul {
     padding: 12px;
     max-width: 320px;
   }
-}
-.a-top_a-s {
-  /* 対応端末エリア */
 }
 .a-top_a-s__devices {
   display: -webkit-box;
@@ -12005,9 +11416,6 @@ ul {
 .a-top_a-s__freq p:last-child span {
   margin-left: 2px;
 }
-.a-top_a-s {
-  /* おすすめバナー（マスコット付き） */
-}
 .a-top_a-s__recommend {
   position: relative;
   width: 100%;
@@ -12073,9 +11481,6 @@ ul {
     right: 8px;
     bottom: 14px;
   }
-}
-.a-top_a-s {
-  /* お支払い方法エリア */
 }
 .a-top_a-s__pays {
   display: -webkit-box;
@@ -12273,65 +11678,6 @@ ul {
   }
 }
 
-/* =========================================================
-   共通コンポーネントパーツ（独立クラスとしてネスト化）
-   ========================================================= */
-/* チェックバッジ */
-.c-check {
-  position: relative;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 63px;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: url("../assets/application/check-badge.svg") center/contain no-repeat;
-  color: #fff;
-}
-.c-check__label {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1;
-}
-.c-check__num {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1;
-}
-
-/* クレジットカードブランドロゴ */
-.c-brands {
-  padding: 0 30px;
-  width: 100%;
-}
-.c-brands img {
-  display: block;
-  height: auto;
-}
-
-.c-brands2 {
-  padding: 0 5px;
-  width: 100%;
-}
-.c-brands2 img {
-  display: block;
-  height: auto;
-}
-
-/* =========================================================
-   top_b … タブ切り替え・商品購入セクション
-   ========================================================= */
 .a-top_b-s {
   position: relative;
   background: var(--teal);
@@ -12368,10 +11714,6 @@ ul {
     padding: 0;
   }
 }
-.a-top_b-s {
-  /* タブメニュー */
-  /* タブメニュー（親要素） */
-}
 .a-top_b-s__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12384,7 +11726,6 @@ ul {
           justify-content: center;
   gap: 18px;
   max-width: 1030px;
-  /* 💡ここがガタつき防止のポイント */
   height: 70px;
   margin: -70px auto 0;
 }
@@ -12394,9 +11735,6 @@ ul {
     margin-top: -50px;
     gap: 8px;
   }
-}
-.a-top_b-s {
-  /* タブ単体 */
 }
 .a-top_b-s__tab {
   -webkit-box-flex: 0;
@@ -12423,9 +11761,6 @@ ul {
   background: var(--teal);
   color: #fff;
 }
-.a-top_b-s__tab {
-  /* レスポンシブ（スマホ版） */
-}
 @media (max-width: 768px) {
   .a-top_b-s__tab {
     font-size: 15px;
@@ -12437,9 +11772,6 @@ ul {
   .a-top_b-s__tab .en {
     font-size: 17px;
   }
-}
-.a-top_b-s {
-  /* 導入テキスト */
 }
 .a-top_b-s__intro {
   margin: 60px 0 0;
@@ -12467,9 +11799,6 @@ ul {
   .a-top_b-s__intro {
     margin: 25px 0 0;
   }
-}
-.a-top_b-s {
-  /* メインカード */
 }
 .a-top_b-s__card {
   max-width: 1030px;
@@ -12504,9 +11833,6 @@ ul {
     padding: 30px 30px;
     margin: 25px auto 0;
   }
-}
-.a-top_b-s {
-  /* カード内：左カラム（商品画像・アコーディオン等） */
 }
 .a-top_b-s__left {
   -webkit-box-flex: 0;
@@ -12562,9 +11888,6 @@ ul {
     width: 100%;
   }
 }
-.a-top_b-s {
-  /* 左カラム：アコーディオン（details/summary） */
-}
 .a-top_b-s__acc {
   width: 282px;
   max-width: 100%;
@@ -12593,9 +11916,6 @@ ul {
 .a-top_b-s__acc-body .is-em {
   font-weight: 700;
   color: var(--red);
-}
-.a-top_b-s {
-  /* 左カラム：対応バンド表 */
 }
 .a-top_b-s__band {
   display: grid;
@@ -12632,9 +11952,6 @@ ul {
 }
 .a-top_b-s__band-val--5g {
   color: var(--red);
-}
-.a-top_b-s {
-  /* カード内：右カラム（セレクトボックス・購入ボタン等） */
 }
 .a-top_b-s__right {
   -webkit-box-flex: 1;
@@ -12734,9 +12051,6 @@ ul {
   background: var(--ink);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
-.a-top_b-s {
-  /* カート・購入ボタン */
-}
 .a-top_b-s__btn {
   position: relative;
   width: 285px;
@@ -12810,17 +12124,11 @@ ul {
   font-size: 16px;
   color: #fff;
 }
-.a-top_b-s__btn {
-  /* カートボタンバリエーション */
-}
 .a-top_b-s__btn--cart {
   background: #A7A7A7;
   -webkit-box-shadow: 0 4px 0 #7e7e7e;
           box-shadow: 0 4px 0 #7e7e7e;
   cursor: default;
-}
-.a-top_b-s__btn--cart .top_b__btn-ico ion-icon {
-  color: #A7A7A7;
 }
 .a-top_b-s__btn--cart.is-ready {
   background: #FF0064;
@@ -12828,19 +12136,10 @@ ul {
           box-shadow: 0 4px 0 #c2004c;
   cursor: pointer;
 }
-.a-top_b-s__btn--cart.is-ready .top_b__btn-ico ion-icon {
-  color: #FF0064;
-}
 .a-top_b-s__btn--multi {
   background: #FF0064;
   -webkit-box-shadow: 0 4px 0 #c2004c;
           box-shadow: 0 4px 0 #c2004c;
-}
-.a-top_b-s__btn--multi .top_b__btn-ico ion-icon {
-  color: #FF0064;
-}
-.a-top_b-s {
-  /* 注記エリア */
 }
 .a-top_b-s__notes {
   width: 100%;
@@ -12869,9 +12168,6 @@ ul {
   font-size: 10px;
   color: #46C9F4;
 }
-.a-top_b-s {
-  /* セット端末・その他の要素 */
-}
 .a-top_b-s__setphone {
   width: 280px;
   max-width: 100%;
@@ -12896,9 +12192,6 @@ ul {
     margin: 0 auto;
     padding: 0 20px;
   }
-}
-.a-top_b-s {
-  /* 未選択状態などのプレースホルダー */
 }
 .a-top_b-s__placeholder {
   max-width: 1030px;
